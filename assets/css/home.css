@@ -857,39 +857,33 @@
 .sb-approach__steps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(32px, 5vw, 80px);
   margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border-radius: 24px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px #ece6dc;
+  padding: clamp(24px, 3vw, 32px) 0 0;
+  border-top: 1px solid var(--sb-line);
   list-style: none;
 }
 
 .sb-step {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-columns: 34px minmax(0, 1fr);
   align-items: start;
-  gap: 18px;
-  padding: clamp(22px, 2.4vw, 30px);
-}
-
-.sb-step + .sb-step {
-  border-left: 1px solid var(--sb-line);
+  gap: clamp(12px, 1.4vw, 18px);
+  padding: 0;
 }
 
 .sb-step__num {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
   background: var(--sb-sky);
   color: var(--sb-ink);
   font-family: var(--sb-font-display);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
@@ -899,17 +893,18 @@
 }
 
 .sb-step__text {
-  max-width: 62ch;
+  max-width: 48ch;
+  margin-top: 4px;
   color: var(--sb-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 16.5px;
+  line-height: 1.62;
   letter-spacing: -0.01em;
   text-wrap: pretty;
 }
 
 .sb-approach__goal {
   position: relative;
-  margin: clamp(40px, 4.5vw, 64px) 0 0;
+  margin: clamp(20px, 2.4vw, 32px) 0 0;
   padding: clamp(32px, 4.5vw, 56px) clamp(24px, 4.5vw, 60px);
   overflow: hidden;
   border-radius: 28px;
@@ -1785,8 +1780,9 @@
   }
 
   .sb-step + .sb-step {
+    margin-top: clamp(20px, 4vw, 26px);
+    padding-top: clamp(20px, 4vw, 26px);
     border-top: 1px solid var(--sb-line);
-    border-left: 0;
   }
 
   .sb-more__inner {
@@ -1999,15 +1995,18 @@
   }
 
   .sb-step {
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 14px;
-    padding: 22px;
+    display: block;
   }
 
   .sb-step__num {
-    width: 44px;
-    height: 44px;
-    font-size: 12px;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+    font-size: 11px;
+  }
+
+  .sb-step__text {
+    margin-top: 0;
   }
 
   .home .footer__phone--main,

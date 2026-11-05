@@ -35,7 +35,7 @@
 {{- with .Params.welcome }}
 <section class="sb-section sb-about-welcome" aria-labelledby="about-welcome-title">
   <div class="sb-inner sb-about-welcome__inner">
-    <header class="sb-about-welcome__head" data-reveal>
+    <header class="sb-about-welcome__head">
       <h2 class="sb-title" id="about-welcome-title">{{ .title }}</h2>
       {{- with .cta }}
       <div class="sb-actions">
@@ -44,7 +44,7 @@
       {{- end }}
     </header>
 
-    <div class="sb-about-welcome__card" data-reveal>
+    <div class="sb-about-welcome__card">
       <div class="sb-about-welcome__text">
         {{- range .paragraphs }}
         <p>{{ . }}</p>
@@ -105,7 +105,15 @@
 {{- with .Params.pillars }}
 <section class="sb-section sb-about-pillars" aria-labelledby="about-pillars-title">
   <div class="sb-inner">
-    <header class="sb-head sb-head--center" data-reveal>
+    <header class="sb-about-pillars__head" data-reveal>
+      <p class="sb-about-pillars__eyebrow">
+        <span class="sb-about-pillars__spark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" focusable="false">
+            <path d="M12 0c.8 6.6 4.6 10.4 12 12-7.4 1.6-11.2 5.4-12 12-.8-6.6-4.6-10.4-12-12C7.4 10.4 11.2 6.6 12 0Z" fill="currentColor"></path>
+          </svg>
+        </span>
+        Три главы о школе
+      </p>
       <h2 class="sb-title sb-about-pillars__title" id="about-pillars-title">
         {{ .title_before }}
         <span class="sb-about-pillars__accent">{{ .title_accent }}</span>
@@ -113,15 +121,31 @@
       </h2>
     </header>
 
-    <div class="sb-about-pillars__grid" data-reveal-group>
+    <ol class="sb-pillars" data-reveal-group>
       {{- range $i, $item := .items }}
-      <article class="sb-card sb-about-pillar" data-reveal>
-        <span class="sb-about-pillar__num sb-about-pillar__num--{{ mod $i 3 }}" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-        <h3 class="sb-about-pillar__title">{{ $item.title }}</h3>
-        <p class="sb-about-pillar__text">{{ $item.text }}</p>
-      </article>
+      <li class="sb-pillar" data-reveal>
+        <span class="sb-pillar__num sb-pillar__num--{{ mod $i 3 }}" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+
+        <div class="sb-pillar__body">
+          <h3 class="sb-pillar__title">{{ $item.title }}</h3>
+          {{- with $item.lead }}
+          <p class="sb-pillar__lead">{{ . }}</p>
+          {{- end }}
+          {{- with $item.text }}
+          <p class="sb-pillar__text">{{ . }}</p>
+          {{- end }}
+        </div>
+
+        {{- with $item.image }}
+        <figure class="sb-pillar__media">
+          {{- with resources.Get . }}
+          {{ partial "responsive-img.html" (dict "resource" . "alt" $item.alt "sizes" "(max-width: 900px) 90vw, 300px" "widths" (slice 300 480 700)) }}
+          {{- end }}
+        </figure>
+        {{- end }}
+      </li>
       {{- end }}
-    </div>
+    </ol>
 
     <div class="sb-actions sb-actions--center sb-about-actions" data-reveal>
       {{ partial "sb-cta-button.html" (dict "label" "Получить консультацию") }}

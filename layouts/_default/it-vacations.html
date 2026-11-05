@@ -26,9 +26,9 @@
 
 <section class="sb-section sb-vac-programs" aria-label="Программы IT Каникул">
   <div class="sb-inner">
-    <div class="sb-vac-programs__grid" data-reveal-group>
+    <div class="sb-vac-programs__grid">
       {{- range .Params.groups }}
-      <article class="sb-card sb-vac-card sb-vac-card--{{ .tone }}" data-reveal>
+      <article class="sb-card sb-vac-card sb-vac-card--{{ .tone }}">
         <span class="sb-vac-card__age">{{ .age }}</span>
         <h2 class="sb-vac-card__title">{{ .subtitle }}</h2>
         <p class="sb-vac-card__intro">{{ .intro }}</p>
