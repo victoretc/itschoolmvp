@@ -44,28 +44,22 @@
 
     </div>
 
-    {{/* Временно скрыто: медиаблок hero (фото, акценты, стикер)
-    <div class="hero__media">
+    <div class="hero__cloud-wrap">
+      <div class="hero__cloud" data-icon-cloud role="img" aria-label="Технологии, которые изучают в АйТи Скул: Scratch, Python, Arduino, HTML5, CSS, JavaScript, Roblox, Unity, Godot, Tinkercad, Blender и C++"></div>
+
       {{- with resources.Get "images/hero-left.jpg" }}
       {{- $crop := .Fill "720x900 Center" }}
-      <figure class="hero__portrait hero__portrait--main">
+      <figure class="hero__photo hero__photo--main">
         <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Девочка с роботом на занятии по робототехнике" loading="eager" decoding="async">
       </figure>
       {{- end }}
 
       {{- with resources.Get "images/hero-right.jpg" }}
       {{- $crop := .Fill "480x640 Center" }}
-      <figure class="hero__portrait hero__portrait--small">
+      <figure class="hero__photo hero__photo--small">
         <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Мальчик программирует на ноутбуке" loading="eager" decoding="async">
       </figure>
       {{- end }}
-
-      <p class="hero__sticker" aria-hidden="true">LEGO · Scratch · Python</p>
-    </div>
-    */}}
-
-    <div class="hero__cloud-wrap">
-      <div class="hero__cloud" data-icon-cloud role="img" aria-label="Технологии, которые изучают в АйТи Скул: Scratch, Python, Arduino, HTML5, CSS, JavaScript, Roblox, Unity, Godot, Tinkercad, Blender и C++"></div>
     </div>
   </div>
 </section>
