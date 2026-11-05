@@ -71,17 +71,6 @@
           </a>
         </div>
       </div>
-
-      {{- with .Params.cta }}
-      <a class="btn btn--cta sb-contacts__cta" href="tel:+375298717612">
-        <span class="btn__label">{{ . }}</span>
-        <span class="btn__icon" aria-hidden="true">
-          <svg class="btn__arrow" viewBox="0 0 24 24" width="18" height="18" focusable="false">
-            <path d="M6.6 3.8a1 1 0 0 1 1.36 0l3.2 3.2a1 1 0 0 1 0 1.4l-1.5 1.5a12.5 12.5 0 0 0 5.4 5.4l1.5-1.5a1 1 0 0 1 1.4 0l3.2 3.2a1 1 0 0 1 0 1.36l-1.8 1.8c-1.1 1.1-2.8 1.4-4.2.7A20.4 20.4 0 0 1 4.1 11c-.7-1.4-.4-3.1.7-4.2l1.8-1.8Z" fill="currentColor"></path>
-          </svg>
-        </span>
-      </a>
-      {{- end }}
     </div>
 
     {{- with .Params.mapEmbed }}
@@ -93,7 +82,6 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--contacts-map-star") }}
     </div>
     {{- end }}
   </div>

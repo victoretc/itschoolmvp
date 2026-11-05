@@ -166,7 +166,7 @@
 }
 
 .sb-contacts__rows {
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 
 .sb-contact + .sb-contact {
@@ -209,10 +209,12 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  color: var(--sb-ink);
+  background: var(--icon-bg);
+  color: var(--icon-ink);
   transition:
-    background-color 160ms ease,
-    transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+    background-color 180ms var(--ease),
+    color 180ms var(--ease),
+    transform 180ms var(--ease-out);
 }
 
 .sb-contact__icon svg {
@@ -221,15 +223,24 @@
 }
 
 .sb-contact__icon--sky {
-  background: var(--sb-sky);
+  --icon-bg: #dcefff;
+  --icon-ink: #0a5c9a;
+  --icon-bg-hover: var(--sb-sky);
+  --icon-ink-hover: #07324f;
 }
 
 .sb-contact__icon--yellow {
-  background: var(--sb-yellow);
+  --icon-bg: #ffecc2;
+  --icon-ink: #8a5700;
+  --icon-bg-hover: var(--sb-yellow);
+  --icon-ink-hover: #3a2600;
 }
 
 .sb-contact__icon--mint {
-  background: var(--sb-mint);
+  --icon-bg: #d7f6e1;
+  --icon-ink: #08733f;
+  --icon-bg-hover: var(--sb-mint);
+  --icon-ink-hover: #063b22;
 }
 
 .sb-contact__body {
@@ -254,26 +265,37 @@
   line-height: 1.4;
 }
 
-.sb-contacts__cta {
-  width: 100%;
-  margin-top: auto;
-}
-
 @media (hover: hover) and (pointer: fine) {
-  .sb-contact__link:hover .sb-contact__icon {
-    transform: translateY(-1px);
+  .sb-contact__link:hover .sb-contact__icon,
+  .sb-contact__link:focus-visible .sb-contact__icon {
+    background: var(--icon-bg-hover);
+    color: var(--icon-ink-hover);
+    transform: translateY(-2px);
   }
 
-  .sb-contact__link:hover .sb-contact__value {
+  .sb-contact__link:hover .sb-contact__value,
+  .sb-contact__link:focus-visible .sb-contact__value {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
   }
+
+  .sb-branch:hover .sb-branch__icon {
+    background: var(--icon-bg-hover);
+    color: var(--icon-ink-hover);
+    transform: translateY(-2px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sb-contact__icon {
+  .sb-contact__icon,
+  .sb-branch__icon {
     transition: none;
+  }
+
+  .sb-contact__link:hover .sb-contact__icon,
+  .sb-branch:hover .sb-branch__icon {
+    transform: none;
   }
 }
 
@@ -298,14 +320,6 @@
   height: 100%;
   min-height: inherit;
   border: 0;
-}
-
-.sb-art--contacts-map-star {
-  position: absolute;
-  top: -18px;
-  right: -14px;
-  z-index: 2;
-  width: 50px;
 }
 
 /* ------------------------------------------------------------ branches */
@@ -337,7 +351,12 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  color: var(--sb-ink);
+  background: var(--icon-bg);
+  color: var(--icon-ink);
+  transition:
+    background-color 180ms var(--ease),
+    color 180ms var(--ease),
+    transform 180ms var(--ease-out);
 }
 
 .sb-branch__icon svg {
@@ -346,19 +365,31 @@
 }
 
 .sb-branch__icon--0 {
-  background: var(--sb-sky);
+  --icon-bg: #dcefff;
+  --icon-ink: #0a5c9a;
+  --icon-bg-hover: var(--sb-sky);
+  --icon-ink-hover: #07324f;
 }
 
 .sb-branch__icon--1 {
-  background: var(--sb-yellow);
+  --icon-bg: #ffecc2;
+  --icon-ink: #8a5700;
+  --icon-bg-hover: var(--sb-yellow);
+  --icon-ink-hover: #3a2600;
 }
 
 .sb-branch__icon--2 {
-  background: var(--sb-mint);
+  --icon-bg: #d7f6e1;
+  --icon-ink: #08733f;
+  --icon-bg-hover: var(--sb-mint);
+  --icon-ink-hover: #063b22;
 }
 
 .sb-branch__icon--3 {
-  background: var(--sb-pink);
+  --icon-bg: #ffdcec;
+  --icon-ink: #a11a5a;
+  --icon-bg-hover: var(--sb-pink);
+  --icon-ink-hover: #4a0726;
 }
 
 .sb-branch__num {

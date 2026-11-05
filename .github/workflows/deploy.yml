@@ -1,0 +1,58 @@
+name: Deploy to Github Pages
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: write
+
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Cache Hugo resources
+              uses: actions/cache@v4
+              env:
+                  cache-name: cache-hugo-resources
+              with:
+                  path: resources
+                  key: ${{ env.cache-name }}
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v2
+              with:
+                  hugo-version: "0.150.0"
+                  extended: true
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm ci
+
+            # Фон первого экрана — React-бандл из Vite. Собирается до Hugo:
+            # Hugo раздаёт static/app как есть.
+            - name: Build app
+              run: npm run build
+
+            - name: Build
+              run: hugo --minify --gc --baseURL https://victoretc.github.io/portfolio/
+
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  branch: gh-pages
+                  folder: public
+                  clean: true
+                  single-commit: true
