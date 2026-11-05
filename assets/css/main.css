@@ -152,14 +152,39 @@ button {
   border-color: rgba(13, 27, 51, 0.32);
 }
 .btn--cta {
+  position: relative;
+  isolation: isolate;
   gap: 0.9rem;
   min-height: 3.5rem;
   padding: 0.35rem 0.35rem 0.35rem 1.45rem;
+  overflow: hidden;
   border-radius: 1rem;
   justify-content: space-between;
   box-shadow:
     0 1px 2px rgba(13, 27, 51, 0.12),
     0 1rem 2rem -1rem rgba(13, 27, 51, 0.45);
+  transition:
+    color 180ms var(--ease),
+    transform 160ms var(--ease-out);
+}
+.btn--cta::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0.35rem;
+  right: 0.35rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: var(--field);
+  transform: scale(1);
+  transition: transform 260ms var(--ease-out);
+  pointer-events: none;
+}
+.btn--cta .btn__label,
+.btn--cta .btn__icon {
+  position: relative;
+  z-index: 1;
 }
 .btn--cta .btn__label {
   white-space: nowrap;
@@ -172,21 +197,14 @@ button {
   height: 2.8rem;
   overflow: hidden;
   border-radius: 50%;
-  background: var(--field);
+  background: transparent;
   color: var(--ink);
   transition:
     background-color 200ms var(--ease),
     color 200ms var(--ease);
 }
 .btn--cta .btn__arrow {
-  grid-area: 1 / 1;
-  transition:
-    transform 220ms var(--ease-out),
-    opacity 160ms var(--ease-out);
-}
-.btn--cta .btn__arrow--next {
-  opacity: 0;
-  transform: translate(-180%, 180%);
+  transition: transform 220ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
@@ -204,25 +222,20 @@ button {
     border-color: var(--ink);
   }
   .btn--cta:hover {
-    background: var(--ink-soft);
-    border-color: var(--ink-soft);
-    color: var(--paper);
+    background: var(--ink);
+    border-color: var(--field);
+    color: var(--ink);
     transform: translateY(-2px);
-    box-shadow:
-      0 1px 2px rgba(13, 27, 51, 0.14),
-      0 1.25rem 2.5rem -1rem rgba(13, 27, 51, 0.5);
+  }
+  .btn--cta:hover::before {
+    transform: scale(13);
   }
   .btn--cta:hover .btn__icon {
-    background: var(--green-bright);
+    background: var(--ink);
+    color: var(--field);
   }
   .btn--cta:hover .btn__arrow {
-    opacity: 0;
-    transform: translate(180%, -180%);
-  }
-  .btn--cta:hover .btn__arrow--next {
-    opacity: 1;
-    transform: translate(0, 0);
-    transition-delay: 40ms;
+    transform: translate(2px, -2px);
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1425,7 +1438,7 @@ button {
   margin-top: clamp(1rem, 3vw, 2rem);
   padding-top: clamp(2.5rem, 5vw, 4rem);
   border-radius: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem) 0 0;
-  background: var(--footer-bg);
+  background: var(--paper);
   color: var(--ink);
 }
 .footer__inner {
@@ -1445,41 +1458,12 @@ button {
   line-height: 1;
   letter-spacing: -0.04em;
 }
-.footer__brand-link::after {
-  content: "";
-  flex: none;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--blue);
-}
 .footer__tagline {
   max-width: 24rem;
   margin-top: 1rem;
   font-size: 0.9375rem;
   line-height: 1.6;
   color: rgba(13, 27, 51, 0.64);
-}
-.footer__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  min-height: 3rem;
-  margin-top: 1.5rem;
-  padding: 0 1.35rem;
-  border-radius: 999px;
-  background: var(--field);
-  color: var(--ink);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  transition:
-    background-color 200ms var(--ease-out),
-    color 200ms var(--ease-out),
-    transform 200ms var(--ease-out);
-}
-.footer__cta svg {
-  flex: none;
-  transition: transform 250ms var(--ease-out);
 }
 .footer__heading {
   font-size: 0.6875rem;
@@ -1529,9 +1513,11 @@ button {
 }
 .footer__phone + .footer__phone {
   margin-top: 0.45rem;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 .footer__phone span {
   margin-left: 0.15rem;
@@ -1587,14 +1573,6 @@ button {
     color 150ms var(--ease);
 }
 @media (hover: hover) {
-  .footer__cta:hover {
-    background: var(--ink);
-    color: var(--paper);
-    transform: translateY(-1px);
-  }
-  .footer__cta:hover svg {
-    transform: translateX(4px);
-  }
   .footer__nav a:hover {
     color: var(--ink);
   }
@@ -2275,11 +2253,20 @@ button {
   .btn svg {
     transition: none;
   }
-  .btn--cta .btn__arrow--next {
+  .btn--cta::before {
     display: none;
   }
+  .btn--cta:hover {
+    background: var(--field);
+    border-color: var(--field);
+    color: var(--ink);
+    transform: none;
+  }
+  .btn--cta:hover .btn__icon {
+    background: var(--ink);
+    color: var(--field);
+  }
   .btn--cta:hover .btn__arrow {
-    opacity: 1;
     transform: none;
   }
   .btn:hover,
