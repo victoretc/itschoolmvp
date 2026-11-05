@@ -427,7 +427,7 @@
 .sb-hero {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   overflow: hidden;
   min-height: calc(100vh - var(--header-h));
   min-height: calc(100svh - var(--header-h));
@@ -610,6 +610,92 @@
   top: 2%;
   left: 6%;
   width: 9%;
+}
+
+/* Photos with illustrations stuck on as stickers. */
+.sb-hero__photo {
+  position: relative;
+  margin: 0;
+  padding: 4px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 20px 34px -26px rgba(18, 18, 18, 0.5);
+}
+
+.sb-hero__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  outline: 1px solid oklch(0 0 0 / 0.08);
+  outline-offset: -1px;
+}
+
+.sb-hero__art .sb-hero__photo {
+  position: absolute;
+  z-index: 2;
+}
+
+.sb-photo--main {
+  top: 4%;
+  left: 5%;
+  width: 88%;
+  transform: rotate(-3.5deg);
+}
+
+.sb-photo--small {
+  top: 49%;
+  left: -2%;
+  width: 56%;
+  transform: rotate(4deg);
+  z-index: 3;
+}
+
+.sb-photo--awards {
+  top: 12%;
+  right: 0;
+  width: 92%;
+  transform: rotate(2.5deg);
+}
+
+.sb-hero__photo .sb-art {
+  position: absolute;
+  z-index: 2;
+  filter: drop-shadow(0 5px 7px rgba(18, 18, 18, 0.16));
+  animation: none;
+}
+
+.sb-sticker--flower {
+  top: -28px;
+  left: -30px;
+  width: 42%;
+  transform: rotate(-5deg);
+}
+
+.sb-sticker--star {
+  top: -16px;
+  right: -20px;
+  width: 18%;
+  transform: rotate(8deg);
+}
+
+.sb-sticker--triangle {
+  top: -26px;
+  right: -18px;
+  width: 32%;
+  transform: rotate(5deg);
+}
+
+.sb-sticker--cat {
+  bottom: -30px;
+  left: -30px;
+  width: 47%;
+  transform: rotate(-4deg);
+}
+
+.sb-hero__mobile-photos {
+  position: relative;
+  display: none;
 }
 
 .sb-hero__mobile-art {
@@ -1520,6 +1606,55 @@
     margin: 18px 0 0;
   }
 
+  .sb-hero__mobile-photos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    margin: 40px auto 0;
+    gap: clamp(6px, 2vw, 14px);
+  }
+
+  .sb-hero__mobile-photos .sb-art {
+    position: absolute;
+    z-index: 3;
+    filter: drop-shadow(0 4px 6px rgba(18, 18, 18, 0.16));
+    animation: none;
+  }
+
+  .sb-sticker--mobile-flower {
+    top: -22px;
+    left: -16px;
+    width: 78%;
+    transform: rotate(-5deg);
+  }
+
+  .sb-sticker--mobile-star {
+    right: -14px;
+    bottom: -14px;
+    width: 44%;
+    transform: rotate(8deg);
+  }
+
+  .sb-hero__mobile-photos .sb-hero__photo {
+    flex: none;
+    width: clamp(78px, 21vw, 118px);
+  }
+
+  .sb-hero__mobile-photos .sb-hero__photo:nth-of-type(1) {
+    transform: rotate(-3deg);
+  }
+
+  .sb-hero__mobile-photos .sb-hero__photo:nth-of-type(2) {
+    margin-top: 10px;
+    transform: rotate(2.5deg);
+  }
+
+  .sb-hero__mobile-photos .sb-hero__photo:nth-of-type(3) {
+    margin-top: 3px;
+    transform: rotate(-2deg);
+  }
+
   .sb-art--mobile-flower {
     width: clamp(72px, 12vw, 104px);
   }
@@ -1537,7 +1672,7 @@
   }
 
   .sb-help {
-    position: static;
+    position: relative;
     padding: 32px;
     min-height: 260px;
   }
@@ -1546,6 +1681,16 @@
     width: 150px;
     right: -12px;
     bottom: -40px;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1080px) {
+  .sb-hero__mobile-photos {
+    gap: clamp(10px, 2vw, 20px);
+  }
+
+  .sb-hero__mobile-photos .sb-hero__photo {
+    width: clamp(140px, 17vw, 190px);
   }
 }
 

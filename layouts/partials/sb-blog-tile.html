@@ -1,0 +1,16 @@
+{{- $page := . -}}
+{{- $cover := false -}}
+{{- with $page.Params.cover -}}{{- $cover = resources.Get . -}}{{- end -}}
+<article class="sb-blog-tile" data-reveal>
+  <a class="sb-blog-tile__media" href="{{ $page.RelPermalink }}" tabindex="-1" aria-hidden="true">
+    {{- with $cover -}}
+    {{- $img := .Fill "720x520 Center" -}}
+    <img src="{{ $img.RelPermalink }}" alt="" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
+    {{- end -}}
+  </a>
+  <div class="sb-blog-tile__body">
+    <time class="sb-blog-tile__date" datetime="{{ $page.Date.Format "2006-01-02" }}">{{ partial "blog-date.html" $page }}</time>
+    <h3 class="sb-blog-tile__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+    <a class="sb-blog-tile__more" href="{{ $page.RelPermalink }}">Подробнее <span class="sb-blog-tile__more-arrows">&gt;&gt;</span></a>
+  </div>
+</article>

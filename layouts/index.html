@@ -4,13 +4,15 @@
 {{/* ---------------------------------------------------------------- hero */}}
 <section class="sb-hero" aria-labelledby="hero-title">
   <div class="sb-hero__inner">
-    <div class="sb-hero__art sb-hero__art--left" aria-hidden="true">
-      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--hero-flower") }}
-      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--hero-star") }}
-      {{ partial "sb-art.html" (dict "kind" "coin" "class" "sb-art--hero-coin") }}
-      {{ partial "sb-art.html" (dict "kind" "heart" "class" "sb-art--hero-heart") }}
-      {{ partial "sb-art.html" (dict "kind" "gear" "class" "sb-art--hero-gear") }}
-      {{ partial "sb-art.html" (dict "kind" "dots" "class" "sb-art--hero-dots") }}
+    <div class="sb-hero__art sb-hero__art--left">
+      <figure class="sb-hero__photo sb-photo--main">
+        <img src="/images/about/gallery-02.jpg" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
+        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--flower") }}
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-sticker--star") }}
+      </figure>
+      <figure class="sb-hero__photo sb-photo--small">
+        <img src="/images/about/gallery-05.jpg" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
+      </figure>
     </div>
 
     <div class="sb-hero__copy">
@@ -20,10 +22,18 @@
         <span class="sb-hero__age">{{ $hero.accent }}</span>
       </h1>
 
-      <div class="sb-hero__mobile-art" aria-hidden="true">
-        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--mobile-flower") }}
-        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--mobile-triangle") }}
-        {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--mobile-cat") }}
+      <div class="sb-hero__mobile-photos">
+        <figure class="sb-hero__photo">
+          <img src="/images/about/gallery-02.jpg" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
+          {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--mobile-flower") }}
+        </figure>
+        <figure class="sb-hero__photo">
+          <img src="/images/about/gallery-01.jpg" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+        </figure>
+        <figure class="sb-hero__photo">
+          <img src="/images/about/gallery-05.jpg" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
+          {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-sticker--mobile-star") }}
+        </figure>
       </div>
 
       <p class="sb-hero__lead">{{ $hero.lead }}</p>
@@ -43,17 +53,15 @@
       </dl>
     </div>
 
-    <div class="sb-hero__art sb-hero__art--right" aria-hidden="true">
-      {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--hero-cat") }}
-      {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--hero-triangle") }}
-      {{ partial "sb-art.html" (dict "kind" "lock" "class" "sb-art--hero-lock") }}
-      {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--hero-spark") }}
-      {{ partial "sb-art.html" (dict "kind" "leaf" "class" "sb-art--hero-leaf") }}
-      {{ partial "sb-art.html" (dict "kind" "plus" "class" "sb-art--hero-plus") }}
+    <div class="sb-hero__art sb-hero__art--right">
+      <figure class="sb-hero__photo sb-photo--awards">
+        <img src="/images/about/gallery-01.jpg" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-sticker--triangle") }}
+        {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-sticker--cat") }}
+      </figure>
     </div>
 
   </div>
-</section>
 
 {{/* ------------------------------------------------------------ benefits */}}
 {{- with $hero.points }}
@@ -72,6 +80,7 @@
   </ul>
 </section>
 {{- end }}
+</section>
 
 {{/* ------------------------------------------------------------ approach */}}
 {{- with .Params.approach }}

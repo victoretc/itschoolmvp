@@ -1,23 +1,61 @@
 {{ define "main" }}
-<section class="blog" aria-labelledby="blog-title">
-  <div class="blog__inner">
-    <header class="blog__head" data-reveal>
-      <h1 class="blog__title" id="blog-title">{{ .Title }}</h1>
-      {{- with .Params.lead }}
-      <p class="blog__lead">{{ . }}</p>
-      {{- end }}
-    </header>
+{{- $pages := .Pages.ByDate.Reverse -}}
+<section class="sb-blog" aria-labelledby="blog-title">
+  <header class="sb-blog-hero">
+    <div class="sb-blog-hero__inner">
+      <div class="sb-blog-hero__art sb-blog-hero__art--left" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--blog-flower") }}
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--blog-star") }}
+        {{ partial "sb-art.html" (dict "kind" "dots" "class" "sb-art--blog-dots") }}
+      </div>
 
-    {{- with .Pages.ByDate.Reverse }}
-    <section class="blog__news" aria-labelledby="blog-news-title">
-      <h2 class="section-title blog__news-title" id="blog-news-title">{{ $.Params.newsTitle | default "Новостные статьи" }}</h2>
-      <div class="blog__grid" data-reveal-group>
+      <div class="sb-blog-hero__copy">
+        <h1 class="sb-blog-hero__title" id="blog-title">
+          <span class="sb-blog-hero__highlight">{{ .Title }}</span>
+        </h1>
+
+        {{- with .Params.lead }}
+        <p class="sb-blog-hero__lead">{{ . }}</p>
+        {{- end }}
+
+        <div class="sb-blog-hero__mobile-art" aria-hidden="true">
+          {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--blog-mobile-flower") }}
+          {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--blog-mobile-spark") }}
+          {{ partial "sb-art.html" (dict "kind" "leaf" "class" "sb-art--blog-mobile-leaf") }}
+        </div>
+
+        <span class="sb-blog-hero__squiggle" aria-hidden="true">
+          {{ partial "sb-art.html" (dict "kind" "squiggle") }}
+        </span>
+      </div>
+
+      <div class="sb-blog-hero__art sb-blog-hero__art--right" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--blog-triangle") }}
+        {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--blog-cat") }}
+        {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--blog-spark") }}
+        {{ partial "sb-art.html" (dict "kind" "leaf" "class" "sb-art--blog-leaf") }}
+      </div>
+    </div>
+  </header>
+
+  {{- with $pages }}
+  <section class="sb-blog-news" aria-labelledby="sb-blog-news-title">
+    <div class="sb-inner">
+      <header class="sb-blog-news__head" data-reveal>
+        <h2 class="sb-title" id="sb-blog-news-title">{{ $.Params.newsTitle | default "Новостные статьи" }}</h2>
+        <span class="sb-blog-news__rule" aria-hidden="true"></span>
+        <span class="sb-blog-news__squiggle" aria-hidden="true">
+          {{ partial "sb-art.html" (dict "kind" "squiggle") }}
+        </span>
+      </header>
+
+      <div class="sb-blog-grid" data-reveal-group>
         {{- range . }}
-        {{ partial "blog-card.html" . }}
+        {{ partial "sb-blog-tile.html" . }}
         {{- end }}
       </div>
-    </section>
-    {{- end }}
-  </div>
+    </div>
+  </section>
+  {{- end }}
 </section>
 {{ end }}

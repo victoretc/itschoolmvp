@@ -1,87 +1,128 @@
 {{ define "main" }}
-<section class="contacts-hero" aria-labelledby="contacts-title">
-  <div class="contacts-hero__inner">
-    <h1 class="contacts-hero__title" id="contacts-title">{{ .Title }}</h1>
-    {{- with .Params.lead }}
-    <p class="contacts-hero__lead">{{ . }}</p>
-    {{- end }}
+
+{{/* --------------------------------------------------------------- hero */}}
+<section class="sb-contacts-hero" aria-labelledby="contacts-title">
+  <div class="sb-contacts-hero__inner">
+    <div class="sb-contacts-hero__art sb-contacts-hero__art--left" aria-hidden="true">
+      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--contacts-flower") }}
+      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--contacts-star") }}
+      {{ partial "sb-art.html" (dict "kind" "coin" "class" "sb-art--contacts-coin") }}
+      {{ partial "sb-art.html" (dict "kind" "dots" "class" "sb-art--contacts-dots") }}
+      {{ partial "sb-art.html" (dict "kind" "heart" "class" "sb-art--contacts-heart") }}
+    </div>
+
+    <div class="sb-contacts-hero__copy">
+      <h1 class="sb-contacts-hero__title" id="contacts-title">{{ .Title }}</h1>
+      {{ partial "sb-art.html" (dict "kind" "squiggle" "class" "sb-art--contacts-squiggle") }}
+      {{- with .Params.lead }}
+      <p class="sb-contacts-hero__lead">{{ . }}</p>
+      {{- end }}
+
+      <div class="sb-contacts-hero__mobile-art" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--mobile-flower") }}
+        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--mobile-triangle") }}
+        {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--mobile-cat") }}
+      </div>
+    </div>
+
+    <div class="sb-contacts-hero__art sb-contacts-hero__art--right" aria-hidden="true">
+      {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--contacts-cat") }}
+      {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--contacts-triangle") }}
+      {{ partial "sb-art.html" (dict "kind" "lock" "class" "sb-art--contacts-lock") }}
+      {{ partial "sb-art.html" (dict "kind" "plus" "class" "sb-art--contacts-plus") }}
+      {{ partial "sb-art.html" (dict "kind" "leaf" "class" "sb-art--contacts-leaf") }}
+    </div>
   </div>
 </section>
 
-<section class="contacts-main" aria-label="Контакты офиса">
-  <div class="contacts-main__inner">
-    <div class="contacts-card" data-reveal>
-      <div class="contacts-row">
-        <span class="contacts-label">Офис</span>
-        <a class="contact-link" href="{{ site.Data.site.mapUrl }}" target="_blank" rel="noopener">
-          <span class="icon-badge contact-link__icon contact-link__icon--neutral">{{ partial "icon.html" "pin" }}</span>
-          <span class="contact-link__body">
-            <span class="contact-link__value">{{ .Params.office }}</span>
-          </span>
-        </a>
-      </div>
+{{/* ------------------------------------------------------------ contacts */}}
+<section class="sb-section sb-contacts" aria-label="Контакты офиса">
+  <div class="sb-inner sb-contacts__inner">
+    <div class="sb-contacts__card" data-reveal>
+      <div class="sb-contacts__rows">
+        <div class="sb-contact">
+          <span class="sb-contact__label">Офис</span>
+          <a class="sb-contact__link" href="{{ site.Data.site.mapUrl }}" target="_blank" rel="noopener">
+            <span class="sb-contact__icon sb-contact__icon--sky">{{ partial "icon.html" "pin" }}</span>
+            <span class="sb-contact__value">{{ .Params.office }}</span>
+          </a>
+        </div>
 
-      {{- range .Params.phones }}
-      <div class="contacts-row">
-        <span class="contacts-label">{{ .label }}</span>
-        <a class="contact-link contact-link--phone" href="{{ .href }}">
-          <span class="icon-badge contact-link__icon">{{ partial "icon.html" "phone" }}</span>
-          <span class="contact-link__body">
-            <span class="contact-link__value">{{ .value }}</span>
-            {{- with .note }}
-            <span class="contact-link__note">{{ . }}</span>
-            {{- end }}
-          </span>
-        </a>
-      </div>
-      {{- end }}
+        {{- range .Params.phones }}
+        <div class="sb-contact">
+          <span class="sb-contact__label">{{ .label }}</span>
+          <a class="sb-contact__link" href="{{ .href }}">
+            <span class="sb-contact__icon sb-contact__icon--yellow">{{ partial "icon.html" "phone" }}</span>
+            <span class="sb-contact__body">
+              <span class="sb-contact__value">{{ .value }}</span>
+              {{- with .note }}
+              <span class="sb-contact__note">{{ . }}</span>
+              {{- end }}
+            </span>
+          </a>
+        </div>
+        {{- end }}
 
-      <div class="contacts-row">
-        <span class="contacts-label">E-mail</span>
-        <a class="contact-link" href="mailto:{{ .Params.email }}">
-          <span class="icon-badge contact-link__icon contact-link__icon--neutral">{{ partial "icon.html" "mail" }}</span>
-          <span class="contact-link__body">
-            <span class="contact-link__value">{{ .Params.email }}</span>
-          </span>
-        </a>
+        <div class="sb-contact">
+          <span class="sb-contact__label">E-mail</span>
+          <a class="sb-contact__link" href="mailto:{{ .Params.email }}">
+            <span class="sb-contact__icon sb-contact__icon--mint">{{ partial "icon.html" "mail" }}</span>
+            <span class="sb-contact__value">{{ .Params.email }}</span>
+          </a>
+        </div>
       </div>
 
       {{- with .Params.cta }}
-      <a class="btn contacts-cta" href="tel:+375298717612">
-        {{ partial "icon.html" "phone" }}
-        <span>{{ . }}</span>
+      <a class="btn btn--cta sb-contacts__cta" href="tel:+375298717612">
+        <span class="btn__label">{{ . }}</span>
+        <span class="btn__icon" aria-hidden="true">
+          <svg class="btn__arrow" viewBox="0 0 24 24" width="18" height="18" focusable="false">
+            <path d="M6.6 3.8a1 1 0 0 1 1.36 0l3.2 3.2a1 1 0 0 1 0 1.4l-1.5 1.5a12.5 12.5 0 0 0 5.4 5.4l1.5-1.5a1 1 0 0 1 1.4 0l3.2 3.2a1 1 0 0 1 0 1.36l-1.8 1.8c-1.1 1.1-2.8 1.4-4.2.7A20.4 20.4 0 0 1 4.1 11c-.7-1.4-.4-3.1.7-4.2l1.8-1.8Z" fill="currentColor"></path>
+          </svg>
+        </span>
       </a>
       {{- end }}
     </div>
 
     {{- with .Params.mapEmbed }}
-    <div class="contacts-map" data-reveal>
-      <iframe
-        src="{{ . }}"
-        title="Карта: офис АйТи Скул в Бресте"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="sb-contacts__map-wrap" data-reveal>
+      <div class="sb-contacts__map">
+        <iframe
+          src="{{ . }}"
+          title="Карта: офис АйТи Скул в Бресте"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--contacts-map-star") }}
     </div>
     {{- end }}
   </div>
 </section>
 
+{{/* ------------------------------------------------------------ branches */}}
 {{- with .Params.branches }}
-<section class="branches" aria-label="Филиалы">
-  <div class="branches__inner">
-    <div class="branches__grid" data-reveal-group>
-      {{- range . }}
-      <div class="branch" data-reveal>
-        <h2 class="branch__city">{{ .city }}</h2>
-        <ul class="branch__list">
-          {{- range .items }}
+<section class="sb-section sb-branches" aria-label="Филиалы">
+  <div class="sb-inner">
+    <div class="sb-branches__grid" data-reveal-group>
+      {{- range $i, $branch := . }}
+      <article class="sb-card sb-branch" data-reveal>
+        <div class="sb-branch__top">
+          <span class="sb-branch__icon sb-branch__icon--{{ mod $i 4 }}" aria-hidden="true">
+            {{ partial "icon.html" "pin" }}
+          </span>
+          <span class="sb-branch__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+        </div>
+        <h2 class="sb-branch__city">{{ $branch.city }}</h2>
+        <ul class="sb-branch__list">
+          {{- range $branch.items }}
           <li>{{ . }}</li>
           {{- end }}
         </ul>
-      </div>
+      </article>
       {{- end }}
     </div>
   </div>
 </section>
 {{- end }}
+
 {{ end }}

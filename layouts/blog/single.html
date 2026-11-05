@@ -7,30 +7,41 @@
 {{- $older := .PrevInSection -}}
 {{- $newer := .NextInSection -}}
 
-<article class="post">
-  <div class="post__inner">
-    <header class="post__head" data-reveal>
-      <p class="post__date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "blog-date.html" . }}</time></p>
-      <h1 class="post__title">{{ .Title }}</h1>
-    </header>
+<article class="sb-post">
+  <header class="sb-post-hero">
+    <div class="sb-post-hero__inner">
+      <div class="sb-post-hero__copy">
+        <p class="sb-post-hero__date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "blog-date.html" . }}</time></p>
+        <h1 class="sb-post-hero__title">{{ .Title }}</h1>
+        {{ partial "sb-art.html" (dict "kind" "squiggle" "class" "sb-art--post-squiggle") }}
+      </div>
 
+      <div class="sb-post-hero__art" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--post-flower") }}
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--post-star") }}
+        {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--post-spark") }}
+      </div>
+    </div>
+  </header>
+
+  <div class="sb-post__wrap">
     {{- with $cover }}
     {{- $img := .Fill "1400x800 Center" }}
-    <figure class="post__cover" data-reveal>
+    <figure class="sb-post-cover" data-reveal>
       <img src="{{ $img.RelPermalink }}" alt="{{ $.Params.coverAlt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager" decoding="async">
     </figure>
     {{- end }}
 
-    <div class="post__body" data-reveal>
+    <div class="sb-post-body" data-reveal>
       {{ .Content }}
 
       {{- with .Params.gallery }}
-      <div class="post__gallery" data-reveal-group>
+      <div class="sb-post-gallery{{ if eq (len .) 5 }} sb-post-gallery--five{{ end }}" data-reveal-group>
         {{- range . }}
         {{- $alt := .alt }}
         {{- with resources.Get .image }}
         {{- $img := .Fill "640x640 Center" }}
-        <figure class="post__gallery-item" data-reveal>
+        <figure class="sb-post-gallery__item" data-reveal>
           <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
         </figure>
         {{- end }}
@@ -40,17 +51,17 @@
     </div>
 
     {{- if or $older $newer }}
-    <nav class="post-nav" aria-label="Навигация по записям">
+    <nav class="sb-post-nav" aria-label="Навигация по записям">
       {{- with $older }}
-      <a class="post-nav__link post-nav__link--prev" href="{{ .RelPermalink }}">
-        <span class="post-nav__label">← Предыдущая запись</span>
-        <span class="post-nav__title">{{ .Title }}</span>
+      <a class="sb-post-nav__link sb-post-nav__link--prev" href="{{ .RelPermalink }}">
+        <span class="sb-post-nav__label">← Предыдущая запись</span>
+        <span class="sb-post-nav__title">{{ .Title }}</span>
       </a>
       {{- end }}
       {{- with $newer }}
-      <a class="post-nav__link post-nav__link--next" href="{{ .RelPermalink }}">
-        <span class="post-nav__label">Следующая запись →</span>
-        <span class="post-nav__title">{{ .Title }}</span>
+      <a class="sb-post-nav__link sb-post-nav__link--next" href="{{ .RelPermalink }}">
+        <span class="sb-post-nav__label">Следующая запись →</span>
+        <span class="sb-post-nav__title">{{ .Title }}</span>
       </a>
       {{- end }}
     </nav>
@@ -59,12 +70,19 @@
 </article>
 
 {{- with $related }}
-<section class="blog blog--related" aria-labelledby="blog-related-title">
-  <div class="blog__inner">
-    <h2 class="section-title blog__news-title" id="blog-related-title">Другие статьи</h2>
-    <div class="blog__grid blog__grid--related" data-reveal-group>
+<section class="sb-blog-news sb-blog-news--related" aria-labelledby="blog-related-title">
+  <div class="sb-inner">
+    <header class="sb-blog-news__head" data-reveal>
+      <h2 class="sb-title" id="blog-related-title">Другие статьи</h2>
+      <span class="sb-blog-news__rule" aria-hidden="true"></span>
+      <span class="sb-blog-news__squiggle" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "squiggle") }}
+      </span>
+    </header>
+
+    <div class="sb-blog-grid sb-blog-grid--related" data-reveal-group>
       {{- range . }}
-      {{ partial "blog-card.html" . }}
+      {{ partial "sb-blog-tile.html" . }}
       {{- end }}
     </div>
   </div>

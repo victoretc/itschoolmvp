@@ -1,14 +1,11 @@
 {{ define "main" }}
 {{- $courses := site.Data.courses -}}
-{{- $guide := sort $courses "guideOrder" -}}
 {{- $first := index $courses 0 -}}
 
 {{/* ---------------------------------------------------------------- hero */}}
 <section class="sb-courses-hero" aria-labelledby="catalog-title">
   <div class="sb-courses-hero__inner">
     <div class="sb-courses-hero__copy">
-      <p class="sb-courses-eyebrow">IT-школа для детей 6–17 лет</p>
-
       <h1 class="sb-courses-hero__title" id="catalog-title">
         <span class="sb-hero__age">{{ .Title }}</span>
       </h1>
@@ -18,7 +15,7 @@
       {{- end }}
 
       <div class="sb-actions sb-courses-hero__actions">
-        {{ partial "sb-cta-button.html" (dict "label" "Подобрать курс" "href" "#guide") }}
+        {{ partial "sb-cta-button.html" (dict "label" "Подобрать курс" "href" "#courses") }}
       </div>
 
       <dl class="sb-stats sb-stats--three">
@@ -66,11 +63,10 @@
 </section>
 
 {{/* ------------------------------------------------------------- catalog */}}
-<section class="sb-section sb-courses-catalog" aria-labelledby="courses-list-title">
+<section class="sb-section sb-courses-catalog" id="courses" aria-labelledby="courses-list-title">
   <div class="sb-inner">
     <header class="sb-courses-head" data-reveal>
       <div>
-        <p class="sb-courses-eyebrow">Направления</p>
         <h2 class="sb-title" id="courses-list-title">Все курсы</h2>
       </div>
       <p class="sb-courses-head__note">Первое занятие — бесплатно. Поможем выбрать, если сомневаетесь.</p>
@@ -114,50 +110,8 @@
       </article>
       {{- end }}
     </div>
-  </div>
-</section>
 
-{{/* --------------------------------------------------------------- guide */}}
-{{- with .Params.guide }}
-<section class="sb-section sb-courses-guide" id="guide" aria-labelledby="guide-title">
-  <div class="sb-inner">
-    <header class="sb-courses-head" data-reveal>
-      <div>
-        <p class="sb-courses-eyebrow">Гид по направлениям</p>
-        <h2 class="sb-title" id="guide-title">{{ .title }}</h2>
-      </div>
-      <p class="sb-courses-head__note">Раскройте курс, чтобы узнать, чему научится ребёнок и с чего начнём.</p>
-    </header>
-
-    <div class="sb-courses-guide__grid" data-reveal-group>
-      <div class="sb-courses-guide__col">
-        {{- range $i, $course := first 7 $guide }}
-        <details class="sb-acc sb-courses-guide__item" name="courses-guide" data-reveal>
-          <summary class="sb-acc__summary sb-courses-guide__summary">
-            <span class="sb-courses-guide__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-            <span class="sb-courses-guide__name">{{ $course.guideTitle }}</span>
-            <span class="sb-acc__toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="sb-acc__panel sb-courses-guide__body">{{ $course.body | safeHTML }}</div>
-        </details>
-        {{- end }}
-      </div>
-
-      <div class="sb-courses-guide__col">
-        {{- range $i, $course := after 7 $guide }}
-        <details class="sb-acc sb-courses-guide__item" name="courses-guide" data-reveal>
-          <summary class="sb-acc__summary sb-courses-guide__summary">
-            <span class="sb-courses-guide__num" aria-hidden="true">{{ printf "%02d" (add $i 8) }}</span>
-            <span class="sb-courses-guide__name">{{ $course.guideTitle }}</span>
-            <span class="sb-acc__toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="sb-acc__panel sb-courses-guide__body">{{ $course.body | safeHTML }}</div>
-        </details>
-        {{- end }}
-      </div>
-    </div>
-
-    {{- with $.Params.help }}
+    {{- with .Params.help }}
     <aside class="sb-courses-help" data-reveal>
       <div class="sb-courses-help__body">
         <h3 class="sb-courses-help__title">{{ .title }}</h3>
@@ -171,5 +125,4 @@
     {{- end }}
   </div>
 </section>
-{{- end }}
 {{ end }}

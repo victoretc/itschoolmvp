@@ -15,7 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   {{- $vacations := eq .Layout "it-vacations" -}}
   {{- $about := eq .Type "about" -}}
-  {{- $storybook := or .IsHome (eq .Section "courses") $vacations $about -}}
+  {{- $contacts := eq .Type "contacts" -}}
+  {{- $blog := eq .Section "blog" -}}
+  {{- $storybook := or .IsHome (eq .Section "courses") $vacations $about $contacts $blog -}}
   {{ if $storybook }}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@400&display=swap" rel="stylesheet">
   {{ else }}
@@ -38,6 +40,14 @@
   {{ if $about }}
   {{ $aboutCss := resources.Get "css/about.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $aboutCss.RelPermalink }}" integrity="{{ $aboutCss.Data.Integrity }}">
+  {{ end }}
+  {{ if $contacts }}
+  {{ $contactsCss := resources.Get "css/contacts.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $contactsCss.RelPermalink }}" integrity="{{ $contactsCss.Data.Integrity }}">
+  {{ end }}
+  {{ if $blog }}
+  {{ $blogCss := resources.Get "css/blog.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $blogCss.RelPermalink }}" integrity="{{ $blogCss.Data.Integrity }}">
   {{ end }}
   <style>
     .site-loader {
