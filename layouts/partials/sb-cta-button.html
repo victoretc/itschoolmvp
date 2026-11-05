@@ -1,5 +1,5 @@
 {{- $label := .label -}}
-{{- $href := .href | default (relURL "/contacts/") -}}
+{{- $href := .href | default (relURL "contacts/") -}}
 <a class="btn btn--cta" href="{{ $href }}">
   <span class="btn__label">{{ $label }}</span>
   <span class="btn__icon" aria-hidden="true">
