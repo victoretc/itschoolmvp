@@ -13,17 +13,66 @@
   <meta name="theme-color" content="#41c0f0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  {{ if .IsHome }}
+  {{- $vacations := eq .Layout "it-vacations" -}}
+  {{- $about := eq .Type "about" -}}
+  {{- $storybook := or .IsHome (eq .Section "courses") $vacations $about -}}
+  {{ if $storybook }}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@400&display=swap" rel="stylesheet">
   {{ else }}
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   {{ end }}
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-  {{ if .IsHome }}
+  {{ if $storybook }}
   {{ $homeCss := resources.Get "css/home.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}" integrity="{{ $homeCss.Data.Integrity }}">
   {{ end }}
+  {{ if eq .Section "courses" }}
+  {{ $coursesCss := resources.Get "css/courses.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $coursesCss.RelPermalink }}" integrity="{{ $coursesCss.Data.Integrity }}">
+  {{ end }}
+  {{ if $vacations }}
+  {{ $vacationsCss := resources.Get "css/vacations.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $vacationsCss.RelPermalink }}" integrity="{{ $vacationsCss.Data.Integrity }}">
+  {{ end }}
+  {{ if $about }}
+  {{ $aboutCss := resources.Get "css/about.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $aboutCss.RelPermalink }}" integrity="{{ $aboutCss.Data.Integrity }}">
+  {{ end }}
+  <style>
+    .site-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: #000;
+      transition: opacity 400ms ease, visibility 400ms ease;
+    }
+    .site-loader.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .site-loader__spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.22);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: site-loader-spin 800ms linear infinite;
+    }
+    html.is-loading,
+    html.is-loading body {
+      overflow: hidden;
+    }
+    @keyframes site-loader-spin {
+      to { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .site-loader__spinner { animation-duration: 1600ms; }
+    }
+  </style>
+  <noscript><style>.site-loader { display: none; }</style></noscript>
   <script>
     document.documentElement.classList.add('js');
     window.setTimeout(function () {
@@ -34,7 +83,41 @@
     }, 2500);
   </script>
 </head>
-<body id="top"{{ if .IsHome }} class="home"{{ end }}>
+<body id="top" class="{{ if $storybook }}home{{ end }}{{ if eq .Section "courses" }} courses-page{{ end }}{{ if $vacations }} vacations-page{{ end }}">
+  <div class="site-loader" data-site-loader role="status" aria-label="Загрузка страницы">
+    <span class="site-loader__spinner" aria-hidden="true"></span>
+  </div>
+  <script>
+    (function () {
+      var loader = document.querySelector('[data-site-loader]');
+      if (!loader) return;
+      document.documentElement.classList.add('is-loading');
+
+      var startedAt = Date.now();
+      var hidden = false;
+      function hideLoader() {
+        if (hidden) return;
+        hidden = true;
+        var wait = Math.max(0, 300 - (Date.now() - startedAt));
+        window.setTimeout(function () {
+          loader.classList.add('is-hidden');
+          document.documentElement.classList.remove('is-loading');
+          window.setTimeout(function () { loader.remove(); }, 450);
+        }, wait);
+      }
+
+      var pageLoad = document.readyState === 'complete'
+        ? Promise.resolve()
+        : new Promise(function (resolve) { window.addEventListener('load', resolve, { once: true }); });
+
+      pageLoad
+        .then(function () {
+          return document.fonts && document.fonts.ready ? document.fonts.ready : null;
+        })
+        .then(hideLoader, hideLoader);
+      window.setTimeout(hideLoader, 5000);
+    })();
+  </script>
   <a class="skip" href="#main">Перейти к содержимому</a>
   {{ partial "header.html" . }}
   <main id="main">

@@ -1,0 +1,377 @@
+/* ============================================================
+   IT Vacations — storybook spread, same language as the home page.
+   Depends on home.css primitives (sb-*) and inherits the .home
+   theme variables from the body class.
+   ============================================================ */
+
+/* --------------------------------------------------------------- hero */
+
+.sb-vac-hero {
+  position: relative;
+  overflow: clip;
+}
+
+.sb-vac-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 76px) clamp(20px, 4vw, 40px);
+}
+
+.sb-vac-hero__copy {
+  position: relative;
+  z-index: 1;
+}
+
+.sb-vac-hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--sb-ink);
+  font-family: var(--sb-font-display);
+  font-size: clamp(3rem, 1.6rem + 5.6vw, 6rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.sb-vac-hero__line {
+  display: block;
+}
+
+.sb-vac-hero__accent {
+  display: inline-block;
+  margin-top: 0.08em;
+  padding: 0.02em 0.14em 0.08em;
+  border-radius: 16px;
+  background: var(--sb-yellow);
+  color: var(--sb-ink);
+  transform: rotate(-1.3deg);
+}
+
+.sb-art--vac-hero-squiggle {
+  width: 118px;
+  margin-top: 28px;
+}
+
+.sb-vac-hero__media-wrap {
+  position: relative;
+  z-index: 1;
+  justify-self: end;
+  width: min(100%, 480px);
+}
+
+.sb-vac-hero__media {
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  background: var(--sb-stone);
+  box-shadow:
+    inset 0 0 0 1px var(--sb-hair),
+    0 30px 50px -40px rgba(18, 18, 18, 0.45);
+}
+
+.sb-vac-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sb-art--vac-hero-star {
+  position: absolute;
+  top: -18px;
+  right: -14px;
+  width: 46px;
+}
+
+.sb-art--vac-hero-coin {
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  width: 52px;
+}
+
+.sb-art--vac-hero-flower {
+  position: absolute;
+  left: -44px;
+  bottom: -34px;
+  width: 118px;
+}
+
+/* ----------------------------------------------------------- programs */
+
+.sb-vac-programs {
+  background: var(--sb-stone);
+}
+
+.sb-vac-programs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 12px;
+}
+
+.sb-vac-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.sb-vac-card__age {
+  align-self: flex-start;
+  padding: 6px 13px;
+  border-radius: 999px;
+  color: var(--sb-ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.006em;
+  white-space: nowrap;
+}
+
+.sb-vac-card--yellow .sb-vac-card__age,
+.sb-vac-card--yellow .sb-vac-card__check {
+  background: var(--sb-yellow);
+}
+
+.sb-vac-card--blue .sb-vac-card__age,
+.sb-vac-card--blue .sb-vac-card__check {
+  background: var(--sb-sky);
+}
+
+.sb-vac-card__title {
+  margin-top: 22px;
+  color: var(--sb-head);
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.019em;
+  text-wrap: balance;
+}
+
+.sb-vac-card__intro {
+  margin-top: 10px;
+  color: var(--sb-body);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.sb-vac-card__list {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--sb-line);
+}
+
+.sb-vac-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--sb-body);
+  font-size: 15.5px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.sb-vac-card__check {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 50%;
+  color: var(--sb-ink);
+}
+
+/* ---------------------------------------------------------------- cta */
+
+.sb-vac-cta__panel {
+  padding-bottom: clamp(44px, 6vw, 96px);
+}
+
+.sb-vac-cta__title {
+  max-width: 24ch;
+}
+
+.sb-vac-cta__accent {
+  display: inline-block;
+  padding: 0.01em 0.14em 0.06em;
+  border-radius: 10px;
+  background: var(--sb-yellow);
+  color: var(--sb-ink);
+  transform: rotate(-1deg);
+}
+
+.sb-art--vac-cta-flower {
+  position: absolute;
+  left: -14px;
+  bottom: -26px;
+  width: 150px;
+}
+
+.sb-art--vac-cta-cat {
+  position: absolute;
+  right: -16px;
+  bottom: -26px;
+  width: 150px;
+}
+
+.sb-vac-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+  padding: 9px 24px 9px 9px;
+  border-radius: 999px;
+  background: var(--sb-ink);
+  color: var(--sb-canvas);
+  transition:
+    background-color 180ms ease,
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sb-vac-phone__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--sb-yellow);
+  color: var(--sb-ink);
+}
+
+.sb-vac-phone__icon svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sb-vac-phone__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  text-align: left;
+}
+
+.sb-vac-phone__label {
+  color: rgba(251, 250, 249, 0.62);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sb-vac-phone__number {
+  color: var(--sb-canvas);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sb-vac-phone:hover {
+    background: #343433;
+    transform: translateY(-1px);
+  }
+
+  .sb-vac-phone:hover .sb-vac-phone__icon svg {
+    transform: rotate(-14deg) scale(1.1);
+  }
+}
+
+/* -------------------------------------------------------- breakpoints */
+
+@media (max-width: 980px) {
+  .sb-vac-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 44px);
+  }
+
+  .sb-vac-hero__media-wrap {
+    justify-self: start;
+    width: min(100%, 520px);
+  }
+
+  .sb-art--vac-hero-flower,
+  .sb-art--vac-hero-coin {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .sb-vac-programs__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .sb-vac-hero__title {
+    font-size: clamp(2.5rem, 1.2rem + 7vw, 3.6rem);
+  }
+
+  .sb-art--vac-hero-squiggle {
+    width: 96px;
+    margin-top: 22px;
+  }
+
+  .sb-art--vac-hero-star {
+    width: 36px;
+    top: -14px;
+    right: -8px;
+  }
+
+  .sb-vac-card {
+    padding: 24px;
+  }
+
+  .sb-vac-card__title {
+    font-size: 20px;
+  }
+
+  .sb-art--vac-cta-flower,
+  .sb-art--vac-cta-cat {
+    display: none;
+  }
+
+  .sb-vac-phone {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sb-vac-cta__panel {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .sb-vac-phone {
+    padding-right: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-vac-phone,
+  .sb-vac-phone__icon svg {
+    transition: none;
+  }
+
+  .sb-vac-phone:hover {
+    transform: none;
+  }
+
+  .sb-vac-phone:hover .sb-vac-phone__icon svg {
+    transform: none;
+  }
+}

@@ -1,37 +1,47 @@
 {{ define "main" }}
 {{- $hero := .Params.hero -}}
-<section class="vacations-hero" aria-labelledby="vacations-title">
-  <div class="vacations-hero__inner">
-    <div class="vacations-hero__copy">
-      <svg class="vacations-hero__spark" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">
-        <path d="M12 0c.8 6.6 4.6 10.4 12 12-7.4 1.6-11.2 5.4-12 12-.8-6.6-4.6-10.4-12-12C7.4 10.4 11.2 6.6 12 0Z" fill="currentColor"></path>
-      </svg>
-      <h1 class="vacations-hero__title" id="vacations-title">
-        <span class="vacations-hero__line">{{ $hero.title }}</span>
-        <span class="vacations-hero__line"><span class="vacations-hero__accent">{{ $hero.accent }}</span></span>
+
+<section class="sb-vac-hero" aria-labelledby="vacations-title">
+  <div class="sb-vac-hero__inner">
+    <div class="sb-vac-hero__copy">
+      <h1 class="sb-vac-hero__title" id="vacations-title">
+        <span class="sb-vac-hero__line">{{ $hero.title }}</span>
+        <span class="sb-vac-hero__line"><span class="sb-vac-hero__accent">{{ $hero.accent }}</span></span>
       </h1>
+      {{ partial "sb-art.html" (dict "kind" "squiggle" "class" "sb-art--vac-hero-squiggle") }}
     </div>
 
-    <figure class="vacations-hero__media">
-      {{- with resources.Get $hero.image }}
-      {{- $crop := .Fill "900x900 Center" }}
-      <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="{{ $hero.image_alt }}" loading="eager" decoding="async">
-      {{- end }}
-    </figure>
+    <div class="sb-vac-hero__media-wrap">
+      <figure class="sb-vac-hero__media">
+        {{- with resources.Get $hero.image }}
+        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $hero.image_alt }}" loading="eager" decoding="async">
+        {{- end }}
+      </figure>
+      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--vac-hero-star") }}
+      {{ partial "sb-art.html" (dict "kind" "coin" "class" "sb-art--vac-hero-coin") }}
+      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--vac-hero-flower") }}
+    </div>
   </div>
 </section>
 
-<section class="vacations-programs" aria-label="Программы IT Каникул">
-  <div class="vacations-programs__inner">
-    <div class="vacations-programs__grid" data-reveal-group>
+<section class="sb-section sb-vac-programs" aria-label="Программы IT Каникул">
+  <div class="sb-inner">
+    <div class="sb-vac-programs__grid" data-reveal-group>
       {{- range .Params.groups }}
-      <article class="vacation-card vacation-card--{{ .tone }}" data-reveal>
-        <p class="vacation-card__age">{{ .age }}</p>
-        <h2 class="vacation-card__title">{{ .subtitle }}</h2>
-        <p class="vacation-card__intro">{{ .intro }}</p>
-        <ul class="vacation-card__list">
+      <article class="sb-card sb-vac-card sb-vac-card--{{ .tone }}" data-reveal>
+        <span class="sb-vac-card__age">{{ .age }}</span>
+        <h2 class="sb-vac-card__title">{{ .subtitle }}</h2>
+        <p class="sb-vac-card__intro">{{ .intro }}</p>
+        <ul class="sb-vac-card__list">
           {{- range .items }}
-          <li>{{ . }}</li>
+          <li>
+            <span class="sb-vac-card__check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="10" height="10" focusable="false">
+                <path d="M3 8.4 6.2 11.6 13 4.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <span>{{ . }}</span>
+          </li>
           {{- end }}
         </ul>
       </article>
@@ -41,22 +51,23 @@
 </section>
 
 {{- with .Params.cta }}
-<section class="vacations-cta" aria-labelledby="vacations-cta-title">
-  <div class="vacations-cta__inner">
-    <div class="vacations-cta__copy" data-reveal>
-      <h2 class="vacations-cta__title" id="vacations-cta-title">
-        {{ .title }} <span class="vacations-cta__accent">{{ .accent }}</span>
+<section class="sb-section sb-vac-cta" aria-labelledby="vacations-cta-title">
+  <div class="sb-inner">
+    <div class="sb-cta__panel sb-vac-cta__panel" data-reveal>
+      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--vac-cta-flower") }}
+      {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--vac-cta-cat") }}
+      <h2 class="sb-cta__title sb-vac-cta__title" id="vacations-cta-title">
+        {{ .title }} <span class="sb-vac-cta__accent">{{ .accent }}</span>
       </h2>
-      <p class="vacations-cta__text">{{ .text }}</p>
+      <p class="sb-cta__text">{{ .text }}</p>
+      <a class="sb-vac-phone" href="{{ site.Params.phoneHref | safeURL }}">
+        <span class="sb-vac-phone__icon">{{ partial "icon.html" "phone" }}</span>
+        <span class="sb-vac-phone__body">
+          <span class="sb-vac-phone__label">{{ .phone_label }}</span>
+          <span class="sb-vac-phone__number">{{ .phone }}</span>
+        </span>
+      </a>
     </div>
-
-    <a class="vacations-cta__phone" href="{{ site.Params.phoneHref | safeURL }}" data-reveal>
-      <span class="icon-badge vacations-cta__phone-icon">{{ partial "icon.html" "phone" }}</span>
-      <span class="vacations-cta__phone-body">
-        <span class="vacations-cta__phone-label">{{ .phone_label }}</span>
-        <span class="vacations-cta__phone-number">{{ .phone }}</span>
-      </span>
-    </a>
   </div>
 </section>
 {{- end }}

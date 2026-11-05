@@ -1,9 +1,9 @@
 socials:
   - name: 'Viber'
-    url: '#'
+    url: 'viber://chat?number=%2B375298717612'
     icon: 'viber'
   - name: 'Instagram'
-    url: '#'
+    url: 'https://www.instagram.com/itschoolby/'
     icon: 'instagram'
 address: 'Брест, просп. Машерова, 23А, этаж 4'
 mapUrl: 'https://yandex.by/maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/'

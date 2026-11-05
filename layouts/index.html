@@ -20,6 +20,12 @@
         <span class="sb-hero__age">{{ $hero.accent }}</span>
       </h1>
 
+      <div class="sb-hero__mobile-art" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--mobile-flower") }}
+        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--mobile-triangle") }}
+        {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--mobile-cat") }}
+      </div>
+
       <p class="sb-hero__lead">{{ $hero.lead }}</p>
 
       <div class="sb-actions">
@@ -38,7 +44,6 @@
     </div>
 
     <div class="sb-hero__art sb-hero__art--right" aria-hidden="true">
-      {{ partial "sb-art.html" (dict "kind" "blob" "class" "sb-art--hero-blob") }}
       {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--hero-cat") }}
       {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--hero-triangle") }}
       {{ partial "sb-art.html" (dict "kind" "lock" "class" "sb-art--hero-lock") }}
@@ -47,12 +52,6 @@
       {{ partial "sb-art.html" (dict "kind" "plus" "class" "sb-art--hero-plus") }}
     </div>
 
-    <div class="sb-hero__mobile-art" aria-hidden="true">
-      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--mobile-flower") }}
-      {{ partial "sb-art.html" (dict "kind" "blob" "class" "sb-art--mobile-blob") }}
-      {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--mobile-triangle") }}
-      {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--mobile-cat") }}
-    </div>
   </div>
 </section>
 
@@ -78,13 +77,13 @@
 {{- with .Params.approach }}
 <section class="sb-section sb-approach" aria-labelledby="approach-title">
   <div class="sb-inner">
-    <header class="sb-head" data-reveal>
+    <header class="sb-head">
       <h2 class="sb-title" id="approach-title">{{ .title }}</h2>
       <p class="sb-lead">{{ .lead }}</p>
     </header>
 
     <div class="sb-approach__body">
-      <div class="sb-approach__media-wrap" data-reveal>
+      <div class="sb-approach__media-wrap">
         {{- with resources.Get "images/school-blog-2.jpg" }}
         {{- $crop := .Fill "1200x900 Center" }}
         <figure class="sb-approach__media">
@@ -98,7 +97,7 @@
       <div class="sb-approach__content">
         <div class="sb-notes">
           {{- range $i, $note := .notes }}
-          <div class="sb-notes__item" data-reveal>
+          <div class="sb-notes__item">
             <span class="sb-notes__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             <p>{{ $note }}</p>
           </div>
@@ -107,10 +106,19 @@
       </div>
     </div>
 
-    <blockquote class="sb-statement" data-reveal>
-      <span class="sb-statement__mark" aria-hidden="true">“</span>
-      <p>{{ .statement }}</p>
-      {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--statement-spark") }}
+    <blockquote class="sb-statement">
+      <div class="sb-statement__body">
+        {{- with .statement_label }}
+        <p class="sb-statement__label">{{ . }}</p>
+        {{- end }}
+        <p class="sb-statement__text">{{ replace .statement "со школьной скамьи" "<span class=\"sb-statement__hl\">со школьной скамьи</span>" | safeHTML }}</p>
+      </div>
+      <div class="sb-statement__art" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--statement-flower") }}
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--statement-star") }}
+        {{ partial "sb-art.html" (dict "kind" "coin" "class" "sb-art--statement-coin") }}
+        {{ partial "sb-art.html" (dict "kind" "plus" "class" "sb-art--statement-plus") }}
+      </div>
     </blockquote>
   </div>
 </section>
@@ -159,16 +167,17 @@
 
     <div class="sb-courses__body">
       <div class="sb-courses__list" data-reveal-group>
-        {{- range $i, $course := $courses }}
-        <details class="sb-course" data-reveal>
-          <summary class="sb-course__summary">
-            <span class="sb-course__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+        {{- range $course := $courses }}
+        <details class="sb-acc sb-course" data-reveal>
+          <summary class="sb-acc__summary">
             <span class="sb-course__title">{{ $course.guideTitle }}</span>
-            <span class="sb-course__age">с {{ $course.age }} лет</span>
-            <span class="sb-course__toggle" aria-hidden="true"></span>
+            <span class="sb-acc__toggle" aria-hidden="true"></span>
           </summary>
-          <div class="sb-course__panel">
-            <p class="sb-course__price">{{ $course.price }} {{ $course.suffix }}</p>
+          <div class="sb-acc__panel sb-course__panel">
+            <p class="sb-course__meta">
+              <span class="sb-course__age">с {{ $course.age }} лет</span>
+              <span class="sb-course__price">{{ $course.price }} {{ $course.suffix }}</span>
+            </p>
             <div class="sb-course__text">{{ $course.body | safeHTML }}</div>
             <a class="sb-link" href="{{ "/contacts/" | relURL }}">
               Записаться на курс
@@ -295,12 +304,12 @@
 
     <div class="sb-faq__list" data-reveal-group>
       {{- range .items }}
-      <details class="sb-faq__item" data-reveal>
-        <summary>
+      <details class="sb-acc sb-faq__item" data-reveal>
+        <summary class="sb-acc__summary">
           <span>{{ .q }}</span>
-          <span class="sb-faq__toggle" aria-hidden="true"></span>
+          <span class="sb-acc__toggle" aria-hidden="true"></span>
         </summary>
-        <p class="sb-faq__answer">{{ .a }}</p>
+        <p class="sb-acc__panel sb-faq__answer">{{ .a }}</p>
       </details>
       {{- end }}
     </div>
@@ -319,7 +328,10 @@
       <p class="sb-cta__text">{{ .text }}</p>
       <div class="sb-actions sb-actions--center">
         {{ partial "sb-cta-button.html" (dict "label" .button) }}
-        <a class="sb-btn sb-btn--sand" href="{{ site.Params.phoneHref | safeURL }}">{{ site.Params.phone }}</a>
+        <a class="sb-btn sb-btn--sand sb-btn--phone" href="{{ site.Params.phoneHref | safeURL }}">
+          {{ partial "icon.html" "phone" }}
+          <span>{{ site.Params.phone }}</span>
+        </a>
       </div>
     </div>
   </div>

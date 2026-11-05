@@ -2,72 +2,83 @@
 {{- $courses := site.Data.courses -}}
 {{- $guide := sort $courses "guideOrder" -}}
 {{- $first := index $courses 0 -}}
-<section class="courses-hero" aria-labelledby="catalog-title">
-  <div class="courses-hero__inner">
-    <div class="courses-hero__copy">
-      <p class="courses-hero__eyebrow">IT-школа для детей 6–17 лет</p>
-      <h1 class="courses-hero__title" id="catalog-title">{{ .Title }}</h1>
+
+{{/* ---------------------------------------------------------------- hero */}}
+<section class="sb-courses-hero" aria-labelledby="catalog-title">
+  <div class="sb-courses-hero__inner">
+    <div class="sb-courses-hero__copy">
+      <p class="sb-courses-eyebrow">IT-школа для детей 6–17 лет</p>
+
+      <h1 class="sb-courses-hero__title" id="catalog-title">
+        <span class="sb-hero__age">{{ .Title }}</span>
+      </h1>
+
       {{- with .Params.lead }}
-      <p class="courses-hero__lead">{{ . }}</p>
+      <p class="sb-courses-hero__lead">{{ . }}</p>
       {{- end }}
 
-      <a class="btn courses-hero__cta" href="#guide">
-        Подобрать курс
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-          <path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </a>
+      <div class="sb-actions sb-courses-hero__actions">
+        {{ partial "sb-cta-button.html" (dict "label" "Подобрать курс" "href" "#guide") }}
+      </div>
 
-      <dl class="courses-hero__stats">
-        <div>
+      <dl class="sb-stats sb-stats--three">
+        <div class="sb-stats__item">
           <dt>{{ len $courses }}</dt>
           <dd>направлений</dd>
         </div>
-        <div>
+        <div class="sb-stats__item">
           <dt>6–17</dt>
           <dd>лет</dd>
         </div>
-        <div>
+        <div class="sb-stats__item">
           <dt>{{ $first.price }} руб.</dt>
           <dd>абонемент</dd>
         </div>
       </dl>
     </div>
 
-    <div class="courses-hero__tiles" aria-hidden="true">
-      <div class="courses-hero__tile">
-        <span class="icon-tile courses-hero__tile-icon">{{ partial "icon.html" "robot" }}</span>
-        <span>Робототехника</span>
-      </div>
-      <div class="courses-hero__tile">
-        <span class="icon-tile icon-tile--yellow courses-hero__tile-icon">{{ partial "icon.html" "game" }}</span>
-        <span>Разработка игр</span>
-      </div>
-      <div class="courses-hero__tile">
-        <span class="icon-tile icon-tile--green courses-hero__tile-icon">{{ partial "icon.html" "code" }}</span>
-        <span>Программирование</span>
-      </div>
-      <div class="courses-hero__tile">
-        <span class="icon-tile icon-tile--red courses-hero__tile-icon">{{ partial "icon.html" "spark" }}</span>
-        <span>Нейросети</span>
-      </div>
-    </div>
+    <figure class="sb-courses-hero__media">
+      <img src="/images/about/gallery-01.jpg" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+    </figure>
   </div>
 </section>
 
-<section class="catalog" aria-labelledby="courses-list-title">
-  <div class="catalog__inner">
-    <div class="catalog__head">
-      <div>
-        <p class="catalog__eyebrow">Направления</p>
-        <h2 class="catalog__title" id="courses-list-title">Все курсы</h2>
-      </div>
-      <p class="catalog__note">Первое занятие — бесплатно. Поможем выбрать, если сомневаетесь.</p>
-    </div>
+{{/* ---------------------------------------------------------- directions */}}
+<section class="sb-courses-strip" aria-label="Направления">
+  <ul class="sb-courses-strip__inner">
+    <li class="sb-courses-strip__item">
+      <span class="sb-tile sb-tile--0" aria-hidden="true">{{ partial "icon.html" "robot" }}</span>
+      <span>Робототехника</span>
+    </li>
+    <li class="sb-courses-strip__item">
+      <span class="sb-tile sb-tile--1" aria-hidden="true">{{ partial "icon.html" "game" }}</span>
+      <span>Разработка игр</span>
+    </li>
+    <li class="sb-courses-strip__item">
+      <span class="sb-tile sb-tile--2" aria-hidden="true">{{ partial "icon.html" "code" }}</span>
+      <span>Программирование</span>
+    </li>
+    <li class="sb-courses-strip__item">
+      <span class="sb-tile sb-tile--3" aria-hidden="true">{{ partial "icon.html" "spark" }}</span>
+      <span>Нейросети</span>
+    </li>
+  </ul>
+</section>
 
-    <div class="catalog__grid">
-      {{- range $courses }}
-      {{- $key := lower .title -}}
+{{/* ------------------------------------------------------------- catalog */}}
+<section class="sb-section sb-courses-catalog" aria-labelledby="courses-list-title">
+  <div class="sb-inner">
+    <header class="sb-courses-head" data-reveal>
+      <div>
+        <p class="sb-courses-eyebrow">Направления</p>
+        <h2 class="sb-title" id="courses-list-title">Все курсы</h2>
+      </div>
+      <p class="sb-courses-head__note">Первое занятие — бесплатно. Поможем выбрать, если сомневаетесь.</p>
+    </header>
+
+    <div class="sb-courses-grid" data-reveal-group>
+      {{- range $i, $course := $courses }}
+      {{- $key := lower $course.title -}}
       {{- $icon := "code" -}}
       {{- if strings.Contains $key "робот" -}}
         {{- $icon = "robot" -}}
@@ -82,20 +93,20 @@
       {{- else if strings.Contains $key "scratch" -}}
         {{- $icon = "blocks" -}}
       {{- end -}}
-      <article class="catalog-card catalog-card--{{ $icon }}">
-        <div class="catalog-card__top">
-          <span class="icon-tile catalog-card__icon">{{ partial "icon.html" $icon }}</span>
-          <span class="catalog-card__age">с {{ .age }} лет</span>
+      <article class="sb-course-card" data-reveal>
+        <div class="sb-course-card__top">
+          <span class="sb-tile sb-tile--{{ mod $i 4 }}" aria-hidden="true">{{ partial "icon.html" $icon }}</span>
+          <span class="sb-course-card__age">с {{ $course.age }} лет</span>
         </div>
-        <h3 class="catalog-card__title">{{ .title }}</h3>
-        <p class="catalog-card__price">
-          <span class="catalog-card__value">{{ .price }}</span>
-          <span class="catalog-card__suffix">{{ .suffix }}</span>
+        <h3 class="sb-course-card__title">{{ $course.title }}</h3>
+        <p class="sb-course-card__price">
+          <span class="sb-course-card__value">{{ $course.price }}</span>
+          <span class="sb-course-card__suffix">{{ $course.suffix }}</span>
         </p>
-        <a class="catalog-card__link" href="{{ "/contacts/" | relURL }}">
+        <a class="sb-course-card__link" href="{{ "/contacts/" | relURL }}">
           <span>Записаться</span>
-          <span class="catalog-card__arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" focusable="false">
+          <span class="sb-course-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" focusable="false">
               <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </span>
@@ -106,56 +117,57 @@
   </div>
 </section>
 
+{{/* --------------------------------------------------------------- guide */}}
 {{- with .Params.guide }}
-<section class="guide" id="guide" aria-labelledby="guide-title">
-  <div class="guide__inner">
-    <header class="guide__head">
+<section class="sb-section sb-courses-guide" id="guide" aria-labelledby="guide-title">
+  <div class="sb-inner">
+    <header class="sb-courses-head" data-reveal>
       <div>
-        <p class="guide__eyebrow">Гид по направлениям</p>
-        <h2 class="section-title" id="guide-title">{{ .title }}</h2>
+        <p class="sb-courses-eyebrow">Гид по направлениям</p>
+        <h2 class="sb-title" id="guide-title">{{ .title }}</h2>
       </div>
-      <p class="guide__lead">Раскройте курс, чтобы узнать, чему научится ребёнок и с чего начнём.</p>
+      <p class="sb-courses-head__note">Раскройте курс, чтобы узнать, чему научится ребёнок и с чего начнём.</p>
     </header>
 
-    <div class="guide__grid">
-      <div class="guide__col">
+    <div class="sb-courses-guide__grid" data-reveal-group>
+      <div class="sb-courses-guide__col">
         {{- range $i, $course := first 7 $guide }}
-        <details class="guide__item" name="courses-guide">
-          <summary class="guide__summary">
-            <span class="guide__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-            <span class="guide__name">{{ $course.guideTitle }}</span>
-            <span class="guide__chev" aria-hidden="true"></span>
+        <details class="sb-acc sb-courses-guide__item" name="courses-guide" data-reveal>
+          <summary class="sb-acc__summary sb-courses-guide__summary">
+            <span class="sb-courses-guide__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            <span class="sb-courses-guide__name">{{ $course.guideTitle }}</span>
+            <span class="sb-acc__toggle" aria-hidden="true"></span>
           </summary>
-          <div class="guide__body">{{ $course.body | safeHTML }}</div>
+          <div class="sb-acc__panel sb-courses-guide__body">{{ $course.body | safeHTML }}</div>
         </details>
         {{- end }}
       </div>
 
-      <div class="guide__col">
+      <div class="sb-courses-guide__col">
         {{- range $i, $course := after 7 $guide }}
-        <details class="guide__item" name="courses-guide">
-          <summary class="guide__summary">
-            <span class="guide__num" aria-hidden="true">{{ printf "%02d" (add $i 8) }}</span>
-            <span class="guide__name">{{ $course.guideTitle }}</span>
-            <span class="guide__chev" aria-hidden="true"></span>
+        <details class="sb-acc sb-courses-guide__item" name="courses-guide" data-reveal>
+          <summary class="sb-acc__summary sb-courses-guide__summary">
+            <span class="sb-courses-guide__num" aria-hidden="true">{{ printf "%02d" (add $i 8) }}</span>
+            <span class="sb-courses-guide__name">{{ $course.guideTitle }}</span>
+            <span class="sb-acc__toggle" aria-hidden="true"></span>
           </summary>
-          <div class="guide__body">{{ $course.body | safeHTML }}</div>
+          <div class="sb-acc__panel sb-courses-guide__body">{{ $course.body | safeHTML }}</div>
         </details>
         {{- end }}
       </div>
     </div>
 
     {{- with $.Params.help }}
-    <div class="guide__help">
-      <div class="guide__help-text">
-        <h3 class="guide__help-title">{{ .title }}</h3>
-        <p class="guide__help-copy">{{ .text }}</p>
+    <aside class="sb-courses-help" data-reveal>
+      <div class="sb-courses-help__body">
+        <h3 class="sb-courses-help__title">{{ .title }}</h3>
+        <p class="sb-courses-help__text">{{ .text }}</p>
       </div>
-      <a class="guide__phone" href="{{ site.Params.phoneHref | safeURL }}">
-        <span class="icon-badge">{{ partial "icon.html" "phone" }}</span>
+      <a class="sb-courses-help__phone" href="{{ site.Params.phoneHref | safeURL }}">
+        {{ partial "icon.html" "phone" }}
         <span>{{ site.Params.phone }}</span>
       </a>
-    </div>
+    </aside>
     {{- end }}
   </div>
 </section>

@@ -1,0 +1,488 @@
+/* ============================================================
+   About — storybook spread, same language as the home page.
+   Depends on home.css primitives (sb-*) and inherits the .home
+   theme variables from the body class.
+   ============================================================ */
+
+/* --------------------------------------------------------------- hero */
+
+.sb-about-hero {
+  position: relative;
+  overflow: clip;
+}
+
+.sb-about-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(36px, 5.5vw, 72px) clamp(20px, 4vw, 40px) clamp(44px, 6vw, 84px);
+}
+
+.sb-about-hero__copy {
+  position: relative;
+  z-index: 1;
+}
+
+.sb-about-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px 7px 11px;
+  border-radius: 999px;
+  background: var(--sb-stone);
+  box-shadow: inset 0 0 0 1px #e9e4da;
+  color: var(--sb-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sb-about-hero__spark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--sb-yellow);
+  color: var(--sb-ink);
+}
+
+.sb-about-hero__spark svg {
+  width: 12px;
+  height: 12px;
+}
+
+.sb-about-hero__title {
+  margin-top: 22px;
+  color: var(--sb-ink);
+  font-family: var(--sb-font-display);
+  font-size: clamp(3rem, 1.5rem + 5.4vw, 5.6rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.sb-art--about-hero-squiggle {
+  width: 118px;
+  margin-top: 20px;
+}
+
+.sb-about-hero__lead {
+  max-width: 40ch;
+  margin-top: 22px;
+  color: var(--sb-body);
+  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+.sb-about-hero__media-wrap {
+  position: relative;
+  justify-self: end;
+  width: min(100%, 470px);
+}
+
+.sb-about-hero__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--sb-stone);
+  box-shadow:
+    inset 0 0 0 1px var(--sb-hair),
+    0 34px 60px -46px rgba(18, 18, 18, 0.5);
+  aspect-ratio: 1;
+}
+
+.sb-about-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sb-art--about-hero-star {
+  position: absolute;
+  top: -20px;
+  right: -14px;
+  width: 48px;
+}
+
+.sb-art--about-hero-coin {
+  position: absolute;
+  top: 34px;
+  left: -28px;
+  width: 54px;
+}
+
+.sb-art--about-hero-flower {
+  position: absolute;
+  left: -44px;
+  bottom: -36px;
+  width: 122px;
+}
+
+/* ------------------------------------------------------------ welcome */
+
+.sb-about-welcome__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.sb-about-welcome__head {
+  position: sticky;
+  top: 120px;
+}
+
+.sb-about-welcome__head .sb-title {
+  max-width: 14ch;
+}
+
+.sb-about-welcome__card {
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--sb-hair);
+}
+
+.sb-about-welcome__text {
+  display: grid;
+  gap: 18px;
+}
+
+.sb-about-welcome__text p {
+  color: var(--sb-body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+.sb-about-welcome__text p:first-child {
+  color: var(--sb-head);
+  font-size: clamp(1.15rem, 1.02rem + 0.5vw, 1.35rem);
+  line-height: 1.45;
+  letter-spacing: -0.022em;
+}
+
+/* ---------------------------------------------------------- principle */
+
+.sb-about-principle {
+  background: var(--sb-stone);
+}
+
+.sb-about-principle .sb-head--center {
+  max-width: 760px;
+}
+
+.sb-about-principle__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 34ch;
+}
+
+.sb-about-principle__text {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 4vw, 56px);
+  max-width: 1020px;
+  margin: 0 auto clamp(32px, 4vw, 56px);
+}
+
+.sb-about-principle__text p {
+  color: var(--sb-body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+.sb-about-principle__text p + p {
+  padding-left: clamp(20px, 4vw, 56px);
+  border-left: 1px solid var(--sb-line);
+}
+
+/* ------------------------------------------------------------ gallery */
+
+.sb-about-gallery {
+  columns: 3;
+  column-gap: 12px;
+}
+
+.sb-about-gallery__item {
+  margin: 0 0 12px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--sb-sand);
+  box-shadow: inset 0 0 0 1px rgba(18, 18, 18, 0.06);
+  break-inside: avoid;
+}
+
+.sb-about-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  transition: transform 520ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sb-about-gallery__item:nth-child(4n + 1) img {
+  aspect-ratio: 4 / 5;
+}
+
+.sb-about-gallery__item:nth-child(4n + 3) img {
+  aspect-ratio: 5 / 4;
+}
+
+@media (hover: hover) {
+  .sb-about-gallery__item:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* ------------------------------------------------------------ reviews */
+
+.sb-about-reviews {
+  background: var(--sb-canvas);
+}
+
+.sb-about-reviews__frame {
+  height: clamp(32rem, 50vw, 40rem);
+}
+
+/* ----------------------------------------------------------- pillars */
+
+.sb-about-pillars {
+  background: var(--sb-stone);
+}
+
+.sb-about-pillars__title {
+  max-width: 24ch;
+  margin: 0 auto;
+}
+
+.sb-about-pillars__accent {
+  display: inline;
+  padding: 0 0.14em 0.05em;
+  border-radius: 8px;
+  background: var(--sb-yellow);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.sb-about-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 12px;
+}
+
+.sb-about-pillar {
+  display: flex;
+  flex-direction: column;
+}
+
+.sb-about-pillar__num {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: var(--sb-ink);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.sb-about-pillar__num--0 {
+  background: var(--sb-sky);
+}
+
+.sb-about-pillar__num--1 {
+  background: var(--sb-yellow);
+}
+
+.sb-about-pillar__num--2 {
+  background: var(--sb-mint);
+}
+
+.sb-about-pillar__title {
+  margin-top: 22px;
+  color: var(--sb-head);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.019em;
+}
+
+.sb-about-pillar__text {
+  margin-top: 10px;
+  color: var(--sb-body);
+  font-size: 15.5px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.sb-about-actions {
+  margin-top: clamp(28px, 4vw, 44px);
+}
+
+.sb-about-actions .sb-btn--sand {
+  background: #fff;
+}
+
+/* -------------------------------------------------------- breakpoints */
+
+@media (max-width: 900px) {
+  .sb-about-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 6vw, 44px);
+  }
+
+  .sb-about-hero__lead {
+    max-width: 52ch;
+  }
+
+  .sb-about-hero__media-wrap {
+    justify-self: start;
+    width: min(100%, 520px);
+  }
+
+  .sb-art--about-hero-flower {
+    left: -22px;
+    bottom: -28px;
+    width: 96px;
+  }
+
+  .sb-art--about-hero-coin {
+    left: -18px;
+    width: 44px;
+  }
+
+  .sb-about-welcome__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sb-about-welcome__head {
+    position: static;
+  }
+
+  .sb-about-welcome__head .sb-title {
+    max-width: 20ch;
+  }
+
+  .sb-about-principle__text {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .sb-about-principle__text p + p {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .sb-about-pillars__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sb-about-pillar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 20px;
+  }
+
+  .sb-about-pillar__num {
+    grid-row: span 2;
+    align-self: start;
+  }
+
+  .sb-about-pillar__title {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .sb-about-gallery {
+    columns: 2;
+    column-gap: 10px;
+  }
+
+  .sb-about-gallery__item {
+    margin-bottom: 10px;
+    border-radius: 14px;
+  }
+
+  .sb-about-hero__title {
+    font-size: clamp(2.6rem, 1.4rem + 8vw, 4rem);
+  }
+
+  .sb-art--about-hero-squiggle {
+    width: 96px;
+  }
+
+  .sb-about-welcome__card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .sb-about-pillar__title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sb-about-hero__eyebrow {
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+  }
+
+  .sb-about-hero__media {
+    border-radius: 20px;
+  }
+
+  .sb-art--about-hero-star {
+    width: 38px;
+    top: -14px;
+    right: -8px;
+  }
+
+  .sb-art--about-hero-coin {
+    display: none;
+  }
+
+  .sb-art--about-hero-flower {
+    left: auto;
+    right: -18px;
+    bottom: -26px;
+    width: 86px;
+  }
+
+  .sb-about-pillar {
+    display: block;
+  }
+
+  .sb-about-pillar__num {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sb-about-pillar__title {
+    margin-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-about-gallery__item img {
+    transition: none;
+  }
+
+  .sb-about-gallery__item:hover img {
+    transform: none;
+  }
+}
