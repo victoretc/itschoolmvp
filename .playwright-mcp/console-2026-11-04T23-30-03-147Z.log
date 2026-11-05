@@ -1,4 +1,0 @@
-[    3311ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://events.myweb3id.io/cookie-sync/yandex?userId={DSP_UID}:0
-[    3520ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://yandex.ru/an/mapuid/onetargetis/837c1304-7439-4311-b400-4521dcd563cd:0
-[    3562ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://match.360yield.com/match?external_user_id=4aad6746-ba3a-40fb-be31-6b08fd89f59a&publisher_dsp_id=429&publisher_call_type=redirect:0
-[    3649ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:8791/livereload.js?mindelay=10&v=2&port=1314&path=livereload:0
