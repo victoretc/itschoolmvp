@@ -1,0 +1,250 @@
+{{ define "main" }}
+{{- $hero := .Params.hero -}}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <svg class="hero__spark" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <path d="M12 0c.8 6.6 4.6 10.4 12 12-7.4 1.6-11.2 5.4-12 12-.8-6.6-4.6-10.4-12-12C7.4 10.4 11.2 6.6 12 0Z" fill="currentColor"></path>
+      </svg>
+
+      <p class="hero__eyebrow">{{ $hero.eyebrow }}</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__line"><span class="hero__line-text">{{ $hero.title }}</span></span>
+        <span class="hero__line"><span class="hero__line-text">{{ $hero.title_second }}</span></span>
+        <span class="hero__line hero__line--accent">{{ $hero.accent }}</span>
+      </h1>
+      <p class="hero__lead">{{ $hero.lead }}</p>
+
+      <div class="hero__actions">
+        <a class="btn" href="{{ "/contacts/" | relURL }}">
+          <span>{{ $hero.cta }}</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a class="btn btn--ghost" href="#courses">{{ $hero.cta_secondary }}</a>
+      </div>
+
+      <dl class="hero__proof">
+        {{- range $hero.proof }}
+        <div class="hero__proof-item">
+          <dt>{{ .value }}</dt>
+          <dd>{{ .label }}</dd>
+        </div>
+        {{- end }}
+      </dl>
+    </div>
+
+    <div class="hero__media">
+      {{- with resources.Get "images/hero-left.jpg" }}
+      {{- $crop := .Fill "720x900 Center" }}
+      <figure class="hero__photo hero__photo--main">
+        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Девочка с роботом на занятии по робототехнике" loading="eager" decoding="async">
+      </figure>
+      {{- end }}
+
+      {{- with resources.Get "images/hero-right.jpg" }}
+      {{- $crop := .Fill "360x480 Center" }}
+      <figure class="hero__photo hero__photo--small">
+        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Мальчик программирует на ноутбуке" loading="lazy" decoding="async">
+      </figure>
+      {{- end }}
+
+      <p class="hero__sticker" aria-hidden="true">LEGO · Scratch · Python</p>
+    </div>
+  </div>
+</section>
+
+{{- with $hero.stats }}
+<section class="proof" aria-label="АйТи Скул в цифрах">
+  <div class="proof__inner">
+    <p class="proof__label">АйТи Скул<br>в цифрах</p>
+    <dl class="proof__grid" data-reveal>
+      {{- range . }}
+      <div class="proof__item">
+        <dt>{{ .value }}</dt>
+        <dd>{{ .label }}</dd>
+      </div>
+      {{- end }}
+    </dl>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.courses }}
+<section class="courses" id="courses" aria-labelledby="courses-title">
+  <div class="courses__inner">
+    <header class="courses__head" data-reveal>
+      <h2 class="section-title" id="courses-title">{{ .title }}</h2>
+      <p class="courses__lead">{{ .lead }}</p>
+    </header>
+
+    <div class="courses__grid" data-reveal-group>
+      {{- range .items }}
+      <article class="course course--{{ .tone }}" data-reveal>
+        <div class="course__top">
+          <span class="course__icon">{{ partial "icon.html" .icon }}</span>
+          <span class="course__tag">{{ .tag }}</span>
+        </div>
+        <h3 class="course__title">{{ .name }}</h3>
+        <p class="course__text">{{ .text }}</p>
+        <a class="course__link" href="{{ "/contacts/" | relURL }}">
+          Записаться
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+      {{- end }}
+
+      <a class="course course--cta" href="{{ "/contacts/" | relURL }}" data-reveal>
+        <span class="course__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+            <path d="M12 3v18M3 12h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <h3 class="course__title">Не знаете, что выбрать?</h3>
+        <p class="course__text">Подберём направление на консультации — по возрасту и интересам ребёнка.</p>
+        <span class="course__link">Помогите выбрать</span>
+      </a>
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.approach }}
+<section class="approach" aria-labelledby="approach-title">
+  <div class="approach__inner">
+    <header class="approach__head" data-reveal>
+      <div>
+        <h2 class="section-title" id="approach-title">{{ .title }}</h2>
+      </div>
+      <p class="approach__lead">{{ .lead }}</p>
+    </header>
+
+    <div class="approach__body">
+      {{- with resources.Get "images/school-blog-2.jpg" }}
+      {{- $crop := .Fill "1200x900 Center" }}
+      <figure class="approach__media" data-reveal>
+        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Команда АйТи Скул с наградами на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+        <figcaption>{{ $.Params.approach.caption }}</figcaption>
+      </figure>
+      {{- end }}
+
+      <div class="approach__content">
+        <div class="approach__notes" data-reveal-group>
+          {{- range .notes }}
+          <div class="approach__note" data-reveal>
+            <span class="approach__dot" aria-hidden="true"></span>
+            <p>{{ . }}</p>
+          </div>
+          {{- end }}
+        </div>
+        <p class="approach__statement" data-reveal>{{ .statement }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.purpose }}
+<section class="purpose" aria-labelledby="purpose-title">
+  <div class="purpose__inner">
+    <header class="purpose__head" data-reveal>
+      <h2 class="section-title section-title--light" id="purpose-title">{{ .title }}</h2>
+    </header>
+
+    <div class="purpose__grid" data-reveal-group>
+      {{- range .points }}
+      <div class="purpose__item" data-reveal>
+        <span class="purpose__icon">{{ partial "icon.html" .icon }}</span>
+        <h3 class="purpose__item-title">{{ .title }}</h3>
+        <p class="purpose__text">{{ .text }}</p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+
+{{- with .Params.reviews }}
+<section class="reviews" aria-labelledby="reviews-title">
+  <div class="reviews__inner">
+    <header class="reviews__head" data-reveal>
+      <h2 class="section-title" id="reviews-title">{{ .title }}</h2>
+    </header>
+
+    {{- with .yandex }}
+    <div class="reviews__widget" data-reveal>
+      <iframe src="{{ .widget }}" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.instagram }}
+<section class="instagram" aria-labelledby="instagram-title">
+  <div class="instagram__inner">
+    <header class="instagram__head" data-reveal>
+      <div>
+        <h2 class="section-title" id="instagram-title">{{ .title }}</h2>
+        {{- with .lead }}
+        <p class="instagram__lead">{{ . }}</p>
+        {{- end }}
+      </div>
+      {{- with .url }}
+      <a class="instagram__link" href="{{ . }}" target="_blank" rel="noopener">
+        {{ $.Params.instagram.handle | default "Instagram" }}
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      {{- end }}
+    </header>
+
+    <div class="instagram__widget" data-reveal>
+      {{ partial "instagram.html" . }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.faq }}
+<section class="faq" aria-labelledby="faq-title">
+  <div class="faq__inner">
+    <header class="faq__head" data-reveal>
+      <h2 class="section-title" id="faq-title">{{ .title }}</h2>
+      <p class="faq__lead">{{ .lead }}</p>
+    </header>
+
+    <div class="faq__list" data-reveal-group>
+      {{- range .items }}
+      <details class="faq__item" data-reveal>
+        <summary>{{ .q }}</summary>
+        <p class="faq__answer">{{ .a }}</p>
+      </details>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.cta }}
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="cta-band__inner">
+    <div data-reveal>
+      <h2 class="cta-band__title" id="cta-title">{{ .title }}</h2>
+      <p class="cta-band__text">{{ .text }}</p>
+    </div>
+    <a class="btn" href="{{ "/contacts/" | relURL }}" data-reveal>
+      <span>{{ .button }}</span>
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+{{- end }}
+{{ end }}

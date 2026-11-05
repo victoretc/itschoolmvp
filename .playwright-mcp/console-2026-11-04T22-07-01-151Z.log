@@ -1,0 +1,12 @@
+[     435ms] ReferenceError: ym is not defined
+    at <anonymous>:1:1
+    at https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:1034:429
+    at ZT (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:1036:31)
+    at Md.XT (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:1033:92)
+    at Md.<anonymous> (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:369:187)
+    at Nd.apply (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:292:465)
+    at ib (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:252:767)
+    at hb (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:252:502)
+    at Md.<anonymous> (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:316:473)
+    at Nd.apply (https://www.googletagmanager.com/gtm.js?id=GTM-TQJ44S3:292:465)
+[    1516ms] [LOG] Пауза при прокрутке: 1 @ :2

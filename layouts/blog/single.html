@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{- $cover := false -}}
+{{- with .Params.cover -}}{{- $cover = resources.Get . -}}{{- end -}}
+{{- $related := where site.RegularPages "Section" "blog" -}}
+{{- $related = where $related "Permalink" "ne" .Permalink -}}
+{{- $related = first 2 $related -}}
+{{- $older := .PrevInSection -}}
+{{- $newer := .NextInSection -}}
+
+<article class="post">
+  <div class="post__inner">
+    <header class="post__head" data-reveal>
+      <p class="post__date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "blog-date.html" . }}</time></p>
+      <h1 class="post__title">{{ .Title }}</h1>
+    </header>
+
+    {{- with $cover }}
+    {{- $img := .Fill "1400x800 Center" }}
+    <figure class="post__cover" data-reveal>
+      <img src="{{ $img.RelPermalink }}" alt="{{ $.Params.coverAlt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager" decoding="async">
+    </figure>
+    {{- end }}
+
+    <div class="post__body" data-reveal>
+      {{ .Content }}
+
+      {{- with .Params.gallery }}
+      <div class="post__gallery" data-reveal-group>
+        {{- range . }}
+        {{- $alt := .alt }}
+        {{- with resources.Get .image }}
+        {{- $img := .Fill "640x640 Center" }}
+        <figure class="post__gallery-item" data-reveal>
+          <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
+        </figure>
+        {{- end }}
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+
+    {{- if or $older $newer }}
+    <nav class="post-nav" aria-label="Навигация по записям">
+      {{- with $older }}
+      <a class="post-nav__link post-nav__link--prev" href="{{ .RelPermalink }}">
+        <span class="post-nav__label">← Предыдущая запись</span>
+        <span class="post-nav__title">{{ .Title }}</span>
+      </a>
+      {{- end }}
+      {{- with $newer }}
+      <a class="post-nav__link post-nav__link--next" href="{{ .RelPermalink }}">
+        <span class="post-nav__label">Следующая запись →</span>
+        <span class="post-nav__title">{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </nav>
+    {{- end }}
+  </div>
+</article>
+
+{{- with $related }}
+<section class="blog blog--related" aria-labelledby="blog-related-title">
+  <div class="blog__inner">
+    <h2 class="section-title blog__news-title" id="blog-related-title">Другие статьи</h2>
+    <div class="blog__grid blog__grid--related" data-reveal-group>
+      {{- range . }}
+      {{ partial "blog-card.html" . }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+{{ end }}

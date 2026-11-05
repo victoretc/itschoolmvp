@@ -1,0 +1,102 @@
+- generic [active] [ref=f12e1]:
+  - link "Перейти к содержимому" [ref=f12e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f12e3]:
+    - generic [ref=f12e4]:
+      - link "АйТи Скул — на главную" [ref=f12e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f12e6]
+      - 'link "Позвонить: +375 (29) 871-76-12" [ref=f12e7] [cursor=pointer]':
+        - /url: tel:+375298717612
+      - button "Меню" [ref=f12e10] [cursor=pointer]
+  - main [ref=f12e14]:
+    - region [ref=f12e15]:
+      - generic [ref=f12e16]:
+        - heading "IT Каникулы" [level=1] [ref=f12e20]:
+          - generic [ref=f12e21]: IT
+          - generic [ref=f12e22]: Каникулы
+        - figure [ref=f12e24]:
+          - img "Ребята на занятии в АйТи Скул" [ref=f12e25]
+    - region "Программы IT Каникул" [ref=f12e26]:
+      - generic [ref=f12e28]:
+        - article [ref=f12e29]:
+          - paragraph [ref=f12e30]: 7-9 лет
+          - heading "Тематические занятия каждые школьные каникулы" [level=2] [ref=f12e31]
+          - paragraph [ref=f12e32]: "В программе занятий:"
+          - list [ref=f12e33]:
+            - listitem [ref=f12e34]: Изучение графического редактора Paint
+            - listitem [ref=f12e35]: Создание игр на языке Scratch
+            - listitem [ref=f12e36]: Создание 3D игр на Kodu
+            - listitem [ref=f12e37]: Робототехника
+            - listitem [ref=f12e38]: 3D Моделирование LeoCAD
+            - listitem [ref=f12e39]: Рисование 3D ручкой
+            - listitem [ref=f12e40]: Настольные игры
+            - listitem [ref=f12e41]: Чаепитие в перерыве между занятиями
+            - listitem [ref=f12e42]: Прогулки на свежем воздухе
+        - article [ref=f12e43]:
+          - paragraph [ref=f12e44]: 10+ лет
+          - heading "Тематические занятия каждые школьные каникулы" [level=2] [ref=f12e45]
+          - paragraph [ref=f12e46]: "В программе занятий:"
+          - list [ref=f12e47]:
+            - listitem [ref=f12e48]: Алгоритмизация и программирование (Python)
+            - listitem [ref=f12e49]: Программирование Minecraft
+            - listitem [ref=f12e50]: Робототехника
+            - listitem [ref=f12e51]: 3D моделирование
+            - listitem [ref=f12e52]: Основы создания игры на платформе Roblox
+            - listitem [ref=f12e53]: Чаепитие в перерыве между занятиями
+            - listitem [ref=f12e54]: Прогулки на свежем воздухе
+    - region [ref=f12e55]:
+      - generic [ref=f12e56]:
+        - generic [ref=f12e57]:
+          - heading "Приглашаем ребят провести каникулы весело и с пользой!" [level=2] [ref=f12e58]:
+            - text: Приглашаем ребят провести каникулы
+            - generic [ref=f12e59]: весело и с пользой!
+          - paragraph [ref=f12e60]: Занятия будут проходить по адресу г. Брест, п-т Машерова, 23А. Количество мест ограничено!
+        - link "Запись по тел. +375 (29) 871 76 12" [ref=f12e61] [cursor=pointer]:
+          - /url: tel:+375298717612
+          - generic [ref=f12e64]:
+            - generic [ref=f12e65]: Запись по тел.
+            - generic [ref=f12e66]: +375 (29) 871 76 12
+  - contentinfo [ref=f12e67]:
+    - generic [ref=f12e68]:
+      - generic [ref=f12e69]:
+        - link "АйТи Скул" [ref=f12e70] [cursor=pointer]:
+          - /url: /
+        - paragraph [ref=f12e71]: "IT-школа для детей 6–17 лет: программирование, робототехника и разработка игр."
+        - link "Получить консультацию" [ref=f12e72] [cursor=pointer]:
+          - /url: /contacts/
+      - navigation "Меню в подвале" [ref=f12e73]:
+        - paragraph [ref=f12e74]: Разделы
+        - list [ref=f12e75]:
+          - listitem [ref=f12e76]:
+            - link "Главная" [ref=f12e77] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f12e78]:
+            - link "Курсы" [ref=f12e79] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f12e80]:
+            - link "IT Каникулы" [ref=f12e81] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f12e82]:
+            - link "О нас" [ref=f12e83] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f12e84]:
+            - link "Блог" [ref=f12e85] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f12e86]:
+            - link "Контакты" [ref=f12e87] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=f12e88]:
+        - paragraph [ref=f12e89]: Связаться
+        - link "+375 (29) 871-76-12" [ref=f12e90] [cursor=pointer]:
+          - /url: tel:+375298717612
+        - list [ref=f12e91]:
+          - listitem [ref=f12e92]:
+            - link "Viber" [ref=f12e93] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f12e94]:
+            - link "Instagram" [ref=f12e95] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=f12e96]:
+      - generic [ref=f12e97]: © 2026 АйТи Скул
+      - generic [ref=f12e98]: Программирование · Робототехника · Игры

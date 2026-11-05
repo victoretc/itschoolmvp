@@ -1,0 +1,40 @@
+- generic [active] [ref=f23e1]:
+  - link "Перейти к содержимому" [ref=f23e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f23e3]:
+    - generic [ref=f23e4]:
+      - link "АйТи Скул — на главную" [ref=f23e5] [cursor=pointer]:
+        - /url: "#"
+        - img "АйТи Скул" [ref=f23e6]
+      - button "Меню" [ref=f23e7] [cursor=pointer]
+  - main [ref=f23e11]:
+    - region [ref=f23e12]:
+      - generic [ref=f23e13]:
+        - generic [ref=f23e14]:
+          - generic [ref=f23e15]:
+            - heading "АйТи Скул" [level=1] [ref=f23e16]:
+              - text: АйТи
+              - generic [ref=f23e17]: Скул
+            - paragraph [ref=f23e18]: Откройте своему ребенку мир программирования и цифровых технологий!
+            - list [ref=f23e19]:
+              - listitem [ref=f23e20]: Улучшаем школьную успеваемость
+              - listitem [ref=f23e21]: Готовимся к перспективным профессиям
+              - listitem [ref=f23e22]: Фиксируем цену занятий вне зависимости от курса
+              - listitem [ref=f23e23]: Развиваем универсальные навыки
+            - link "Получить консультацию" [ref=f23e25] [cursor=pointer]:
+              - /url: /contacts/
+          - figure [aria-hidden] [ref=f23e29]
+          - figure [aria-hidden] [ref=f23e30]
+        - generic [ref=f23e31]:
+          - generic [ref=f23e32]:
+            - term [ref=f23e33]: "700"
+            - definition [ref=f23e34]: Постоянных клиентов в год
+          - generic [ref=f23e35]:
+            - term [ref=f23e36]: "8"
+            - definition [ref=f23e37]: Лет преподавания
+          - generic [ref=f23e38]:
+            - term [ref=f23e39]: "15"
+            - definition [ref=f23e40]: Педагогов
+          - generic [ref=f23e41]:
+            - term [ref=f23e42]: 6000+
+            - definition [ref=f23e43]: обученных детей

@@ -1,0 +1,256 @@
+- generic [active] [ref=f190e1]:
+  - link "Перейти к содержимому" [ref=f190e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f190e3]:
+    - generic [ref=f190e4]:
+      - link "АйТи Скул — на главную" [ref=f190e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f190e6]
+      - navigation "Основное меню" [ref=f190e7]:
+        - list [ref=f190e8]:
+          - listitem [ref=f190e9]:
+            - link "Главная" [ref=f190e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f190e11]:
+            - link "Курсы" [ref=f190e12] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f190e13]:
+            - link "IT Каникулы" [ref=f190e14] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f190e15]:
+            - link "О нас" [ref=f190e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f190e17]:
+            - link "Блог" [ref=f190e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f190e19]:
+            - link "Контакты" [ref=f190e20] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f190e21]:
+          - link "+375 (29) 871-76-12" [ref=f190e22] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f190e26]:
+            - listitem [ref=f190e27]:
+              - link "Viber" [ref=f190e28] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f190e31]:
+              - link "Instagram" [ref=f190e32] [cursor=pointer]:
+                - /url: "#"
+          - link "Получить консультацию" [ref=f190e35] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f190e36]:
+    - region [ref=f190e37]:
+      - generic [ref=f190e38]:
+        - heading "Курсы" [level=1] [ref=f190e39]
+        - generic [ref=f190e40]:
+          - article [ref=f190e41]:
+            - heading "Робототехника LEGO" [level=2] [ref=f190e42]
+            - paragraph [ref=f190e43]:
+              - generic [ref=f190e44]: "110"
+              - generic [ref=f190e45]: руб. /абонемент
+            - paragraph [ref=f190e46]: Детям с 7 лет
+            - link "Записаться" [ref=f190e50] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e53]:
+            - heading "Программирование в Kodu и Scratch" [level=2] [ref=f190e54]
+            - paragraph [ref=f190e55]:
+              - generic [ref=f190e56]: "110"
+              - generic [ref=f190e57]: руб. /абонемент
+            - paragraph [ref=f190e58]: Детям с 8 лет
+            - link "Записаться" [ref=f190e62] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e65]:
+            - heading "Робототехника Arduino" [level=2] [ref=f190e66]
+            - paragraph [ref=f190e67]:
+              - generic [ref=f190e68]: "110"
+              - generic [ref=f190e69]: руб. /абонемент
+            - paragraph [ref=f190e70]: Детям с 10 лет
+            - link "Записаться" [ref=f190e74] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e77]:
+            - heading "Программирование Minecraft" [level=2] [ref=f190e78]
+            - paragraph [ref=f190e79]:
+              - generic [ref=f190e80]: "110"
+              - generic [ref=f190e81]: руб. /абонемент
+            - paragraph [ref=f190e82]: Детям с 10 лет
+            - link "Записаться" [ref=f190e86] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e89]:
+            - heading "Программирования на Python" [level=2] [ref=f190e90]
+            - paragraph [ref=f190e91]:
+              - generic [ref=f190e92]: "110"
+              - generic [ref=f190e93]: руб. /абонемент
+            - paragraph [ref=f190e94]: Детям с 12 лет
+            - link "Записаться" [ref=f190e98] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e101]:
+            - heading "Разработка игр на Godot" [level=2] [ref=f190e102]
+            - paragraph [ref=f190e103]:
+              - generic [ref=f190e104]: "110"
+              - generic [ref=f190e105]: руб. /абонемент
+            - paragraph [ref=f190e106]: Детям с 11 лет
+            - link "Записаться" [ref=f190e110] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e113]:
+            - heading "Программирование Roblox" [level=2] [ref=f190e114]
+            - paragraph [ref=f190e115]:
+              - generic [ref=f190e116]: "110"
+              - generic [ref=f190e117]: руб. /абонемент
+            - paragraph [ref=f190e118]: Детям с 10 лет
+            - link "Записаться" [ref=f190e122] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e125]:
+            - heading "Программирование квадрокоптеров" [level=2] [ref=f190e126]
+            - paragraph [ref=f190e127]:
+              - generic [ref=f190e128]: "110"
+              - generic [ref=f190e129]: руб. /абонемент
+            - paragraph [ref=f190e130]: Детям с 12 лет
+            - link "Записаться" [ref=f190e134] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e137]:
+            - heading "Нейронные сети" [level=2] [ref=f190e138]
+            - paragraph [ref=f190e139]:
+              - generic [ref=f190e140]: "110"
+              - generic [ref=f190e141]: руб. /абонемент
+            - paragraph [ref=f190e142]: Детям с 10 лет
+            - link "Записаться" [ref=f190e146] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e149]:
+            - heading "Разработка сайтов" [level=2] [ref=f190e150]
+            - paragraph [ref=f190e151]:
+              - generic [ref=f190e152]: "110"
+              - generic [ref=f190e153]: руб. /абонемент
+            - paragraph [ref=f190e154]: Детям с 12 лет
+            - link "Записаться" [ref=f190e158] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e161]:
+            - heading "Тестирование программного обеспечения" [level=2] [ref=f190e162]
+            - paragraph [ref=f190e163]:
+              - generic [ref=f190e164]: "110"
+              - generic [ref=f190e165]: руб. /абонемент
+            - paragraph [ref=f190e166]: Детям с 14 лет
+            - link "Записаться" [ref=f190e170] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e173]:
+            - heading "Разработка игр на Unity" [level=2] [ref=f190e174]
+            - paragraph [ref=f190e175]:
+              - generic [ref=f190e176]: "110"
+              - generic [ref=f190e177]: руб. /абонемент
+            - paragraph [ref=f190e178]: Детям с 12 лет
+            - link "Записаться" [ref=f190e182] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e185]:
+            - heading "Олимпиадное программирование" [level=2] [ref=f190e186]
+            - paragraph [ref=f190e187]:
+              - generic [ref=f190e188]: "110"
+              - generic [ref=f190e189]: руб. /абонемент
+            - paragraph [ref=f190e190]: Детям с 12 лет
+            - link "Записаться" [ref=f190e194] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f190e197]:
+            - heading "3Д-моделирование в BLENDER" [level=2] [ref=f190e198]
+            - paragraph [ref=f190e199]:
+              - generic [ref=f190e200]: "110"
+              - generic [ref=f190e201]: руб. /абонемент
+            - paragraph [ref=f190e202]: Детям с 12 лет
+            - link "Записаться" [ref=f190e206] [cursor=pointer]:
+              - /url: /contacts/
+    - region [ref=f190e209]:
+      - generic [ref=f190e210]:
+        - generic [ref=f190e211]:
+          - heading "Выбирайте подходящий курс" [level=2] [ref=f190e212]
+          - paragraph [ref=f190e213]: Кратко рассказываем о каждом курсе
+        - generic [ref=f190e214]:
+          - generic [ref=f190e215]:
+            - group [ref=f190e216]:
+              - generic "Робототехника LEGO" [ref=f190e217] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e218]: "01"
+            - group [ref=f190e221]:
+              - generic "Программирование в Kodu и Scratch" [ref=f190e222] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e223]: "02"
+            - group [ref=f190e226]:
+              - generic "Робототехника Arduino" [ref=f190e227] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e228]: "03"
+            - group [ref=f190e231]:
+              - generic "Программирование на Python" [ref=f190e232] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e233]: "04"
+            - group [ref=f190e236]:
+              - generic "Программирование Minecraft" [ref=f190e237] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e238]: "05"
+            - group [ref=f190e241]:
+              - generic "Программирование Roblox" [ref=f190e242] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e243]: "06"
+            - group [ref=f190e246]:
+              - generic "Разработка игр на Godot" [ref=f190e247] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e248]: "07"
+          - generic [ref=f190e251]:
+            - group [ref=f190e252]:
+              - generic "Программирование квадрокоптеров" [ref=f190e253] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e254]: "08"
+            - group [ref=f190e257]:
+              - generic "Разработка игр на платформе Unity" [ref=f190e258] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e259]: "09"
+            - group [ref=f190e262]:
+              - generic "Олимпиадное программирование" [ref=f190e263] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e264]: "10"
+            - group [ref=f190e267]:
+              - generic "3D-моделирование в BLENDER" [ref=f190e268] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e269]: "11"
+            - group [ref=f190e272]:
+              - generic "Разработка сайтов" [ref=f190e273] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e274]: "12"
+            - group [ref=f190e277]:
+              - generic "Нейронные сети" [ref=f190e278] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e279]: "13"
+            - group [ref=f190e282]:
+              - generic "Тестирование программного обеспечения" [ref=f190e283] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f190e284]: "14"
+        - generic [ref=f190e287]:
+          - generic [ref=f190e288]:
+            - heading "Вы все равно затрудняетесь?" [level=3] [ref=f190e289]
+            - paragraph [ref=f190e290]: Мы с радостью вам поможем определиться с направлением и ответим на волнующие вас вопросы
+          - link "+375 (29) 871-76-12" [ref=f190e291] [cursor=pointer]:
+            - /url: tel:+375298717612
+  - contentinfo [ref=f190e295]:
+    - generic [ref=f190e296]:
+      - generic [ref=f190e297]:
+        - link "АйТи Скул" [ref=f190e298] [cursor=pointer]:
+          - /url: /
+        - paragraph [ref=f190e299]: "IT-школа для детей 6–17 лет: программирование, робототехника и разработка игр."
+        - link "Получить консультацию" [ref=f190e300] [cursor=pointer]:
+          - /url: /contacts/
+      - navigation "Меню в подвале" [ref=f190e301]:
+        - paragraph [ref=f190e302]: Разделы
+        - list [ref=f190e303]:
+          - listitem [ref=f190e304]:
+            - link "Главная" [ref=f190e305] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f190e306]:
+            - link "Курсы" [ref=f190e307] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f190e308]:
+            - link "IT Каникулы" [ref=f190e309] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f190e310]:
+            - link "О нас" [ref=f190e311] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f190e312]:
+            - link "Блог" [ref=f190e313] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f190e314]:
+            - link "Контакты" [ref=f190e315] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=f190e316]:
+        - paragraph [ref=f190e317]: Связаться
+        - link "+375 (29) 871-76-12" [ref=f190e318] [cursor=pointer]:
+          - /url: tel:+375298717612
+        - list [ref=f190e319]:
+          - listitem [ref=f190e320]:
+            - link "Viber" [ref=f190e321] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f190e322]:
+            - link "Instagram" [ref=f190e323] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=f190e324]:
+      - generic [ref=f190e325]: © 2026 АйТи Скул
+      - generic [ref=f190e326]: Программирование · Робототехника · Игры

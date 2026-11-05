@@ -1,0 +1,137 @@
+- generic [active] [ref=f8e1]:
+  - link "Перейти к содержимому" [ref=f8e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f8e3]:
+    - generic [ref=f8e4]:
+      - link "АйТи Скул — на главную" [ref=f8e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f8e6]
+      - navigation "Основное меню" [ref=f8e7]:
+        - list [ref=f8e8]:
+          - listitem [ref=f8e9]:
+            - link "Главная" [ref=f8e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f8e11]:
+            - link "Курсы" [ref=f8e12] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f8e13]:
+            - link "IT Каникулы" [ref=f8e14] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f8e15]:
+            - link "О нас" [ref=f8e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f8e17]:
+            - link "Блог" [ref=f8e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f8e19]:
+            - link "Контакты" [ref=f8e20] [cursor=pointer]:
+              - /url: /contacts/
+        - generic [ref=f8e21]:
+          - link "+375 (29) 871-76-12" [ref=f8e22] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f8e26]:
+            - listitem [ref=f8e27]:
+              - link "Viber" [ref=f8e28] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f8e31]:
+              - link "Instagram" [ref=f8e32] [cursor=pointer]:
+                - /url: "#"
+          - link "Получить консультацию" [ref=f8e35] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f8e36]:
+    - region [ref=f8e37]:
+      - generic [ref=f8e38]:
+        - heading "Контакты" [level=1] [ref=f8e39]
+        - paragraph [ref=f8e40]: Наши филиалы представлены в Пинске, Кобрине, Жабинке и Бресте
+    - region "Контакты офиса" [ref=f8e41]:
+      - generic [ref=f8e42]:
+        - generic [ref=f8e43]:
+          - generic [ref=f8e44]:
+            - generic [ref=f8e45]: Офис
+            - paragraph [ref=f8e46]:
+              - link "г. Брест ул. Пионерская, 52 к. 503 (офис)" [ref=f8e47] [cursor=pointer]:
+                - /url: https://yandex.by/maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/
+          - generic [ref=f8e48]:
+            - generic [ref=f8e49]: Телефон
+            - paragraph [ref=f8e50]:
+              - link "+375 (29) 871-76-12" [ref=f8e51] [cursor=pointer]:
+                - /url: "#ZgotmplZ"
+              - text: (Офис)
+          - generic [ref=f8e52]:
+            - generic [ref=f8e53]: Тел
+            - paragraph [ref=f8e54]:
+              - link "+375 (29) 228-49-71" [ref=f8e55] [cursor=pointer]:
+                - /url: "#ZgotmplZ"
+              - text: (Директор)
+          - generic [ref=f8e56]:
+            - generic [ref=f8e57]: E-mail
+            - paragraph [ref=f8e58]:
+              - link "info@it-school.by" [ref=f8e59] [cursor=pointer]:
+                - /url: mailto:info@it-school.by
+          - link "Получить консультацию" [ref=f8e60] [cursor=pointer]:
+            - /url: tel:+375298717612
+        - iframe [ref=f8e64]
+    - region "Филиалы" [ref=f8e65]:
+      - generic [ref=f8e67]:
+        - generic [ref=f8e68]:
+          - heading "Филиалы в Бресте" [level=2] [ref=f8e69]
+          - list [ref=f8e70]:
+            - listitem [ref=f8e71]: г. Брест, пр-т Машерова, д. 23А
+            - listitem [ref=f8e72]: г. Брест, ул. Орловская, д. 16 (Средняя Школа №23, каб. 35)
+        - generic [ref=f8e73]:
+          - heading "Филиалы в Жабинке" [level=2] [ref=f8e74]
+          - list [ref=f8e75]:
+            - listitem [ref=f8e76]: г. Жабинка, ул. Свободы, 9 (Средняя школа №3 г. Жабинки, каб. 302)
+        - generic [ref=f8e77]:
+          - heading "Филиалы в Пинске" [level=2] [ref=f8e78]
+          - list [ref=f8e79]:
+            - listitem [ref=f8e80]: г. Пинск, ул. Жолтовского, д. 37 (Средняя Школа №18, каб. 120)
+        - generic [ref=f8e81]:
+          - heading "Филиалы в Кобрине" [level=2] [ref=f8e82]
+          - list [ref=f8e83]:
+            - listitem [ref=f8e84]: г. Кобрин, ул. Парковая, д. 2 (Средняя Школа №8, каб. 58)
+  - contentinfo [ref=f8e85]:
+    - generic [ref=f8e86]:
+      - link "АйТи Скул" [ref=f8e88] [cursor=pointer]:
+        - /url: /
+      - navigation "Навигация в подвале" [ref=f8e89]:
+        - paragraph [ref=f8e90]: Навигация
+        - list [ref=f8e91]:
+          - listitem [ref=f8e92]:
+            - link "Курсы" [ref=f8e93] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f8e94]:
+            - link "IT каникулы" [ref=f8e95] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f8e96]:
+            - link "О нас" [ref=f8e97] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f8e98]:
+            - link "Блог" [ref=f8e99] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f8e100]:
+            - link "Контакты" [ref=f8e101] [cursor=pointer]:
+              - /url: /contacts/
+      - generic [ref=f8e102]:
+        - paragraph [ref=f8e103]: Контакты
+        - link "+375 (29) 871-76-12" [ref=f8e104] [cursor=pointer]:
+          - /url: tel:+375298717612
+        - link "+375 (29) 228-49-71 (Директор)" [ref=f8e105] [cursor=pointer]:
+          - /url: tel:+375292284971
+        - link "info@it-school.by" [ref=f8e106] [cursor=pointer]:
+          - /url: mailto:info@it-school.by
+        - paragraph [ref=f8e107]:
+          - link "г. Брест ул. Пионерская, 52 к. 503 (офис)" [ref=f8e108] [cursor=pointer]:
+            - /url: https://yandex.by/maps/-/CDDRAYi-
+      - generic [ref=f8e109]:
+        - paragraph [ref=f8e110]: Месенджеры
+        - list [ref=f8e111]:
+          - listitem [ref=f8e112]:
+            - link "Viber" [ref=f8e113] [cursor=pointer]:
+              - /url: viber://chat?number=%2B375298717612
+    - generic [ref=f8e114]:
+      - generic [ref=f8e115]: © 2026 Все права защищены
+      - link "Разработка Богатов" [ref=f8e116] [cursor=pointer]:
+        - /url: https://victoretc.github.io/portfolio/
+      - link "Прокрутить вверх" [ref=f8e117] [cursor=pointer]:
+        - /url: "#main"

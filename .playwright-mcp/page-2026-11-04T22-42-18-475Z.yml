@@ -1,0 +1,74 @@
+- generic [ref=f58e1]:
+  - link "Перейти к содержимому" [ref=f58e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f58e3]:
+    - generic [ref=f58e4]:
+      - link "АйТи Скул — на главную" [ref=f58e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f58e6]
+      - 'link "Позвонить: +375 (29) 871-76-12" [ref=f58e7] [cursor=pointer]':
+        - /url: tel:+375298717612
+      - button "Меню" [expanded] [active] [ref=f58e10] [cursor=pointer]
+      - navigation "Основное меню" [ref=f58e47]:
+        - list [ref=f58e48]:
+          - listitem [ref=f58e49]:
+            - link "Главная" [ref=f58e50] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f58e51]:
+            - link "Курсы" [ref=f58e52] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f58e53]:
+            - link "IT Каникулы" [ref=f58e54] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f58e55]:
+            - link "О нас" [ref=f58e56] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f58e57]:
+            - link "Блог" [ref=f58e58] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f58e59]:
+            - link "Контакты" [ref=f58e60] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f58e61]:
+          - link "+375 (29) 871-76-12" [ref=f58e62] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f58e66]:
+            - listitem [ref=f58e67]:
+              - link "Viber" [ref=f58e68] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f58e72]:
+              - link "Instagram" [ref=f58e73] [cursor=pointer]:
+                - /url: "#"
+          - link "Получить консультацию" [ref=f58e78] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f58e14]:
+    - region [ref=f58e15]:
+      - generic [ref=f58e16]:
+        - generic [ref=f58e17]:
+          - generic [ref=f58e18]:
+            - heading "АйТи Скул" [level=1] [ref=f58e19]:
+              - text: АйТи
+              - generic [ref=f58e20]: Скул
+            - paragraph [ref=f58e21]: Откройте своему ребенку мир программирования и цифровых технологий!
+            - list [ref=f58e22]:
+              - listitem [ref=f58e23]: Улучшаем школьную успеваемость
+              - listitem [ref=f58e24]: Готовимся к перспективным профессиям
+              - listitem [ref=f58e25]: Фиксируем цену занятий вне зависимости от курса
+              - listitem [ref=f58e26]: Развиваем универсальные навыки
+            - link "Получить консультацию" [ref=f58e28] [cursor=pointer]:
+              - /url: /contacts/
+          - figure [aria-hidden] [ref=f58e32]
+          - figure [aria-hidden] [ref=f58e33]
+        - generic [ref=f58e34]:
+          - generic [ref=f58e35]:
+            - term [ref=f58e36]: "700"
+            - definition [ref=f58e37]: Постоянных клиентов в год
+          - generic [ref=f58e38]:
+            - term [ref=f58e39]: "8"
+            - definition [ref=f58e40]: Лет преподавания
+          - generic [ref=f58e41]:
+            - term [ref=f58e42]: "15"
+            - definition [ref=f58e43]: Педагогов
+          - generic [ref=f58e44]:
+            - term [ref=f58e45]: 6000+
+            - definition [ref=f58e46]: обученных детей

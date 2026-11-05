@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="blog" aria-labelledby="blog-title">
+  <div class="blog__inner">
+    <header class="blog__head" data-reveal>
+      <h1 class="blog__title" id="blog-title">{{ .Title }}</h1>
+      {{- with .Params.lead }}
+      <p class="blog__lead">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    {{- with .Pages.ByDate.Reverse }}
+    <section class="blog__news" aria-labelledby="blog-news-title">
+      <h2 class="section-title blog__news-title" id="blog-news-title">{{ $.Params.newsTitle | default "Новостные статьи" }}</h2>
+      <div class="blog__grid" data-reveal-group>
+        {{- range . }}
+        {{ partial "blog-card.html" . }}
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

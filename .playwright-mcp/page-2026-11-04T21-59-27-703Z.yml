@@ -1,0 +1,408 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "К основному контенту" [ref=e3] [cursor=pointer]:
+      - /url: "#t-main-content"
+    - banner [ref=e4]:
+      - generic [ref=e11]:
+        - generic [ref=e13]:
+          - link [ref=e15] [cursor=pointer]:
+            - /url: /?utm_source=organic&utm_medium=search&utm_campaign=main
+          - generic [ref=e17]:
+            - link "Программирование" [ref=e19] [cursor=pointer]:
+              - /url: /catalog/courses/programmirovaniye-dlya-detey/#
+            - link "Развитие детей" [ref=e24] [cursor=pointer]:
+              - /url: https://hwschool.online/catalog/courses/intellektualnoye-razvitiye-dlya-detey/#
+            - link "Репетиторы" [ref=e29] [cursor=pointer]:
+              - /url: /catalog/courses/repetitory-online-dlya-detey/#
+            - link "Дизайн и графика" [ref=e34] [cursor=pointer]:
+              - /url: /catalog/courses/risovanie-i-dizayn-dlya-detey/#
+            - link "Наш блог" [ref=e39] [cursor=pointer]:
+              - /url: /blog?utm_source=organic&utm_medium=search&utm_campaign=main
+            - link "Контакты" [ref=e43] [cursor=pointer]:
+              - /url: /contacts?utm_source=organic&utm_medium=search&utm_campaign=main
+        - generic [ref=e47]:
+          - link [ref=e49] [cursor=pointer]:
+            - /url: https://telegram.me/hwschool_bot?utm_source=organic&utm_medium=search&utm_campaign=main
+          - link [ref=e53] [cursor=pointer]:
+            - /url: https://wa.me/13343445021?utm_source=organic&utm_medium=search&utm_campaign=main
+          - link "Войти" [ref=e57] [cursor=pointer]:
+            - /url: https://parent.hwschool.pro/app?utm_source=organic&utm_medium=search&utm_campaign=main
+      - generic [ref=e65]:
+        - button "Close menu" [ref=e66] [cursor=pointer]
+        - generic [ref=e70]:
+          - navigation [ref=e72]:
+            - list [ref=e73]:
+              - listitem [ref=e74]:
+                - button "Программирование" [ref=e75] [cursor=pointer]
+              - listitem [ref=e76]:
+                - button "Развитие детей" [ref=e77] [cursor=pointer]
+              - listitem [ref=e78]:
+                - button "Репетиторы" [ref=e79] [cursor=pointer]
+              - listitem [ref=e80]:
+                - button "Дизайн и графика" [ref=e81] [cursor=pointer]
+              - listitem [ref=e82]:
+                - link "Наш блог" [ref=e83] [cursor=pointer]:
+                  - /url: /blog?utm_source=organic&utm_medium=search&utm_campaign=main
+              - listitem [ref=e84]:
+                - link "Контакты" [ref=e85] [cursor=pointer]:
+                  - /url: /contacts?utm_source=organic&utm_medium=search&utm_campaign=main
+              - listitem [ref=e86]:
+                - link "Отзывы" [ref=e87] [cursor=pointer]:
+                  - /url: /otzivi?utm_source=organic&utm_medium=search&utm_campaign=main
+          - generic [ref=e91]:
+            - button "Записаться" [ref=e93] [cursor=pointer]
+            - link "Войти" [ref=e96] [cursor=pointer]:
+              - /url: https://parent.hwschool.pro/app?utm_source=organic&utm_medium=search&utm_campaign=main
+    - generic [ref=e100]:
+      - img "Пекоративный элемент с иконкой сообщения" [ref=e107]
+      - generic [ref=e108]: Меняем детский досуг с игр, YouTube и TikTok на программирование и развитие.
+      - heading "Детская школа программирования" [level=1] [ref=e113]
+      - img "Декоративный элемент с геймпадом" [ref=e116]
+      - img "Пекоративный элемент с иконкой академической шапки" [ref=e123]
+      - button "Записаться на первый урок" [ref=e125] [cursor=pointer]
+    - generic [ref=e130]:
+      - heading "Почему выбирают нашу онлайн-школу программирования для детей?" [level=2] [ref=e137]
+      - link [ref=e139] [cursor=pointer]:
+        - /url: https://www.trustpilot.com/review/hwschool.pro?utm_source=organic&utm_medium=search&utm_campaign=main
+        - img "Изображение с рейтингов в Trustpilot" [ref=e140]
+      - link [ref=e142] [cursor=pointer]:
+        - /url: https://mooc.ru/company/hwschool?utm_source=organic&utm_medium=search&utm_campaign=main
+        - img "Изображение с рейтингов в mooc.ru" [ref=e143]
+      - link [ref=e145] [cursor=pointer]:
+        - /url: https://tutortop.ru/school-reviews/hello-world/?sort=created_at&sort_direction=desc&utm_source=organic&utm_medium=search&utm_campaign=main
+        - img "Изображение с рейтингов в Tutortop" [ref=e146]
+      - link [ref=e148] [cursor=pointer]:
+        - /url: https://www.tinkoff.ru/reviews/company/hello-world/104094?utm_source=organic&utm_medium=search&utm_campaign=main
+        - img "Изображение с рейтингов в Тинькофф" [ref=e149]
+      - generic [ref=e151]:
+        - generic [ref=e152]: 7 лет
+        - generic [ref=e154]: развиваем и вдохновляем детей
+      - generic [ref=e157]:
+        - generic [ref=e158]: "109"
+        - generic [ref=e160]: стран и 5 континентов
+      - generic [ref=e162]: "Школа программирования для детей Hello World — это место, где мы увлекаем ребенка программированием и создаем основу для будущего развития в IT‑сфере. Мы помогаем детям развивать логическое мышление, подтягивать знания по математике, учим думать заново после ютуба и тик-тока. В онлайн‑формате дети из любой точки мира могут раскрыть свои творческие способности: рисовать на компьютере, создавать проекты и полюбить программирование. Занятия вызывают искренний интерес, дети с нетерпением ждут каждого урока, а домашние задания становятся удовольствием, а не обязанностью."
+      - generic [ref=e165]:
+        - generic [ref=e166]: 31 000+
+        - generic [ref=e168]: довольных учеников и учениц
+      - generic [ref=e171]:
+        - generic [ref=e172]: 30 000+
+        - generic [ref=e174]: уроков проводим в месяц
+    - generic [ref=e178]:
+      - img "Курсы дизайна от онлайн-школы Hello World" [ref=e182]
+      - heading "1 курс" [level=3] [ref=e188]
+      - heading "Курсы дизайна" [level=3] [ref=e190]
+      - link [ref=e192] [cursor=pointer]:
+        - /url: /catalog/courses/risovanie-i-dizayn-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+      - heading "1 курс" [level=3] [ref=e200]
+      - heading "Математика, физика, информатика, обществознание, русский язык" [level=3] [ref=e202]
+      - heading "Индивидуальные репетиторы" [level=3] [ref=e204]
+      - heading "1 курс" [level=3] [ref=e212]
+      - heading "Английский язык" [level=3] [ref=e214]
+      - link [ref=e216] [cursor=pointer]:
+        - /url: https://hwschool.online/english-for-children-from-6-years-old?utm_source=organic&utm_medium=search&utm_campaign=main
+      - heading "2 курса" [level=3] [ref=e224]
+      - heading "Развитие интеллекта" [level=3] [ref=e227]
+      - link [ref=e229] [cursor=pointer]:
+        - /url: /catalog/courses/intellektualnoye-razvitiye-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+      - heading "6 курсов" [level=3] [ref=e237]
+      - heading "IT-направление" [level=3] [ref=e240]
+      - link [ref=e242] [cursor=pointer]:
+        - /url: /catalog/courses/programmirovaniye-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+      - heading "Направления обучения" [level=2] [ref=e244]
+      - link "Все курсы" [ref=e245] [cursor=pointer]:
+        - /url: /catalog/courses?utm_source=organic&utm_medium=search&utm_campaign=main
+    - generic [ref=e253]:
+      - generic [ref=e258]: "01"
+      - generic [ref=e262]: Наставники
+      - generic [ref=e266]: Детей учат настоящие профессионалы
+      - generic [ref=e268]: В школу устраивается только 1 из 10 кандидатов. Преподаватели постоянно повышают квалификацию.
+      - generic [ref=e272]: "02"
+      - generic [ref=e276]: Подход
+      - generic [ref=e280]: Программа корректируется индивидуально
+      - generic [ref=e282]: Потому что каждый ребёнок уникален. Мы учитываем уровень знаний, цели в учёбе и интересы детей. Такое обучение позволяет достичь наилучших результатов.
+      - generic [ref=e286]: "03"
+      - generic [ref=e290]: Комфорт
+      - generic [ref=e294]: Уроки проходят, когда вам удобно
+      - generic [ref=e296]: Вы сами выбираете расписание. Не нужно никуда ездить и покупать учебники. Занятия проходят онлайн. Вся школа ориентирована на комфортное обучение детей.
+      - heading "В чем плюсы?" [level=2] [ref=e299]
+      - generic [ref=e306]: о школе уже после первого занятия
+      - button "Попробовать сейчас" [ref=e309] [cursor=pointer]
+      - generic [ref=e312]: У
+      - generic [ref=e314]: 97%
+      - generic [ref=e318]: положительные отзывы
+      - generic [ref=e320]: родителей
+      - img "Счастливая девушка, показывающая жест \"класс\"\"" [ref=e324]
+    - generic [ref=e327]:
+      - generic [ref=e338]: Ваши сын или дочь нарисуют иллюстрацию, увидят работу своей игры или программы, усвоят практические знания, которые пригодятся им в дальнейшем. Эти знания они будут использовать не только на наших занятиях, но и в жизни, развивая навыки мышления.
+      - heading "Проекты и достижения наших учеников" [level=2] [ref=e341]
+      - generic [ref=e344]: "Вы сразу увидите, нравится ему или ей заниматься, и сможете понять, насколько интересен ребёнку выбранный курс. Занятие проведёт преподаватель, который может работать с вами дальше: не нужно будет привыкать к новому человеку, обучение станет комфортным."
+      - button "Попробовать сейчас" [ref=e347] [cursor=pointer]
+      - generic [ref=e358]: Дадим ребёнку бережную обратную связь, разберём его работу и обязательно ответим на все ваши вопросы после урока. Вы сможете почувствовать уверенность в том, что ваш ребёнок развивается в правильном направлении и получает актуальные знания.
+    - 'heading "Наши преподаватели: эксперты в программировании и работе с детьми" [level=2] [ref=e368]'
+    - generic [ref=e371]:
+      - link "05" [ref=e375] [cursor=pointer]:
+        - /url: "#bullet5"
+      - link "04" [ref=e379] [cursor=pointer]:
+        - /url: "#bullet4"
+      - link "03" [ref=e383] [cursor=pointer]:
+        - /url: "#bullet3"
+      - link "02" [ref=e387] [cursor=pointer]:
+        - /url: "#bullet2"
+      - button "Оставить заявку" [ref=e395] [cursor=pointer]
+      - link "01" [ref=e399] [cursor=pointer]:
+        - /url: "#bullet1"
+      - generic [ref=e404]: У преподавателей по направлениям программирование, дизайн, математика и другие — реальный опыт. Они знают сферы изнутри и могут объяснить любую тему простым языком.
+      - generic [ref=e406]: Практики, а не теоретики
+      - generic [ref=e412]: Только 1 из 10 человек становится преподавателем в Hello world. Каждый и каждая проходит 5 стадий отбора и постоянно повышает квалификацию.
+      - generic [ref=e414]: 400+
+      - generic [ref=e418]: преподавателей-практиков
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link "01":
+              - /url: "#bullet1"
+          - generic:
+            - link "05":
+              - /url: "#bullet5"
+          - generic:
+            - link "04":
+              - /url: "#bullet4"
+          - generic:
+            - link "03":
+              - /url: "#bullet3"
+          - generic:
+            - button "Оставить заявку"
+          - generic: "В онлайн-обучении и IT-индустрии всё часто меняется: появляются новые технологии и инструменты. Поэтому мы всегда следим за актуальностью программ и обновляем уроки."
+          - generic: Актуальные и интересные программы
+          - generic:
+            - link "02":
+              - /url: "#bullet2"
+          - generic: Только 1 из 10 человек становится преподавателем в Hello world. Каждый и каждая проходит 5 стадий отбора и постоянно повышает квалификацию.
+          - generic: 400+
+          - generic: преподавателей-практиков
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link "02":
+              - /url: "#bullet2"
+          - generic:
+            - link "01":
+              - /url: "#bullet1"
+          - generic:
+            - link "05":
+              - /url: "#bullet5"
+          - generic:
+            - link "04":
+              - /url: "#bullet4"
+          - generic:
+            - button "Оставить заявку"
+          - generic: Преподаватели ориентируются на уровень знаний ребёнка и комфортный темп, а не на строгие учебные планы. Поэтому дети усваивают темы шаг за шагом, а мы, если нужно, корректируем программу и выделяем больше времени на сложные уроки.
+          - generic: Методика «Step by step»
+          - generic:
+            - link "03":
+              - /url: "#bullet3"
+          - generic: Только 1 из 10 человек становится преподавателем в Hello world. Каждый и каждая проходит 5 стадий отбора и постоянно повышает квалификацию.
+          - generic: 400+
+          - generic: преподавателей-практиков
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link "03":
+              - /url: "#bullet3"
+          - generic:
+            - link "02":
+              - /url: "#bullet2"
+          - generic:
+            - link "01":
+              - /url: "#bullet1"
+          - generic:
+            - link "05":
+              - /url: "#bullet5"
+          - generic:
+            - button "Оставить заявку"
+          - generic: Наши преподаватели знают, как важно найти общий язык с тихими или неусидчивыми детьми, ребятами помладше и подростками, школьниками с особенными потребностями.
+          - generic: Свой подход к каждому ребёнку
+          - generic: Только 1 из 10 человек становится преподавателем в Hello world. Каждый и каждая проходит 5 стадий отбора и постоянно повышает квалификацию.
+          - generic: 400+
+          - generic: преподавателей-практиков
+          - generic:
+            - link "04":
+              - /url: "#bullet4"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link "03":
+              - /url: "#bullet3"
+          - generic:
+            - link "02":
+              - /url: "#bullet2"
+          - generic:
+            - link "01":
+              - /url: "#bullet1"
+          - generic:
+            - link "04":
+              - /url: "#bullet4"
+          - generic:
+            - button "Оставить заявку"
+          - generic: "Вы будете знать, кто проведёт первый урок: мы высылаем профайл преподавателя после записи на занятие. Этот же преподаватель может работать с вами дальше — ребёнку не нужно будет привыкать к новому человеку."
+          - generic: Никаких неожиданностей
+          - generic: Только 1 из 10 человек становится преподавателем в Hello world. Каждый и каждая проходит 5 стадий отбора и постоянно повышает квалификацию.
+          - generic: 400+
+          - generic: преподавателей-практиков
+          - generic:
+            - link "05":
+              - /url: "#bullet5"
+    - generic [ref=e425]:
+      - heading "Часто задаваемые вопросы об обучении" [level=2] [ref=e431]
+      - img "Иллюстрация с улыбающимся кубков и словами \"проекты\", \"успехи\", \"друзья\"" [ref=e434]
+      - generic [ref=e437]: "Это индивидуальное занятие и часть программы. Поэтому мы сразу определим уровень знаний, а ребёнок добьётся результата: нарисует иллюстрацию, создаст игру или программу, усвоит практические знания, которые пригодятся в будущем. Наше обучение построено так, чтобы каждый достигал цели."
+      - generic [ref=e441]: "Предложим выбрать подходящее количество занятий: 12, 24, 48 или 100. А ещё вы всегда сможете видеть в личном кабинете или Telegram-боте, сколько осталось занятий, переносить их и пополнять баланс. Наша школа программирования делает обучение удобным для каждого ученика и семьи."
+      - generic [ref=e445]: Все занятия в нашей школе проходят онлайн и записываются, чтобы всегда был доступ к материалам при необходимости. Преподаватели школы дают домашние задания для глубокого освоения материала. Если вы хотите, чтобы ребёнок занимался без дополнительной нагрузки, можно ограничиться только онлайн‑уроками.
+      - generic [ref=e449]: "Наша школа проводит проверочные уроки после каждых пяти занятий, чтобы отслеживать прогресс. После делимся обратной связью: вы узнаете, как успехи у ребёнка и что можно улучшить. Такой подход делает процесс обучения интересным и результативным, чтобы каждый ученик раскрывал свой потенциал."
+      - generic [ref=e451]: Как продолжить занятия?
+      - generic [ref=e457]: Как проходят занятия?
+      - generic [ref=e463]: "1"
+      - generic [ref=e469]: Вы даете обратную связь?
+      - generic [ref=e475]: "2"
+      - generic [ref=e481]: Как проходит первый урок?
+      - generic [ref=e489]: "3"
+      - generic [ref=e495]: "4"
+    - heading "Отзывы наших учеников и их родителей" [level=2] [ref=e505]
+    - link "Ко всем отзывам" [ref=e521] [cursor=pointer]:
+      - /url: https://hwschool.online/otzivi?utm_source=organic&utm_medium=search&utm_campaign=main
+    - generic [ref=e526]:
+      - button "Попробовать сейчас" [ref=e532] [cursor=pointer]
+      - heading "Запишитесь на первый урок" [level=2] [ref=e538]
+      - generic [ref=e539]: Наша школа помогает раскрыть потенциал вашего ребёнка, делая обучение интересным и увлекательным. Мы подберём программу, которая подойдёт именно ему, и организуем гибкое расписание занятий. В итоге наша школа станет местом для развития и получения новых знаний.
+      - generic [ref=e541]: Консультация
+    - contentinfo [ref=e545]:
+      - generic [ref=e548]:
+        - generic [ref=e558]:
+          - generic [ref=e560]:
+            - generic [ref=e562]:
+              - link [ref=e564] [cursor=pointer]:
+                - /url: /?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "+358 753-263711" [ref=e567] [cursor=pointer]:
+                - /url: tel:+358753263711?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Telegram Bot" [ref=e570] [cursor=pointer]:
+                - /url: https://telegram.me/hwschool_bot?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Whatsapp" [ref=e574] [cursor=pointer]:
+                - /url: https://wa.me/13343445021?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "hello@hwschool.online" [ref=e578] [cursor=pointer]:
+                - /url: mailto:hello@hwschool.online?utm_source=organic&utm_medium=search&utm_campaign=main
+              - generic [ref=e579]: Наши соцсети
+              - generic [ref=e582]:
+                - link [ref=e584] [cursor=pointer]:
+                  - /url: https://telegram.me/+4YWCzPwrcSY4NjJk?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link [ref=e588] [cursor=pointer]:
+                  - /url: https://www.facebook.com/helloworldschool?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link [ref=e592] [cursor=pointer]:
+                  - /url: https://www.instagram.com/hw_school/?utm_source=organic&utm_medium=search&utm_campaign=main
+            - generic [ref=e596]:
+              - generic [ref=e597]: Полезное
+              - link "О школе" [ref=e601] [cursor=pointer]:
+                - /url: /o-shkole?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Контакты" [ref=e604] [cursor=pointer]:
+                - /url: /contacts?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Преподаватели" [ref=e607] [cursor=pointer]:
+                - /url: /prepodavateli-i-pedagogi-onlayn-shkoly?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Отзывы" [ref=e610] [cursor=pointer]:
+                - /url: /otzivi?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Блог" [ref=e613] [cursor=pointer]:
+                - /url: /blog?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Карта сайта" [ref=e616] [cursor=pointer]:
+                - /url: /map?utm_source=organic&utm_medium=search&utm_campaign=main
+          - generic [ref=e618]:
+            - generic [ref=e620]:
+              - generic [ref=e622]:
+                - link "Курсы программирования" [ref=e625] [cursor=pointer]:
+                  - /url: https://hwschool.online/catalog/courses/programmirovaniye-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Программирование Minecraft · 6+" [ref=e628] [cursor=pointer]:
+                  - /url: /programmirovanie-minecraft?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Scratch программирование · 7+" [ref=e631] [cursor=pointer]:
+                  - /url: /scratch-programmirovanie-dlya-detej?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Программирование на Python · 9+" [ref=e634] [cursor=pointer]:
+                  - /url: /python?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Программирование в Roblox · 8+" [ref=e637] [cursor=pointer]:
+                  - /url: /roblox?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Создание сайтов · 10+" [ref=e640] [cursor=pointer]:
+                  - /url: /frontend?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Создание игр на Unity · 10+" [ref=e643] [cursor=pointer]:
+                  - /url: /unity?utm_source=organic&utm_medium=search&utm_campaign=main
+              - generic [ref=e645]:
+                - link "Репетиторы для детей" [ref=e648] [cursor=pointer]:
+                  - /url: https://hwschool.online/catalog/courses/repetitory-online-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Математика · 1-4 класс" [ref=e651] [cursor=pointer]:
+                  - /url: /matematika-1-4-class?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Математика · 5-7 класс" [ref=e654] [cursor=pointer]:
+                  - /url: /matematika-5-7-class?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Математика · 8-9 класс" [ref=e657] [cursor=pointer]:
+                  - /url: /matematika-8-9-class?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Русский язык · 1-11 класс" [ref=e660] [cursor=pointer]:
+                  - /url: /russkii-yazik-dlya-shkolnikov?utm_source=organic&utm_medium=search&utm_campaign=main
+              - generic [ref=e662]:
+                - link "Курсы дизайна" [ref=e665] [cursor=pointer]:
+                  - /url: https://hwschool.online/catalog/courses/risovanie-i-dizayn-dlya-detey/?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Курсы дизайна · 6+" [ref=e668] [cursor=pointer]:
+                  - /url: /kursy-dizayna-i-risovaniya-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Рисование на плашнете · 6+" [ref=e671] [cursor=pointer]:
+                  - /url: /krita-digital-risovanie?utm_source=organic&utm_medium=search&utm_campaign=main
+                - link "Blender для детей · 10+" [ref=e674] [cursor=pointer]:
+                  - /url: /blender-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+            - generic [ref=e676]:
+              - link "Курсы развития детей" [ref=e679] [cursor=pointer]:
+                - /url: https://hwschool.online/catalog/courses/intellektualnoye-razvitiye-dlya-detey/?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Английский язык · 6+" [ref=e682] [cursor=pointer]:
+                - /url: /english-for-children-6-9-years?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Английский язык · 10 +" [ref=e685] [cursor=pointer]:
+                - /url: /english-for-children-10-12-years?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Английский язык · 13 +" [ref=e688] [cursor=pointer]:
+                - /url: /english-for-children-13-15-years?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Ментальная арифметика · 6+" [ref=e691] [cursor=pointer]:
+                - /url: /mentalnaya-arifmetika-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Скорочтение · 7+" [ref=e694] [cursor=pointer]:
+                - /url: /skorochtenie?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Компьютерная грамотность · 7+" [ref=e697] [cursor=pointer]:
+                - /url: /kompyuternaya-gramotnost-dlya-detej?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Нейросети для детей · 8+" [ref=e700] [cursor=pointer]:
+                - /url: /neiroseti-dlya-detey?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Шахматы для детей · 4+" [ref=e703] [cursor=pointer]:
+                - /url: /chess-online?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Эмоциональный интеллект · 5+" [ref=e706] [cursor=pointer]:
+                - /url: /emotional-intelligence?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Занятия с логопедом онлайн · 4+" [ref=e709] [cursor=pointer]:
+                - /url: /logoped-online?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Подготовка к школе онлайн · 5+" [ref=e712] [cursor=pointer]:
+                - /url: /podgotovka-k-shkole?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Каллиграфия для детей · 5+" [ref=e715] [cursor=pointer]:
+                - /url: /calligraphia?utm_source=organic&utm_medium=search&utm_campaign=main
+        - generic [ref=e721]:
+          - generic [ref=e722]: "HELLO STEM PTE. LTD. 68 Circular Road, #02-01, 049422, Singapore"
+          - generic [ref=e727]:
+            - generic [ref=e729]:
+              - link "Договор-оферта" [ref=e732] [cursor=pointer]:
+                - /url: /dogovor?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Согласие на обработку персональных данных" [ref=e735] [cursor=pointer]:
+                - /url: /privacy-agreement?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Политика об обработке персональных данных" [ref=e738] [cursor=pointer]:
+                - /url: /politika?utm_source=organic&utm_medium=search&utm_campaign=main
+            - generic [ref=e740]:
+              - link "Согласие на использование файлов cookie" [ref=e743] [cursor=pointer]:
+                - /url: /cookie-agreement?utm_source=organic&utm_medium=search&utm_campaign=main
+              - link "Согласие на получение информационных и рекламно-информационных материалов" [ref=e746] [cursor=pointer]:
+                - /url: /promotional-agreement?utm_source=organic&utm_medium=search&utm_campaign=main
+      - generic [ref=e748]:
+        - generic [ref=e749]:
+          - text: Мы используем файлы cookie. Оставаясь на сайте, Вы подтверждаете
+          - link "согласие на использование cookie" [ref=e750] [cursor=pointer]:
+            - /url: https://hwschool.online/cookie-agreement?utm_source=organic&utm_medium=search&utm_campaign=main
+          - text: в соответствии с
+          - link "Политикой" [ref=e751] [cursor=pointer]:
+            - /url: https://hwschool.online/politika?utm_source=organic&utm_medium=search&utm_campaign=main
+          - text: . Вы можете запретить сохранение cookie в настройках своего браузера
+        - generic [ref=e752] [cursor=pointer]: Хорошо
+  - iframe [ref=e754]

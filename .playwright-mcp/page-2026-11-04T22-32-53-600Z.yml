@@ -1,0 +1,71 @@
+- generic [active] [ref=f25e1]:
+  - link "Перейти к содержимому" [ref=f25e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f25e3]:
+    - generic [ref=f25e4]:
+      - link "АйТи Скул — на главную" [ref=f25e5] [cursor=pointer]:
+        - /url: "#"
+        - img "АйТи Скул" [ref=f25e6]
+      - navigation "Основное меню" [ref=f25e7]:
+        - list [ref=f25e8]:
+          - listitem [ref=f25e9]:
+            - link "Главная" [ref=f25e10] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f25e11]:
+            - link "Курсы" [ref=f25e12] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f25e13]:
+            - link "IT Каникулы" [ref=f25e14] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f25e15]:
+            - link "О нас" [ref=f25e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f25e17]:
+            - link "Блог" [ref=f25e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f25e19]:
+            - link "Контакты" [ref=f25e20] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f25e21]:
+          - link "+375 (29) 871-76-12" [ref=f25e22] [cursor=pointer]:
+            - /url: "#ZgotmplZ"
+          - list [ref=f25e23]:
+            - listitem [ref=f25e24]:
+              - link "Viber" [ref=f25e25] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f25e28]:
+              - link "Instagram" [ref=f25e29] [cursor=pointer]:
+                - /url: "#"
+          - link "Получить консультацию" [ref=f25e32] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f25e33]:
+    - region [ref=f25e34]:
+      - generic [ref=f25e35]:
+        - generic [ref=f25e36]:
+          - generic [ref=f25e37]:
+            - heading "АйТи Скул" [level=1] [ref=f25e38]:
+              - text: АйТи
+              - generic [ref=f25e39]: Скул
+            - paragraph [ref=f25e40]: Откройте своему ребенку мир программирования и цифровых технологий!
+            - list [ref=f25e41]:
+              - listitem [ref=f25e42]: Улучшаем школьную успеваемость
+              - listitem [ref=f25e43]: Готовимся к перспективным профессиям
+              - listitem [ref=f25e44]: Фиксируем цену занятий вне зависимости от курса
+              - listitem [ref=f25e45]: Развиваем универсальные навыки
+            - link "Получить консультацию" [ref=f25e47] [cursor=pointer]:
+              - /url: /contacts/
+          - figure [aria-hidden] [ref=f25e51]
+          - figure [aria-hidden] [ref=f25e52]
+        - generic [ref=f25e53]:
+          - generic [ref=f25e54]:
+            - term [ref=f25e55]: "700"
+            - definition [ref=f25e56]: Постоянных клиентов в год
+          - generic [ref=f25e57]:
+            - term [ref=f25e58]: "8"
+            - definition [ref=f25e59]: Лет преподавания
+          - generic [ref=f25e60]:
+            - term [ref=f25e61]: "15"
+            - definition [ref=f25e62]: Педагогов
+          - generic [ref=f25e63]:
+            - term [ref=f25e64]: 6000+
+            - definition [ref=f25e65]: обученных детей

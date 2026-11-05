@@ -1,0 +1,327 @@
+- generic [active] [ref=f154e1]:
+  - link "Перейти к содержимому" [ref=f154e2] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=f154e3]:
+    - generic [ref=f154e7]:
+      - link [ref=f154e12] [cursor=pointer]:
+        - /url: https://it-school.by
+      - generic [ref=f154e16]:
+        - navigation [ref=f154e17]:
+          - list [ref=f154e18]:
+            - listitem [ref=f154e19]:
+              - link "Главная" [ref=f154e20] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f154e21]:
+              - link "Курсы" [ref=f154e22] [cursor=pointer]:
+                - /url: /courses
+            - listitem [ref=f154e23]:
+              - link "IT Каникулы" [ref=f154e24] [cursor=pointer]:
+                - /url: /it-vacations
+            - listitem [ref=f154e25]:
+              - link "О нас" [ref=f154e26] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f154e27]:
+              - link "Блог" [ref=f154e28] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f154e29]:
+              - link "Контакты" [ref=f154e30] [cursor=pointer]:
+                - /url: /contacts
+        - text:  
+      - list [ref=f154e35]:
+        - listitem [ref=f154e36]:
+          - link "+375 (29) 871-76-12" [ref=f154e37] [cursor=pointer]:
+            - /url: tel:+375298717612
+            - generic [aria-hidden] [ref=f154e39]: 
+      - generic [ref=f154e45]:
+        - link "Viber " [ref=f154e47] [cursor=pointer]:
+          - /url: viber://chat?number=%2B375298717612
+          - generic [ref=f154e48]: Viber
+          - generic [ref=f154e49]: 
+        - link "Instagram " [ref=f154e51] [cursor=pointer]:
+          - /url: https://www.instagram.com/itschoolby/?hl=ru
+          - generic [ref=f154e52]: Instagram
+          - generic [ref=f154e53]: 
+    - main [ref=f154e57]:
+      - article [ref=f154e58]:
+        - generic [ref=f154e60]:
+          - generic [ref=f154e65]:
+            - generic [ref=f154e69]:
+              - heading "АйТи Скул" [level=2] [ref=f154e70]
+              - 'heading "IT School: Откройте своему ребенку мир программирования и цифровых технологий!" [level=1] [ref=f154e71]':
+                - generic [ref=f154e72]: "IT School:"
+                - text: Откройте своему ребенку мир программирования и цифровых технологий!
+            - list [ref=f154e76]:
+              - listitem [ref=f154e77]:
+                - generic [aria-hidden] [ref=f154e79]: 
+                - generic [ref=f154e80]: Улучшаем школьную успеваемость
+              - listitem [ref=f154e81]:
+                - generic [aria-hidden] [ref=f154e83]: 
+                - generic [ref=f154e84]: Готовимся к перспективным профессиям
+              - listitem [ref=f154e85]:
+                - generic [aria-hidden] [ref=f154e87]: 
+                - generic [ref=f154e88]: Фиксируем цену занятий вне зависимости от курса
+              - listitem [ref=f154e89]:
+                - generic [aria-hidden] [ref=f154e91]: 
+                - generic [ref=f154e92]: Развиваем универсальные навыки
+            - button "Получить консультацию" [ref=f154e104] [cursor=pointer]
+          - generic [ref=f154e112]:
+            - generic [ref=f154e120]:
+              - heading "700" [level=5] [ref=f154e597]
+              - heading "Постоянных клиентов в год" [level=6] [ref=f154e122]
+            - generic [ref=f154e130]:
+              - heading "8" [level=5] [ref=f154e131]
+              - heading "Лет преподавания" [level=6] [ref=f154e132]
+            - generic [ref=f154e140]:
+              - heading "15" [level=5] [ref=f154e141]
+              - heading "Педагогов" [level=6] [ref=f154e142]
+            - generic [ref=f154e150]:
+              - heading "6000+" [level=5] [ref=f154e598]
+              - heading "обученных детей" [level=6] [ref=f154e152]
+          - generic [ref=f154e180]:
+            - generic [ref=f154e182]:
+              - paragraph [ref=f154e185]: Кратко рассказываем о каждом курсе
+              - generic [ref=f154e197]:
+                - generic [ref=f154e201]: Вы все равно затрудняетесь?
+                - paragraph [ref=f154e205]: Мы с радостью вам поможем определиться с направлением и ответим на волнующие вас вопросы
+                - button " +375 (29) 871-76-12" [ref=f154e211] [cursor=pointer]:
+                  - generic [ref=f154e212]: 
+                  - text: +375 (29) 871-76-12
+            - generic [ref=f154e219]:
+              - link "Робототехника LEGO" [ref=f154e222] [cursor=pointer]:
+                - /url: "#collapse-bc228306ab402abbb406"
+                - generic [ref=f154e223]:
+                  - generic [aria-hidden] [ref=f154e224]: 
+                  - text: 
+              - link "Программирование в Kodu и Scratch" [ref=f154e228] [cursor=pointer]:
+                - /url: "#collapse-8417e716ab402abbb406"
+                - generic [ref=f154e229]:
+                  - generic [aria-hidden] [ref=f154e230]: 
+                  - text: 
+              - link "Робототехника Arduino" [ref=f154e234] [cursor=pointer]:
+                - /url: "#collapse-5a3c4906ab402abbb406"
+                - generic [ref=f154e235]:
+                  - generic [aria-hidden] [ref=f154e236]: 
+                  - text: 
+              - link "Программирование на Python" [ref=f154e240] [cursor=pointer]:
+                - /url: "#collapse-0af77d26ab402abbb406"
+                - generic [ref=f154e241]:
+                  - generic [aria-hidden] [ref=f154e242]: 
+                  - text: 
+              - link "Программирование Minecraft" [ref=f154e246] [cursor=pointer]:
+                - /url: "#collapse-d84e76a6ab402abbb406"
+                - generic [ref=f154e247]:
+                  - generic [aria-hidden] [ref=f154e248]: 
+                  - text: 
+              - link "Программирование Roblox" [ref=f154e252] [cursor=pointer]:
+                - /url: "#collapse-825d65c6ab402abbb406"
+                - generic [ref=f154e253]:
+                  - generic [aria-hidden] [ref=f154e254]: 
+                  - text: 
+              - link "Разработка игр на Godot" [ref=f154e258] [cursor=pointer]:
+                - /url: "#collapse-ef7f5e56ab402abbb406"
+                - generic [ref=f154e259]:
+                  - generic [aria-hidden] [ref=f154e260]: 
+                  - text: 
+              - link "Программирование квадрокоптеров" [ref=f154e264] [cursor=pointer]:
+                - /url: "#collapse-d84b8566ab402abbb406"
+                - generic [ref=f154e265]:
+                  - generic [aria-hidden] [ref=f154e266]: 
+                  - text: 
+              - link "Разработка игр на платформе Unity" [ref=f154e270] [cursor=pointer]:
+                - /url: "#collapse-c57220a6ab402abbb406"
+                - generic [ref=f154e271]:
+                  - generic [aria-hidden] [ref=f154e272]: 
+                  - text: 
+              - link "Олимпиадное программирование" [ref=f154e276] [cursor=pointer]:
+                - /url: "#collapse-33ea8776ab402abbb406"
+                - generic [ref=f154e277]:
+                  - generic [aria-hidden] [ref=f154e278]: 
+                  - text: 
+              - link "3D-моделирование в BLENDER" [ref=f154e282] [cursor=pointer]:
+                - /url: "#collapse-85348e46ab402abbb406"
+                - generic [ref=f154e283]:
+                  - generic [aria-hidden] [ref=f154e284]: 
+                  - text: 
+              - link "Разработка сайтов" [ref=f154e288] [cursor=pointer]:
+                - /url: "#collapse-482fcb46ab402abbb406"
+                - generic [ref=f154e289]:
+                  - generic [aria-hidden] [ref=f154e290]: 
+                  - text: 
+              - link "Нейронные сети" [ref=f154e294] [cursor=pointer]:
+                - /url: "#collapse-17506de6ab402abbb406"
+                - generic [ref=f154e295]:
+                  - generic [aria-hidden] [ref=f154e296]: 
+                  - text: 
+              - link "Тестирование программного обеспечения" [ref=f154e300] [cursor=pointer]:
+                - /url: "#collapse-67b3afd6ab402abbb406"
+                - generic [ref=f154e301]:
+                  - generic [aria-hidden] [ref=f154e302]: 
+                  - text: 
+          - button "Получить консультацию" [ref=f154e315] [cursor=pointer]
+          - generic [ref=f154e330]:
+            - generic [ref=f154e331]:
+              - group "6 / 8" [ref=f154e332]:
+                - generic [ref=f154e334]:
+                  - generic [aria-hidden] [ref=f154e336]: 
+                  - paragraph [ref=f154e338]: Довольна, что мой ребенок развивается на курсах в школе информационных технологий. Он очень любит работать с Lego и программировать те модели, которые собирает сам. Очень довольны работой преподавателя. Маленькое пожелание вам, хотелось бы чаще участвовать в различных соревнованиях.
+                  - generic [ref=f154e341]:
+                    - strong [ref=f154e342]: Юлия Витальевна Шахваладова
+                    - text: Брест, 25-05-2019
+              - group "7 / 8" [ref=f154e343]:
+                - generic [ref=f154e345]:
+                  - generic [aria-hidden] [ref=f154e347]: 
+                  - paragraph [ref=f154e349]: "Мой сын, Максимук Никита, обучается сразу же на двух курсах: 3D-моделирование и робототехника. Очень довольна тем, что ребенок получает знания, которые пригодятся ему в будущем. Спасибо большое за актуальные направления, в которых ребёнок получает знания, а также за действительно полезную информацию, которая пригодится ему при выборе профессии."
+                  - generic [ref=f154e352]:
+                    - strong [ref=f154e353]: Марина Владимировна Максимук
+                    - text: Кобрин, 25-05-2019
+              - group "8 / 8" [ref=f154e354]:
+                - generic [ref=f154e356]:
+                  - generic [aria-hidden] [ref=f154e358]: 
+                  - paragraph [ref=f154e360]: Ваш курс развивает мышление, навыки программирования, конечно, творчество. Моему ребенку очень нравится конструировать различных роботов. Ребенок доволен и счастлив, а соответственно я очень благодарна вам! Творческих успехов, новых идей!
+                  - generic [ref=f154e363]:
+                    - strong [ref=f154e364]: Наталья Владимировна Полховская
+                    - text: Пинск, 25-05-2019
+              - group "1 / 8" [ref=f154e365]:
+                - generic [ref=f154e367]:
+                  - generic [aria-hidden] [ref=f154e369]: 
+                  - paragraph [ref=f154e371]: Мой сын, Левонюк Владислав, посещает Школу информационных технологий уже 2 года. Занимается с удовольствием. За это время открыл для себя много нового и интересного. нашел новых друзей. Отдельное огромное спасибо нашему педагогу Ангелине Викторовне. Она квалифицированный эрудированный специалист.
+                  - generic [ref=f154e374]:
+                    - strong [ref=f154e375]: Левонюк Владислав
+                    - text: 02-11-2017
+              - group "2 / 8" [ref=f154e376]:
+                - generic [ref=f154e378]:
+                  - generic [aria-hidden] [ref=f154e380]: 
+                  - paragraph [ref=f154e382]: Наш сын Виноградов Лев занимается в школе ИТ второй год. Очень доволен занятиями, всегда очень ждет субботу, чтобы идти "на роботов". Ему нравятся темы, модели, которые собирают на занятиях. Также нам очень нравится наш преподаватель Светлана Александровна, второй год мы просим попасть именно в ее группу. Лёве нравится как она всё объясняет и как ко всем хорошо относится. От себя могу сказать, что сын стал более собранным, усидчивым, стал шире словарный запас. Младший сын очень ждет того момента, когда подрастет и сможет ходить "на роботов". Мы очень довольны школой ИТ и хотели бы продолжать посещать занятия и дальше.
+                  - generic [ref=f154e385]:
+                    - strong [ref=f154e386]: Виноградов Лев
+                    - text: 02-04-2018
+              - group "3 / 8" [ref=f154e387]:
+                - generic [ref=f154e389]:
+                  - generic [aria-hidden] [ref=f154e391]: 
+                  - paragraph [ref=f154e393]: Мой ребенок, Книга Арсений, посещает с 6 лет Школу информационных технологий. От занятий по робототехнике всегда в восторге. Тур Светлана Александровна, преподаватель курса, индивидуально и креативно подходит к каждому учащемуся, доходчиво и доступно объясняет материал. Мы, родители, довольны уровнем уровнем образования, проводимыми мероприятиями (конкурсами, экскурсиями). Наши дети даже не хотят болеть, только б ходить на робототехнику, а это яркий показатель того, что Школа ИТ важна для наших детей! Успехов, творческой реализации и здоровья всем участникам образовательного процесса!Отзыв оставила мама Книга Арсения
+                  - generic [ref=f154e396]:
+                    - strong [ref=f154e397]: Книга Арсений
+                    - text: 12-04-2018
+              - group "4 / 8" [ref=f154e398]:
+                - generic [ref=f154e400]:
+                  - generic [aria-hidden] [ref=f154e402]: 
+                  - paragraph [ref=f154e404]: Интересный и нетривиальный курс обучения, гибкий график, обратная связь с родителями, а также незабываемая поездка на фестиваль робототехники в г.Брест!Благодарна коллективу за индивидуальный подход, прогрессивно, в ногу со временем, всегда с пониманием относятся к разным обстоятельствам, предупредительны и вежливы.
+                  - generic [ref=f154e407]:
+                    - strong [ref=f154e408]: Анна Викторовна Куницкая
+                    - text: Пинск, 25-05-2019
+              - group "5 / 8" [ref=f154e409]:
+                - generic [ref=f154e411]:
+                  - generic [aria-hidden] [ref=f154e413]: 
+                  - paragraph [ref=f154e415]: Спасибо огромное Школе Информационных Технологий за такой увлекательный и развивающий курс для детей. Я не могу знать, что происходит на занятиях, но для меня важно, что ребенок всегда с нетерпением ждет и радостно бежит на очередное занятие. Ему очень нравится. И, несмотря на то, что конструирование Lego можно рассматривать, как развлечение, но все же, как само по себе, так и вместе с созданием определенных компьютерных программ, данное занятие оказывает огромное влияние на развитие мышления и логики у детей. С удовольствием будем продолжать заниматься в следующем году. Только жаль что занятия проводятся один раз в неделю (мнение сына).
+                  - generic [ref=f154e418]:
+                    - strong [ref=f154e419]: Наталья Валентиновна Ступакова
+                    - text: Пинск, 25-05-2019
+              - group "6 / 8" [ref=f154e420]:
+                - generic [ref=f154e422]:
+                  - generic [aria-hidden] [ref=f154e424]: 
+                  - paragraph [ref=f154e426]: Довольна, что мой ребенок развивается на курсах в школе информационных технологий. Он очень любит работать с Lego и программировать те модели, которые собирает сам. Очень довольны работой преподавателя. Маленькое пожелание вам, хотелось бы чаще участвовать в различных соревнованиях.
+                  - generic [ref=f154e429]:
+                    - strong [ref=f154e430]: Юлия Витальевна Шахваладова
+                    - text: Брест, 25-05-2019
+              - group "7 / 8" [ref=f154e431]:
+                - generic [ref=f154e433]:
+                  - generic [aria-hidden] [ref=f154e435]: 
+                  - paragraph [ref=f154e437]: "Мой сын, Максимук Никита, обучается сразу же на двух курсах: 3D-моделирование и робототехника. Очень довольна тем, что ребенок получает знания, которые пригодятся ему в будущем. Спасибо большое за актуальные направления, в которых ребёнок получает знания, а также за действительно полезную информацию, которая пригодится ему при выборе профессии."
+                  - generic [ref=f154e440]:
+                    - strong [ref=f154e441]: Марина Владимировна Максимук
+                    - text: Кобрин, 25-05-2019
+              - group "8 / 8" [ref=f154e442]:
+                - generic [ref=f154e444]:
+                  - generic [aria-hidden] [ref=f154e446]: 
+                  - paragraph [ref=f154e448]: Ваш курс развивает мышление, навыки программирования, конечно, творчество. Моему ребенку очень нравится конструировать различных роботов. Ребенок доволен и счастлив, а соответственно я очень благодарна вам! Творческих успехов, новых идей!
+                  - generic [ref=f154e451]:
+                    - strong [ref=f154e452]: Наталья Владимировна Полховская
+                    - text: Пинск, 25-05-2019
+              - group "1 / 8" [ref=f154e453]:
+                - generic [ref=f154e455]:
+                  - generic [aria-hidden] [ref=f154e457]: 
+                  - paragraph [ref=f154e459]: Мой сын, Левонюк Владислав, посещает Школу информационных технологий уже 2 года. Занимается с удовольствием. За это время открыл для себя много нового и интересного. нашел новых друзей. Отдельное огромное спасибо нашему педагогу Ангелине Викторовне. Она квалифицированный эрудированный специалист.
+                  - generic [ref=f154e462]:
+                    - strong [ref=f154e463]: Левонюк Владислав
+                    - text: 02-11-2017
+              - group "2 / 8" [ref=f154e464]:
+                - generic [ref=f154e466]:
+                  - generic [aria-hidden] [ref=f154e468]: 
+                  - paragraph [ref=f154e470]: Наш сын Виноградов Лев занимается в школе ИТ второй год. Очень доволен занятиями, всегда очень ждет субботу, чтобы идти "на роботов". Ему нравятся темы, модели, которые собирают на занятиях. Также нам очень нравится наш преподаватель Светлана Александровна, второй год мы просим попасть именно в ее группу. Лёве нравится как она всё объясняет и как ко всем хорошо относится. От себя могу сказать, что сын стал более собранным, усидчивым, стал шире словарный запас. Младший сын очень ждет того момента, когда подрастет и сможет ходить "на роботов". Мы очень довольны школой ИТ и хотели бы продолжать посещать занятия и дальше.
+                  - generic [ref=f154e473]:
+                    - strong [ref=f154e474]: Виноградов Лев
+                    - text: 02-04-2018
+              - group "3 / 8" [ref=f154e475]:
+                - generic [ref=f154e477]:
+                  - generic [aria-hidden] [ref=f154e479]: 
+                  - paragraph [ref=f154e481]: Мой ребенок, Книга Арсений, посещает с 6 лет Школу информационных технологий. От занятий по робототехнике всегда в восторге. Тур Светлана Александровна, преподаватель курса, индивидуально и креативно подходит к каждому учащемуся, доходчиво и доступно объясняет материал. Мы, родители, довольны уровнем уровнем образования, проводимыми мероприятиями (конкурсами, экскурсиями). Наши дети даже не хотят болеть, только б ходить на робототехнику, а это яркий показатель того, что Школа ИТ важна для наших детей! Успехов, творческой реализации и здоровья всем участникам образовательного процесса!Отзыв оставила мама Книга Арсения
+                  - generic [ref=f154e484]:
+                    - strong [ref=f154e485]: Книга Арсений
+                    - text: 12-04-2018
+            - button "Previous slide" [ref=f154e486] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f154e487]: 
+            - button "Next slide" [ref=f154e488] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f154e489]: 
+    - generic [ref=f154e495]:
+      - generic [ref=f154e498]:
+        - link [ref=f154e503] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f154e505]:
+          - heading "Навигация" [level=2] [ref=f154e508]
+          - list [ref=f154e511]:
+            - listitem [ref=f154e512]:
+              - link "Курсы" [ref=f154e513] [cursor=pointer]:
+                - /url: /courses
+                - generic [aria-hidden] [ref=f154e515]: 
+            - listitem [ref=f154e517]:
+              - link "IT каникулы" [ref=f154e518] [cursor=pointer]:
+                - /url: /it-vacations
+                - generic [aria-hidden] [ref=f154e520]: 
+            - listitem [ref=f154e522]:
+              - link "О нас" [ref=f154e523] [cursor=pointer]:
+                - /url: /about
+                - generic [aria-hidden] [ref=f154e525]: 
+            - listitem [ref=f154e527]:
+              - link "Блог" [ref=f154e528] [cursor=pointer]:
+                - /url: /blog
+                - generic [aria-hidden] [ref=f154e530]: 
+            - listitem [ref=f154e532]:
+              - link "Контакты" [ref=f154e533] [cursor=pointer]:
+                - /url: /contacts
+                - generic [aria-hidden] [ref=f154e535]: 
+        - generic [ref=f154e538]:
+          - heading "Контакты" [level=2] [ref=f154e541]
+          - list [ref=f154e544]:
+            - listitem [ref=f154e545]:
+              - link "+375 (29) 871-76-12" [ref=f154e546] [cursor=pointer]:
+                - /url: tel:+375298717612
+                - generic [aria-hidden] [ref=f154e548]: 
+            - listitem [ref=f154e550]:
+              - link "+375 (29) 228-49-71 (Директор)" [ref=f154e551] [cursor=pointer]:
+                - /url: tel:+375292284971
+                - generic [aria-hidden] [ref=f154e553]: 
+            - listitem [ref=f154e555]:
+              - link "info@it-school.by" [ref=f154e556] [cursor=pointer]:
+                - /url: mailto:info@it-school.by
+                - generic [aria-hidden] [ref=f154e558]: 
+            - listitem [ref=f154e560]:
+              - link "г. Брест ул. Пионерская, 52 к. 503 (офис)" [ref=f154e561] [cursor=pointer]:
+                - /url: https://yandex.by/maps/-/CDDRAYi-
+                - generic [aria-hidden] [ref=f154e563]: 
+        - generic [ref=f154e566]:
+          - heading "Месенджеры" [level=2] [ref=f154e569]
+          - list [ref=f154e572]:
+            - listitem [ref=f154e573]:
+              - link "Viber" [ref=f154e574] [cursor=pointer]:
+                - /url: viber://chat?number=%2B375298717612
+                - generic [aria-hidden] [ref=f154e576]: 
+      - generic [ref=f154e580]:
+        - list [ref=f154e585]:
+          - listitem [ref=f154e586]:
+            - generic [ref=f154e587]: © 2024 Все права защищены
+        - list [ref=f154e592]:
+          - listitem [ref=f154e593]:
+            - link "Разработка Encore.by" [ref=f154e594] [cursor=pointer]:
+              - /url: https://encore.by/
+  - text: 
+  - generic [ref=f154e596]: desktop

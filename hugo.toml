@@ -1,0 +1,50 @@
+baseURL = 'https://example.com/'
+languageCode = 'ru-ru'
+defaultContentLanguage = 'ru'
+title = 'АйТи Скул'
+enableRobotsTXT = true
+summaryLength = 30
+
+[pagination]
+  pagerSize = 10
+
+[minify]
+  minifyOutput = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    style = 'github-dark'
+
+[params]
+  description = 'IT-школа в Бресте: программирование, робототехника и разработка игр для детей и подростков'
+  phone = '+375 (29) 871-76-12'
+  phoneHref = 'tel:+375298717612'
+
+[[menus.main]]
+  name = 'Главная'
+  url = '/'
+  weight = 10
+[[menus.main]]
+  name = 'Курсы'
+  url = '/courses/'
+  weight = 20
+[[menus.main]]
+  name = 'IT Каникулы'
+  url = '/it-vacations/'
+  weight = 30
+[[menus.main]]
+  name = 'О нас'
+  url = '#'
+  weight = 40
+[[menus.main]]
+  name = 'Блог'
+  url = '/blog/'
+  weight = 50
+[[menus.main]]
+  name = 'Контакты'
+  url = '/contacts/'
+  weight = 60

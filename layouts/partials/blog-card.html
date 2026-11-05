@@ -1,0 +1,16 @@
+{{- $page := . -}}
+{{- $cover := false -}}
+{{- with $page.Params.cover -}}{{- $cover = resources.Get . -}}{{- end -}}
+<article class="post-card" data-reveal>
+  <a class="post-card__media" href="{{ $page.RelPermalink }}" tabindex="-1" aria-hidden="true">
+    {{- with $cover -}}
+    {{- $img := .Fill "720x520 Center" -}}
+    <img src="{{ $img.RelPermalink }}" alt="" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
+    {{- end -}}
+  </a>
+  <div class="post-card__body">
+    <time class="post-card__date" datetime="{{ $page.Date.Format "2006-01-02" }}">{{ partial "blog-date.html" $page }}</time>
+    <h3 class="post-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+    <a class="post-card__more" href="{{ $page.RelPermalink }}">Подробнее &gt;&gt;</a>
+  </div>
+</article>

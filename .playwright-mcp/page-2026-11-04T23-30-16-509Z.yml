@@ -1,0 +1,381 @@
+- generic [active] [ref=f44e1]:
+  - generic [ref=f44e2]:
+    - generic [ref=f44e6]:
+      - generic [ref=f44e7] [cursor=pointer]
+      - generic [ref=f44e9] [cursor=pointer]:
+        - generic [ref=f44e10]:
+          - generic [ref=f44e11]: ІТ-школа
+          - generic [ref=f44e12]: 4,5
+        - generic [ref=f44e16]: Курсы и мастер-классы
+    - generic:
+      - generic:
+        - banner
+      - generic:
+        - complementary [ref=f44e18]:
+          - generic [ref=f44e21]:
+            - generic [ref=f44e22]:
+              - generic [ref=f44e23]:
+                - generic [ref=f44e25]:
+                  - button "Назад" [ref=f44e26] [cursor=pointer]
+                  - generic [ref=f44e29]:
+                    - button "Яндекс Карты" [ref=f44e30] [cursor=pointer]
+                    - generic [ref=f44e39]:
+                      - link "Поиск" [ref=f44e40] [cursor=pointer]
+                      - link "Маршруты" [ref=f44e45] [cursor=pointer]:
+                        - /url: /maps/153/brest/routes/
+                  - button "Закрыть" [ref=f44e52] [cursor=pointer]
+                - generic [ref=f44e57]:
+                  - generic [ref=f44e68]:
+                    - link "Карты" [ref=f44e69] [cursor=pointer]:
+                      - /url: https://yandex.by/maps/
+                    - text: ·
+                    - link "Брест" [ref=f44e70] [cursor=pointer]:
+                      - /url: https://yandex.by/maps/153/brest/
+                    - text: ·
+                    - link "Курсы" [ref=f44e71] [cursor=pointer]:
+                      - /url: https://yandex.by/maps/153/brest/category/courses_and_master_classes/184106220/
+                  - heading "Центр робототехники и програмирования для детей" [level=1] [ref=f44e74]
+                  - generic [ref=f44e77]:
+                    - generic [ref=f44e78]:
+                      - generic "Оценка 4.5 Из 5" [ref=f44e79]
+                      - generic [ref=f44e96]:
+                        - generic [ref=f44e97]: Рейтинг
+                        - text: 4,5
+                    - button "17 оценок" [ref=f44e98] [cursor=pointer]
+                  - generic [ref=f44e99]:
+                    - button "Закрыто до 09:00" [ref=f44e101] [cursor=pointer]
+                    - button [aria-hidden] [ref=f44e110]:
+                      - generic [ref=f44e111]: +375 29 871-76-12
+                      - button [ref=f44e112] [cursor=pointer]: Показать телефон
+                    - link "Брест, проспект Машерова, 23А · этаж 4 на карте Бреста" [ref=f44e113] [cursor=pointer]:
+                      - /url: /maps/153/brest/house/ZkoYcA5oSkEPQFtofXx5d39iYw==/
+                      - generic [ref=f44e114]:
+                        - text: Брест, просп. Машерова, 23А
+                        - generic [ref=f44e115]: этаж 4
+                  - list [ref=f44e119]:
+                    - listitem [ref=f44e120]:
+                      - generic [ref=f44e121]:
+                        - status [ref=f44e122]: Сохранить
+                        - button "Закладки" [ref=f44e124] [cursor=pointer]
+                    - listitem [ref=f44e129]:
+                      - button "Отправить в телефон" [ref=f44e131] [cursor=pointer]
+                    - listitem [ref=f44e136]:
+                      - button "Поделиться" [ref=f44e138] [cursor=pointer]
+                    - listitem [ref=f44e144]:
+                      - button "Маршрут" [ref=f44e146] [cursor=pointer]
+                    - iframe [aria-hidden] [ref=f44e154]
+                  - generic [ref=f44e156]:
+                    - button [ref=f44e157] [cursor=pointer]:
+                      - heading "Добавить фото или видео" [level=2] [ref=f44e162]
+                    - generic [ref=f44e163]:
+                      - list [ref=f44e164]:
+                        - listitem [ref=f44e165]:
+                          - generic [aria-hidden] [ref=f44e167] [cursor=pointer]
+                        - listitem [ref=f44e169]:
+                          - generic [aria-hidden] [ref=f44e171] [cursor=pointer]
+                        - listitem [ref=f44e173]:
+                          - generic [aria-hidden] [ref=f44e175] [cursor=pointer]
+                        - listitem [ref=f44e177]:
+                          - generic [aria-hidden] [ref=f44e179] [cursor=pointer]
+                        - listitem [ref=f44e181]:
+                          - generic [aria-hidden] [ref=f44e183] [cursor=pointer]
+                        - listitem [ref=f44e185]:
+                          - generic [aria-hidden] [ref=f44e187] [cursor=pointer]
+                        - listitem [ref=f44e189]:
+                          - generic [aria-hidden] [ref=f44e191] [cursor=pointer]
+                        - listitem [ref=f44e193]:
+                          - generic [aria-hidden] [ref=f44e195] [cursor=pointer]
+                        - listitem [ref=f44e197]:
+                          - generic [aria-hidden] [ref=f44e199] [cursor=pointer]
+                        - listitem [ref=f44e201]:
+                          - generic [ref=f44e202]:
+                            - generic [aria-hidden] [ref=f44e203] [cursor=pointer]
+                            - generic [ref=f44e209] [cursor=pointer]: Еще 5
+                        - iframe [aria-hidden] [ref=f44e210]
+                      - generic [aria-hidden] [ref=f44e211] [cursor=pointer]
+                  - generic [ref=f44e217]:
+                    - tablist [ref=f44e222]:
+                      - tab "Обзор," [selected] [ref=f44e224]:
+                        - link [aria-hidden]:
+                          - /url: /maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/
+                          - text: Обзор
+                      - tab "Фото, 15" [ref=f44e226]:
+                        - link [aria-hidden]:
+                          - /url: /maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/gallery/
+                          - text: Фото
+                        - generic [aria-hidden]: "15"
+                      - tab "Отзывы, 7" [ref=f44e228]:
+                        - link [aria-hidden]:
+                          - /url: /maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/reviews/
+                          - text: Отзывы
+                        - generic [aria-hidden]: "7"
+                      - tab "Особенности," [ref=f44e230]:
+                        - generic [aria-hidden]: Особенности
+                      - tab "Похожие места," [ref=f44e232]:
+                        - link [aria-hidden]:
+                          - /url: /maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/related/
+                          - text: Похожие места
+                      - iframe [aria-hidden] [ref=f44e233]
+                    - generic [ref=f44e237]:
+                      - generic [ref=f44e238]:
+                        - generic [ref=f44e239]:
+                          - generic [ref=f44e240]:
+                            - heading "Адрес" [level=3] [ref=f44e247]
+                            - generic [ref=f44e253]:
+                              - generic [ref=f44e254]:
+                                - link "Брест, просп. Машерова, 23А" [ref=f44e255]:
+                                  - /url: /maps/153/brest/house/ZkoYcA5oSkEPQFtofXx5d39iYw==/
+                                - text: · этаж 4
+                              - generic [ref=f44e256]:
+                                - button "Показать входы" [ref=f44e257] [cursor=pointer]
+                                - generic [ref=f44e258]: "|"
+                                - button "Маршрут" [ref=f44e259] [cursor=pointer]
+                          - generic [ref=f44e260]:
+                            - heading "Контакты" [level=3] [ref=f44e267]
+                            - generic [ref=f44e279]:
+                              - text: +375 29 871-76-12
+                              - button "Показать телефон" [ref=f44e280] [cursor=pointer]
+                            - link "it-school.by" [ref=f44e292] [cursor=pointer]:
+                              - /url: http://it-school.by/
+                            - generic [ref=f44e298]:
+                              - button "Соцсети, facebook" [ref=f44e300] [cursor=pointer]
+                              - button "Соцсети, instagram" [ref=f44e306] [cursor=pointer]
+                              - button "Соцсети, ok" [ref=f44e313] [cursor=pointer]
+                              - button "Соцсети, youtube" [ref=f44e319] [cursor=pointer]
+                          - generic [ref=f44e324]:
+                            - heading "Время работы" [level=3] [ref=f44e331]
+                            - button "Закрыто до 09:00 Возможны изменения в нерабочие дни. Свяжитесь с организацией, чтобы уточнить" [ref=f44e335] [cursor=pointer]:
+                              - generic [ref=f44e336]:
+                                - generic [ref=f44e339]:
+                                  - generic "Закрыто до 09:00" [ref=f44e342]
+                                  - generic [ref=f44e343]: Возможны изменения в нерабочие дни. Свяжитесь с организацией, чтобы уточнить
+                                - generic [ref=f44e346]: График
+                          - button "Исправить неточность" [ref=f44e352] [cursor=pointer]
+                        - generic "Как добраться" [ref=f44e360]:
+                          - heading "Как добраться" [level=2] [ref=f44e362]
+                          - button "Остановки рядом" [ref=f44e366] [cursor=pointer]:
+                            - generic [ref=f44e367]:
+                              - generic [ref=f44e368]:
+                                - generic "На автобусе" [ref=f44e371]
+                                - generic [ref=f44e379]:
+                                  - generic [ref=f44e380]: Белтелеком
+                                  - button "Белтелеком Построить маршрут Пешком 115 м" [ref=f44e381]:
+                                    - generic [ref=f44e385]: 115 м
+                              - generic [ref=f44e387]: "4"
+                          - button [aria-hidden] [ref=f44e392] [cursor=pointer]:
+                            - generic [ref=f44e393]: Показать парковки
+                        - generic [ref=f44e404]:
+                          - heading "Особенности" [level=2] [ref=f44e406]
+                          - generic [ref=f44e407]:
+                            - link "Курсы и мастер-классы" [ref=f44e408] [cursor=pointer]:
+                              - /url: /maps/153/brest/category/courses_and_master_classes/184106220/
+                              - button [aria-hidden] [ref=f44e410]:
+                                - generic [ref=f44e411]: Курсы и мастер-классы
+                            - link "компьютерные курсы" [ref=f44e412] [cursor=pointer]:
+                              - /url: /maps/153/brest/category/computer_courses/184106158/
+                              - button [aria-hidden] [ref=f44e414]:
+                                - generic [ref=f44e415]: Компьютерные курсы
+                            - link "дополнительное образование" [ref=f44e416] [cursor=pointer]:
+                              - /url: /maps/153/brest/category/further_education/184106162/
+                              - button [aria-hidden] [ref=f44e418]:
+                                - generic [ref=f44e419]: Дополнительное образование
+                          - button "Подробнее об организации" [ref=f44e420] [cursor=pointer]:
+                            - link [aria-hidden] [ref=f44e429]:
+                              - /url: /maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/?tab=features
+                              - text: Подробнее об организации
+                        - generic [ref=f44e432]:
+                          - button [ref=f44e433] [cursor=pointer]:
+                            - img "Панорама — курсы и мастер-классы Центр робототехники и програмирования для детей, Брест" [ref=f44e436]
+                            - generic [aria-hidden]: Панорама
+                          - link "Панорама":
+                            - /url: /maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/panorama/
+                        - button [ref=f44e441] [cursor=pointer]:
+                          - link "Вы владелец этой организации?" [ref=f44e451]:
+                            - /url: https://yandex.by/sprav/search?permalink=170502162732
+                        - generic [ref=f44e493]:
+                          - generic [ref=f44e498]:
+                            - generic [ref=f44e500]:
+                              - generic [ref=f44e501]:
+                                - generic [ref=f44e502]: Рейтинг
+                                - text: 4,5
+                              - generic [ref=f44e503]:
+                                - generic "Оценка 4.5 Из 5" [ref=f44e505]
+                                - generic [ref=f44e516]: 17 оценок
+                            - generic [ref=f44e521]:
+                              - generic [ref=f44e522]: Оцените это место
+                              - generic [ref=f44e523]:
+                                - button "1 звезда" [ref=f44e524] [cursor=pointer]
+                                - button "2 звезды" [ref=f44e526] [cursor=pointer]
+                                - button "3 звезды" [ref=f44e528] [cursor=pointer]
+                                - button "4 звезды" [ref=f44e530] [cursor=pointer]
+                                - button "5 звезд" [ref=f44e532] [cursor=pointer]
+                          - generic [ref=f44e535]:
+                            - generic [ref=f44e538]:
+                              - heading "7 отзывов" [level=2] [ref=f44e539]
+                              - button "По умолчанию" [ref=f44e542] [cursor=pointer]
+                            - list [ref=f44e545]:
+                              - listitem [ref=f44e547]:
+                                - generic [ref=f44e549]:
+                                  - generic [ref=f44e550]:
+                                    - link "Аватар" [ref=f44e552] [cursor=pointer]:
+                                      - /url: https://yandex.by/maps/user/p326zej5zbwnvfuc95p32twjf8
+                                    - generic [ref=f44e554]:
+                                      - link "✨KARINA✨" [ref=f44e556] [cursor=pointer]:
+                                        - /url: https://yandex.by/maps/user/p326zej5zbwnvfuc95p32twjf8
+                                      - generic [ref=f44e557]: Знаток города 9 уровня
+                                    - button "Подписаться" [ref=f44e560] [cursor=pointer]
+                                  - generic [ref=f44e563]:
+                                    - generic "Оценка 5 Из 5" [ref=f44e566]
+                                    - generic [ref=f44e577]: 14 сентября 2025
+                                  - generic [ref=f44e578]: Просто суперское заведение. Моя дочь ходила на несколько занятий. Осталась просто в восторге. Учитель очень добрая, прекрасная женщина. Учит просто превосходно. Сразу видно есть потенциал. Объясняет все доходчиво, с юмором. Очень приятное место. Советую записаться тем, кто желает научиться программированию и робототехнике. Цена в полне оправдана. Реально ребенок получает удовольствие от занятий. Спасибо за такое прекрасное место!
+                                  - generic [ref=f44e581]:
+                                    - generic [ref=f44e582]:
+                                      - button "Лайк" [ref=f44e583] [cursor=pointer]:
+                                        - generic [ref=f44e587]: "1"
+                                      - button "Дизлайк" [ref=f44e588] [cursor=pointer]
+                                    - button "Поделиться" [ref=f44e592] [cursor=pointer]
+                              - listitem [ref=f44e594]:
+                                - generic [ref=f44e596]:
+                                  - generic [ref=f44e597]:
+                                    - link "Аватар" [ref=f44e599] [cursor=pointer]:
+                                      - /url: https://yandex.by/maps/user/ruuupbztkcygnkqbenpqf0x1br
+                                    - generic [ref=f44e601]:
+                                      - link "Иван Б." [ref=f44e603] [cursor=pointer]:
+                                        - /url: https://yandex.by/maps/user/ruuupbztkcygnkqbenpqf0x1br
+                                      - generic [ref=f44e604]: Знаток города 3 уровня
+                                    - button "Подписаться" [ref=f44e607] [cursor=pointer]
+                                  - generic [ref=f44e610]:
+                                    - generic "Оценка 5 Из 5" [ref=f44e613]
+                                    - generic [ref=f44e624]: 24 августа 2019
+                                  - generic [ref=f44e625]: Пожалуй лучшие курсы и преподаватели в нашем городе! Ребенок ходит с удовольствием и получает хорошие знания, а это самое главное!
+                                  - generic [ref=f44e628]:
+                                    - generic [ref=f44e629]:
+                                      - button "Лайк" [ref=f44e630] [cursor=pointer]:
+                                        - generic [ref=f44e634]: "3"
+                                      - button "Дизлайк" [ref=f44e635] [cursor=pointer]
+                                    - button "Поделиться" [ref=f44e639] [cursor=pointer]
+                              - listitem [ref=f44e641]:
+                                - generic [ref=f44e643]:
+                                  - generic [ref=f44e644]:
+                                    - link "Аватар" [ref=f44e646] [cursor=pointer]:
+                                      - /url: https://yandex.by/maps/user/tn5d0gnxdv2weq5zpzkta73ju4
+                                    - generic [ref=f44e648]:
+                                      - link "Илья Гречный" [ref=f44e650] [cursor=pointer]:
+                                        - /url: https://yandex.by/maps/user/tn5d0gnxdv2weq5zpzkta73ju4
+                                      - generic [ref=f44e651]: Знаток города 5 уровня
+                                    - button "Подписаться" [ref=f44e654] [cursor=pointer]
+                                  - generic [ref=f44e657]:
+                                    - generic "Оценка 5 Из 5" [ref=f44e660]
+                                    - generic [ref=f44e671]: 23 апреля 2021
+                                  - generic [ref=f44e672]: Очень крутая школа, ребёнок с большим интересом посещает занятия
+                                  - generic [ref=f44e675]:
+                                    - generic [ref=f44e676]:
+                                      - button "Лайк" [ref=f44e677] [cursor=pointer]:
+                                        - generic [ref=f44e681]: "3"
+                                      - button "Дизлайк" [ref=f44e682] [cursor=pointer]
+                                    - button "Поделиться" [ref=f44e686] [cursor=pointer]
+                              - button "Посмотреть все 7 отзывов" [ref=f44e690] [cursor=pointer]
+                      - link "Разместить рекламу" [ref=f44e693] [cursor=pointer]:
+                        - /url: https://yandex.ru/business/priority-promo/web-maps-promo?utm_source=webmaps&utm_medium=org_card_link&utm_campaign=webmaps_org_card&permalink=170502162732
+                - generic "подвал блока" [ref=f44e711]:
+                  - generic [ref=f44e712]:
+                    - generic [ref=f44e713]:
+                      - link "Сообщить об ошибке" [ref=f44e715] [cursor=pointer]
+                      - link "Справка" [ref=f44e717] [cursor=pointer]:
+                        - /url: //yandex.ru/support/maps/?lang=ru
+                    - generic [ref=f44e718]:
+                      - generic [ref=f44e719]:
+                        - generic [ref=f44e720]:
+                          - generic [ref=f44e721]: Сервисы
+                          - link "Маршруты" [ref=f44e723] [cursor=pointer]
+                          - link "Пробки" [ref=f44e725] [cursor=pointer]
+                          - link "Редактор Яндекс Карт" [ref=f44e727] [cursor=pointer]:
+                            - /url: https://n.maps.yandex.ru/
+                          - link "Схема Метро" [ref=f44e729] [cursor=pointer]:
+                            - /url: https://yandex.by/metro/
+                          - link "Создать карту" [ref=f44e731] [cursor=pointer]:
+                            - /url: https://yandex.ru/map-constructor/
+                          - link "API Карт" [ref=f44e733] [cursor=pointer]:
+                            - /url: https://tech.yandex.com/maps/
+                        - generic [ref=f44e734]:
+                          - generic [ref=f44e735]: Персональное
+                          - link "Закладки и мой транспорт" [ref=f44e737] [cursor=pointer]
+                          - link "Мои отзывы" [ref=f44e739] [cursor=pointer]:
+                            - /url: https://reviews.yandex.by/ugcpub/cabinet?utm_source=maps
+                          - link "Мои карты" [ref=f44e741] [cursor=pointer]:
+                            - /url: https://yandex.ru/map-constructor/
+                          - link "Настройки" [ref=f44e743] [cursor=pointer]:
+                            - /url: https://yandex.by/tune/?retpath=https%3A%2F%2Fyandex.by%2Fmaps%2Forg%2Ftsentr_robototekhniki_i_programirovaniya_dlya_detey%2F170502162732%2F%3Fll%3D23.698317%252C52.086440%26z%3D14
+                        - generic [ref=f44e744]:
+                          - generic [ref=f44e745]: Для бизнеса
+                          - link "Личный кабинет" [ref=f44e747] [cursor=pointer]:
+                            - /url: //business.yandex.ru/
+                          - link "Реклама в Картах" [ref=f44e749] [cursor=pointer]:
+                            - /url: https://yandex.ru/business/priority-promo/web-maps-promo?utm_source=webmaps&utm_medium=gp_label&utm_campaign=orgpage_label
+                          - link "Добавить свою организацию" [ref=f44e751] [cursor=pointer]
+                      - generic [ref=f44e752]:
+                        - link "О сервисе" [ref=f44e754] [cursor=pointer]:
+                          - /url: //yandex.ru/support/maps/
+                        - link "Пользовательское соглашение" [ref=f44e756] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/maps_termsofuse/?lang=ru
+                        - link "Мобильное приложение" [ref=f44e758] [cursor=pointer]:
+                          - /url: https://mobile.yandex.ru/apps/maps/
+                  - generic [ref=f44e759]:
+                    - generic [ref=f44e761]:
+                      - link "vkontakte" [ref=f44e762] [cursor=pointer]:
+                        - /url: https://vk.com/yandex.maps
+                      - link "telegram" [ref=f44e765] [cursor=pointer]:
+                        - /url: https://t.me/mapsyandex
+                      - link "zen" [ref=f44e768] [cursor=pointer]:
+                        - /url: https://zen.yandex.ru/yandexmaps
+                    - generic [ref=f44e771]:
+                      - generic [ref=f44e772]: Яндекс Карты — выбирайте, где поесть, куда сходить, чем заняться.
+                      - generic [ref=f44e773]: © 2001–2026 ООО «Яндекс»
+                      - button "Источник данных" [ref=f44e776] [cursor=pointer]
+              - iframe [aria-hidden] [ref=f44e782]
+            - iframe [aria-hidden] [ref=f44e783]
+        - generic [aria-hidden] [ref=f44e787] [cursor=pointer]
+      - navigation:
+        - generic [ref=f44e792]:
+          - button "Пробки в Бресте" [ref=f44e795] [cursor=pointer]
+          - button "Панорамы улиц и фотографии" [ref=f44e800] [cursor=pointer]
+          - button "Зеркала" [ref=f44e803] [cursor=pointer]
+          - button "Движущийся транспорт" [ref=f44e806] [cursor=pointer]
+          - button "Слои" [ref=f44e809] [cursor=pointer]
+        - generic [ref=f44e811]:
+          - button "Линейка и планиметр" [ref=f44e814] [cursor=pointer]
+          - button "Детали" [ref=f44e817] [cursor=pointer]
+        - button "Профиль" [ref=f44e820] [cursor=pointer]
+        - generic:
+          - generic:
+            - generic:
+              - generic [ref=f44e824]:
+                - button "Приблизить" [ref=f44e826] [cursor=pointer]
+                - button "Отдалить" [ref=f44e828] [cursor=pointer]
+              - button "Моё местоположение" [ref=f44e832] [cursor=pointer]
+              - generic [ref=f44e835]:
+                - generic [aria-hidden] [ref=f44e837] [cursor=pointer]
+                - button "Наклон карты" [ref=f44e839] [cursor=pointer]: 3D
+      - contentinfo:
+        - generic [ref=f44e841]:
+          - generic [ref=f44e842]: © Яндекс
+          - button "Русский" [ref=f44e846] [cursor=pointer]
+          - link "Условия использования" [ref=f44e855] [cursor=pointer]:
+            - /url: https://yandex.by/legal/maps_termsofuse/?lang=ru
+          - link "Политика конфиденциальности" [ref=f44e856] [cursor=pointer]:
+            - /url: https://yandex.by/legal/confidential/?lang=ru
+        - link "Яндекс" [ref=f44e859] [cursor=pointer]:
+          - /url: https://yandex.by
+        - generic:
+          - generic:
+            - generic [aria-hidden]:
+              - generic: 400 м
+      - iframe [aria-hidden] [ref=f44e862]
+    - iframe [aria-hidden] [ref=f44e863]
+  - iframe [aria-hidden] [ref=f44e864]
+  - generic [ref=f44e867]:
+    - generic [ref=f44e868]:
+      - generic [ref=f44e869]: ІТ-школа
+      - generic [ref=f44e870]: 4,5
+    - generic [ref=f44e874]: Курсы и мастер-классы
+  - iframe [ref=f44e891]

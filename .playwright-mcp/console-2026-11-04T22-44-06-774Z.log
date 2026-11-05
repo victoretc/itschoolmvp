@@ -1,0 +1,5 @@
+[     207ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://it-school.by/wp-content/cache/minify/818c0.js:4
+[     237ms] [WARNING] Google Maps JavaScript API has been loaded directly without loading=async. This can result in suboptimal performance. For best-practice loading patterns please see https://goo.gle/js-api-loading @ https://maps.googleapis.com/maps/api/js?key=&sensor=false:338
+[    5273ms] [WARNING] Google Maps JavaScript API warning: NoApiKeys https://developers.google.com/maps/documentation/javascript/error-messages#no-api-keys @ https://maps.googleapis.com/maps-api-v3/api/js/66/13d/intl/en_gb/util.js:38
+[    5274ms] [WARNING] Google Maps JavaScript API warning: InvalidKey https://developers.google.com/maps/documentation/javascript/error-messages#invalid-key @ https://maps.googleapis.com/maps-api-v3/api/js/66/13d/intl/en_gb/util.js:38
+[    5274ms] [WARNING] Google Maps JavaScript API warning: SensorNotRequired https://developers.google.com/maps/documentation/javascript/error-messages#sensor-not-required @ https://maps.googleapis.com/maps-api-v3/api/js/66/13d/intl/en_gb/util.js:38

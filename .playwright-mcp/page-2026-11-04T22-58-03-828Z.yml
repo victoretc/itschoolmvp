@@ -1,0 +1,78 @@
+- generic [active] [ref=f95e1]:
+  - link "Перейти к содержимому" [ref=f95e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f95e3]:
+    - generic [ref=f95e4]:
+      - link "АйТи Скул — на главную" [ref=f95e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f95e6]
+      - 'link "Позвонить: +375 (29) 871-76-12" [ref=f95e7] [cursor=pointer]':
+        - /url: tel:+375298717612
+      - button "Меню" [ref=f95e10] [cursor=pointer]
+  - main [ref=f95e14]:
+    - region [ref=f95e15]:
+      - generic [ref=f95e17]:
+        - generic [ref=f95e18]:
+          - heading "АйТи Скул" [level=1] [ref=f95e19]:
+            - text: АйТи
+            - generic [ref=f95e20]: Скул
+          - paragraph [ref=f95e21]: Откройте своему ребенку мир программирования и цифровых технологий!
+          - link "Получить консультацию" [ref=f95e23] [cursor=pointer]:
+            - /url: /contacts/
+        - figure [aria-hidden] [ref=f95e27]
+        - figure [aria-hidden] [ref=f95e28]
+        - list [ref=f95e29]:
+          - listitem [ref=f95e30]:
+            - generic [ref=f95e31]: "01"
+            - text: Улучшаем школьную успеваемость
+          - listitem [ref=f95e32]:
+            - generic [ref=f95e33]: "02"
+            - text: Готовимся к перспективным профессиям
+          - listitem [ref=f95e34]:
+            - generic [ref=f95e35]: "03"
+            - text: Фиксируем цену занятий вне зависимости от курса
+          - listitem [ref=f95e36]:
+            - generic [ref=f95e37]: "04"
+            - text: Развиваем универсальные навыки
+        - generic [ref=f95e38]:
+          - generic [ref=f95e39]:
+            - term [ref=f95e40]: "700"
+            - definition [ref=f95e41]: Постоянных клиентов в год
+          - generic [ref=f95e42]:
+            - term [ref=f95e43]: "8"
+            - definition [ref=f95e44]: Лет преподавания
+          - generic [ref=f95e45]:
+            - term [ref=f95e46]: "15"
+            - definition [ref=f95e47]: Педагогов
+          - generic [ref=f95e48]:
+            - term [ref=f95e49]: 6000+
+            - definition [ref=f95e50]: обученных детей
+    - region [ref=f95e51]:
+      - generic [ref=f95e52]:
+        - generic [ref=f95e53]:
+          - heading "Как учат в АйТи Скул" [level=2] [ref=f95e54]
+          - paragraph [ref=f95e55]: В АйТи Скул мы используем программируемые конструкторы LEGO и робототехнические наборы Arduino для обучения детей с 6 лет.
+        - generic [ref=f95e56]:
+          - generic [ref=f95e57]:
+            - generic [aria-hidden] [ref=f95e58]: "01"
+            - paragraph [ref=f95e59]: Мы собрали команду преподавателей из числа брестских специалистов по робототехнике, опытных предпринимателей и менеджеров из IT-отрасли, чтобы решить амбициозную задачу — обеспечить нашим детям возможность развиваться с использованием новейших и инновационных образовательных технологий.
+          - generic [ref=f95e60]:
+            - generic [aria-hidden] [ref=f95e61]: "02"
+            - paragraph [ref=f95e62]: Наша учебная программа разработана специалистами, которые зарекомендовали себя как в Республике Беларусь, так и на международной арене. Педагоги АйТи Скул прошли специальную подготовку и сертификацию по использованию оборудования LEGO в образовательном процессе.
+        - paragraph [ref=f95e63]: Наша главная цель — формирование профессиональных кадров для IT-отрасли уже со школьной скамьи.
+    - region [ref=f95e64]:
+      - generic [ref=f95e65]:
+        - heading "Для чего ребенку компьютерное образование?" [level=2] [ref=f95e66]
+        - generic [ref=f95e67]:
+          - generic [ref=f95e68]:
+            - generic [aria-hidden] [ref=f95e69]: "01"
+            - heading "Развитие потенциала" [level=3] [ref=f95e70]
+            - paragraph [ref=f95e71]: Работа с компьютером это инструмент интеллектуальной работы, помогающий в развитии интеллектуально-творческого потенциала личности, что позволит быстрее адаптироваться к различным условиям жизни, находить нестандартные решения любых возникающих задач.
+          - generic [ref=f95e72]:
+            - generic [aria-hidden] [ref=f95e73]: "02"
+            - heading "Профориентация" [level=3] [ref=f95e74]
+            - paragraph [ref=f95e75]: "Курс построен таким образом, что тинейджеры могут попробовать себя в разных ролях в IT: от тестировщика до программиста."
+          - generic [ref=f95e76]:
+            - generic [aria-hidden] [ref=f95e77]: "03"
+            - heading "Ранний старт в IT" [level=3] [ref=f95e78]
+            - paragraph [ref=f95e79]: Ребята смогут получить реальный опыт и свою первую профессию еще в школе, создавая и развивая настоящий проект.

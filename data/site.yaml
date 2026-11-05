@@ -1,0 +1,9 @@
+socials:
+  - name: 'Viber'
+    url: '#'
+    icon: 'viber'
+  - name: 'Instagram'
+    url: '#'
+    icon: 'instagram'
+address: 'Брест, просп. Машерова, 23А, этаж 4'
+mapUrl: 'https://yandex.by/maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/'

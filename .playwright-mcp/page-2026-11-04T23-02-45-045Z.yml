@@ -1,0 +1,134 @@
+- generic [active] [ref=f105e1]:
+  - link "Перейти к содержимому" [ref=f105e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f105e3]:
+    - generic [ref=f105e4]:
+      - link "АйТи Скул — на главную" [ref=f105e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f105e6]
+      - 'link "Позвонить: +375 (29) 871-76-12" [ref=f105e7] [cursor=pointer]':
+        - /url: tel:+375298717612
+      - button "Меню" [ref=f105e10] [cursor=pointer]
+  - main [ref=f105e14]:
+    - region [ref=f105e15]:
+      - generic [ref=f105e17]:
+        - generic [ref=f105e18]:
+          - heading "АйТи Скул" [level=1] [ref=f105e19]:
+            - text: АйТи
+            - generic [ref=f105e20]: Скул
+          - paragraph [ref=f105e21]: Откройте своему ребенку мир программирования и цифровых технологий!
+          - link "Получить консультацию" [ref=f105e23] [cursor=pointer]:
+            - /url: /contacts/
+        - figure [aria-hidden] [ref=f105e27]
+        - figure [aria-hidden] [ref=f105e28]
+        - list [ref=f105e29]:
+          - listitem [ref=f105e30]:
+            - generic [ref=f105e31]: "01"
+            - text: Улучшаем школьную успеваемость
+          - listitem [ref=f105e32]:
+            - generic [ref=f105e33]: "02"
+            - text: Готовимся к перспективным профессиям
+          - listitem [ref=f105e34]:
+            - generic [ref=f105e35]: "03"
+            - text: Фиксируем цену занятий вне зависимости от курса
+          - listitem [ref=f105e36]:
+            - generic [ref=f105e37]: "04"
+            - text: Развиваем универсальные навыки
+        - generic [ref=f105e38]:
+          - generic [ref=f105e39]:
+            - term [ref=f105e40]: "700"
+            - definition [ref=f105e41]: Постоянных клиентов в год
+          - generic [ref=f105e42]:
+            - term [ref=f105e43]: "8"
+            - definition [ref=f105e44]: Лет преподавания
+          - generic [ref=f105e45]:
+            - term [ref=f105e46]: "15"
+            - definition [ref=f105e47]: Педагогов
+          - generic [ref=f105e48]:
+            - term [ref=f105e49]: 6000+
+            - definition [ref=f105e50]: обученных детей
+    - region [ref=f105e51]:
+      - generic [ref=f105e52]:
+        - generic [ref=f105e53]:
+          - heading "Как учат в АйТи Скул" [level=2] [ref=f105e54]
+          - paragraph [ref=f105e55]: В АйТи Скул мы используем программируемые конструкторы LEGO и робототехнические наборы Arduino для обучения детей с 6 лет.
+        - generic [ref=f105e56]:
+          - generic [ref=f105e57]:
+            - generic [aria-hidden] [ref=f105e58]: "01"
+            - paragraph [ref=f105e59]: Мы собрали команду преподавателей из числа брестских специалистов по робототехнике, опытных предпринимателей и менеджеров из IT-отрасли, чтобы решить амбициозную задачу — обеспечить нашим детям возможность развиваться с использованием новейших и инновационных образовательных технологий.
+          - generic [ref=f105e60]:
+            - generic [aria-hidden] [ref=f105e61]: "02"
+            - paragraph [ref=f105e62]: Наша учебная программа разработана специалистами, которые зарекомендовали себя как в Республике Беларусь, так и на международной арене. Педагоги АйТи Скул прошли специальную подготовку и сертификацию по использованию оборудования LEGO в образовательном процессе.
+        - paragraph [ref=f105e63]: Наша главная цель — формирование профессиональных кадров для IT-отрасли уже со школьной скамьи.
+    - region [ref=f105e64]:
+      - generic [ref=f105e65]:
+        - heading "Для чего ребенку компьютерное образование?" [level=2] [ref=f105e66]
+        - generic [ref=f105e67]:
+          - generic [ref=f105e68]:
+            - generic [aria-hidden] [ref=f105e69]: "01"
+            - heading "Развитие потенциала" [level=3] [ref=f105e70]
+            - paragraph [ref=f105e71]: Работа с компьютером это инструмент интеллектуальной работы, помогающий в развитии интеллектуально-творческого потенциала личности, что позволит быстрее адаптироваться к различным условиям жизни, находить нестандартные решения любых возникающих задач.
+          - generic [ref=f105e72]:
+            - generic [aria-hidden] [ref=f105e73]: "02"
+            - heading "Профориентация" [level=3] [ref=f105e74]
+            - paragraph [ref=f105e75]: "Курс построен таким образом, что тинейджеры могут попробовать себя в разных ролях в IT: от тестировщика до программиста."
+          - generic [ref=f105e76]:
+            - generic [aria-hidden] [ref=f105e77]: "03"
+            - heading "Ранний старт в IT" [level=3] [ref=f105e78]
+            - paragraph [ref=f105e79]: Ребята смогут получить реальный опыт и свою первую профессию еще в школе, создавая и развивая настоящий проект.
+    - region [ref=f105e80]:
+      - generic [ref=f105e81]:
+        - generic [ref=f105e82]:
+          - heading "Выбирайте подходящий курс" [level=2] [ref=f105e83]
+          - paragraph [ref=f105e84]: Кратко рассказываем о каждом курсе
+        - generic [ref=f105e85]:
+          - generic [ref=f105e86]:
+            - group [ref=f105e87]:
+              - generic "Робототехника LEGO" [ref=f105e88] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e89]: "01"
+            - group [ref=f105e92]:
+              - generic "Программирование в Kodu и Scratch" [ref=f105e93] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e94]: "02"
+            - group [ref=f105e97]:
+              - generic "Робототехника Arduino" [ref=f105e98] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e99]: "03"
+            - group [ref=f105e102]:
+              - generic "Программирование на Python" [ref=f105e103] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e104]: "04"
+            - group [ref=f105e107]:
+              - generic "Программирование Minecraft" [ref=f105e108] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e109]: "05"
+            - group [ref=f105e112]:
+              - generic "Программирование Roblox" [ref=f105e113] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e114]: "06"
+            - group [ref=f105e117]:
+              - generic "Разработка игр на Godot" [ref=f105e118] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e119]: "07"
+          - generic [ref=f105e122]:
+            - group [ref=f105e123]:
+              - generic "Программирование квадрокоптеров" [ref=f105e124] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e125]: "08"
+            - group [ref=f105e128]:
+              - generic "Разработка игр на платформе Unity" [ref=f105e129] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e130]: "09"
+            - group [ref=f105e133]:
+              - generic "Олимпиадное программирование" [ref=f105e134] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e135]: "10"
+            - group [ref=f105e138]:
+              - generic "3D-моделирование в BLENDER" [ref=f105e139] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e140]: "11"
+            - group [ref=f105e143]:
+              - generic "Разработка сайтов" [ref=f105e144] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e145]: "12"
+            - group [ref=f105e148]:
+              - generic "Нейронные сети" [ref=f105e149] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e150]: "13"
+            - group [ref=f105e153]:
+              - generic "Тестирование программного обеспечения" [ref=f105e154] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f105e155]: "14"
+        - generic [ref=f105e158]:
+          - generic [ref=f105e159]:
+            - heading "Вы все равно затрудняетесь?" [level=3] [ref=f105e160]
+            - paragraph [ref=f105e161]: Мы с радостью вам поможем определиться с направлением и ответим на волнующие вас вопросы
+          - link "+375 (29) 871-76-12" [ref=f105e162] [cursor=pointer]:
+            - /url: tel:+375298717612

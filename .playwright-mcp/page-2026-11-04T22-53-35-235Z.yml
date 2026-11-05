@@ -1,0 +1,91 @@
+- generic [active] [ref=f82e1]:
+  - link "Перейти к содержимому" [ref=f82e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f82e3]:
+    - generic [ref=f82e4]:
+      - link "АйТи Скул — на главную" [ref=f82e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f82e6]
+      - navigation "Основное меню" [ref=f82e7]:
+        - list [ref=f82e8]:
+          - listitem [ref=f82e9]:
+            - link "Главная" [ref=f82e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f82e11]:
+            - link "Курсы" [ref=f82e12] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f82e13]:
+            - link "IT Каникулы" [ref=f82e14] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f82e15]:
+            - link "О нас" [ref=f82e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f82e17]:
+            - link "Блог" [ref=f82e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f82e19]:
+            - link "Контакты" [ref=f82e20] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f82e21]:
+          - link "+375 (29) 871-76-12" [ref=f82e22] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f82e26]:
+            - listitem [ref=f82e27]:
+              - link "Viber" [ref=f82e28] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f82e31]:
+              - link "Instagram" [ref=f82e32] [cursor=pointer]:
+                - /url: "#"
+          - link "Получить консультацию" [ref=f82e35] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f82e36]:
+    - region [ref=f82e37]:
+      - generic [ref=f82e39]:
+        - generic [ref=f82e40]:
+          - heading "АйТи Скул" [level=1] [ref=f82e41]:
+            - text: АйТи
+            - generic [ref=f82e42]: Скул
+          - paragraph [ref=f82e43]: Откройте своему ребенку мир программирования и цифровых технологий!
+          - link "Получить консультацию" [ref=f82e45] [cursor=pointer]:
+            - /url: /contacts/
+        - figure [aria-hidden] [ref=f82e49]
+        - figure [aria-hidden] [ref=f82e50]
+        - list [ref=f82e51]:
+          - listitem [ref=f82e52]:
+            - generic [ref=f82e53]: "01"
+            - text: Улучшаем школьную успеваемость
+          - listitem [ref=f82e54]:
+            - generic [ref=f82e55]: "02"
+            - text: Готовимся к перспективным профессиям
+          - listitem [ref=f82e56]:
+            - generic [ref=f82e57]: "03"
+            - text: Фиксируем цену занятий вне зависимости от курса
+          - listitem [ref=f82e58]:
+            - generic [ref=f82e59]: "04"
+            - text: Развиваем универсальные навыки
+        - generic [ref=f82e60]:
+          - generic [ref=f82e61]:
+            - term [ref=f82e62]: "700"
+            - definition [ref=f82e63]: Постоянных клиентов в год
+          - generic [ref=f82e64]:
+            - term [ref=f82e65]: "8"
+            - definition [ref=f82e66]: Лет преподавания
+          - generic [ref=f82e67]:
+            - term [ref=f82e68]: "15"
+            - definition [ref=f82e69]: Педагогов
+          - generic [ref=f82e70]:
+            - term [ref=f82e71]: 6000+
+            - definition [ref=f82e72]: обученных детей
+    - region [ref=f82e73]:
+      - generic [ref=f82e74]:
+        - generic [ref=f82e75]:
+          - heading "Как учат в АйТи Скул" [level=2] [ref=f82e76]
+          - paragraph [ref=f82e77]: В АйТи Скул мы используем программируемые конструкторы LEGO и робототехнические наборы Arduino для обучения детей с 6 лет.
+        - generic [ref=f82e78]:
+          - generic [ref=f82e79]:
+            - generic [aria-hidden] [ref=f82e80]: "01"
+            - paragraph [ref=f82e81]: Мы собрали команду преподавателей из числа брестских специалистов по робототехнике, опытных предпринимателей и менеджеров из IT-отрасли, чтобы решить амбициозную задачу — обеспечить нашим детям возможность развиваться с использованием новейших и инновационных образовательных технологий.
+          - generic [ref=f82e82]:
+            - generic [aria-hidden] [ref=f82e83]: "02"
+            - paragraph [ref=f82e84]: Наша учебная программа разработана специалистами, которые зарекомендовали себя как в Республике Беларусь, так и на международной арене. Педагоги АйТи Скул прошли специальную подготовку и сертификацию по использованию оборудования LEGO в образовательном процессе.
+        - paragraph [ref=f82e85]: Наша главная цель — формирование профессиональных кадров для IT-отрасли уже со школьной скамьи.

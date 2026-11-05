@@ -1,0 +1,169 @@
+- generic [ref=f103e1]:
+  - link "Перейти к содержимому" [ref=f103e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f103e3]:
+    - generic [ref=f103e4]:
+      - link "АйТи Скул — на главную" [ref=f103e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f103e6]
+      - navigation "Основное меню" [ref=f103e7]:
+        - list [ref=f103e8]:
+          - listitem [ref=f103e9]:
+            - link "Главная" [ref=f103e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f103e11]:
+            - link "Курсы" [ref=f103e12] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f103e13]:
+            - link "IT Каникулы" [ref=f103e14] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f103e15]:
+            - link "О нас" [ref=f103e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f103e17]:
+            - link "Блог" [ref=f103e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f103e19]:
+            - link "Контакты" [ref=f103e20] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f103e21]:
+          - link "+375 (29) 871-76-12" [ref=f103e22] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f103e26]:
+            - listitem [ref=f103e27]:
+              - link "Viber" [ref=f103e28] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f103e31]:
+              - link "Instagram" [ref=f103e32] [cursor=pointer]:
+                - /url: "#"
+          - link "Получить консультацию" [ref=f103e35] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f103e36]:
+    - region [ref=f103e37]:
+      - generic [ref=f103e39]:
+        - generic [ref=f103e40]:
+          - heading "АйТи Скул" [level=1] [ref=f103e41]:
+            - text: АйТи
+            - generic [ref=f103e42]: Скул
+          - paragraph [ref=f103e43]: Откройте своему ребенку мир программирования и цифровых технологий!
+          - link "Получить консультацию" [ref=f103e45] [cursor=pointer]:
+            - /url: /contacts/
+        - figure [aria-hidden] [ref=f103e49]
+        - figure [aria-hidden] [ref=f103e50]
+        - list [ref=f103e51]:
+          - listitem [ref=f103e52]:
+            - generic [ref=f103e53]: "01"
+            - text: Улучшаем школьную успеваемость
+          - listitem [ref=f103e54]:
+            - generic [ref=f103e55]: "02"
+            - text: Готовимся к перспективным профессиям
+          - listitem [ref=f103e56]:
+            - generic [ref=f103e57]: "03"
+            - text: Фиксируем цену занятий вне зависимости от курса
+          - listitem [ref=f103e58]:
+            - generic [ref=f103e59]: "04"
+            - text: Развиваем универсальные навыки
+        - generic [ref=f103e60]:
+          - generic [ref=f103e61]:
+            - term [ref=f103e62]: "700"
+            - definition [ref=f103e63]: Постоянных клиентов в год
+          - generic [ref=f103e64]:
+            - term [ref=f103e65]: "8"
+            - definition [ref=f103e66]: Лет преподавания
+          - generic [ref=f103e67]:
+            - term [ref=f103e68]: "15"
+            - definition [ref=f103e69]: Педагогов
+          - generic [ref=f103e70]:
+            - term [ref=f103e71]: 6000+
+            - definition [ref=f103e72]: обученных детей
+    - region [ref=f103e73]:
+      - generic [ref=f103e74]:
+        - generic [ref=f103e75]:
+          - heading "Как учат в АйТи Скул" [level=2] [ref=f103e76]
+          - paragraph [ref=f103e77]: В АйТи Скул мы используем программируемые конструкторы LEGO и робототехнические наборы Arduino для обучения детей с 6 лет.
+        - generic [ref=f103e78]:
+          - generic [ref=f103e79]:
+            - generic [aria-hidden] [ref=f103e80]: "01"
+            - paragraph [ref=f103e81]: Мы собрали команду преподавателей из числа брестских специалистов по робототехнике, опытных предпринимателей и менеджеров из IT-отрасли, чтобы решить амбициозную задачу — обеспечить нашим детям возможность развиваться с использованием новейших и инновационных образовательных технологий.
+          - generic [ref=f103e82]:
+            - generic [aria-hidden] [ref=f103e83]: "02"
+            - paragraph [ref=f103e84]: Наша учебная программа разработана специалистами, которые зарекомендовали себя как в Республике Беларусь, так и на международной арене. Педагоги АйТи Скул прошли специальную подготовку и сертификацию по использованию оборудования LEGO в образовательном процессе.
+        - paragraph [ref=f103e85]: Наша главная цель — формирование профессиональных кадров для IT-отрасли уже со школьной скамьи.
+    - region [ref=f103e86]:
+      - generic [ref=f103e87]:
+        - heading "Для чего ребенку компьютерное образование?" [level=2] [ref=f103e88]
+        - generic [ref=f103e89]:
+          - generic [ref=f103e90]:
+            - generic [aria-hidden] [ref=f103e91]: "01"
+            - heading "Развитие потенциала" [level=3] [ref=f103e92]
+            - paragraph [ref=f103e93]: Работа с компьютером это инструмент интеллектуальной работы, помогающий в развитии интеллектуально-творческого потенциала личности, что позволит быстрее адаптироваться к различным условиям жизни, находить нестандартные решения любых возникающих задач.
+          - generic [ref=f103e94]:
+            - generic [aria-hidden] [ref=f103e95]: "02"
+            - heading "Профориентация" [level=3] [ref=f103e96]
+            - paragraph [ref=f103e97]: "Курс построен таким образом, что тинейджеры могут попробовать себя в разных ролях в IT: от тестировщика до программиста."
+          - generic [ref=f103e98]:
+            - generic [aria-hidden] [ref=f103e99]: "03"
+            - heading "Ранний старт в IT" [level=3] [ref=f103e100]
+            - paragraph [ref=f103e101]: Ребята смогут получить реальный опыт и свою первую профессию еще в школе, создавая и развивая настоящий проект.
+    - region [ref=f103e102]:
+      - generic [ref=f103e103]:
+        - generic [ref=f103e104]:
+          - heading "Выбирайте подходящий курс" [level=2] [ref=f103e105]
+          - paragraph [ref=f103e106]: Кратко рассказываем о каждом курсе
+        - generic [ref=f103e107]:
+          - generic [ref=f103e108]:
+            - group [ref=f103e109]:
+              - generic "Робототехника LEGO" [active] [ref=f103e110] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e111]: "01"
+              - generic [ref=f103e188]:
+                - paragraph [ref=f103e189]: LEGO WeDo, WeDo 2.0, EV3 - идеальный старт для изучения робототехники с 7-ми лет. Занятия по робототехнике развивают творческое и логическое мышление, ответственность, усидчивость, терпеливость, целеустремленность, память и мелкую моторику.
+                - paragraph [ref=f103e190]: В процессе занятий дети учатся действовать логически, принимать взвешенные решения, прислушиваться к чужому мнению, работать сообща, доводить начатое до конца.
+                - paragraph [ref=f103e191]: Платформа LEGO WeDo создана для эффективного изучения технических дисциплин уже в начальной школе. Она позволяет собирать и программировать простые робототехнические модели, которые подключаются к компьютеру. Для управления моделями используется специальное программное обеспечение, основанное на визуальном языке программирования, понятном даже дошкольнику.
+                - paragraph [ref=f103e192]: Платформа LEGO WeDo 2.0 - расширенная версия платформы WeDo. Она создана для развития у детей навыков алгоритмического мышления, необходимых в дальнейшем освоении программирования, и вовлечения их в изучение точных наук через практическую деятельность. WeDo 2.0 включает в себя материалы для реализации 17 проектов по окружающему миру, биологии, географии, исследованию космоса и инженерному проектированию - через исследование, моделирование и конструирование робототехнических моделей.
+                - paragraph [ref=f103e193]: Платформа LEGO Mindstorms EV3 позволяет ученикам создавать, программировать и тестировать свои решения, используя реальные технологии из мира робототехники. С её помощью легко и просто совершенствовать знания в области информатики, физики, технологии и математики, при этом развивая критически важные для XXI века навыки и умения.
+            - group [ref=f103e114]:
+              - generic "Программирование в Kodu и Scratch" [ref=f103e115] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e116]: "02"
+            - group [ref=f103e119]:
+              - generic "Робототехника Arduino" [ref=f103e120] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e121]: "03"
+            - group [ref=f103e124]:
+              - generic "Программирование на Python" [ref=f103e125] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e126]: "04"
+            - group [ref=f103e129]:
+              - generic "Программирование Minecraft" [ref=f103e130] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e131]: "05"
+            - group [ref=f103e134]:
+              - generic "Программирование Roblox" [ref=f103e135] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e136]: "06"
+            - group [ref=f103e139]:
+              - generic "Разработка игр на Godot" [ref=f103e140] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e141]: "07"
+          - generic [ref=f103e144]:
+            - group [ref=f103e145]:
+              - generic "Программирование квадрокоптеров" [ref=f103e146] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e147]: "08"
+            - group [ref=f103e150]:
+              - generic "Разработка игр на платформе Unity" [ref=f103e151] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e152]: "09"
+            - group [ref=f103e155]:
+              - generic "Олимпиадное программирование" [ref=f103e156] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e157]: "10"
+            - group [ref=f103e160]:
+              - generic "3D-моделирование в BLENDER" [ref=f103e161] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e162]: "11"
+            - group [ref=f103e165]:
+              - generic "Разработка сайтов" [ref=f103e166] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e167]: "12"
+            - group [ref=f103e170]:
+              - generic "Нейронные сети" [ref=f103e171] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e172]: "13"
+            - group [ref=f103e175]:
+              - generic "Тестирование программного обеспечения" [ref=f103e176] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f103e177]: "14"
+        - generic [ref=f103e180]:
+          - generic [ref=f103e181]:
+            - heading "Вы все равно затрудняетесь?" [level=3] [ref=f103e182]
+            - paragraph [ref=f103e183]: Мы с радостью вам поможем определиться с направлением и ответим на волнующие вас вопросы
+          - link "+375 (29) 871-76-12" [ref=f103e184] [cursor=pointer]:
+            - /url: tel:+375298717612

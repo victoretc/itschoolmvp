@@ -1,0 +1,1142 @@
+{
+ "url": "public/index.html",
+ "at": "2026-11-04T19:56:23.381Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.06
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 900,
+     "screens": 1,
+     "words": 46,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [
+      "http://127.0.0.1:56797/images/logo_itschool.svg",
+      "http://127.0.0.1:56797/images/hero-kid-robot.jpg",
+      "http://127.0.0.1:56797/images/school-mentor.jpg"
+     ],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "АйТи Скул",
+     "words": 2,
+     "chars": 9,
+     "lines": 1,
+     "size": 32,
+     "vw": 2.2,
+     "font": "Times",
+     "weight": 700,
+     "tracking": 0,
+     "leading": 1.2,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.99,
+     "top": 290,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "АйТи Скул",
+     "words": 2,
+     "lines": 1,
+     "size": 32,
+     "font": "Times"
+    },
+    "headings": [
+     {
+      "text": "АйТи Скул",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Times",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.99,
+      "top": 290,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Times",
+       "share": 0.99,
+       "mono": false
+      },
+      {
+       "family": "Arial",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      16,
+      32
+     ],
+     "sizeCount": 3,
+     "notLoaded": [],
+     "body": {
+      "font": "Times",
+      "size": 16,
+      "leading": 1.2,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 178,
+     "max": {
+      "size": 32,
+      "vw": 2.2,
+      "font": "Times",
+      "text": "АйТи Скул"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.7
+      },
+      {
+       "color": "#0000ee",
+       "share": 0.3
+      }
+     ],
+     "button": null,
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 0,
+     "inHero": 0,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": []
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 243,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 900,
+    "margins": {
+     "left": 8,
+     "right": 851
+    },
+    "sections": [
+     {
+      "sel": "header.header",
+      "tag": "header",
+      "top": 26,
+      "height": 243,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 8,
+      "right": 1292,
+      "textLeft": 8,
+      "textRight": 1292,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 290,
+      "height": 266,
+      "words": 33,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "АйТи Скул",
+       "size": 32,
+       "tag": "h1"
+      },
+      "left": 8,
+      "right": 851,
+      "textLeft": 8,
+      "textRight": 851,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "АйТи Скул",
+      "size": 32,
+      "top": 290,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Перейти к содержимому",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "+375 (29) 871-76-12",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "АйТи Скул",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "IT School: Откройте своему ребенку мир программиро",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "Получить консультацию",
+      "side": "left",
+      "px": 8
+     }
+    ],
+    "edges": [
+     {
+      "x": 8,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.51,
+    "voidBox": {
+     "x": 600,
+     "y": 120,
+     "w": 840,
+     "h": 780
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.11
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1024,
+     "screens": 1,
+     "words": 46,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [
+      "http://127.0.0.1:56797/images/logo_itschool.svg",
+      "http://127.0.0.1:56797/images/hero-kid-robot.jpg",
+      "http://127.0.0.1:56797/images/school-mentor.jpg"
+     ],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "АйТи Скул",
+     "words": 2,
+     "chars": 9,
+     "lines": 1,
+     "size": 32,
+     "vw": 4.2,
+     "font": "Times",
+     "weight": 700,
+     "tracking": 0,
+     "leading": 1.2,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.98,
+     "top": 290,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "АйТи Скул",
+     "words": 2,
+     "lines": 1,
+     "size": 32,
+     "font": "Times"
+    },
+    "headings": [
+     {
+      "text": "АйТи Скул",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Times",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.98,
+      "top": 290,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Times",
+       "share": 0.99,
+       "mono": false
+      },
+      {
+       "family": "Arial",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      16,
+      32
+     ],
+     "sizeCount": 3,
+     "notLoaded": [],
+     "body": {
+      "font": "Times",
+      "size": 16,
+      "leading": 1.2,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 94,
+     "max": {
+      "size": 32,
+      "vw": 4.2,
+      "font": "Times",
+      "text": "АйТи Скул"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.7
+      },
+      {
+       "color": "#0000ee",
+       "share": 0.3
+      }
+     ],
+     "button": null,
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 0,
+     "inHero": 0,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": []
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 243,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1024,
+    "margins": {
+     "left": 8,
+     "right": 179
+    },
+    "sections": [
+     {
+      "sel": "header.header",
+      "tag": "header",
+      "top": 26,
+      "height": 243,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 8,
+      "right": 620,
+      "textLeft": 8,
+      "textRight": 620,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 290,
+      "height": 266,
+      "words": 33,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "АйТи Скул",
+       "size": 32,
+       "tag": "h1"
+      },
+      "left": 8,
+      "right": 179,
+      "textLeft": 8,
+      "textRight": 179,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "АйТи Скул",
+      "size": 32,
+      "top": 290,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Перейти к содержимому",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "+375 (29) 871-76-12",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "АйТи Скул",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "IT School: Откройте своему ребенку мир программиро",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "Получить консультацию",
+      "side": "left",
+      "px": 8
+     }
+    ],
+    "edges": [
+     {
+      "x": 8,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.24
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 844,
+     "screens": 1,
+     "words": 46,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 2,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [
+      "http://127.0.0.1:56797/images/logo_itschool.svg",
+      "http://127.0.0.1:56797/images/hero-kid-robot.jpg",
+      "http://127.0.0.1:56797/images/school-mentor.jpg"
+     ],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "АйТи Скул",
+     "words": 2,
+     "chars": 9,
+     "lines": 1,
+     "size": 32,
+     "vw": 8.2,
+     "font": "Times",
+     "weight": 700,
+     "tracking": 0,
+     "leading": 1.2,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 290,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "АйТи Скул",
+     "words": 2,
+     "lines": 1,
+     "size": 32,
+     "font": "Times"
+    },
+    "headings": [
+     {
+      "text": "АйТи Скул",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Times",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 290,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Times",
+       "share": 0.99,
+       "mono": false
+      },
+      {
+       "family": "Arial",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      16,
+      32
+     ],
+     "sizeCount": 3,
+     "notLoaded": [],
+     "body": {
+      "font": "Times",
+      "size": 16,
+      "leading": 1.2,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 21
+     },
+     "measureChars": 47,
+     "max": {
+      "size": 32,
+      "vw": 8.2,
+      "font": "Times",
+      "text": "АйТи Скул"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#000000",
+       "share": 0.7
+      },
+      {
+       "color": "#0000ee",
+       "share": 0.3
+      }
+     ],
+     "button": null,
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 0,
+     "inHero": 0,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": []
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 243,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 844,
+    "margins": {
+     "left": 8,
+     "right": 39
+    },
+    "sections": [
+     {
+      "sel": "header.header",
+      "tag": "header",
+      "top": 26,
+      "height": 243,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 8,
+      "right": 242,
+      "textLeft": 8,
+      "textRight": 242,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 290,
+      "height": 338,
+      "words": 33,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "АйТи Скул",
+       "size": 32,
+       "tag": "h1"
+      },
+      "left": 8,
+      "right": 39,
+      "textLeft": 8,
+      "textRight": 39,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "АйТи Скул",
+      "size": 32,
+      "top": 290,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Перейти к содержимому",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "+375 (29) 871-76-12",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "АйТи Скул",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "IT School: Откройте своему ребенку мир программиро",
+      "side": "left",
+      "px": 8
+     },
+     {
+      "text": "Получить консультацию",
+      "side": "left",
+      "px": 8
+     }
+    ],
+    "edges": [
+     {
+      "x": 8,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "default-link",
+   "width": 1440,
+   "message": "Browser-default blue/purple link colour is showing.",
+   "fix": "Style every link: inherit the text colour and mark it with weight, underline offset, or the accent.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "first-action",
+   "width": 1440,
+   "message": "No visible button in the first screen.",
+   "fix": "Give the one primary action a real button in the first screen (a filled or solid-bordered control, 44px or taller), not only a link in the navigation.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 0 picture(s) on the page (0 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "measure",
+   "width": 1440,
+   "message": "Longest paragraph runs about 178 characters per line.",
+   "fix": "Cap paragraphs at 45–75 characters (max-width: 60ch).",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "broken-image",
+   "width": 1440,
+   "message": "Broken image(s): http://127.0.0.1:56797/images/logo_itschool.svg, http://127.0.0.1:56797/images/hero-kid-robot.jpg, http://127.0.0.1:56797/images/school-mentor.jpg",
+   "fix": "Fix the URL or replace the asset.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "focal-point",
+   "width": 1440,
+   "message": "The first screen has no dominant element: the largest type is 32px (2.2vw) and no single picture holds a third of the viewport.",
+   "fix": "Make one thing lead: the headline at display size, or one large picture. A grid of many small pictures is not one thing; in blind tests jurors marked a first screen without a headline down every time. On the strongest studied sites the largest type has a median of 8.4vw.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-not-dealt",
+   "width": 1440,
+   "message": "The sheet dealt Chillax and Chillax, but the page renders Times, Arial.",
+   "fix": "Load the dealt face (the link on the sheet) and put it first in font-family. A build that falls back to a default face lands on the default look."
+  },
+  {
+   "level": "FAIL",
+   "id": "off-centre",
+   "width": 1440,
+   "message": "The page sits off-centre: its content comes to 8px from the left edge but only to 851px from the right, at 1440px.",
+   "fix": "Give the page one pair of equal margins. Check the wrapper for a max-width without margin-inline: auto, a grid with an empty last column, or padding on one side only. If one side is meant to hold air, it must still be closed by something that reaches the margin (a picture, the navigation's last item, a figure).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "name-only-title",
+   "width": 1440,
+   "message": "The h1 is a bare name (\"АйТи Скул\") and nothing else on the first screen says what this is.",
+   "fix": "Keep the name if it leads, and give the line under it (18px or more) the plain words: what it is, for whom, where or when. In the study of 97 Sites of the Day, first screens that named nothing lost usability and content points.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "hero-void",
+   "width": 1440,
+   "message": "51% of the first screen is one empty block (840×780px at 600,120).",
+   "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+  },
+  {
+   "level": "FAIL",
+   "id": "edge-text",
+   "width": 1440,
+   "message": "5 text block(s) sit within 16px of the screen edge: \"Перейти к содержимому\" (8px from the left); \"+375 (29) 871-76-12\" (8px from the left); \"АйТи Скул\" (8px from the left); \"IT School: Откройте своему реб\" (8px from the left)",
+   "fix": "Keep text inside the page margin (16–32px or more). Only display type deliberately bled past the edge may touch it.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Only 0 element(s) moved while the page loaded and scrolled.",
+   "fix": "Build the motion layer (SKILL.md step 9, references/motion.md): the signature move, an entrance for the parts of every section, feedback on every control, and one moving picture. Transform and opacity only, with a reduced-motion fallback."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/vitaarosuk/Documents/victoretc/studio/itschool/.taste-skill/inspect/desktop-fold.jpg",
+   "pages": [
+    "/Users/vitaarosuk/Documents/victoretc/studio/itschool/.taste-skill/inspect/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/vitaarosuk/Documents/victoretc/studio/itschool/.taste-skill/inspect/tablet-fold.jpg",
+   "pages": [
+    "/Users/vitaarosuk/Documents/victoretc/studio/itschool/.taste-skill/inspect/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/vitaarosuk/Documents/victoretc/studio/itschool/.taste-skill/inspect/mobile-fold.jpg",
+   "pages": [
+    "/Users/vitaarosuk/Documents/victoretc/studio/itschool/.taste-skill/inspect/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

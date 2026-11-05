@@ -1,0 +1,41 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="footer__brand-link" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+    </div>
+
+    <nav class="footer__nav" aria-label="Навигация в подвале">
+      <p class="footer__heading">Навигация</p>
+      <ul>
+        <li><a href="{{ "/courses/" | relURL }}">Курсы</a></li>
+        <li><a href="{{ "/it-vacations/" | relURL }}">IT каникулы</a></li>
+        <li><a href="{{ "/about/" | relURL }}">О нас</a></li>
+        <li><a href="{{ "/blog/" | relURL }}">Блог</a></li>
+        <li><a href="{{ "/contacts/" | relURL }}">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__contacts">
+      <p class="footer__heading">Контакты</p>
+      <a class="footer__phone" href="tel:+375298717612">+375 (29) 871-76-12</a>
+      <a class="footer__phone" href="tel:+375292284971">+375 (29) 228-49-71 (Директор)</a>
+      <a class="footer__email" href="mailto:info@it-school.by">info@it-school.by</a>
+      <p class="footer__address">
+        <a href="https://yandex.by/maps/-/CDDRAYi-" target="_blank" rel="noopener">г. Брест ул. Пионерская, 52 к. 503 (офис)</a>
+      </p>
+    </div>
+
+    <div class="footer__messengers">
+      <p class="footer__heading">Месенджеры</p>
+      <ul class="footer__socials">
+        <li><a href="viber://chat?number=%2B375298717612">Viber</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__base">
+    <span>© {{ now.Year }} Все права защищены</span>
+    <a href="https://victoretc.github.io/portfolio/" target="_blank" rel="noopener">Разработка Богатов</a>
+    <a class="footer__top" href="#main">Прокрутить вверх</a>
+  </div>
+</footer>

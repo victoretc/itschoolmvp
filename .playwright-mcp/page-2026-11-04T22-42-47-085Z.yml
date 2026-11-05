@@ -1,0 +1,42 @@
+- generic [active] [ref=f60e1]:
+  - link "Перейти к содержимому" [ref=f60e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f60e3]:
+    - generic [ref=f60e4]:
+      - link "АйТи Скул — на главную" [ref=f60e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f60e6]
+      - 'link "Позвонить: +375 (29) 871-76-12" [ref=f60e7] [cursor=pointer]':
+        - /url: tel:+375298717612
+      - button "Меню" [ref=f60e10] [cursor=pointer]
+  - main [ref=f60e14]:
+    - region [ref=f60e15]:
+      - generic [ref=f60e16]:
+        - generic [ref=f60e17]:
+          - generic [ref=f60e18]:
+            - heading "АйТи Скул" [level=1] [ref=f60e19]:
+              - text: АйТи
+              - generic [ref=f60e20]: Скул
+            - paragraph [ref=f60e21]: Откройте своему ребенку мир программирования и цифровых технологий!
+            - list [ref=f60e22]:
+              - listitem [ref=f60e23]: Улучшаем школьную успеваемость
+              - listitem [ref=f60e24]: Готовимся к перспективным профессиям
+              - listitem [ref=f60e25]: Фиксируем цену занятий вне зависимости от курса
+              - listitem [ref=f60e26]: Развиваем универсальные навыки
+            - link "Получить консультацию" [ref=f60e28] [cursor=pointer]:
+              - /url: /contacts/
+          - figure [aria-hidden] [ref=f60e32]
+          - figure [aria-hidden] [ref=f60e33]
+        - generic [ref=f60e34]:
+          - generic [ref=f60e35]:
+            - term [ref=f60e36]: "700"
+            - definition [ref=f60e37]: Постоянных клиентов в год
+          - generic [ref=f60e38]:
+            - term [ref=f60e39]: "8"
+            - definition [ref=f60e40]: Лет преподавания
+          - generic [ref=f60e41]:
+            - term [ref=f60e42]: "15"
+            - definition [ref=f60e43]: Педагогов
+          - generic [ref=f60e44]:
+            - term [ref=f60e45]: 6000+
+            - definition [ref=f60e46]: обученных детей
