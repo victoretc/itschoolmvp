@@ -10,6 +10,13 @@
   <div class="sb-blog-tile__body">
     <time class="sb-blog-tile__date" datetime="{{ $page.Date.Format "2006-01-02" }}">{{ partial "blog-date.html" $page }}</time>
     <h3 class="sb-blog-tile__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
-    <a class="sb-blog-tile__more" href="{{ $page.RelPermalink }}">Подробнее <span class="sb-blog-tile__more-arrows">&gt;&gt;</span></a>
+    <span class="sb-blog-tile__more" aria-hidden="true">
+      <span>Подробнее</span>
+      <span class="sb-blog-tile__arrow">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M5 12h14M13 6l6 6-6 6"></path>
+        </svg>
+      </span>
+    </span>
   </div>
 </article>

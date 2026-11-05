@@ -3,50 +3,22 @@
 <section class="sb-blog" aria-labelledby="blog-title">
   <header class="sb-blog-hero">
     <div class="sb-blog-hero__inner">
-      <div class="sb-blog-hero__art sb-blog-hero__art--left" aria-hidden="true">
-        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--blog-flower") }}
-        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--blog-star") }}
-        {{ partial "sb-art.html" (dict "kind" "dots" "class" "sb-art--blog-dots") }}
-      </div>
+      <h1 class="sb-blog-hero__title" id="blog-title">
+        <span class="sb-blog-hero__highlight">{{ .Title }}</span>
+      </h1>
 
-      <div class="sb-blog-hero__copy">
-        <h1 class="sb-blog-hero__title" id="blog-title">
-          <span class="sb-blog-hero__highlight">{{ .Title }}</span>
-        </h1>
-
-        {{- with .Params.lead }}
-        <p class="sb-blog-hero__lead">{{ . }}</p>
-        {{- end }}
-
-        <div class="sb-blog-hero__mobile-art" aria-hidden="true">
-          {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--blog-mobile-flower") }}
-          {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--blog-mobile-spark") }}
-          {{ partial "sb-art.html" (dict "kind" "leaf" "class" "sb-art--blog-mobile-leaf") }}
-        </div>
-
-        <span class="sb-blog-hero__squiggle" aria-hidden="true">
-          {{ partial "sb-art.html" (dict "kind" "squiggle") }}
-        </span>
-      </div>
-
-      <div class="sb-blog-hero__art sb-blog-hero__art--right" aria-hidden="true">
-        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--blog-triangle") }}
-        {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--blog-cat") }}
-        {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--blog-spark") }}
-        {{ partial "sb-art.html" (dict "kind" "leaf" "class" "sb-art--blog-leaf") }}
-      </div>
+      {{- with (.Params.lead | default .Description) }}
+      <p class="sb-blog-hero__lead">{{ . }}</p>
+      {{- end }}
     </div>
   </header>
 
   {{- with $pages }}
-  <section class="sb-blog-news" aria-labelledby="sb-blog-news-title">
+  <section class="sb-blog-news sb-blog-news--index" aria-labelledby="sb-blog-news-title">
     <div class="sb-inner">
       <header class="sb-blog-news__head" data-reveal>
-        <h2 class="sb-title" id="sb-blog-news-title">{{ $.Params.newsTitle | default "Новостные статьи" }}</h2>
+        <h2 class="sb-blog-news__label" id="sb-blog-news-title">{{ $.Params.newsTitle | default "Новостные статьи" }}</h2>
         <span class="sb-blog-news__rule" aria-hidden="true"></span>
-        <span class="sb-blog-news__squiggle" aria-hidden="true">
-          {{ partial "sb-art.html" (dict "kind" "squiggle") }}
-        </span>
       </header>
 
       <div class="sb-blog-grid" data-reveal-group>

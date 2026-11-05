@@ -70,11 +70,9 @@
     {{- range $i, $point := . }}
     <li class="sb-benefits__item">
       <span class="sb-benefits__mark sb-benefits__mark--{{ mod $i 4 }}" aria-hidden="true">
-        <svg viewBox="0 0 16 16" width="12" height="12" focusable="false">
-          <path d="M3 8.4 6.2 11.6 13 4.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
+        {{ partial "icon.html" $point.icon }}
       </span>
-      <span>{{ $point }}</span>
+      <span>{{ $point.text }}</span>
     </li>
     {{- end }}
   </ul>
@@ -86,44 +84,35 @@
 {{- with .Params.approach }}
 <section class="sb-section sb-approach" aria-labelledby="approach-title">
   <div class="sb-inner">
-    <header class="sb-head">
-      <h2 class="sb-title" id="approach-title">{{ .title }}</h2>
-      <p class="sb-lead">{{ .lead }}</p>
+    <header class="sb-approach__head">
+      <div class="sb-approach__intro">
+        <h2 class="sb-title" id="approach-title">{{ .title }}</h2>
+        <p class="sb-approach__lead">{{ .lead }}</p>
+      </div>
+
+      <figure class="sb-approach__media">
+        {{ partial "responsive-img.html" (dict "src" "images/school-blog-2.jpg" "fill" "1200x900 Center" "alt" "Команда АйТи Скул с наградами на фестивале Smart Robo Fest" "sizes" "(max-width: 900px) 90vw, 480px" "widths" (slice 400 600 900 1200)) }}
+        <figcaption class="sb-approach__caption">{{ .caption }}</figcaption>
+      </figure>
     </header>
 
-    <div class="sb-approach__body">
-      <div class="sb-approach__media-wrap">
-        <figure class="sb-approach__media">
-          {{ partial "responsive-img.html" (dict "src" "images/school-blog-2.jpg" "fill" "1200x900 Center" "alt" "Команда АйТи Скул с наградами на фестивале Smart Robo Fest" "sizes" "(max-width: 900px) 90vw, 600px" "widths" (slice 400 600 900 1200)) }}
-        </figure>
-        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--approach-star") }}
-        <p class="sb-approach__caption">{{ .caption }}</p>
-      </div>
+    <ol class="sb-approach__steps">
+      {{- range $i, $note := .notes }}
+      <li class="sb-step">
+        <span class="sb-step__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+        <p class="sb-step__text">{{ $note }}</p>
+      </li>
+      {{- end }}
+    </ol>
 
-      <div class="sb-approach__content">
-        <div class="sb-notes">
-          {{- range $i, $note := .notes }}
-          <div class="sb-notes__item">
-            <span class="sb-notes__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-            <p>{{ $note }}</p>
-          </div>
-          {{- end }}
-        </div>
-      </div>
-    </div>
-
-    <blockquote class="sb-statement">
-      <div class="sb-statement__body">
+    <blockquote class="sb-approach__goal">
+      <div class="sb-approach__goal-body">
         {{- with .statement_label }}
-        <p class="sb-statement__label">{{ . }}</p>
+        <p class="sb-approach__goal-label">{{ . }}</p>
         {{- end }}
-        <p class="sb-statement__text">{{ replace .statement "со школьной скамьи" "<span class=\"sb-statement__hl\">со школьной скамьи</span>" | safeHTML }}</p>
+        <p class="sb-approach__goal-text">{{ replace .statement "со школьной скамьи" "<span class=\"sb-approach__goal-hl\">со школьной скамьи</span>" | safeHTML }}</p>
       </div>
-      <div class="sb-statement__art" aria-hidden="true">
-        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--statement-star") }}
-        {{ partial "sb-art.html" (dict "kind" "coin" "class" "sb-art--statement-coin") }}
-        {{ partial "sb-art.html" (dict "kind" "plus" "class" "sb-art--statement-plus") }}
-      </div>
+      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-approach__goal-star") }}
     </blockquote>
   </div>
 </section>
@@ -200,8 +189,9 @@
         <p class="sb-help__eyebrow">Нужна помощь?</p>
         <h3 class="sb-help__title">{{ .help.title }}</h3>
         <p class="sb-help__text">{{ .help.text }}</p>
-        <a class="sb-help__phone" href="{{ site.Params.phoneHref | safeURL }}">
-          {{ site.Params.phone }}
+        <a class="sb-help__phone sb-btn sb-btn--sand sb-btn--phone" href="{{ site.Params.phoneHref | safeURL }}">
+          {{ partial "icon.html" "phone" }}
+          <span>{{ site.Params.phone }}</span>
         </a>
         <p class="sb-help__note">Пн–Сб, 9:00–20:00</p>
       </aside>
@@ -286,10 +276,6 @@
       </a>
       {{- end }}
     </header>
-
-    <div class="sb-instagram__widget" data-reveal>
-      {{ partial "instagram.html" . }}
-    </div>
   </div>
 </section>
 {{- end }}

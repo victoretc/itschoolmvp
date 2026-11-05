@@ -211,7 +211,6 @@ button {
     background: var(--blue);
     color: var(--ink);
     border-color: var(--blue);
-    transform: translateY(-1px);
   }
   .btn:hover svg {
     transform: translateX(4px);
@@ -225,7 +224,6 @@ button {
     background: var(--ink);
     border-color: var(--field);
     color: var(--ink);
-    transform: translateY(-2px);
   }
   .btn--cta:hover::before {
     transform: scale(13);
@@ -345,6 +343,11 @@ button {
   .header__inner {
     width: 100%;
     border-radius: 0;
+  }
+
+  /* Keep the bar flush with the top edge on touch layouts. */
+  .header.is-scrolled {
+    padding-top: 0;
   }
 }
 

@@ -38,38 +38,41 @@
 {{/* ------------------------------------------------------------ contacts */}}
 <section class="sb-section sb-contacts" aria-label="Контакты офиса">
   <div class="sb-inner sb-contacts__inner">
-    <div class="sb-contacts__card" data-reveal>
-      <div class="sb-contacts__rows">
-        <div class="sb-contact">
+    <div class="sb-contacts__card">
+      <div class="sb-contacts__rows" data-reveal-group>
+        <div class="sb-contact sb-contact--office" data-reveal>
           <span class="sb-contact__label">Офис</span>
           <a class="sb-contact__link" href="{{ site.Data.site.mapUrl }}" target="_blank" rel="noopener">
             <span class="sb-contact__icon sb-contact__icon--sky">{{ partial "icon.html" "pin" }}</span>
-            <span class="sb-contact__value">{{ .Params.office }}</span>
+            <span class="sb-contact__value sb-contact__value--lead">{{ .Params.office }}</span>
+            <svg class="sb-contact__arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+              <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
           </a>
         </div>
 
-        {{- range .Params.phones }}
-        <div class="sb-contact">
-          <span class="sb-contact__label">{{ .label }}</span>
-          <a class="sb-contact__link" href="{{ .href }}">
+        <div class="sb-contacts__pair" data-reveal>
+          {{- range .Params.phones }}
+          <a class="sb-contact__tile" href="{{ .href }}">
             <span class="sb-contact__icon sb-contact__icon--yellow">{{ partial "icon.html" "phone" }}</span>
             <span class="sb-contact__body">
+              <span class="sb-contact__label">{{ .label }}</span>
               <span class="sb-contact__value">{{ .value }}</span>
-              {{- with .note }}
-              <span class="sb-contact__note">{{ . }}</span>
-              {{- end }}
             </span>
           </a>
+          {{- end }}
         </div>
-        {{- end }}
 
-        <div class="sb-contact">
-          <span class="sb-contact__label">E-mail</span>
-          <a class="sb-contact__link" href="mailto:{{ .Params.email }}">
-            <span class="sb-contact__icon sb-contact__icon--mint">{{ partial "icon.html" "mail" }}</span>
+        <a class="sb-contact__tile sb-contact__tile--wide" href="mailto:{{ .Params.email }}" data-reveal>
+          <span class="sb-contact__icon sb-contact__icon--mint">{{ partial "icon.html" "mail" }}</span>
+          <span class="sb-contact__body">
+            <span class="sb-contact__label">E-mail</span>
             <span class="sb-contact__value">{{ .Params.email }}</span>
-          </a>
-        </div>
+          </span>
+          <svg class="sb-contact__arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
       </div>
     </div>
 

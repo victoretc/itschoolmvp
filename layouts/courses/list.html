@@ -65,14 +65,14 @@
 {{/* ------------------------------------------------------------- catalog */}}
 <section class="sb-section sb-courses-catalog" id="courses" aria-labelledby="courses-list-title">
   <div class="sb-inner">
-    <header class="sb-courses-head" data-reveal>
+    <header class="sb-courses-head">
       <div>
         <h2 class="sb-title" id="courses-list-title">Все курсы</h2>
       </div>
       <p class="sb-courses-head__note">Первое занятие — бесплатно. Поможем выбрать, если сомневаетесь.</p>
     </header>
 
-    <div class="sb-courses-grid" data-reveal-group>
+    <div class="sb-courses-grid">
       {{- range $i, $course := $courses }}
       {{- $key := lower $course.title -}}
       {{- $icon := "code" -}}
@@ -89,7 +89,7 @@
       {{- else if strings.Contains $key "scratch" -}}
         {{- $icon = "blocks" -}}
       {{- end -}}
-      <article class="sb-course-card" data-reveal>
+      <article class="sb-course-card">
         <div class="sb-course-card__top">
           <span class="sb-tile sb-tile--{{ mod $i 4 }}" aria-hidden="true">{{ partial "icon.html" $icon }}</span>
           <span class="sb-course-card__age">с {{ $course.age }} лет</span>
@@ -112,15 +112,19 @@
     </div>
 
     {{- with .Params.help }}
-    <aside class="sb-courses-help" data-reveal>
+    <aside class="sb-courses-help">
       <div class="sb-courses-help__body">
+        <p class="sb-courses-help__eyebrow">Нужна помощь?</p>
         <h3 class="sb-courses-help__title">{{ .title }}</h3>
         <p class="sb-courses-help__text">{{ .text }}</p>
       </div>
-      <a class="sb-courses-help__phone" href="{{ site.Params.phoneHref | safeURL }}">
-        {{ partial "icon.html" "phone" }}
-        <span>{{ site.Params.phone }}</span>
-      </a>
+      <div class="sb-courses-help__contact">
+        <a class="sb-courses-help__phone" href="{{ site.Params.phoneHref | safeURL }}">
+          <span class="sb-courses-help__phone-icon">{{ partial "icon.html" "phone" }}</span>
+          <span>{{ site.Params.phone }}</span>
+        </a>
+        <p class="sb-courses-help__note">Пн–Сб, 9:00–20:00</p>
+      </div>
     </aside>
     {{- end }}
   </div>
