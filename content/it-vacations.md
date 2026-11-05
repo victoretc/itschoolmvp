@@ -5,6 +5,8 @@ layout: 'it-vacations'
 hero:
   title: 'IT'
   accent: 'Каникулы'
+  image: 'images/about/gallery-03.jpg'
+  image_alt: 'Дети собирают робота из конструктора LEGO на занятии'
 groups:
   - age: '7-9 лет'
     subtitle: 'Тематические занятия каждые школьные каникулы'

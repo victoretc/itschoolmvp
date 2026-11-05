@@ -13,9 +13,9 @@
     </div>
 
     <figure class="vacations-hero__media">
-      {{- with resources.Get "images/vacations.jpg" }}
+      {{- with resources.Get $hero.image }}
       {{- $crop := .Fill "900x900 Center" }}
-      <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Ребята на занятии в АйТи Скул" loading="eager" decoding="async">
+      <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="{{ $hero.image_alt }}" loading="eager" decoding="async">
       {{- end }}
     </figure>
   </div>

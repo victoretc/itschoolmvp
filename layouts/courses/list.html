@@ -1,28 +1,104 @@
 {{ define "main" }}
 {{- $courses := site.Data.courses -}}
 {{- $guide := sort $courses "guideOrder" -}}
-<section class="catalog" aria-labelledby="catalog-title">
+{{- $first := index $courses 0 -}}
+<section class="courses-hero" aria-labelledby="catalog-title">
+  <div class="courses-hero__inner">
+    <div class="courses-hero__copy">
+      <p class="courses-hero__eyebrow">IT-школа для детей 6–17 лет</p>
+      <h1 class="courses-hero__title" id="catalog-title">{{ .Title }}</h1>
+      {{- with .Params.lead }}
+      <p class="courses-hero__lead">{{ . }}</p>
+      {{- end }}
+
+      <a class="btn courses-hero__cta" href="#guide">
+        Подобрать курс
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+
+      <dl class="courses-hero__stats">
+        <div>
+          <dt>{{ len $courses }}</dt>
+          <dd>направлений</dd>
+        </div>
+        <div>
+          <dt>6–17</dt>
+          <dd>лет</dd>
+        </div>
+        <div>
+          <dt>{{ $first.price }} руб.</dt>
+          <dd>абонемент</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="courses-hero__tiles" aria-hidden="true">
+      <div class="courses-hero__tile">
+        <span class="icon-tile courses-hero__tile-icon">{{ partial "icon.html" "robot" }}</span>
+        <span>Робототехника</span>
+      </div>
+      <div class="courses-hero__tile">
+        <span class="icon-tile icon-tile--yellow courses-hero__tile-icon">{{ partial "icon.html" "game" }}</span>
+        <span>Разработка игр</span>
+      </div>
+      <div class="courses-hero__tile">
+        <span class="icon-tile icon-tile--green courses-hero__tile-icon">{{ partial "icon.html" "code" }}</span>
+        <span>Программирование</span>
+      </div>
+      <div class="courses-hero__tile">
+        <span class="icon-tile icon-tile--red courses-hero__tile-icon">{{ partial "icon.html" "spark" }}</span>
+        <span>Нейросети</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalog" aria-labelledby="courses-list-title">
   <div class="catalog__inner">
-    <h1 class="catalog__title" id="catalog-title">{{ .Title }}</h1>
-    {{- with .Params.lead }}
-    <p class="catalog__lead">{{ . }}</p>
-    {{- end }}
+    <div class="catalog__head">
+      <div>
+        <p class="catalog__eyebrow">Направления</p>
+        <h2 class="catalog__title" id="courses-list-title">Все курсы</h2>
+      </div>
+      <p class="catalog__note">Первое занятие — бесплатно. Поможем выбрать, если сомневаетесь.</p>
+    </div>
 
     <div class="catalog__grid">
       {{- range $courses }}
-      <article class="catalog-card">
-        <h2 class="catalog-card__title">{{ .title }}</h2>
+      {{- $key := lower .title -}}
+      {{- $icon := "code" -}}
+      {{- if strings.Contains $key "робот" -}}
+        {{- $icon = "robot" -}}
+      {{- else if strings.Contains $key "квадрокоптер" -}}
+        {{- $icon = "rocket" -}}
+      {{- else if or (strings.Contains $key "игр") (strings.Contains $key "roblox") (strings.Contains $key "minecraft") -}}
+        {{- $icon = "game" -}}
+      {{- else if strings.Contains $key "нейрон" -}}
+        {{- $icon = "spark" -}}
+      {{- else if or (strings.Contains $key "3д") (strings.Contains $key "blender") -}}
+        {{- $icon = "compass" -}}
+      {{- else if strings.Contains $key "scratch" -}}
+        {{- $icon = "blocks" -}}
+      {{- end -}}
+      <article class="catalog-card catalog-card--{{ $icon }}">
+        <div class="catalog-card__top">
+          <span class="icon-tile catalog-card__icon">{{ partial "icon.html" $icon }}</span>
+          <span class="catalog-card__age">с {{ .age }} лет</span>
+        </div>
+        <h3 class="catalog-card__title">{{ .title }}</h3>
         <p class="catalog-card__price">
           <span class="catalog-card__value">{{ .price }}</span>
           <span class="catalog-card__suffix">{{ .suffix }}</span>
         </p>
-        <p class="catalog-card__age">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 20c.6-3.4 3.1-5.5 6.5-5.5s5.9 2.1 6.5 5.5"></path></svg>
-          Детям с {{ .age }} лет
-        </p>
         <a class="catalog-card__link" href="{{ "/contacts/" | relURL }}">
-          Записаться
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span>Записаться</span>
+          <span class="catalog-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" focusable="false">
+              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
         </a>
       </article>
       {{- end }}
@@ -31,16 +107,20 @@
 </section>
 
 {{- with .Params.guide }}
-<section class="guide" aria-labelledby="guide-title">
+<section class="guide" id="guide" aria-labelledby="guide-title">
   <div class="guide__inner">
     <header class="guide__head">
-      <h2 class="section-title" id="guide-title">{{ .title }}</h2>
+      <div>
+        <p class="guide__eyebrow">Гид по направлениям</p>
+        <h2 class="section-title" id="guide-title">{{ .title }}</h2>
+      </div>
+      <p class="guide__lead">Раскройте курс, чтобы узнать, чему научится ребёнок и с чего начнём.</p>
     </header>
 
     <div class="guide__grid">
       <div class="guide__col">
         {{- range $i, $course := first 7 $guide }}
-        <details class="guide__item">
+        <details class="guide__item" name="courses-guide">
           <summary class="guide__summary">
             <span class="guide__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             <span class="guide__name">{{ $course.guideTitle }}</span>
@@ -53,7 +133,7 @@
 
       <div class="guide__col">
         {{- range $i, $course := after 7 $guide }}
-        <details class="guide__item">
+        <details class="guide__item" name="courses-guide">
           <summary class="guide__summary">
             <span class="guide__num" aria-hidden="true">{{ printf "%02d" (add $i 8) }}</span>
             <span class="guide__name">{{ $course.guideTitle }}</span>

@@ -5,8 +5,8 @@ type: 'about'
 hero:
   eyebrow: 'IT-школа для детей 6–17 лет'
   lead: 'Обучение через действие — вот основной принцип работы АйТи Скул.'
-  image: 'images/about/about-hero.jpg'
-  image_alt: 'Педагог и ученик работают над проектом за ноутбуком'
+  image: 'images/about/gallery-07.jpg'
+  image_alt: 'Собранные модели роботов на столе'
 welcome:
   title: 'Добро пожаловать в АйТи Скул!'
   paragraphs:
@@ -41,8 +41,8 @@ principle:
       alt: 'Собранные модели роботов на столе'
     - image: 'images/about/gallery-10.jpg'
       alt: 'Робот на колёсах крупным планом'
-    - image: 'images/about/gallery-11.jpg'
-      alt: 'Педагог и ученик работают за ноутбуком'
+    - image: 'images/blog/robot-tournament.jpg'
+      alt: 'Команда АйТи Скул на турнире робототехники'
     - image: 'images/about/gallery-12.jpg'
       alt: 'Робот-вездеход, собранный на занятии'
     - image: 'images/about/gallery-13.jpg'

@@ -1,0 +1,132 @@
+- generic [active] [ref=f645e1]:
+  - link "Перейти к содержимому" [ref=f645e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f645e3]:
+    - generic [ref=f645e4]:
+      - link "АйТи Скул — на главную" [ref=f645e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f645e6]
+      - navigation "Основное меню" [ref=f645e7]:
+        - list [ref=f645e8]:
+          - listitem [ref=f645e9]:
+            - link "Главная" [ref=f645e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f645e11]:
+            - link "Курсы" [ref=f645e12] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f645e13]:
+            - link "IT Каникулы" [ref=f645e14] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f645e15]:
+            - link "О нас" [ref=f645e16] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f645e17]:
+            - link "Блог" [ref=f645e18] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f645e19]:
+            - link "Контакты" [ref=f645e20] [cursor=pointer]:
+              - /url: /contacts/
+        - generic [ref=f645e21]:
+          - link [ref=f645e22] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f645e25]:
+            - listitem [ref=f645e26]:
+              - link "Viber" [ref=f645e27] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f645e30]:
+              - link "Instagram" [ref=f645e31] [cursor=pointer]:
+                - /url: "#"
+  - main [ref=f645e34]:
+    - region [ref=f645e35]:
+      - generic [ref=f645e36]:
+        - heading "IT Каникулы" [level=1] [ref=f645e40]:
+          - generic [ref=f645e41]: IT
+          - generic [ref=f645e42]: Каникулы
+        - figure [ref=f645e44]:
+          - img "Дети собирают робота из конструктора LEGO на занятии" [ref=f645e45]
+    - region "Программы IT Каникул" [ref=f645e46]:
+      - generic [ref=f645e48]:
+        - article [ref=f645e49]:
+          - paragraph [ref=f645e50]: 7-9 лет
+          - heading "Тематические занятия каждые школьные каникулы" [level=2] [ref=f645e51]
+          - paragraph [ref=f645e52]: "В программе занятий:"
+          - list [ref=f645e53]:
+            - listitem [ref=f645e54]: Изучение графического редактора Paint
+            - listitem [ref=f645e55]: Создание игр на языке Scratch
+            - listitem [ref=f645e56]: Создание 3D игр на Kodu
+            - listitem [ref=f645e57]: Робототехника
+            - listitem [ref=f645e58]: 3D Моделирование LeoCAD
+            - listitem [ref=f645e59]: Рисование 3D ручкой
+            - listitem [ref=f645e60]: Настольные игры
+            - listitem [ref=f645e61]: Чаепитие в перерыве между занятиями
+            - listitem [ref=f645e62]: Прогулки на свежем воздухе
+        - article [ref=f645e63]:
+          - paragraph [ref=f645e64]: 10+ лет
+          - heading "Тематические занятия каждые школьные каникулы" [level=2] [ref=f645e65]
+          - paragraph [ref=f645e66]: "В программе занятий:"
+          - list [ref=f645e67]:
+            - listitem [ref=f645e68]: Алгоритмизация и программирование (Python)
+            - listitem [ref=f645e69]: Программирование Minecraft
+            - listitem [ref=f645e70]: Робототехника
+            - listitem [ref=f645e71]: 3D моделирование
+            - listitem [ref=f645e72]: Основы создания игры на платформе Roblox
+            - listitem [ref=f645e73]: Чаепитие в перерыве между занятиями
+            - listitem [ref=f645e74]: Прогулки на свежем воздухе
+    - region [ref=f645e75]:
+      - generic [ref=f645e76]:
+        - generic [ref=f645e77]:
+          - heading "Приглашаем ребят провести каникулы весело и с пользой!" [level=2] [ref=f645e78]:
+            - text: Приглашаем ребят провести каникулы
+            - generic [ref=f645e79]: весело и с пользой!
+          - paragraph [ref=f645e80]: Занятия будут проходить по адресу г. Брест, п-т Машерова, 23А. Количество мест ограничено!
+        - link "Запись по тел. +375 (29) 871 76 12" [ref=f645e81] [cursor=pointer]:
+          - /url: tel:+375298717612
+          - generic [ref=f645e85]:
+            - generic [ref=f645e86]: Запись по тел.
+            - generic [ref=f645e87]: +375 (29) 871 76 12
+  - contentinfo [ref=f645e88]:
+    - generic [ref=f645e89]:
+      - generic [ref=f645e90]:
+        - link "АйТи Скул — на главную" [ref=f645e91] [cursor=pointer]:
+          - /url: /
+          - img "АйТи Скул" [ref=f645e92]
+        - paragraph [ref=f645e93]: "IT-школа для детей 6–17 лет в Бресте: программирование, робототехника и разработка игр."
+      - navigation "Навигация в подвале" [ref=f645e94]:
+        - paragraph [ref=f645e95]: Навигация
+        - list [ref=f645e96]:
+          - listitem [ref=f645e97]:
+            - link "Курсы" [ref=f645e98] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f645e99]:
+            - link "IT каникулы" [ref=f645e100] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f645e101]:
+            - link "О нас" [ref=f645e102] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f645e103]:
+            - link "Блог" [ref=f645e104] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f645e105]:
+            - link "Контакты" [ref=f645e106] [cursor=pointer]:
+              - /url: /contacts/
+      - generic [ref=f645e107]:
+        - paragraph [ref=f645e108]: Контакты
+        - link "+375 (29) 871-76-12" [ref=f645e109] [cursor=pointer]:
+          - /url: tel:+375298717612
+        - link "+375 (29) 228-49-71 (директор)" [ref=f645e110] [cursor=pointer]:
+          - /url: tel:+375292284971
+        - link "info@it-school.by" [ref=f645e111] [cursor=pointer]:
+          - /url: mailto:info@it-school.by
+        - paragraph [ref=f645e112]:
+          - link "г. Брест, ул. Пионерская, 52, к. 503" [ref=f645e113] [cursor=pointer]:
+            - /url: https://yandex.by/maps/-/CDDRAYi-
+      - generic [ref=f645e118]:
+        - paragraph [ref=f645e119]: Мессенджеры
+        - link "Viber" [ref=f645e120] [cursor=pointer]:
+          - /url: viber://chat?number=%2B375298717612
+    - generic [ref=f645e124]:
+      - generic [ref=f645e125]: © 2026 Все права защищены
+      - link "Разработка Богатов" [ref=f645e126] [cursor=pointer]:
+        - /url: https://victoretc.github.io/portfolio/
+      - link "Наверх" [ref=f645e127] [cursor=pointer]:
+        - /url: "#top"

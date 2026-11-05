@@ -2,11 +2,8 @@
 title: 'Весенние IT-каникулы'
 date: 2024-03-20
 description: 'Открыт набор в группы "Весенние IT-каникулы": программы для детей 6+ и 12+.'
-cover: 'images/blog/it-camp-cover.jpg'
+cover: 'images/about/gallery-03.jpg'
 coverAlt: 'Весенние IT-каникулы в АйТи Скул'
-gallery:
-  - image: 'images/blog/it-camp.jpg'
-    alt: 'Занятия на весенних IT-каникулах в АйТи Скул'
 ---
 
 ## Открыт набор в группы "Весенние IT-каникулы"
