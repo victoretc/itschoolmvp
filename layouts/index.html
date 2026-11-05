@@ -22,11 +22,16 @@
       </ul>
 
       <div class="hero__actions">
-        <a class="btn" href="{{ "/contacts/" | relURL }}">
-          <span>{{ $hero.cta }}</span>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
+        <a class="btn btn--cta" href="{{ "/contacts/" | relURL }}">
+          <span class="btn__label">{{ $hero.cta }}</span>
+          <span class="btn__icon" aria-hidden="true">
+            <svg class="btn__arrow" viewBox="0 0 24 24" width="18" height="18" focusable="false">
+              <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <svg class="btn__arrow btn__arrow--next" viewBox="0 0 24 24" width="18" height="18" focusable="false">
+              <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
         </a>
         <a class="btn btn--ghost" href="#courses">{{ $hero.cta_secondary }}</a>
       </div>
@@ -42,22 +47,28 @@
 
     </div>
 
+    {{/* Временно скрыто: медиаблок hero (фото, акценты, стикер)
     <div class="hero__media">
       {{- with resources.Get "images/hero-left.jpg" }}
-      {{- $crop := .Fill "760x760 Center" }}
+      {{- $crop := .Fill "720x900 Center" }}
       <figure class="hero__portrait hero__portrait--main">
         <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Девочка с роботом на занятии по робототехнике" loading="eager" decoding="async">
       </figure>
       {{- end }}
 
       {{- with resources.Get "images/hero-right.jpg" }}
-      {{- $crop := .Fill "420x420 Center" }}
+      {{- $crop := .Fill "480x640 Center" }}
       <figure class="hero__portrait hero__portrait--small">
         <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Мальчик программирует на ноутбуке" loading="eager" decoding="async">
       </figure>
       {{- end }}
 
       <p class="hero__sticker" aria-hidden="true">LEGO · Scratch · Python</p>
+    </div>
+    */}}
+
+    <div class="hero__cloud-wrap">
+      <div class="hero__cloud" data-icon-cloud role="img" aria-label="Технологии, которые изучают в АйТи Скул: Scratch, Python, Arduino, HTML5, CSS, JavaScript, Roblox, Unity, Godot, Tinkercad, Blender и C++"></div>
     </div>
   </div>
 </section>
