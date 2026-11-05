@@ -6,12 +6,16 @@
   <div class="sb-hero__inner">
     <div class="sb-hero__art sb-hero__art--left">
       <figure class="sb-hero__photo sb-photo--main">
-        <img src="/images/about/gallery-02.jpg" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
+        {{- with resources.Get "images/about/gallery-02.jpg" }}
+        <img src="{{ .RelPermalink }}" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
+        {{- end }}
         {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--flower") }}
         {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-sticker--star") }}
       </figure>
       <figure class="sb-hero__photo sb-photo--small">
-        <img src="/images/about/gallery-05.jpg" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
+        {{- with resources.Get "images/about/gallery-05.jpg" }}
+        <img src="{{ .RelPermalink }}" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
+        {{- end }}
       </figure>
     </div>
 
@@ -24,14 +28,20 @@
 
       <div class="sb-hero__mobile-photos">
         <figure class="sb-hero__photo">
-          <img src="/images/about/gallery-02.jpg" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
+          {{- with resources.Get "images/about/gallery-02.jpg" }}
+          <img src="{{ .RelPermalink }}" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
+          {{- end }}
           {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--mobile-flower") }}
         </figure>
         <figure class="sb-hero__photo">
-          <img src="/images/about/gallery-01.jpg" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+          {{- with resources.Get "images/about/gallery-01.jpg" }}
+          <img src="{{ .RelPermalink }}" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+          {{- end }}
         </figure>
         <figure class="sb-hero__photo">
-          <img src="/images/about/gallery-05.jpg" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
+          {{- with resources.Get "images/about/gallery-05.jpg" }}
+          <img src="{{ .RelPermalink }}" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
+          {{- end }}
           {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-sticker--mobile-star") }}
         </figure>
       </div>
@@ -55,7 +65,9 @@
 
     <div class="sb-hero__art sb-hero__art--right">
       <figure class="sb-hero__photo sb-photo--awards">
-        <img src="/images/about/gallery-01.jpg" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+        {{- with resources.Get "images/about/gallery-01.jpg" }}
+        <img src="{{ .RelPermalink }}" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+        {{- end }}
         {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-sticker--triangle") }}
         {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-sticker--cat") }}
       </figure>
