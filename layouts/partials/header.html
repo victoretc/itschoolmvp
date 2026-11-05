@@ -24,9 +24,10 @@
     <nav class="header__nav" id="site-menu" aria-label="Основное меню" data-menu>
       <ul class="header__list">
         {{- range site.Menus.main }}
-        {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) (eq $.RelPermalink .URL) -}}
+        {{- $url := .URL | relURL -}}
+        {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) (eq $.RelPermalink $url) -}}
         <li class="header__item">
-          <a class="header__link{{ if $active }} header__link--current{{ end }}" href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+          <a class="header__link{{ if $active }} header__link--current{{ end }}" href="{{ $url }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
         </li>
         {{- end }}
       </ul>
