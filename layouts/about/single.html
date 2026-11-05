@@ -21,7 +21,7 @@
     <div class="sb-about-hero__media-wrap">
       <figure class="sb-about-hero__media">
         {{- with resources.Get $hero.image }}
-        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $hero.image_alt }}" loading="eager" decoding="async">
+        {{ partial "responsive-img.html" (dict "resource" . "alt" $hero.image_alt "sizes" "(max-width: 900px) 90vw, 520px" "loading" "eager" "priority" "high" "widths" (slice 480 720 1000)) }}
         {{- end }}
       </figure>
       {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--about-hero-star") }}
@@ -75,7 +75,7 @@
       {{- $image := . }}
       <figure class="sb-about-gallery__item" data-reveal>
         {{- with resources.Get $image.image }}
-        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $image.alt }}" loading="lazy" decoding="async">
+        {{ partial "responsive-img.html" (dict "resource" . "alt" $image.alt "sizes" "(max-width: 700px) 44vw, 260px" "widths" (slice 260 380 520)) }}
         {{- end }}
       </figure>
       {{- end }}

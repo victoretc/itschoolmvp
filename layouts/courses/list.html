@@ -35,9 +35,7 @@
     </div>
 
     <figure class="sb-courses-hero__media">
-      {{- with resources.Get "images/about/gallery-01.jpg" }}
-      <img src="{{ .RelPermalink }}" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
-      {{- end }}
+      {{ partial "responsive-img.html" (dict "src" "images/about/gallery-01.jpg" "alt" "Награды АйТи Скул на фестивале Smart Robo Fest" "sizes" "(max-width: 1080px) 90vw, 560px" "loading" "eager" "priority" "high") }}
     </figure>
   </div>
 </section>

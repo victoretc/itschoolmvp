@@ -14,7 +14,7 @@
     <div class="sb-vac-hero__media-wrap">
       <figure class="sb-vac-hero__media">
         {{- with resources.Get $hero.image }}
-        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $hero.image_alt }}" loading="eager" decoding="async">
+        {{ partial "responsive-img.html" (dict "resource" . "alt" $hero.image_alt "sizes" "(max-width: 900px) 90vw, 520px" "loading" "eager" "priority" "high" "widths" (slice 480 720 1000)) }}
         {{- end }}
       </figure>
       {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--vac-hero-star") }}

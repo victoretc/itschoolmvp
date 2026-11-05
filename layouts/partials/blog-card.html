@@ -4,8 +4,7 @@
 <article class="post-card" data-reveal>
   <a class="post-card__media" href="{{ $page.RelPermalink }}" tabindex="-1" aria-hidden="true">
     {{- with $cover -}}
-    {{- $img := .Fill "720x520 Center" -}}
-    <img src="{{ $img.RelPermalink }}" alt="" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
+    {{ partial "responsive-img.html" (dict "resource" . "fill" "720x520 Center" "alt" "" "sizes" "(max-width: 700px) 90vw, 320px" "widths" (slice 320 480 720)) }}
     {{- end -}}
   </a>
   <div class="post-card__body">

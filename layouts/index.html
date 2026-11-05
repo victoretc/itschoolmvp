@@ -6,16 +6,12 @@
   <div class="sb-hero__inner">
     <div class="sb-hero__art sb-hero__art--left">
       <figure class="sb-hero__photo sb-photo--main">
-        {{- with resources.Get "images/about/gallery-02.jpg" }}
-        <img src="{{ .RelPermalink }}" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
-        {{- end }}
+        {{ partial "responsive-img.html" (dict "src" "images/about/gallery-02.jpg" "alt" "Педагог и ученик собирают модель на занятии" "sizes" "200px" "loading" "eager" "priority" "high") }}
         {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--flower") }}
         {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-sticker--star") }}
       </figure>
       <figure class="sb-hero__photo sb-photo--small">
-        {{- with resources.Get "images/about/gallery-05.jpg" }}
-        <img src="{{ .RelPermalink }}" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
-        {{- end }}
+        {{ partial "responsive-img.html" (dict "src" "images/about/gallery-05.jpg" "alt" "Рабочее место с ноутбуком, конструктором и собранной моделью" "sizes" "140px") }}
       </figure>
     </div>
 
@@ -28,20 +24,14 @@
 
       <div class="sb-hero__mobile-photos">
         <figure class="sb-hero__photo">
-          {{- with resources.Get "images/about/gallery-02.jpg" }}
-          <img src="{{ .RelPermalink }}" width="700" height="700" alt="Педагог и ученик собирают модель на занятии" loading="lazy" decoding="async">
-          {{- end }}
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-02.jpg" "alt" "Педагог и ученик собирают модель на занятии" "sizes" "120px") }}
           {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--mobile-flower") }}
         </figure>
         <figure class="sb-hero__photo">
-          {{- with resources.Get "images/about/gallery-01.jpg" }}
-          <img src="{{ .RelPermalink }}" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
-          {{- end }}
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-01.jpg" "alt" "Награды АйТи Скул на фестивале Smart Robo Fest" "sizes" "120px") }}
         </figure>
         <figure class="sb-hero__photo">
-          {{- with resources.Get "images/about/gallery-05.jpg" }}
-          <img src="{{ .RelPermalink }}" width="700" height="700" alt="Рабочее место с ноутбуком, конструктором и собранной моделью" loading="lazy" decoding="async">
-          {{- end }}
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-05.jpg" "alt" "Рабочее место с ноутбуком, конструктором и собранной моделью" "sizes" "120px") }}
           {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-sticker--mobile-star") }}
         </figure>
       </div>
@@ -65,9 +55,7 @@
 
     <div class="sb-hero__art sb-hero__art--right">
       <figure class="sb-hero__photo sb-photo--awards">
-        {{- with resources.Get "images/about/gallery-01.jpg" }}
-        <img src="{{ .RelPermalink }}" width="700" height="700" alt="Награды АйТи Скул на фестивале Smart Robo Fest" loading="lazy" decoding="async">
-        {{- end }}
+        {{ partial "responsive-img.html" (dict "src" "images/about/gallery-01.jpg" "alt" "Награды АйТи Скул на фестивале Smart Robo Fest" "sizes" "200px") }}
         {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-sticker--triangle") }}
         {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-sticker--cat") }}
       </figure>
@@ -105,12 +93,9 @@
 
     <div class="sb-approach__body">
       <div class="sb-approach__media-wrap">
-        {{- with resources.Get "images/school-blog-2.jpg" }}
-        {{- $crop := .Fill "1200x900 Center" }}
         <figure class="sb-approach__media">
-          <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Команда АйТи Скул с наградами на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+          {{ partial "responsive-img.html" (dict "src" "images/school-blog-2.jpg" "fill" "1200x900 Center" "alt" "Команда АйТи Скул с наградами на фестивале Smart Robo Fest" "sizes" "(max-width: 900px) 90vw, 600px" "widths" (slice 400 600 900 1200)) }}
         </figure>
-        {{- end }}
         {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--approach-star") }}
         <p class="sb-approach__caption">{{ .caption }}</p>
       </div>
@@ -245,10 +230,7 @@
     <figure class="sb-more__video-wrap" data-reveal>
       <div class="sb-more__video" data-video data-video-id="{{ .id }}" data-video-title="{{ .title }}">
         <a class="sb-more__facade" href="https://www.youtube.com/watch?v={{ .id }}" data-video-play aria-label="Смотреть видео: {{ .title }}">
-          {{- with resources.Get "images/school-graduates.jpg" }}
-          {{- $poster := .Fill "1280x720 Center" }}
-          <img class="sb-more__poster" src="{{ $poster.RelPermalink }}" width="{{ $poster.Width }}" height="{{ $poster.Height }}" alt="" loading="lazy" decoding="async">
-          {{- end }}
+          {{ partial "responsive-img.html" (dict "src" "images/school-graduates.jpg" "class" "sb-more__poster" "fill" "1280x720 Center" "alt" "" "sizes" "(max-width: 900px) 90vw, 640px" "widths" (slice 400 640 900 1280)) }}
           <span class="sb-more__shade" aria-hidden="true"></span>
           <span class="sb-more__play" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">

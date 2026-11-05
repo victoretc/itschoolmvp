@@ -26,9 +26,8 @@
 
   <div class="sb-post__wrap">
     {{- with $cover }}
-    {{- $img := .Fill "1400x800 Center" }}
     <figure class="sb-post-cover" data-reveal>
-      <img src="{{ $img.RelPermalink }}" alt="{{ $.Params.coverAlt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager" decoding="async">
+      {{ partial "responsive-img.html" (dict "resource" . "fill" "1400x800 Center" "alt" $.Params.coverAlt "sizes" "(max-width: 900px) 100vw, 900px" "loading" "eager" "priority" "high" "widths" (slice 480 800 1200 1400)) }}
     </figure>
     {{- end }}
 
@@ -40,9 +39,8 @@
         {{- range . }}
         {{- $alt := .alt }}
         {{- with resources.Get .image }}
-        {{- $img := .Fill "640x640 Center" }}
         <figure class="sb-post-gallery__item" data-reveal>
-          <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
+          {{ partial "responsive-img.html" (dict "resource" . "fill" "640x640 Center" "alt" $alt "sizes" "(max-width: 700px) 44vw, 320px" "widths" (slice 320 480 640)) }}
         </figure>
         {{- end }}
         {{- end }}

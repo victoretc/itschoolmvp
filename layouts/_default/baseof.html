@@ -18,37 +18,38 @@
   {{- $contacts := eq .Type "contacts" -}}
   {{- $blog := eq .Section "blog" -}}
   {{- $storybook := or .IsHome (eq .Section "courses") $vacations $about $contacts $blog -}}
-  {{ if $storybook }}
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@400&display=swap" rel="stylesheet">
-  {{ else }}
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  {{ end }}
-  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-  {{ if $storybook }}
-  {{ $homeCss := resources.Get "css/home.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}" integrity="{{ $homeCss.Data.Integrity }}">
-  {{ end }}
-  {{ if eq .Section "courses" }}
-  {{ $coursesCss := resources.Get "css/courses.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $coursesCss.RelPermalink }}" integrity="{{ $coursesCss.Data.Integrity }}">
-  {{ end }}
-  {{ if $vacations }}
-  {{ $vacationsCss := resources.Get "css/vacations.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $vacationsCss.RelPermalink }}" integrity="{{ $vacationsCss.Data.Integrity }}">
-  {{ end }}
-  {{ if $about }}
-  {{ $aboutCss := resources.Get "css/about.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $aboutCss.RelPermalink }}" integrity="{{ $aboutCss.Data.Integrity }}">
-  {{ end }}
-  {{ if $contacts }}
-  {{ $contactsCss := resources.Get "css/contacts.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $contactsCss.RelPermalink }}" integrity="{{ $contactsCss.Data.Integrity }}">
-  {{ end }}
-  {{ if $blog }}
-  {{ $blogCss := resources.Get "css/blog.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $blogCss.RelPermalink }}" integrity="{{ $blogCss.Data.Integrity }}">
-  {{ end }}
+  {{- $fonts := cond $storybook "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@400&display=swap" "https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" -}}
+  <link rel="preload" as="style" href="{{ $fonts }}">
+  <link rel="stylesheet" href="{{ $fonts }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ $fonts }}"></noscript>
+  {{- $styles := slice (resources.Get "css/main.css") -}}
+  {{- $bundleName := "base" -}}
+  {{- if $storybook -}}
+    {{- $styles = $styles | append (resources.Get "css/home.css") -}}
+    {{- $bundleName = printf "%s-home" $bundleName -}}
+  {{- end -}}
+  {{- if eq .Section "courses" -}}
+    {{- $styles = $styles | append (resources.Get "css/courses.css") -}}
+    {{- $bundleName = printf "%s-courses" $bundleName -}}
+  {{- end -}}
+  {{- if $vacations -}}
+    {{- $styles = $styles | append (resources.Get "css/vacations.css") -}}
+    {{- $bundleName = printf "%s-vacations" $bundleName -}}
+  {{- end -}}
+  {{- if $about -}}
+    {{- $styles = $styles | append (resources.Get "css/about.css") -}}
+    {{- $bundleName = printf "%s-about" $bundleName -}}
+  {{- end -}}
+  {{- if $contacts -}}
+    {{- $styles = $styles | append (resources.Get "css/contacts.css") -}}
+    {{- $bundleName = printf "%s-contacts" $bundleName -}}
+  {{- end -}}
+  {{- if $blog -}}
+    {{- $styles = $styles | append (resources.Get "css/blog.css") -}}
+    {{- $bundleName = printf "%s-blog" $bundleName -}}
+  {{- end -}}
+  {{- $bundle := $styles | resources.Concat (printf "css/bundle-%s.css" $bundleName) | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}">
   <style>
     .site-loader {
       position: fixed;
@@ -116,16 +117,12 @@
         }, wait);
       }
 
-      var pageLoad = document.readyState === 'complete'
-        ? Promise.resolve()
-        : new Promise(function (resolve) { window.addEventListener('load', resolve, { once: true }); });
+      var pageLoad = document.readyState === 'loading'
+        ? new Promise(function (resolve) { document.addEventListener('DOMContentLoaded', resolve, { once: true }); })
+        : Promise.resolve();
 
-      pageLoad
-        .then(function () {
-          return document.fonts && document.fonts.ready ? document.fonts.ready : null;
-        })
-        .then(hideLoader, hideLoader);
-      window.setTimeout(hideLoader, 5000);
+      pageLoad.then(hideLoader, hideLoader);
+      window.setTimeout(hideLoader, 2000);
     })();
   </script>
   <a class="skip" href="#main">Перейти к содержимому</a>
