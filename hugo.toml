@@ -38,7 +38,7 @@ summaryLength = 30
   weight = 30
 [[menus.main]]
   name = 'О нас'
-  url = '#'
+  url = '/about/'
   weight = 40
 [[menus.main]]
   name = 'Блог'

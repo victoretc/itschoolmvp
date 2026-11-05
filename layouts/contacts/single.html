@@ -13,34 +13,43 @@
     <div class="contacts-card" data-reveal>
       <div class="contacts-row">
         <span class="contacts-label">Офис</span>
-        <p class="contacts-value">
-          <a href="{{ site.Data.site.mapUrl }}" target="_blank" rel="noopener">{{ .Params.office }}</a>
-        </p>
+        <a class="contact-link" href="{{ site.Data.site.mapUrl }}" target="_blank" rel="noopener">
+          <span class="icon-badge contact-link__icon contact-link__icon--neutral">{{ partial "icon.html" "pin" }}</span>
+          <span class="contact-link__body">
+            <span class="contact-link__value">{{ .Params.office }}</span>
+          </span>
+        </a>
       </div>
 
       {{- range .Params.phones }}
       <div class="contacts-row">
         <span class="contacts-label">{{ .label }}</span>
-        <p class="contacts-value">
-          <a href="{{ .href }}">{{ .value }}</a>
-          <span class="contacts-note">{{ .note }}</span>
-        </p>
+        <a class="contact-link contact-link--phone" href="{{ .href }}">
+          <span class="icon-badge contact-link__icon">{{ partial "icon.html" "phone" }}</span>
+          <span class="contact-link__body">
+            <span class="contact-link__value">{{ .value }}</span>
+            {{- with .note }}
+            <span class="contact-link__note">{{ . }}</span>
+            {{- end }}
+          </span>
+        </a>
       </div>
       {{- end }}
 
       <div class="contacts-row">
         <span class="contacts-label">E-mail</span>
-        <p class="contacts-value">
-          <a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a>
-        </p>
+        <a class="contact-link" href="mailto:{{ .Params.email }}">
+          <span class="icon-badge contact-link__icon contact-link__icon--neutral">{{ partial "icon.html" "mail" }}</span>
+          <span class="contact-link__body">
+            <span class="contact-link__value">{{ .Params.email }}</span>
+          </span>
+        </a>
       </div>
 
       {{- with .Params.cta }}
       <a class="btn contacts-cta" href="tel:+375298717612">
-        {{ . }}
-        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-          <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
+        {{ partial "icon.html" "phone" }}
+        <span>{{ . }}</span>
       </a>
       {{- end }}
     </div>

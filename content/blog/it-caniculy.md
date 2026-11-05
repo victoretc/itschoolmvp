@@ -34,6 +34,6 @@ gallery:
 - Чаепитие и настольные игры в перерыве
 
 <div class="post__callout">
-  <p class="post__callout-title"><a href="tel:+375298717612">Запись по тел. +375298717612</a></p>
+  <p class="post__callout-title">{{< phone href="tel:+375298717612" text="Запись по тел. +375 (29) 871-76-12" class="post__callout-phone" >}}</p>
   <p class="post__callout-text">Занятия будут проходить с 25 по 29 марта по адресу п-т Машерова, 23А. Количество мест ограничено!</p>
 </div>

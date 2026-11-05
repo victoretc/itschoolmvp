@@ -89,3 +89,28 @@
     { passive: true }
   );
 })();
+
+(() => {
+  const players = document.querySelectorAll('[data-video]');
+  if (!players.length) return;
+
+  players.forEach((player) => {
+    const facade = player.querySelector('[data-video-play]');
+    const id = player.dataset.videoId;
+    if (!facade || !id) return;
+
+    facade.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      iframe.title = player.dataset.videoTitle || 'Видео о школе';
+      iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+
+      player.replaceChildren(iframe);
+      iframe.focus();
+    });
+  });
+})();

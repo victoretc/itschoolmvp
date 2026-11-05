@@ -1,0 +1,7 @@
+{{- $href := .Get "href" | default site.Params.phoneHref -}}
+{{- $text := .Get "text" | default site.Params.phone -}}
+{{- $class := .Get "class" | default "phone-link" -}}
+<a class="{{ $class }}" href="{{ $href | safeURL }}">
+  <span class="icon-badge">{{ partial "icon.html" "phone" }}</span>
+  <span class="phone-link__text">{{ $text }}</span>
+</a>

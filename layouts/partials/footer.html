@@ -1,7 +1,10 @@
+{{- $logo := resources.Get "images/logo_itschool.svg" -}}
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__brand">
-      <a class="footer__brand-link" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+      <a class="footer__brand-link" href="{{ site.Home.RelPermalink }}" aria-label="АйТи Скул — на главную">
+        <img src="{{ $logo.RelPermalink }}" alt="АйТи Скул" width="414" height="130">
+      </a>
       <p class="footer__tagline">IT-школа для детей 6–17 лет в Бресте: программирование, робототехника и разработка игр.</p>
     </div>
 

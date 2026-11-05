@@ -1,0 +1,133 @@
+- generic [active] [ref=f539e1]:
+  - link "Перейти к содержимому" [ref=f539e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f539e3]:
+    - generic [ref=f539e4]:
+      - link "АйТи Скул — на главную" [ref=f539e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f539e6]
+      - navigation "Основное меню" [ref=f539e7]:
+        - list [ref=f539e8]:
+          - listitem [ref=f539e9]:
+            - link "Главная" [ref=f539e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f539e11]:
+            - link "Курсы" [ref=f539e12] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f539e13]:
+            - link "IT Каникулы" [ref=f539e14] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f539e15]:
+            - link "О нас" [ref=f539e16] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f539e17]:
+            - link "Блог" [ref=f539e18] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f539e19]:
+            - link "Контакты" [ref=f539e20] [cursor=pointer]:
+              - /url: /contacts/
+        - generic [ref=f539e21]:
+          - link "+375 (29) 871-76-12" [ref=f539e22] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f539e26]:
+            - listitem [ref=f539e27]:
+              - link "Viber" [ref=f539e28] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f539e31]:
+              - link "Instagram" [ref=f539e32] [cursor=pointer]:
+                - /url: "#"
+          - link "Бесплатный урок" [ref=f539e35] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f539e36]:
+    - region [ref=f539e37]:
+      - generic [ref=f539e38]:
+        - heading "Контакты" [level=1] [ref=f539e39]
+        - paragraph [ref=f539e40]: Наши филиалы представлены в Пинске, Кобрине, Жабинке и Бресте
+    - region "Контакты офиса" [ref=f539e41]:
+      - generic [ref=f539e42]:
+        - generic [ref=f539e43]:
+          - generic [ref=f539e44]:
+            - generic [ref=f539e45]: Офис
+            - link "г. Брест ул. Пионерская, 52 к. 503 (офис)" [ref=f539e46] [cursor=pointer]:
+              - /url: https://yandex.by/maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/
+          - generic [ref=f539e53]:
+            - generic [ref=f539e54]: Офис
+            - link "+375 (29) 871-76-12" [ref=f539e55] [cursor=pointer]:
+              - /url: "#ZgotmplZ"
+          - generic [ref=f539e61]:
+            - generic [ref=f539e62]: Директор
+            - link "+375 (29) 228-49-71" [ref=f539e63] [cursor=pointer]:
+              - /url: "#ZgotmplZ"
+          - generic [ref=f539e69]:
+            - generic [ref=f539e70]: E-mail
+            - link "info@it-school.by" [ref=f539e71] [cursor=pointer]:
+              - /url: mailto:info@it-school.by
+          - link "Получить консультацию" [ref=f539e78] [cursor=pointer]:
+            - /url: tel:+375298717612
+        - iframe [ref=f539e83]:
+          - iframe [aria-hidden] [ref=f540e4]
+    - region "Филиалы" [ref=f539e84]:
+      - generic [ref=f539e86]:
+        - generic [ref=f539e87]:
+          - heading "Филиалы в Бресте" [level=2] [ref=f539e88]
+          - list [ref=f539e89]:
+            - listitem [ref=f539e90]: г. Брест, пр-т Машерова, д. 23А
+            - listitem [ref=f539e91]: г. Брест, ул. Орловская, д. 16 (Средняя Школа №23, каб. 35)
+        - generic [ref=f539e92]:
+          - heading "Филиалы в Жабинке" [level=2] [ref=f539e93]
+          - list [ref=f539e94]:
+            - listitem [ref=f539e95]: г. Жабинка, ул. Свободы, 9 (Средняя школа №3 г. Жабинки, каб. 302)
+        - generic [ref=f539e96]:
+          - heading "Филиалы в Пинске" [level=2] [ref=f539e97]
+          - list [ref=f539e98]:
+            - listitem [ref=f539e99]: г. Пинск, ул. Жолтовского, д. 37 (Средняя Школа №18, каб. 120)
+        - generic [ref=f539e100]:
+          - heading "Филиалы в Кобрине" [level=2] [ref=f539e101]
+          - list [ref=f539e102]:
+            - listitem [ref=f539e103]: г. Кобрин, ул. Парковая, д. 2 (Средняя Школа №8, каб. 58)
+  - contentinfo [ref=f539e104]:
+    - generic [ref=f539e105]:
+      - generic [ref=f539e106]:
+        - link "АйТи Скул — на главную" [ref=f539e107] [cursor=pointer]:
+          - /url: /
+          - img "АйТи Скул" [ref=f539e108]
+        - paragraph [ref=f539e109]: "IT-школа для детей 6–17 лет в Бресте: программирование, робототехника и разработка игр."
+      - navigation "Навигация в подвале" [ref=f539e110]:
+        - paragraph [ref=f539e111]: Навигация
+        - list [ref=f539e112]:
+          - listitem [ref=f539e113]:
+            - link "Курсы" [ref=f539e114] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f539e115]:
+            - link "IT каникулы" [ref=f539e116] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f539e117]:
+            - link "О нас" [ref=f539e118] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f539e119]:
+            - link "Блог" [ref=f539e120] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f539e121]:
+            - link "Контакты" [ref=f539e122] [cursor=pointer]:
+              - /url: /contacts/
+      - generic [ref=f539e123]:
+        - paragraph [ref=f539e124]: Контакты
+        - link "+375 (29) 871-76-12" [ref=f539e125] [cursor=pointer]:
+          - /url: tel:+375298717612
+        - link "+375 (29) 228-49-71 (директор)" [ref=f539e126] [cursor=pointer]:
+          - /url: tel:+375292284971
+        - link "info@it-school.by" [ref=f539e127] [cursor=pointer]:
+          - /url: mailto:info@it-school.by
+        - paragraph [ref=f539e128]:
+          - link "г. Брест, ул. Пионерская, 52, к. 503" [ref=f539e129] [cursor=pointer]:
+            - /url: https://yandex.by/maps/-/CDDRAYi-
+      - generic [ref=f539e134]:
+        - paragraph [ref=f539e135]: Мессенджеры
+        - link "Viber" [ref=f539e136] [cursor=pointer]:
+          - /url: viber://chat?number=%2B375298717612
+    - generic [ref=f539e140]:
+      - generic [ref=f539e141]: © 2026 Все права защищены
+      - link "Разработка Богатов" [ref=f539e142] [cursor=pointer]:
+        - /url: https://victoretc.github.io/portfolio/
+      - link "Наверх" [ref=f539e143] [cursor=pointer]:
+        - /url: "#top"
