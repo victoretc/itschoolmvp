@@ -1,0 +1,1195 @@
+- generic [active] [ref=f31e1]:
+  - generic [ref=f31e3]:
+    - banner [ref=f31e4]:
+      - link "Kodland" [ref=f31e5] [cursor=pointer]:
+        - /url: /ru
+      - navigation "Главное меню" [ref=f31e16]:
+        - button "Курсы" [ref=f31e18] [cursor=pointer]
+        - button "О нас" [ref=f31e22] [cursor=pointer]
+        - button "Вопросы-Ответы" [ref=f31e26] [cursor=pointer]
+        - button "Контакты" [ref=f31e29] [cursor=pointer]
+        - button "Уроки в подарок" [ref=f31e32] [cursor=pointer]
+      - generic [ref=f31e34]:
+        - button "РУ" [ref=f31e36] [cursor=pointer]
+        - generic [ref=f31e39]:
+          - link "Войти" [ref=f31e40] [cursor=pointer]:
+            - /url: https://learn.kodland.org/ru
+          - button "Бесплатный урок" [ref=f31e45] [cursor=pointer]
+    - region "Рекламный баннер" [ref=f31e47]:
+      - generic [ref=f31e48]:
+        - generic [ref=f31e49]:
+          - paragraph [ref=f31e50]: Самые популярные курсы
+          - paragraph [ref=f31e51]: Попробуйте что-то новое для ребёнка
+        - navigation [ref=f31e52]:
+          - link "Roblox" [ref=f31e53] [cursor=pointer]:
+            - /url: /ru/courses/coding/roblox-game-design
+          - link "Unity" [ref=f31e58] [cursor=pointer]:
+            - /url: /ru/courses/coding/unity-game-design
+          - link "ФанТех" [ref=f31e63] [cursor=pointer]:
+            - /url: /ru/courses/coding/funtech
+        - button "Закрыть баннер" [ref=f31e68] [cursor=pointer]
+    - generic [ref=f31e72]:
+      - generic [ref=f31e73]:
+        - generic [ref=f31e75]:
+          - heading "Онлайн-школа для детей 5–17 лет" [level=1] [ref=f31e76]:
+            - text: Онлайн-школа
+            - generic [ref=f31e77]: для детей 5–17 лет
+          - paragraph [ref=f31e78]: Превращаем увлечения в навыки будущего. Развиваем критическое мышление и креативность
+          - paragraph [ref=f31e79]: Сомневаетесь, какой курс выбрать ребенку?
+          - generic [ref=f31e80] [cursor=pointer]: Подобрать курс
+          - paragraph [ref=f31e82]: 5 вопросов. В конце покажем подходящий курс и предложим бесплатный пробный урок.
+        - generic [ref=f31e83]:
+          - generic [ref=f31e84]:
+            - img "Рейтинг 4.7 из 5 на основе 9 488 отзывов" [ref=f31e85]
+            - generic [ref=f31e86]:
+              - generic [ref=f31e87]: "4.7"
+              - generic [ref=f31e89]: 9 488 отзывов
+          - generic [ref=f31e90]:
+            - img "Stem.org" [ref=f31e91]
+            - generic [ref=f31e92]: Аккредитовано STEM.orgИсследования и сертификация в сфере образования
+      - generic [ref=f31e94]:
+        - generic [ref=f31e95]:
+          - heading "Популярные курсы" [level=2] [ref=f31e96]
+          - paragraph [ref=f31e97]: Практические программы по программированию, разработке игр и дизайну — с живыми преподавателями и реальными проектами
+        - generic [ref=f31e98]:
+          - article [ref=f31e99]:
+            - generic [ref=f31e100]:
+              - img "Основы программирования на «Роблокс» (Roblox) для детей" [ref=f31e101]
+              - generic [ref=f31e102]: Roblox
+              - generic [ref=f31e103]:
+                - generic [ref=f31e104]: 8–12 лет
+                - generic [ref=f31e105]: Программирование
+            - heading "Основы программирования на «Роблокс» (Roblox) для детей" [level=3] [ref=f31e106]
+            - generic [ref=f31e107]:
+              - generic [ref=f31e108]: 40 уроков
+              - generic [ref=f31e112]: 1-1
+              - generic [ref=f31e116]: Мини-группы
+            - list [ref=f31e120]:
+              - listitem [ref=f31e121]:
+                - generic [ref=f31e123]: Скриптинг на Lua и создание 3D-миров
+              - listitem [ref=f31e124]:
+                - generic [ref=f31e126]: Игровые механики с нуля
+              - listitem [ref=f31e127]:
+                - generic [ref=f31e129]: Опубликованная игра в Roblox к концу курса
+            - generic [ref=f31e130]:
+              - button "Записаться на пробный урок" [ref=f31e131] [cursor=pointer]
+              - list [ref=f31e132]:
+                - listitem [ref=f31e133]:
+                  - generic [ref=f31e135]: Бесплатно
+                - listitem [ref=f31e136]:
+                  - generic [ref=f31e138]: 1 на 1 с преподавателем
+                - listitem [ref=f31e139]:
+                  - generic [ref=f31e141]: 45 мин
+              - link "Подробнее о курсе" [ref=f31e142] [cursor=pointer]:
+                - /url: /ru/courses/coding/roblox-game-design
+          - article [ref=f31e143]:
+            - generic [ref=f31e144]:
+              - img "«Юнити» (Unity) для детей и подростков" [ref=f31e145]
+              - generic [ref=f31e146]: Unity
+              - generic [ref=f31e147]:
+                - generic [ref=f31e148]: 13+ лет
+                - generic [ref=f31e149]: Программирование
+            - heading "«Юнити» (Unity) для детей и подростков" [level=3] [ref=f31e150]
+            - generic [ref=f31e151]:
+              - generic [ref=f31e152]: 40 уроков
+              - generic [ref=f31e156]: 1-1
+              - generic [ref=f31e160]: Мини-группы
+            - list [ref=f31e164]:
+              - listitem [ref=f31e165]:
+                - generic [ref=f31e167]: Программирование на C# в настоящем игровом движке
+              - listitem [ref=f31e168]:
+                - generic [ref=f31e170]: 3D-окружения и персонажи с ИИ-поведением
+              - listitem [ref=f31e171]:
+                - generic [ref=f31e173]: Полноценная игра с мультиплеером в финале
+            - generic [ref=f31e174]:
+              - button "Записаться на пробный урок" [ref=f31e175] [cursor=pointer]
+              - list [ref=f31e176]:
+                - listitem [ref=f31e177]:
+                  - generic [ref=f31e179]: Бесплатно
+                - listitem [ref=f31e180]:
+                  - generic [ref=f31e182]: 1 на 1 с преподавателем
+                - listitem [ref=f31e183]:
+                  - generic [ref=f31e185]: 45 мин
+              - link "Подробнее о курсе" [ref=f31e186] [cursor=pointer]:
+                - /url: /ru/courses/coding/unity-game-design
+          - article [ref=f31e187]:
+            - generic [ref=f31e188]:
+              - img "Курс программирования и цифровых технологий «ФанТех»" [ref=f31e189]
+              - generic [ref=f31e190]: FunTech
+              - generic [ref=f31e191]:
+                - generic [ref=f31e192]: 5–7 лет
+                - generic [ref=f31e193]: Программирование
+            - heading "Курс программирования и цифровых технологий «ФанТех»" [level=3] [ref=f31e194]
+            - generic [ref=f31e195]:
+              - generic [ref=f31e196]: 80 уроков
+              - generic [ref=f31e200]: 1-1
+              - generic [ref=f31e204]: Мини-группы
+            - list [ref=f31e208]:
+              - listitem [ref=f31e209]:
+                - generic [ref=f31e211]: Первые программы и игры с первого занятия
+              - listitem [ref=f31e212]:
+                - generic [ref=f31e214]: Творческие проекты на каждом уроке
+              - listitem [ref=f31e215]:
+                - generic [ref=f31e217]: Логическое мышление через практику программирования
+            - generic [ref=f31e218]:
+              - button "Записаться на пробный урок" [ref=f31e219] [cursor=pointer]
+              - list [ref=f31e220]:
+                - listitem [ref=f31e221]:
+                  - generic [ref=f31e223]: Бесплатно
+                - listitem [ref=f31e224]:
+                  - generic [ref=f31e226]: 1 на 1 с преподавателем
+                - listitem [ref=f31e227]:
+                  - generic [ref=f31e229]: 45 мин
+              - link "Подробнее о курсе" [ref=f31e230] [cursor=pointer]:
+                - /url: /ru/courses/coding/funtech
+      - generic [ref=f31e232]:
+        - heading "Выберите, что сейчас интересно вашему ребенку" [level=2] [ref=f31e234]:
+          - text: Выберите, что сейчас
+          - generic [ref=f31e235]: интересно
+          - text: вашему ребенку
+        - generic [ref=f31e236]:
+          - link [ref=f31e237] [cursor=pointer]:
+            - /url: /ru/courses/coding
+            - article [ref=f31e238]:
+              - generic [ref=f31e239]: 5–17 лет
+              - generic [ref=f31e240]: Программирование
+              - paragraph [ref=f31e241]: Поможем понять, как устроены любимые игры, научим создавать их и писать код на языке Луа (Lua) и других языках программирования.
+              - generic [ref=f31e243]:
+                - text: Все курсы программирования
+                - generic [aria-hidden] [ref=f31e244]: →
+          - link [ref=f31e245] [cursor=pointer]:
+            - /url: /ru/courses/design
+            - article [ref=f31e246]:
+              - generic [ref=f31e247]: 8–17 лет
+              - generic [ref=f31e248]: Дизайн
+              - paragraph [ref=f31e249]: Научим создавать логотипы и визуалы для соцсетей, познакомим с графическим дизайном и 3Д-моделированием.
+              - generic [ref=f31e251]:
+                - text: Все курсы дизайна
+                - generic [aria-hidden] [ref=f31e252]: →
+          - complementary [ref=f31e253]:
+            - generic [ref=f31e254]:
+              - generic [ref=f31e255]:
+                - generic [ref=f31e256]: Хотите, чтобы курс точно увлек ребенка?
+                - paragraph [ref=f31e257]: Запишитесь на пробный урок — мы подберем направление по возрасту и интересам
+              - button "Пробный урок" [ref=f31e258] [cursor=pointer]
+      - generic [ref=f31e261]:
+        - generic [ref=f31e262]:
+          - text: За
+          - img "7 лет"
+          - text: лет работы мы обучили
+        - generic [ref=f31e263]:
+          - img "41 тысяча детей"
+          - text: детей из
+        - generic [ref=f31e264]:
+          - img "12 стран"
+          - text: стран, и у нас
+        - generic [ref=f31e265]:
+          - text: работает
+          - img "10 тысяч преподавателей"
+          - text: преподавателей
+      - generic [ref=f31e267]:
+        - generic [ref=f31e268]:
+          - heading "Каждому возрасту — свой путь к вдохновению и результату" [level=2] [ref=f31e269]
+          - generic [ref=f31e270]:
+            - generic [ref=f31e271]:
+              - button "5–7 лет" [ref=f31e272] [cursor=pointer]
+              - generic [ref=f31e276]:
+                - paragraph [ref=f31e277]: Малыши учатся через игру и эксперименты. В сопровождении наставника они пробуют новое в безопасной среде и не боятся задавать вопросы.
+                - link "Подобрать программу" [ref=f31e278] [cursor=pointer]:
+                  - /url: /ru/courses
+            - button "7–14 лет" [ref=f31e280] [cursor=pointer]
+            - button "15–17 лет" [ref=f31e285] [cursor=pointer]
+        - generic [ref=f31e289]:
+          - article [ref=f31e290]:
+            - button "Короткие сессии" [ref=f31e291] [cursor=pointer]
+          - article [ref=f31e293]:
+            - button "Занятия в группе" [ref=f31e294] [cursor=pointer]
+          - article [ref=f31e296]:
+            - button "Развитие любопытства" [ref=f31e297] [cursor=pointer]
+      - generic [ref=f31e300]:
+        - heading "Начните с бесплатного урока" [level=2] [ref=f31e302]:
+          - text: Начните с
+          - generic [ref=f31e303]: бесплатного
+          - text: урока
+        - generic [ref=f31e304]:
+          - generic [ref=f31e305]:
+            - generic [ref=f31e306]:
+              - generic "Пообщайтесь с преподавателем" [ref=f31e310]
+              - img "next" [ref=f31e313] [cursor=pointer]
+              - img "prev" [ref=f31e314] [cursor=pointer]
+            - generic [ref=f31e316]:
+              - button "Go to slide 1" [ref=f31e317] [cursor=pointer]
+              - button "Go to slide 2" [ref=f31e318] [cursor=pointer]
+              - button "Go to slide 3" [ref=f31e319] [cursor=pointer]
+          - generic [ref=f31e320]:
+            - generic [ref=f31e321]:
+              - generic [ref=f31e322]: ШАГ 1 / 3
+              - generic [ref=f31e324]:
+                - generic [ref=f31e325]: Пообщайтесь с преподавателем
+                - generic [ref=f31e326]: Наставник начнет со знакомства с ребенком и узнает, что ему нравится, чем он увлекается. Часто дети стесняются или переживают, поэтому прежде всего мы выстраиваем доверие, чтобы ребенок почувствовал себя уверенно и спокойно.
+            - button "Записаться" [ref=f31e327] [cursor=pointer]
+      - generic [ref=f31e329]:
+        - generic [ref=f31e330]:
+          - heading "Отзывы" [level=2] [ref=f31e331]
+          - heading "Тысячи семей уже с нами" [level=2] [ref=f31e332]
+          - generic [ref=f31e333]:
+            - img "Отзовик"
+            - img "Яндекс"
+        - generic [ref=f31e334]:
+          - article [ref=f31e335]:
+            - generic [ref=f31e336]:
+              - generic [ref=f31e337]:
+                - img "Аяжан" [ref=f31e338]
+                - generic [ref=f31e339]:
+                  - generic [ref=f31e340]: Аяжан
+                  - generic [ref=f31e341]: 12 лет
+              - generic [ref=f31e342]: Пайтон (Python)
+            - button "Я прошла два курса и сейчас прохожу курс под названием «Разработка игр на Python». Я уверена в том, что это поможет мне в будущем и уже вот-вот я начну создавать свои первые игры." [ref=f31e345] [cursor=pointer]
+          - article [ref=f31e346]:
+            - generic [ref=f31e347]:
+              - generic [ref=f31e348]:
+                - img "Маша" [ref=f31e349]
+                - generic [ref=f31e350]:
+                  - generic [ref=f31e351]: Маша
+                  - generic [ref=f31e352]: 14 лет
+              - generic [ref=f31e353]: Графический дизайн
+            - 'button "Курс очень понравился. Я научилась работать в Фигма (Figma) и Фотопи (Photopea): рисовать логотипы, стикеры и даже макеты сайтов. Классно, что мы использовали нейросети, а все свои проекты я в итоге выложила на Behance и теперь у меня есть портфолио с классными работами." [ref=f31e356] [cursor=pointer]'
+          - button "Open video" [ref=f31e357] [cursor=pointer]:
+            - generic [ref=f31e359]:
+              - generic [ref=f31e360]: Максим, 10 лет
+              - generic [ref=f31e361]: Scratch
+          - article [ref=f31e362]:
+            - generic [ref=f31e363]:
+              - generic [ref=f31e364]:
+                - img "Миша" [ref=f31e365]
+                - generic [ref=f31e366]:
+                  - generic [ref=f31e367]: Миша
+                  - generic [ref=f31e368]: 13 лет
+              - generic [ref=f31e369]: Роблокс (Roblox)
+            - button "Мне нравится, что занятия короткие и каждый раз мы узнаем что-то новое. Всё объясняют спокойно — если я не понимаю, можно спросить. Иногда кажется, что это не урок, а приключение!" [ref=f31e372] [cursor=pointer]
+          - button "Open video" [ref=f31e373] [cursor=pointer]:
+            - generic [ref=f31e375]:
+              - generic [ref=f31e376]: Адина, 16 лет
+              - generic [ref=f31e377]: Web Design
+          - article [ref=f31e378]:
+            - generic [ref=f31e379]:
+              - generic [ref=f31e380]:
+                - img "Павел Петров" [ref=f31e381]
+                - generic [ref=f31e382]:
+                  - generic [ref=f31e383]: Павел Петров
+                  - generic [ref=f31e384]: Отец студента
+              - generic [ref=f31e385]: 3Д-юнити (3D Unity)
+            - button "Хотим оставить отзыв о школе. Очень приятные сотрудники, и наш куратор Ольга всегда очень порядочная. Нравятся преподаватели и курс. Сын уже на втором курсе, продолжает изучать разработку игр. Жалоб от него не слышал — это самое главное. Уроки не пропускает, домашку делает, все отлично." [ref=f31e388] [cursor=pointer]
+          - article [ref=f31e389]:
+            - generic [ref=f31e390]:
+              - generic [ref=f31e391]:
+                - img "Инна Васильева" [ref=f31e392]
+                - generic [ref=f31e393]:
+                  - generic [ref=f31e394]: Инна Васильева
+                  - generic [ref=f31e395]: Мама студента
+              - generic [ref=f31e396]: Пайтон (Python)
+            - button "Занимаемся на курсе Пайтон (Python) уже третий месяц — от ребенка только восторг! Спасибо преподавателю." [ref=f31e399] [cursor=pointer]
+          - button "Open video" [ref=f31e400] [cursor=pointer]:
+            - generic [ref=f31e402]:
+              - generic [ref=f31e403]: Лёня, 15 лет
+              - generic [ref=f31e404]: Java Script
+      - generic [ref=f31e407]:
+        - heading "Мы гордимся принципами в образовании, рожденными из опыта и желания сделать детей счастливее" [level=2] [ref=f31e408]:
+          - generic [ref=f31e409]: Мы гордимся
+          - generic [ref=f31e410]: принципами
+          - generic [ref=f31e411]: в образовании,
+          - generic [ref=f31e412]: рожденными
+          - generic [ref=f31e413]: из опыта
+          - generic [ref=f31e414]: и желания сделать
+          - generic [ref=f31e415]: детей счастливее
+        - article [ref=f31e416]:
+          - heading "Свобода и интерес" [level=3] [ref=f31e417]
+          - paragraph [ref=f31e418]: Главный ключ к развитию — любопытство. Мы создаем пространство, где дети выбирают то, что им интересно, не боятся ошибаться, что их отругают, и совершают открытия.
+        - article [ref=f31e419]:
+          - heading "Постоянная практика" [level=3] [ref=f31e420]
+          - paragraph [ref=f31e421]: Только практика превращает знания в навыки. Поэтому мы работаем над настоящими проектами, разбивая их на понятные шаги. Маленькие победы помогают видеть прогресс и не терять мотивацию.
+        - article [ref=f31e422]:
+          - heading "Путь важнее пункта назначения" [level=3] [ref=f31e423]
+          - paragraph [ref=f31e424]: "У нас нет «правильно» и «неправильно», нет плохих и хороших оценок. Лучший путь к результату — фокус на процессе: если ребенку интересно, он достигает большего и получает устойчивый прогресс."
+        - article [ref=f31e425]:
+          - heading "Люди важнее технологий" [level=3] [ref=f31e426]: Люди важнеетехнологий
+          - paragraph [ref=f31e427]: Технологии — это помощник, но не замена живому общению. Ведь только в контакте преподавателя с учеником возможны эмпатия и доверие, которые делают обучение эффективным.
+      - generic [ref=f31e430]:
+        - generic [ref=f31e431]:
+          - heading "Как строится обучение?" [level=2] [ref=f31e432]
+          - paragraph [ref=f31e433]: Мы верим, что главная мотивация ребенка — не оценки, а собственное любопытство. Мы развиваем интересы ребенка и превращаем их в востребованные навыки
+        - navigation "Направления" [ref=f31e434]:
+          - button "Программирование Программирование" [ref=f31e435] [cursor=pointer]:
+            - generic [ref=f31e436]:
+              - img "Программирование"
+            - generic [ref=f31e437]: Программирование
+          - button "Дизайн Дизайн" [ref=f31e438] [cursor=pointer]:
+            - generic [ref=f31e439]:
+              - img "Дизайн"
+            - generic [ref=f31e440]: Дизайн
+        - generic [ref=f31e441]:
+          - generic:
+            - generic:
+              - article:
+                - heading "От любимых игр к своим проектам" [level=3]
+                - paragraph: Начинаем с того, что уже интересно ребенку — учимся на базе Юнити (Unity) и Майнкрафт (Minecraft).
+              - article:
+                - heading "Совместная работа" [level=3]
+                - paragraph: "Дети учатся работать в команде: создают общие игровые миры и тестируют игры друг друга."
+              - article:
+                - heading "Понятная траектория" [level=3]
+                - paragraph: От простого блочного программирования к коду на JavaScript или Python.
+              - article:
+                - heading "Постоянная практика" [level=3]
+                - paragraph: "Мы работаем не с абстрактными упражнениями, а с настоящими проектами: играми, сайтами и приложениями."
+        - generic [ref=f31e444]:
+          - link "Каталог курсов" [ref=f31e445] [cursor=pointer]:
+            - /url: /ru/courses
+          - button "Бесплатный урок" [ref=f31e446] [cursor=pointer]
+      - generic [ref=f31e448]:
+        - heading "Преподаватели — наша основа" [level=2] [ref=f31e450]:
+          - text: Преподаватели — наша
+          - generic [ref=f31e451]: основа
+        - generic [ref=f31e453]:
+          - article [ref=f31e454]:
+            - generic [ref=f31e455]:
+              - generic [ref=f31e456]:
+                - generic [ref=f31e457]: Руслан Конев
+                - generic [ref=f31e458]:
+                  - generic [ref=f31e459]: Математика
+                  - generic [ref=f31e460]: Roblox
+              - img "Руслан Конев"
+            - generic:
+              - generic:
+                - generic: Руслан Конев
+                - generic:
+                  - paragraph: "Педагог дополнительного образования детей и взрослых: техническое творчество."
+                  - paragraph: Педагог-психолог. Учитель информатики начальных классов.
+                  - paragraph: В 2016 году стал первым педагогом, который начал учить детей создавать беспилотные летательные аппараты (гоночные дроны).
+                - generic:
+                  - generic:
+                    - generic: "7"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 140+
+                    - generic: учеников выпустил
+          - article [ref=f31e461]:
+            - generic [ref=f31e462]:
+              - generic [ref=f31e463]:
+                - generic [ref=f31e464]: Ангелина Халуева
+                - generic [ref=f31e465]:
+                  - generic [ref=f31e466]: Unity
+                  - generic [ref=f31e467]: Python
+                  - generic [ref=f31e468]: GameDev
+              - img "Ангелина Халуева"
+            - generic:
+              - generic:
+                - generic: Ангелина Халуева
+                - generic:
+                  - paragraph: Окончила МТИ по специальности «Конструктор», прошла обучение на педагога дополнительного образования. Обучает Python, Unity и веб-разработке.
+                  - paragraph: Преподаватель дополнительного образования.
+                  - paragraph: «Ценность ошибки — в выводах, которые мы делаем. Не бойтесь ошибаться, бойтесь не усвоить урок»
+                - generic:
+                  - generic:
+                    - generic: "5"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 134+
+                    - generic: учеников выпустила
+          - article [ref=f31e469]:
+            - generic [ref=f31e470]:
+              - generic [ref=f31e471]:
+                - generic [ref=f31e472]: Дамирова Сабина
+                - generic [ref=f31e473]:
+                  - generic [ref=f31e474]: Scratch
+                  - generic [ref=f31e475]: Дизайн
+              - img "Дамирова Сабина"
+            - generic:
+              - generic:
+                - generic: Дамирова Сабина
+                - generic:
+                  - paragraph: Окончила Shippensburg University of Pennsylvania. Азербайджанский ГЭУ. Выпускница программы SUSI'22 (The Study of U.S. Institutes) и FLEX'21.
+                  - paragraph: Была одним из организаторов международного хакатона «Teens In AI Global Hackathon».
+                - generic:
+                  - generic:
+                    - generic: "5"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 80+
+                    - generic: учеников выпустила
+          - article [ref=f31e476]:
+            - generic [ref=f31e477]:
+              - generic [ref=f31e478]:
+                - generic [ref=f31e479]: Вильям Тимофеев
+                - generic [ref=f31e480]:
+                  - generic [ref=f31e481]: Scratch
+                  - generic [ref=f31e482]: Minecraft
+              - img "Вильям Тимофеев"
+            - generic:
+              - generic:
+                - generic: Вильям Тимофеев
+                - generic:
+                  - paragraph: "Окончил Гарвардский университет (онлайн-курс CS50: Introduction to Computer Science). Обучает Computer Science, Scratch и Minecraft."
+                  - paragraph: «Относись к детям так, как хотел бы, чтобы относились к тебе. Я следую золотому правилу нравственности в педагогике. Уважение, поддержка и честность — вот три кита, на которых строится доверие и успешное обучение в моём классе»
+                - generic:
+                  - generic:
+                    - generic: "6"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 160+
+                    - generic: учеников выпустил
+          - article [ref=f31e483]:
+            - generic [ref=f31e484]:
+              - generic [ref=f31e485]:
+                - generic [ref=f31e486]: Екатерина Яровая
+                - generic [ref=f31e487]:
+                  - generic [ref=f31e488]: JavaScript
+                  - generic [ref=f31e489]: Веб-дизайн
+                  - generic [ref=f31e490]: Математика
+              - img "Екатерина Яровая"
+            - generic:
+              - generic:
+                - generic: Екатерина Яровая
+                - generic:
+                  - paragraph: Окончила Гродненский государственный университет. Прошла курсы по веб-дизайну и разработке в Roblox.
+                  - paragraph: Помогает ученикам уверенно решать алгоритмические задачи и поступать на престижные IT-специальности.
+                  - paragraph: «Терпение и труд всё перетрут. В математике и программировании нет волшебной таблетки — только упорство даёт результат»
+                - generic:
+                  - generic:
+                    - generic: "2"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 30+
+                    - generic: учеников выпустила
+          - article [ref=f31e491]:
+            - generic [ref=f31e492]:
+              - generic [ref=f31e493]:
+                - generic [ref=f31e494]: Виталий Тарасов
+                - generic [ref=f31e495]:
+                  - generic [ref=f31e496]: Roblox
+                  - generic [ref=f31e497]: JavaScript
+              - img "Виталий Тарасов"
+            - generic:
+              - generic:
+                - generic: Виталий Тарасов
+                - generic:
+                  - paragraph: Окончил Астанинский гуманитарный колледж. Прошёл ИТ-обучение в Alem School по направлению Go-Developer.
+                  - paragraph: «Настоящий результат — не выполненные задания, а понимание, которое остаётся после них. Оценки забудутся, а умение мыслить алгоритмически останется навсегда. Я учу детей сути программирования, а не простому заучиванию команд»
+                - generic:
+                  - generic:
+                    - generic: "3"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 80+
+                    - generic: учеников выпустил
+          - article [ref=f31e498]:
+            - generic [ref=f31e499]:
+              - generic [ref=f31e500]:
+                - generic [ref=f31e501]: Елена Ястрежемская
+                - generic [ref=f31e502]:
+                  - generic [ref=f31e503]: Python
+                  - generic [ref=f31e504]: Roblox
+              - img "Елена Ястрежемская"
+            - generic:
+              - generic:
+                - generic: Елена Ястрежемская
+                - generic:
+                  - paragraph: Окончила ВСГУТУ по специальности «Педагог-психолог». Прошла профильное обучение по Python-разработке и созданию ИИ.
+                  - paragraph: Помогает ученикам создавать свои первые проекты уже через месяц и побеждать в ИИ-конкурсах.
+                  - paragraph: «Не ограничивайте ребёнка тем, что знаете сами, ведь он рождён для другого времени»
+                - generic:
+                  - generic:
+                    - generic: "6"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 60+
+                    - generic: учеников выпустила
+          - article [ref=f31e505]:
+            - generic [ref=f31e506]:
+              - generic [ref=f31e507]:
+                - generic [ref=f31e508]: Артур Ярмалавичюс
+                - generic [ref=f31e509]:
+                  - generic [ref=f31e510]: Python
+                  - generic [ref=f31e511]: Дизайн
+              - img "Артур Ярмалавичюс"
+            - generic:
+              - generic:
+                - generic: Артур Ярмалавичюс
+                - generic:
+                  - paragraph: Окончил Молодечненский торгово-экономический колледж по специальности «Программное обеспечение информационных технологий».
+                  - paragraph: «Получение знаний — это первый шаг на пути становления победителем. Я учу детей воспринимать учёбу как тренировку перед большими жизненными победами»
+                - generic:
+                  - generic:
+                    - generic: "2"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 40+
+                    - generic: учеников выпустил
+          - article [ref=f31e512]:
+            - generic [ref=f31e513]:
+              - generic [ref=f31e514]:
+                - generic [ref=f31e515]: Светлана Радашкевич
+                - generic [ref=f31e516]:
+                  - generic [ref=f31e517]: Scratch
+                  - generic [ref=f31e518]: Python
+              - img "Светлана Радашкевич"
+            - generic:
+              - generic:
+                - generic: Светлана Радашкевич
+                - generic:
+                  - paragraph: Окончила СамГТУ по направлению «Информатика и ВТ». Обучает Python, Scratch и 3D-графике.
+                  - paragraph: «Дисциплина, помноженная на интерес, даёт блестящий результат. Я выстраиваю процесс обучения чётко и профессионально, чтобы каждый ребёнок получил максимум пользы от каждой минуты занятия»
+                - generic:
+                  - generic:
+                    - generic: "11"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 300+
+                    - generic: учеников выпустила
+          - article [ref=f31e519]:
+            - generic [ref=f31e520]:
+              - generic [ref=f31e521]:
+                - generic [ref=f31e522]: Александр Кириченко
+                - generic [ref=f31e523]:
+                  - generic [ref=f31e524]: Roblox
+                  - generic [ref=f31e525]: Веб-дизайн
+                  - generic [ref=f31e526]: Математика
+              - img "Александр Кириченко"
+            - generic:
+              - generic:
+                - generic: Александр Кириченко
+                - generic:
+                  - paragraph: Окончил Александровский промышленно-правовой колледж по направлению «Веб-дизайн», прошёл курсы Roblox Development. Обучает созданию игр в Roblox и веб-дизайну.
+                  - paragraph: «Если трудно, значит путь правильный. В геймдеве, как и в спорте, результат приходит через усилия»
+                - generic:
+                  - generic:
+                    - generic: "2"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 63+
+                    - generic: учеников выпустил
+          - article [ref=f31e527]:
+            - generic [ref=f31e528]:
+              - generic [ref=f31e529]:
+                - generic [ref=f31e530]: Артур Тарайкович
+                - generic [ref=f31e531]: Дизайн
+              - img "Артур Тарайкович"
+            - generic:
+              - generic:
+                - generic: Артур Тарайкович
+                - generic:
+                  - paragraph: Окончил СПбХУ им. Н.К. Рериха по специальности «Дизайн». Обучает цифровому рисунку и графике.
+                  - paragraph: «Главное — не талант, а желание творить. В каждом ребёнке живёт художник, и современные технологии дают ему в руки волшебную кисть. Моя задача — научить его пользоваться ею и показать, что творчество не имеет границ»
+                - generic:
+                  - generic:
+                    - generic: "12"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 300+
+                    - generic: учеников выпустил
+          - article [ref=f31e533]:
+            - generic [ref=f31e534]:
+              - generic [ref=f31e535]:
+                - generic [ref=f31e536]: Валерия Ангур
+                - generic [ref=f31e537]:
+                  - generic [ref=f31e538]: Дизайн
+                  - generic [ref=f31e539]: 3D-modeling
+              - img "Валерия Ангур"
+            - generic:
+              - generic:
+                - generic: Валерия Ангур
+                - generic:
+                  - paragraph: Окончила МГЛУ, лингвист и преподаватель. Обучалась в художественной школе и на курсах 3D-моделирования (Blender, Cinema4D). Обучает 3D-моделированию и графическому дизайну.
+                  - paragraph: «Важно не идеальное выполнение с первого раза, а искренний прогресс. В IT и дизайне главное — это путь, на котором каждая ошибка делает твой следующий проект чуточку лучше»
+                - generic:
+                  - generic:
+                    - generic: "4"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 120+
+                    - generic: учеников выпустила
+          - article [aria-hidden] [ref=f31e540]:
+            - generic [ref=f31e542]:
+              - generic [ref=f31e543]: Руслан Конев
+              - generic [ref=f31e544]:
+                - generic [ref=f31e545]: Математика
+                - generic [ref=f31e546]: Roblox
+            - generic:
+              - generic:
+                - generic: Руслан Конев
+                - generic:
+                  - paragraph: "Педагог дополнительного образования детей и взрослых: техническое творчество."
+                  - paragraph: Педагог-психолог. Учитель информатики начальных классов.
+                  - paragraph: В 2016 году стал первым педагогом, который начал учить детей создавать беспилотные летательные аппараты (гоночные дроны).
+                - generic:
+                  - generic:
+                    - generic: "7"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 140+
+                    - generic: учеников выпустил
+          - article [aria-hidden] [ref=f31e547]:
+            - generic [ref=f31e549]:
+              - generic [ref=f31e550]: Ангелина Халуева
+              - generic [ref=f31e551]:
+                - generic [ref=f31e552]: Unity
+                - generic [ref=f31e553]: Python
+                - generic [ref=f31e554]: GameDev
+            - generic:
+              - generic:
+                - generic: Ангелина Халуева
+                - generic:
+                  - paragraph: Окончила МТИ по специальности «Конструктор», прошла обучение на педагога дополнительного образования. Обучает Python, Unity и веб-разработке.
+                  - paragraph: Преподаватель дополнительного образования.
+                  - paragraph: «Ценность ошибки — в выводах, которые мы делаем. Не бойтесь ошибаться, бойтесь не усвоить урок»
+                - generic:
+                  - generic:
+                    - generic: "5"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 134+
+                    - generic: учеников выпустила
+          - article [aria-hidden] [ref=f31e555]:
+            - generic [ref=f31e557]:
+              - generic [ref=f31e558]: Дамирова Сабина
+              - generic [ref=f31e559]:
+                - generic [ref=f31e560]: Scratch
+                - generic [ref=f31e561]: Дизайн
+            - generic:
+              - generic:
+                - generic: Дамирова Сабина
+                - generic:
+                  - paragraph: Окончила Shippensburg University of Pennsylvania. Азербайджанский ГЭУ. Выпускница программы SUSI'22 (The Study of U.S. Institutes) и FLEX'21.
+                  - paragraph: Была одним из организаторов международного хакатона «Teens In AI Global Hackathon».
+                - generic:
+                  - generic:
+                    - generic: "5"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 80+
+                    - generic: учеников выпустила
+          - article [aria-hidden] [ref=f31e562]:
+            - generic [ref=f31e564]:
+              - generic [ref=f31e565]: Вильям Тимофеев
+              - generic [ref=f31e566]:
+                - generic [ref=f31e567]: Scratch
+                - generic [ref=f31e568]: Minecraft
+            - generic:
+              - generic:
+                - generic: Вильям Тимофеев
+                - generic:
+                  - paragraph: "Окончил Гарвардский университет (онлайн-курс CS50: Introduction to Computer Science). Обучает Computer Science, Scratch и Minecraft."
+                  - paragraph: «Относись к детям так, как хотел бы, чтобы относились к тебе. Я следую золотому правилу нравственности в педагогике. Уважение, поддержка и честность — вот три кита, на которых строится доверие и успешное обучение в моём классе»
+                - generic:
+                  - generic:
+                    - generic: "6"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 160+
+                    - generic: учеников выпустил
+          - article [aria-hidden] [ref=f31e569]:
+            - generic [ref=f31e571]:
+              - generic [ref=f31e572]: Екатерина Яровая
+              - generic [ref=f31e573]:
+                - generic [ref=f31e574]: JavaScript
+                - generic [ref=f31e575]: Веб-дизайн
+                - generic [ref=f31e576]: Математика
+            - generic:
+              - generic:
+                - generic: Екатерина Яровая
+                - generic:
+                  - paragraph: Окончила Гродненский государственный университет. Прошла курсы по веб-дизайну и разработке в Roblox.
+                  - paragraph: Помогает ученикам уверенно решать алгоритмические задачи и поступать на престижные IT-специальности.
+                  - paragraph: «Терпение и труд всё перетрут. В математике и программировании нет волшебной таблетки — только упорство даёт результат»
+                - generic:
+                  - generic:
+                    - generic: "2"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 30+
+                    - generic: учеников выпустила
+          - article [aria-hidden] [ref=f31e577]:
+            - generic [ref=f31e579]:
+              - generic [ref=f31e580]: Виталий Тарасов
+              - generic [ref=f31e581]:
+                - generic [ref=f31e582]: Roblox
+                - generic [ref=f31e583]: JavaScript
+            - generic:
+              - generic:
+                - generic: Виталий Тарасов
+                - generic:
+                  - paragraph: Окончил Астанинский гуманитарный колледж. Прошёл ИТ-обучение в Alem School по направлению Go-Developer.
+                  - paragraph: «Настоящий результат — не выполненные задания, а понимание, которое остаётся после них. Оценки забудутся, а умение мыслить алгоритмически останется навсегда. Я учу детей сути программирования, а не простому заучиванию команд»
+                - generic:
+                  - generic:
+                    - generic: "3"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 80+
+                    - generic: учеников выпустил
+          - article [aria-hidden] [ref=f31e584]:
+            - generic [ref=f31e586]:
+              - generic [ref=f31e587]: Елена Ястрежемская
+              - generic [ref=f31e588]:
+                - generic [ref=f31e589]: Python
+                - generic [ref=f31e590]: Roblox
+            - generic:
+              - generic:
+                - generic: Елена Ястрежемская
+                - generic:
+                  - paragraph: Окончила ВСГУТУ по специальности «Педагог-психолог». Прошла профильное обучение по Python-разработке и созданию ИИ.
+                  - paragraph: Помогает ученикам создавать свои первые проекты уже через месяц и побеждать в ИИ-конкурсах.
+                  - paragraph: «Не ограничивайте ребёнка тем, что знаете сами, ведь он рождён для другого времени»
+                - generic:
+                  - generic:
+                    - generic: "6"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 60+
+                    - generic: учеников выпустила
+          - article [aria-hidden] [ref=f31e591]:
+            - generic [ref=f31e593]:
+              - generic [ref=f31e594]: Артур Ярмалавичюс
+              - generic [ref=f31e595]:
+                - generic [ref=f31e596]: Python
+                - generic [ref=f31e597]: Дизайн
+            - generic:
+              - generic:
+                - generic: Артур Ярмалавичюс
+                - generic:
+                  - paragraph: Окончил Молодечненский торгово-экономический колледж по специальности «Программное обеспечение информационных технологий».
+                  - paragraph: «Получение знаний — это первый шаг на пути становления победителем. Я учу детей воспринимать учёбу как тренировку перед большими жизненными победами»
+                - generic:
+                  - generic:
+                    - generic: "2"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 40+
+                    - generic: учеников выпустил
+          - article [aria-hidden] [ref=f31e598]:
+            - generic [ref=f31e600]:
+              - generic [ref=f31e601]: Светлана Радашкевич
+              - generic [ref=f31e602]:
+                - generic [ref=f31e603]: Scratch
+                - generic [ref=f31e604]: Python
+            - generic:
+              - generic:
+                - generic: Светлана Радашкевич
+                - generic:
+                  - paragraph: Окончила СамГТУ по направлению «Информатика и ВТ». Обучает Python, Scratch и 3D-графике.
+                  - paragraph: «Дисциплина, помноженная на интерес, даёт блестящий результат. Я выстраиваю процесс обучения чётко и профессионально, чтобы каждый ребёнок получил максимум пользы от каждой минуты занятия»
+                - generic:
+                  - generic:
+                    - generic: "11"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 300+
+                    - generic: учеников выпустила
+          - article [aria-hidden] [ref=f31e605]:
+            - generic [ref=f31e607]:
+              - generic [ref=f31e608]: Александр Кириченко
+              - generic [ref=f31e609]:
+                - generic [ref=f31e610]: Roblox
+                - generic [ref=f31e611]: Веб-дизайн
+                - generic [ref=f31e612]: Математика
+            - generic:
+              - generic:
+                - generic: Александр Кириченко
+                - generic:
+                  - paragraph: Окончил Александровский промышленно-правовой колледж по направлению «Веб-дизайн», прошёл курсы Roblox Development. Обучает созданию игр в Roblox и веб-дизайну.
+                  - paragraph: «Если трудно, значит путь правильный. В геймдеве, как и в спорте, результат приходит через усилия»
+                - generic:
+                  - generic:
+                    - generic: "2"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 63+
+                    - generic: учеников выпустил
+          - article [aria-hidden] [ref=f31e613]:
+            - generic [ref=f31e615]:
+              - generic [ref=f31e616]: Артур Тарайкович
+              - generic [ref=f31e617]: Дизайн
+            - generic:
+              - generic:
+                - generic: Артур Тарайкович
+                - generic:
+                  - paragraph: Окончил СПбХУ им. Н.К. Рериха по специальности «Дизайн». Обучает цифровому рисунку и графике.
+                  - paragraph: «Главное — не талант, а желание творить. В каждом ребёнке живёт художник, и современные технологии дают ему в руки волшебную кисть. Моя задача — научить его пользоваться ею и показать, что творчество не имеет границ»
+                - generic:
+                  - generic:
+                    - generic: "12"
+                    - generic: лет стажа
+                  - generic:
+                    - generic: 300+
+                    - generic: учеников выпустил
+          - article [aria-hidden] [ref=f31e619]:
+            - generic [ref=f31e621]:
+              - generic [ref=f31e622]: Валерия Ангур
+              - generic [ref=f31e623]:
+                - generic [ref=f31e624]: Дизайн
+                - generic [ref=f31e625]: 3D-modeling
+            - generic:
+              - generic:
+                - generic: Валерия Ангур
+                - generic:
+                  - paragraph: Окончила МГЛУ, лингвист и преподаватель. Обучалась в художественной школе и на курсах 3D-моделирования (Blender, Cinema4D). Обучает 3D-моделированию и графическому дизайну.
+                  - paragraph: «Важно не идеальное выполнение с первого раза, а искренний прогресс. В IT и дизайне главное — это путь, на котором каждая ошибка делает твой следующий проект чуточку лучше»
+                - generic:
+                  - generic:
+                    - generic: "4"
+                    - generic: года стажа
+                  - generic:
+                    - generic: 120+
+                    - generic: учеников выпустила
+      - generic [ref=f31e629]:
+        - heading "Поможем подобрать курс по возрасту и интересам" [level=2] [ref=f31e630]:
+          - text: Поможем
+          - generic [ref=f31e631]: подобрать
+          - text: курс по возрасту и интересам
+        - button "Бесплатный урок" [ref=f31e632] [cursor=pointer]
+      - generic [ref=f31e634]:
+        - heading "Проекты учеников" [level=2] [ref=f31e635]
+        - heading "От вопросов — к собственным открытиям" [level=2] [ref=f31e637]
+        - generic [ref=f31e639]:
+          - article [ref=f31e640]:
+            - generic [ref=f31e641]:
+              - generic [ref=f31e642]:
+                - generic [ref=f31e643]: Захар, 8 лет
+                - generic [ref=f31e644]: Scratch
+                - generic [ref=f31e645]: Scratch
+                - generic [ref=f31e646]:
+                  - img "Захар, 8 лет"
+                - paragraph [ref=f31e647]: Захар уже собрал свою первую игру в Scratch в стиле Minecraft
+              - generic [ref=f31e648]:
+                - generic [ref=f31e649]:
+                  - generic [ref=f31e650]: Scratch
+                  - generic [ref=f31e652]: Захар, 8 лет
+                  - paragraph [ref=f31e653]: «Я уже на втором курсе Scratch. Там я делаю игру Minecraft, где человечек бегает от монстров и собирает металл и кристаллы»
+                  - generic [ref=f31e654] [cursor=pointer]: Видеоотзыв
+                - img "Захар, 8 лет" [ref=f31e660]
+          - article [ref=f31e661]:
+            - generic [ref=f31e662]:
+              - generic [ref=f31e663]:
+                - generic [ref=f31e664]: Аяжан, 12 лет
+                - generic [ref=f31e665]: Python
+                - generic [ref=f31e666]: Python
+                - generic [ref=f31e667]:
+                  - img "Аяжан, 12 лет"
+                - paragraph [ref=f31e668]: Аяжан уверенно идет по пути в разработку игр на Python и готовится к своим первым самостоятельным проектам
+              - generic [ref=f31e669]:
+                - generic [ref=f31e670]:
+                  - generic [ref=f31e671]: Python LVL1
+                  - generic [ref=f31e673]: Аяжан, 12 лет
+                  - paragraph [ref=f31e674]: «Я прошла два курса и сейчас прохожу курс под названием «Разработка игр на Python». Я уверена в том, что это поможет мне в будущем и уже вот-вот я начну создавать свои первые игры»
+                  - generic [ref=f31e675] [cursor=pointer]: Видеоотзыв
+                - img "Аяжан, 12 лет" [ref=f31e681]
+          - article [ref=f31e682]:
+            - generic [ref=f31e683]:
+              - generic [ref=f31e684]:
+                - generic [ref=f31e685]: Никита, 9 лет
+                - generic [ref=f31e686]: Scratch
+                - generic [ref=f31e687]: Scratch
+                - generic [ref=f31e688]:
+                  - img "Никита, 9 лет"
+                - paragraph [ref=f31e689]: Никита уже на втором курсе Scratch и готовится к созданию собственной игры
+              - generic [ref=f31e690]:
+                - generic [ref=f31e691]:
+                  - generic [ref=f31e692]: Scratch
+                  - generic [ref=f31e694]: Никита, 9 лет
+                  - paragraph [ref=f31e695]: «Я учусь на Scratch. У меня уже второй курс и в итоге я хочу попробовать создать свою игру»
+                  - generic [ref=f31e696] [cursor=pointer]: Видеоотзыв
+                - img "Никита, 9 лет" [ref=f31e702]
+          - article [ref=f31e703]:
+            - generic [ref=f31e704]:
+              - generic [ref=f31e705]:
+                - generic [ref=f31e706]: Адина, 16 лет
+                - generic [ref=f31e707]: Figma
+                - generic [ref=f31e708]: HTML
+                - generic [ref=f31e709]:
+                  - img "Адина, 16 лет"
+                - paragraph [ref=f31e710]: Адину интересовало и программирование, и визуал. Она объединила увлечения, записавшись на «Веб-дизайн»
+              - generic [ref=f31e711]:
+                - generic [ref=f31e712]:
+                  - generic [ref=f31e713]: Web Design
+                  - generic [ref=f31e715]: Адина, 16 лет
+                  - paragraph [ref=f31e716]: «Я учусь как разрабатывать собственный макет сайта в приложении Figma, после я переношу этот макет на язык HTML и CSS и воплощаю этот сайт в коде»
+                  - generic [ref=f31e717] [cursor=pointer]: Видеоотзыв
+                - img "Адина, 16 лет" [ref=f31e723]
+          - article [ref=f31e724]:
+            - generic [ref=f31e725]:
+              - generic [ref=f31e726]:
+                - generic [ref=f31e727]: Максим, 10 лет
+                - generic [ref=f31e728]: Scratch
+                - generic [ref=f31e729]: Scratch
+                - generic [ref=f31e730]:
+                  - img "Максим, 10 лет"
+                - paragraph [ref=f31e731]: Максим освоил Scratch и собрал портфолио из собственных игр
+              - generic [ref=f31e732]:
+                - generic [ref=f31e733]:
+                  - generic [ref=f31e734]: Scratch
+                  - generic [ref=f31e736]: Максим, 10 лет
+                  - paragraph [ref=f31e737]: "«Я изучаю язык программирования Scratch и уже создал 2 игры: пародию на Geometry Dash и 3Д-лабиринт от первого лица»"
+                  - generic [ref=f31e738] [cursor=pointer]: Видеоотзыв
+                - img "Максим, 10 лет" [ref=f31e744]
+          - article [ref=f31e745]:
+            - generic [ref=f31e746]:
+              - generic [ref=f31e747]:
+                - generic [ref=f31e748]: Тимофей, 10 лет
+                - generic [ref=f31e749]: Scratch
+                - generic [ref=f31e750]: Scratch
+                - generic [ref=f31e751]:
+                  - img "Тимофей, 10 лет"
+                - paragraph [ref=f31e752]: Закончил курс по Scratch с первым местом в рейтинге
+              - generic [ref=f31e753]:
+                - generic [ref=f31e754]:
+                  - generic [ref=f31e755]: Scratch
+                  - generic [ref=f31e757]: Тимофей, 10 лет
+                  - paragraph [ref=f31e758]: "«Я изучаю язык программирования Scratch и уже создал 2 игры: пародию на Geometry Dash и 3Д-лабиринт от первого лица»"
+                  - generic [ref=f31e759] [cursor=pointer]: Видеоотзыв
+                - img "Тимофей, 10 лет" [ref=f31e765]
+          - article [ref=f31e766]:
+            - generic [ref=f31e767]:
+              - generic [ref=f31e768]:
+                - generic [ref=f31e769]: Леня, 15 лет
+                - generic [ref=f31e770]: JavaScript
+                - generic [ref=f31e771]: JavaScript
+                - generic [ref=f31e772]:
+                  - img "Леня, 15 лет"
+                - paragraph [ref=f31e773]: Осваивает HTML, CSS и JavaScript, чтобы в будущем стать верстальщиком и работать над реальными проектами
+              - generic [ref=f31e774]:
+                - generic [ref=f31e775]:
+                  - generic [ref=f31e776]: JavaScript
+                  - generic [ref=f31e778]: Леня, 15 лет
+                  - paragraph [ref=f31e779]: «Я уже три года учусь по курсам Kodland. Сейчас я изучаю языки программирования HTML, CSS и JavaScript. В будущем хочу стать верстальщиком сайтов и брать на заказ проекты»
+                  - generic [ref=f31e780] [cursor=pointer]: Видеоотзыв
+                - img "Леня, 15 лет" [ref=f31e786]
+          - article [ref=f31e787]:
+            - generic [ref=f31e788]:
+              - generic [ref=f31e789]:
+                - generic [ref=f31e790]: Тимур, 11 лет
+                - generic [ref=f31e791]: Scratch
+                - generic [ref=f31e792]: Scratch
+                - generic [ref=f31e793]:
+                  - img "Тимур, 11 лет"
+                - paragraph [ref=f31e794]: Создает свои версии известных игр. Планирует развивать эти навыки, чтобы в будущем стать программистом
+              - generic [ref=f31e795]:
+                - generic [ref=f31e796]:
+                  - generic [ref=f31e797]: Scratch
+                  - generic [ref=f31e799]: Тимур, 11 лет
+                  - paragraph [ref=f31e800]: «Я думаю, что уже могу делать такие игры как Dino Run или Flappy Bird. Я думаю, что это мне поможет в будущем, потому что я хочу стать настоящим программистом»
+                  - generic [ref=f31e801] [cursor=pointer]: Видеоотзыв
+                - img "Тимур, 11 лет" [ref=f31e807]
+          - article [ref=f31e808]:
+            - generic [ref=f31e809]:
+              - generic [ref=f31e810]:
+                - generic [ref=f31e811]: София
+                - generic [ref=f31e812]: Цифровое творчество
+                - generic [ref=f31e813]:
+                  - img "София"
+                - paragraph [ref=f31e814]: София создала анимированный клип на песню Виктора Цоя
+              - generic [ref=f31e815]:
+                - generic [ref=f31e816]:
+                  - generic [ref=f31e817]: Цифровое творчество
+                  - generic [ref=f31e819]: София
+                  - paragraph [ref=f31e820]: «Я решила сделать анимационный клип на песню Виктора Цоя. Сначала я придумала, как все будет выглядеть, и нарисовала персонажей. Потом я анимировала каждую сцену и постаралась сделать так, чтобы все движения попадали точно в ритм и настроение музыки»
+                - img "София" [ref=f31e822]
+          - article [ref=f31e823]:
+            - generic [ref=f31e824]:
+              - generic [ref=f31e825]:
+                - generic [ref=f31e826]: Самира
+                - generic [ref=f31e827]: 3Д-моделирование
+                - generic [ref=f31e828]:
+                  - img "Самира"
+                - paragraph [ref=f31e829]: Студентка создала рекламный ролик для любимых духов
+              - generic [ref=f31e830]:
+                - generic [ref=f31e831]:
+                  - generic [ref=f31e832]: 3Д-моделирование
+                  - generic [ref=f31e834]: Самира
+                  - paragraph [ref=f31e835]: «Мне очень нравятся мои духи, поэтому я захотела создать для них рекламу, которая выглядела бы как настоящая. Было очень здорово наблюдать, как моя идея превращается в реальный проект»
+                - img "Самира" [ref=f31e837]
+          - article [ref=f31e838]:
+            - generic [ref=f31e839]:
+              - generic [ref=f31e840]:
+                - generic [ref=f31e841]: Александр
+                - generic [ref=f31e842]: 3Д-моделирование
+                - generic [ref=f31e843]:
+                  - img "Александр"
+                - paragraph [ref=f31e844]: «Я захотел сделать такую комнату для себя — чтобы там были вещи для моих любимых хобби»
+              - generic [ref=f31e845]:
+                - generic [ref=f31e846]:
+                  - generic [ref=f31e847]: 3Д-моделирование
+                  - generic [ref=f31e849]: Александр
+                  - paragraph [ref=f31e850]: "«Меня вдохновили разные дизайны, и я захотел сделать такую комнату для себя — чтобы там были вещи для моих любимых хобби. Мне очень нравится, как получилось использовать пространство: все на своих местах и выглядит удобно»"
+                - img "Александр" [ref=f31e852]
+          - article [ref=f31e853]:
+            - generic [ref=f31e854]:
+              - generic [ref=f31e855]:
+                - generic [ref=f31e856]: Проект студента
+                - generic [ref=f31e857]: Графический дизайн
+                - generic [ref=f31e858]:
+                  - img "Проект студента"
+                - paragraph [ref=f31e859]: Студент курса разработал полноценную презентацию уже после 2-го модуля
+              - generic [ref=f31e860]:
+                - generic [ref=f31e861]:
+                  - generic [ref=f31e862]: Графический дизайн
+                  - generic [ref=f31e864]: Проект студента
+                  - paragraph [ref=f31e865]: "В этом проекте студент применил знания из 2-го модуля курса графического дизайна: научился выстраивать макеты по модульным сеткам и работать со сложными шрифтами. Задача была создать стильную презентацию в духе мировых брендов."
+                - img "Проект студента" [ref=f31e867]
+          - article [ref=f31e868]:
+            - generic [ref=f31e869]:
+              - generic [ref=f31e870]:
+                - generic [ref=f31e871]: Проект студента
+                - generic [ref=f31e872]: Графический дизайн
+                - generic [ref=f31e873]:
+                  - img "Проект студента"
+                - paragraph [ref=f31e874]: Студент разработал фирменный стиль для шахматной школы
+              - generic [ref=f31e875]:
+                - generic [ref=f31e876]:
+                  - generic [ref=f31e877]: Графический дизайн
+                  - generic [ref=f31e879]: Проект студента
+                  - paragraph [ref=f31e880]: "На 4-м и 5-м модулях мы учим ребят создавать логотипы и полноценные брендбуки. В этом проекте студент придумал фирменный стиль для шахматной школы: подобрал шрифты, цвета, разработал айдентику и оформление группы ВКонтакте."
+                - img "Проект студента" [ref=f31e882]
+      - generic [ref=f31e885]:
+        - generic [aria-hidden] [ref=f31e886]:
+          - generic:
+            - heading [level=2]: Приходите на бесплатный урок!
+            - paragraph: Вы можете выбрать направление сразу или определиться с решением после урока. За час мы познакомимся, подберем курс под интересы ребенка и попробуем сферу на практике.
+        - generic [ref=f31e888]:
+          - textbox [ref=f31e891]:
+            - /placeholder: Ваше имя
+          - generic [ref=f31e892]:
+            - textbox [ref=f31e895]:
+              - /placeholder: Имя ребенка
+            - textbox [ref=f31e898]:
+              - /placeholder: Возраст ребёнка
+          - textbox [ref=f31e901]:
+            - /placeholder: Электронная почта
+          - generic [ref=f31e905]:
+            - button "Country Code Selector" [ref=f31e906] [cursor=pointer]:
+              - generic [ref=f31e907]: ▼
+            - textbox "+_ ___ ___ __ __" [ref=f31e910]
+          - generic [ref=f31e911]:
+            - generic [ref=f31e912] [cursor=pointer]:
+              - checkbox "Я ознакомлен с Политикой конфиденциальности"
+              - generic [ref=f31e914]:
+                - text: Я ознакомлен с
+                - link "Политикой конфиденциальности" [ref=f31e915]:
+                  - /url: /ru/docs/privacy-policy.pdf
+            - generic [ref=f31e916] [cursor=pointer]:
+              - checkbox "Я даю согласие на обработку персональных данных, в том числе персональных данных ребёнка, действуя как его законный представитель"
+              - generic [ref=f31e918]:
+                - text: Я даю
+                - link "согласие" [ref=f31e919]:
+                  - /url: /ru/docs/consent-services.pdf
+                - text: на обработку персональных данных, в том числе персональных данных ребёнка, действуя как его законный представитель
+            - generic [ref=f31e920] [cursor=pointer]:
+              - checkbox "Я даю согласие на обработку персональных данных в целях получения рекламных, маркетинговых и информационных рассылок"
+              - generic [ref=f31e922]:
+                - text: Я даю
+                - link "согласие" [ref=f31e923]:
+                  - /url: /ru/docs/consent-marketing.pdf
+                - text: на обработку персональных данных в целях получения рекламных, маркетинговых и информационных рассылок
+            - paragraph [ref=f31e924]: Поскольку обучение проходит несовершеннолетний, согласие на обработку его персональных данных предоставляете вы как законный представитель
+          - button "Записаться" [disabled] [ref=f31e925]
+      - generic [ref=f31e927]:
+        - heading "Вопрос-ответ" [level=2] [ref=f31e928]
+        - paragraph [ref=f31e929]: Посмотрите ответы на самые частые вопросы ниже или загляните в Центр поддержки за дополнительной информацией
+        - generic [ref=f31e930]:
+          - button [ref=f31e932] [cursor=pointer]:
+            - paragraph [ref=f31e933]: Частота занятий, формат обучения?
+          - button [ref=f31e938] [cursor=pointer]:
+            - paragraph [ref=f31e939]: Что делать, если мой ребенок не умеет пользоваться компьютером?
+          - button [ref=f31e944] [cursor=pointer]:
+            - paragraph [ref=f31e945]: Что получит ребенок по окончании курса?
+          - button [ref=f31e950] [cursor=pointer]:
+            - paragraph [ref=f31e951]: Есть только телефон или планшет — можем ли мы заниматься?
+          - button [ref=f31e956] [cursor=pointer]:
+            - paragraph [ref=f31e957]: Есть ли у вас куратор и техподдержка?
+        - link [ref=f31e960] [cursor=pointer]:
+          - /url: /ru/faq
+          - button "Центр поддержки" [ref=f31e961]
+    - generic [ref=f31e965]:
+      - button "Бесплатный урок" [ref=f31e975] [cursor=pointer]
+      - generic [ref=f31e976]:
+        - generic [ref=f31e977]:
+          - generic [ref=f31e978]:
+            - heading "Школа" [level=6] [ref=f31e979]
+            - list [ref=f31e980]:
+              - listitem [ref=f31e981]:
+                - link "О нас" [ref=f31e982] [cursor=pointer]:
+                  - /url: /ru/about
+              - listitem [ref=f31e983]:
+                - link "Методы" [ref=f31e984] [cursor=pointer]:
+                  - /url: /ru/methods
+              - listitem [ref=f31e985]:
+                - link "Преподаватели" [ref=f31e986] [cursor=pointer]:
+                  - /url: /ru/tutors
+              - listitem [ref=f31e987]:
+                - link "For Schools" [ref=f31e988] [cursor=pointer]:
+                  - /url: https://www.kodland.org/en/b2b/forschools/
+              - listitem [ref=f31e989]:
+                - link "Урок в подарок" [ref=f31e990] [cursor=pointer]:
+                  - /url: https://kodland.tech/refferal-ru
+              - listitem [ref=f31e991]:
+                - link "Карьера" [ref=f31e992] [cursor=pointer]:
+                  - /url: https://kodland.tech/career
+              - listitem [ref=f31e993]:
+                - link "Отзывы" [ref=f31e994] [cursor=pointer]:
+                  - /url: /ru/review
+              - listitem [ref=f31e995]:
+                - link "Контакты" [ref=f31e996] [cursor=pointer]:
+                  - /url: /ru/contacts
+              - listitem [ref=f31e997]:
+                - link "Партнерская программа" [ref=f31e998] [cursor=pointer]:
+                  - /url: https://rsa.kodland.org/ru/partners
+              - listitem [ref=f31e999]:
+                - link "Сведения об Образовательной Организации" [ref=f31e1000] [cursor=pointer]:
+                  - /url: /ru/info
+              - listitem [ref=f31e1001]:
+                - link "Документы" [ref=f31e1002] [cursor=pointer]:
+                  - /url: /ru/documents
+          - generic [ref=f31e1003]:
+            - heading "Направления" [level=6] [ref=f31e1004]
+            - list [ref=f31e1005]:
+              - listitem [ref=f31e1006]:
+                - link "Все курсы" [ref=f31e1007] [cursor=pointer]:
+                  - /url: /ru/courses
+              - listitem [ref=f31e1008]:
+                - link "Программирование" [ref=f31e1009] [cursor=pointer]:
+                  - /url: /ru/courses/coding
+              - listitem [ref=f31e1010]:
+                - link "Дизайн" [ref=f31e1011] [cursor=pointer]:
+                  - /url: /ru/courses/design
+        - generic [ref=f31e1013]:
+          - generic [ref=f31e1014]: ООО «КОДЛЕНД»ИНН 9705147841 · ОГРН 1207700333631101000, Г.МОСКВА, ВН.ТЕР.Г. МУНИЦИПАЛЬНЫЙ ОКРУГ БАСМАННЫЙ, УЛ МАШКОВА, Д. 17, ПОМЕЩ. 1/1П
+          - link "+7 (499) 490–72–77" [ref=f31e1015] [cursor=pointer]:
+            - /url: tel:+74994907277
+      - generic [ref=f31e1016]:
+        - img [ref=f31e1017] [cursor=pointer]
+        - img [ref=f31e1020] [cursor=pointer]
+        - img [ref=f31e1023] [cursor=pointer]
+        - img [ref=f31e1026] [cursor=pointer]
+      - separator [ref=f31e1029]
+      - generic [ref=f31e1030]:
+        - generic [ref=f31e1031]: © Kodland, 2026
+        - generic [ref=f31e1032]:
+          - link "Политика конфиденциальности" [ref=f31e1033] [cursor=pointer]:
+            - /url: /ru/docs/privacy-policy.pdf
+          - link "Политика использования файлов cookie" [ref=f31e1034] [cursor=pointer]:
+            - /url: /ru/docs/cookie-policy.pdf
+          - link "Публичная оферта" [ref=f31e1035] [cursor=pointer]:
+            - /url: /ru/docs/oferta.pdf
+          - link "Сведения о реализуемых требованиях к защите персональных данных" [ref=f31e1036] [cursor=pointer]:
+            - /url: /ru/docs/pdn-protection.pdf
+          - link "Настройки файлов cookie" [ref=f31e1037] [cursor=pointer]:
+            - /url: "#"
+  - dialog "Согласие на использование файлов cookie" [ref=f31e1039]:
+    - paragraph [ref=f31e1040]:
+      - text: Мы используем файлы cookie. Технические нужны для работы сайта, остальные включаются только с вашего согласия. Подробнее — в
+      - link "Политике использования файлов cookie" [ref=f31e1041] [cursor=pointer]:
+        - /url: /ru/docs/cookie-policy.pdf
+      - text: .
+    - generic [ref=f31e1042]:
+      - button "Принять все" [ref=f31e1043] [cursor=pointer]
+      - button "Отклонить все" [ref=f31e1044] [cursor=pointer]
+      - button "Настроить" [ref=f31e1045] [cursor=pointer]

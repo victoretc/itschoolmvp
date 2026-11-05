@@ -3,17 +3,23 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__inner">
     <div class="hero__copy">
-      <svg class="hero__spark" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
-        <path d="M12 0c.8 6.6 4.6 10.4 12 12-7.4 1.6-11.2 5.4-12 12-.8-6.6-4.6-10.4-12-12C7.4 10.4 11.2 6.6 12 0Z" fill="currentColor"></path>
-      </svg>
-
-      <p class="hero__eyebrow">{{ $hero.eyebrow }}</p>
       <h1 class="hero__title" id="hero-title">
-        <span class="hero__line"><span class="hero__line-text">{{ $hero.title }}</span></span>
-        <span class="hero__line"><span class="hero__line-text">{{ $hero.title_second }}</span></span>
+        <span class="hero__line">{{ $hero.title }}</span>
+        <span class="hero__line">{{ $hero.title_second }}</span>
         <span class="hero__line hero__line--accent">{{ $hero.accent }}</span>
       </h1>
       <p class="hero__lead">{{ $hero.lead }}</p>
+
+      <ul class="hero__points">
+        {{- range $hero.points }}
+        <li class="hero__point">
+          <svg class="hero__point-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false">
+            <path d="M3 8.2l3.1 3.1L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>{{ . }}</span>
+        </li>
+        {{- end }}
+      </ul>
 
       <div class="hero__actions">
         <a class="btn" href="{{ "/contacts/" | relURL }}">
@@ -33,20 +39,21 @@
         </div>
         {{- end }}
       </dl>
+
     </div>
 
     <div class="hero__media">
       {{- with resources.Get "images/hero-left.jpg" }}
-      {{- $crop := .Fill "720x900 Center" }}
-      <figure class="hero__photo hero__photo--main">
+      {{- $crop := .Fill "760x760 Center" }}
+      <figure class="hero__portrait hero__portrait--main">
         <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Девочка с роботом на занятии по робототехнике" loading="eager" decoding="async">
       </figure>
       {{- end }}
 
       {{- with resources.Get "images/hero-right.jpg" }}
-      {{- $crop := .Fill "360x480 Center" }}
-      <figure class="hero__photo hero__photo--small">
-        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Мальчик программирует на ноутбуке" loading="lazy" decoding="async">
+      {{- $crop := .Fill "420x420 Center" }}
+      <figure class="hero__portrait hero__portrait--small">
+        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Мальчик программирует на ноутбуке" loading="eager" decoding="async">
       </figure>
       {{- end }}
 
@@ -55,18 +62,65 @@
   </div>
 </section>
 
-{{- with $hero.stats }}
-<section class="proof" aria-label="АйТи Скул в цифрах">
-  <div class="proof__inner">
-    <p class="proof__label">АйТи Скул<br>в цифрах</p>
-    <dl class="proof__grid" data-reveal>
-      {{- range . }}
-      <div class="proof__item">
-        <dt>{{ .value }}</dt>
-        <dd>{{ .label }}</dd>
+{{- with .Params.approach }}
+<section class="approach" aria-labelledby="approach-title">
+  <div class="approach__inner">
+    <header class="approach__head" data-reveal>
+      <div>
+        <h2 class="section-title" id="approach-title">{{ .title }}</h2>
       </div>
+      <p class="approach__lead">{{ .lead }}</p>
+    </header>
+
+    <div class="approach__body">
+      {{- with resources.Get "images/school-blog-2.jpg" }}
+      {{- $crop := .Fill "1200x900 Center" }}
+      <figure class="approach__media" data-reveal>
+        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Команда АйТи Скул с наградами на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+        <figcaption>{{ $.Params.approach.caption }}</figcaption>
+      </figure>
       {{- end }}
-    </dl>
+
+      <div class="approach__content">
+        <div class="approach__notes" data-reveal-group>
+          {{- range $i, $note := .notes }}
+          <div class="approach__note" data-reveal>
+            <span class="approach__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            <p>{{ $note }}</p>
+          </div>
+          {{- end }}
+        </div>
+        <div class="approach__statement" data-reveal>
+          <span class="approach__statement-label">Наша главная цель</span>
+          <p class="approach__statement-text">{{ .statement }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.purpose }}
+<section class="purpose" aria-labelledby="purpose-title">
+  <div class="purpose__inner">
+    <header class="purpose__head" data-reveal>
+      <h2 class="section-title" id="purpose-title">{{ .title }}</h2>
+    </header>
+
+    <div class="purpose__grid" data-reveal-group>
+      {{- range $i, $point := .points }}
+      <article class="purpose__card" data-reveal>
+        <div class="purpose__card-top">
+          <span class="purpose__icon">{{ partial "icon.html" $point.icon }}</span>
+          <span class="purpose__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+        </div>
+        <div class="purpose__card-body">
+          <h3 class="purpose__item-title">{{ $point.title }}</h3>
+          <p class="purpose__text">{{ $point.text }}</p>
+        </div>
+      </article>
+      {{- end }}
+    </div>
   </div>
 </section>
 {{- end }}
@@ -111,62 +165,6 @@
   </div>
 </section>
 {{- end }}
-
-{{- with .Params.approach }}
-<section class="approach" aria-labelledby="approach-title">
-  <div class="approach__inner">
-    <header class="approach__head" data-reveal>
-      <div>
-        <h2 class="section-title" id="approach-title">{{ .title }}</h2>
-      </div>
-      <p class="approach__lead">{{ .lead }}</p>
-    </header>
-
-    <div class="approach__body">
-      {{- with resources.Get "images/school-blog-2.jpg" }}
-      {{- $crop := .Fill "1200x900 Center" }}
-      <figure class="approach__media" data-reveal>
-        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Команда АйТи Скул с наградами на фестивале Smart Robo Fest" loading="lazy" decoding="async">
-        <figcaption>{{ $.Params.approach.caption }}</figcaption>
-      </figure>
-      {{- end }}
-
-      <div class="approach__content">
-        <div class="approach__notes" data-reveal-group>
-          {{- range .notes }}
-          <div class="approach__note" data-reveal>
-            <span class="approach__dot" aria-hidden="true"></span>
-            <p>{{ . }}</p>
-          </div>
-          {{- end }}
-        </div>
-        <p class="approach__statement" data-reveal>{{ .statement }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-{{- end }}
-
-{{- with .Params.purpose }}
-<section class="purpose" aria-labelledby="purpose-title">
-  <div class="purpose__inner">
-    <header class="purpose__head" data-reveal>
-      <h2 class="section-title section-title--light" id="purpose-title">{{ .title }}</h2>
-    </header>
-
-    <div class="purpose__grid" data-reveal-group>
-      {{- range .points }}
-      <div class="purpose__item" data-reveal>
-        <span class="purpose__icon">{{ partial "icon.html" .icon }}</span>
-        <h3 class="purpose__item-title">{{ .title }}</h3>
-        <p class="purpose__text">{{ .text }}</p>
-      </div>
-      {{- end }}
-    </div>
-  </div>
-</section>
-{{- end }}
-
 
 {{- with .Params.reviews }}
 <section class="reviews" aria-labelledby="reviews-title">
@@ -234,16 +232,32 @@
 {{- with .Params.cta }}
 <section class="cta-band" aria-labelledby="cta-title">
   <div class="cta-band__inner">
-    <div data-reveal>
-      <h2 class="cta-band__title" id="cta-title">{{ .title }}</h2>
-      <p class="cta-band__text">{{ .text }}</p>
+    <div class="cta-band__panel" data-reveal>
+      <div class="cta-band__copy">
+        <span class="cta-band__badge">Бесплатная консультация</span>
+        <h2 class="cta-band__title" id="cta-title">{{ replace .title "какой курс" "<span class=\"cta-band__mark\">какой курс</span>" | safeHTML }}</h2>
+        <p class="cta-band__text">{{ .text }}</p>
+        <div class="cta-band__actions">
+          <a class="cta-band__button" href="{{ "/contacts/" | relURL }}">
+            <span>{{ .button }}</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a class="cta-band__call" href="{{ site.Params.phoneHref | safeURL }}">{{ site.Params.phone }}</a>
+        </div>
+      </div>
+
+      <div class="cta-band__media">
+        {{- with resources.Get "images/school-mentor.jpg" }}
+        {{- $crop := .Fill "640x640 Center" }}
+        <figure class="cta-band__portrait">
+          <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Педагог помогает ребёнку с первой программой" loading="lazy" decoding="async">
+        </figure>
+        {{- end }}
+        <p class="cta-band__sticker" aria-hidden="true">Подберём курс</p>
+      </div>
     </div>
-    <a class="btn" href="{{ "/contacts/" | relURL }}" data-reveal>
-      <span>{{ .button }}</span>
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-        <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
-    </a>
   </div>
 </section>
 {{- end }}

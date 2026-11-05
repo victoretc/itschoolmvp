@@ -1,0 +1,231 @@
+- generic [active] [ref=f35e1]:
+  - link "Перейти к содержимому" [ref=f35e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f35e3]:
+    - generic [ref=f35e4]:
+      - link "АйТи Скул — на главную" [ref=f35e5] [cursor=pointer]:
+        - /url: /
+        - img "АйТи Скул" [ref=f35e6]
+      - navigation "Основное меню" [ref=f35e7]:
+        - list [ref=f35e8]:
+          - listitem [ref=f35e9]:
+            - link "Главная" [ref=f35e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f35e11]:
+            - link "Курсы" [ref=f35e12] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f35e13]:
+            - link "IT Каникулы" [ref=f35e14] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f35e15]:
+            - link "О нас" [ref=f35e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f35e17]:
+            - link "Блог" [ref=f35e18] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f35e19]:
+            - link "Контакты" [ref=f35e20] [cursor=pointer]:
+              - /url: /contacts/
+        - generic [ref=f35e21]:
+          - link "+375 (29) 871-76-12" [ref=f35e22] [cursor=pointer]:
+            - /url: tel:+375298717612
+          - list [ref=f35e26]:
+            - listitem [ref=f35e27]:
+              - link "Viber" [ref=f35e28] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f35e31]:
+              - link "Instagram" [ref=f35e32] [cursor=pointer]:
+                - /url: "#"
+          - link "Бесплатный урок" [ref=f35e35] [cursor=pointer]:
+            - /url: /contacts/
+  - main [ref=f35e36]:
+    - region [ref=f35e37]:
+      - generic [ref=f35e39]:
+        - generic [ref=f35e40]:
+          - paragraph [ref=f35e41]: АйТи Скул · школа цифровых технологий
+          - heading "IT-школа для детей 6–17 лет" [level=1] [ref=f35e42]:
+            - generic [ref=f35e43]: IT-школа
+            - generic [ref=f35e44]: для детей
+            - generic [ref=f35e45]: 6–17 лет
+          - paragraph [ref=f35e46]: Программирование, робототехника и разработка игр. Превращаем интерес ребёнка к технологиям в реальные навыки и первые проекты.
+          - generic [ref=f35e47]:
+            - link "Получить консультацию" [ref=f35e48] [cursor=pointer]:
+              - /url: /contacts/
+            - link "Смотреть курсы" [ref=f35e52] [cursor=pointer]:
+              - /url: "#courses"
+          - generic [ref=f35e53]:
+            - generic [ref=f35e54]:
+              - term [ref=f35e55]: "8"
+              - definition [ref=f35e56]: лет преподавания
+            - generic [ref=f35e57]:
+              - term [ref=f35e58]: "15"
+              - definition [ref=f35e59]: педагогов
+            - generic [ref=f35e60]:
+              - term [ref=f35e61]: 6000+
+              - definition [ref=f35e62]: детей обучили
+        - generic [ref=f35e63]:
+          - figure [ref=f35e64]:
+            - img "Девочка с роботом на занятии по робототехнике" [ref=f35e65]
+          - figure [ref=f35e66]:
+            - img "Мальчик программирует на ноутбуке" [ref=f35e67]
+          - paragraph [aria-hidden] [ref=f35e68]: LEGO · Scratch · Python
+    - region "АйТи Скул в цифрах" [ref=f35e69]:
+      - generic [ref=f35e70]:
+        - paragraph [ref=f35e71]: АйТи Скулв цифрах
+        - generic [ref=f35e72]:
+          - generic [ref=f35e73]:
+            - term [ref=f35e74]: "700"
+            - definition [ref=f35e75]: Постоянных клиентов в год
+          - generic [ref=f35e76]:
+            - term [ref=f35e77]: "8"
+            - definition [ref=f35e78]: Лет преподавания
+          - generic [ref=f35e79]:
+            - term [ref=f35e80]: "15"
+            - definition [ref=f35e81]: Педагогов
+          - generic [ref=f35e82]:
+            - term [ref=f35e83]: 6000+
+            - definition [ref=f35e84]: Обученных детей
+    - region [ref=f35e85]:
+      - generic [ref=f35e86]:
+        - generic [ref=f35e87]:
+          - heading "Выберите, что интересно ребёнку" [level=2] [ref=f35e88]
+          - paragraph [ref=f35e89]: Коротко о направлениях. На консультации подберём курс по возрасту и опыту.
+        - generic [ref=f35e90]:
+          - article [ref=f35e91]:
+            - generic [ref=f35e92]: с 6 лет
+            - heading "Робототехника LEGO" [level=3] [ref=f35e99]
+            - paragraph [ref=f35e100]: "Собираем модели на LEGO и учим их двигаться: механика, датчики, первые программы."
+            - link "Записаться" [ref=f35e101] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f35e104]:
+            - generic [ref=f35e105]: начинающим
+            - heading "Программирование в Scratch" [level=3] [ref=f35e112]
+            - paragraph [ref=f35e113]: Создаём игры и мультфильмы в Scratch и Kodu — первый код без сложного синтаксиса.
+            - link "Записаться" [ref=f35e114] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f35e117]:
+            - generic [ref=f35e118]: продолжающим
+            - heading "Робототехника Arduino" [level=3] [ref=f35e124]
+            - paragraph [ref=f35e125]: "Собираем устройства на Arduino: электроника, сенсоры и программы на C++."
+            - link "Записаться" [ref=f35e126] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f35e129]:
+            - generic [ref=f35e130]: продолжающим
+            - heading "Python и Minecraft" [level=3] [ref=f35e135]
+            - paragraph [ref=f35e136]: Переходим к настоящему коду на Python и строим собственные миры в Minecraft.
+            - link "Записаться" [ref=f35e137] [cursor=pointer]:
+              - /url: /contacts/
+          - article [ref=f35e140]:
+            - generic [ref=f35e141]: 12+
+            - heading "Разработка игр" [level=3] [ref=f35e147]
+            - paragraph [ref=f35e148]: "Придумываем и собираем свою игру: уровни, персонажи, механики и защита проекта."
+            - link "Записаться" [ref=f35e149] [cursor=pointer]:
+              - /url: /contacts/
+          - link "Не знаете, что выбрать? Подберём направление на консультации — по возрасту и интересам ребёнка. Помогите выбрать" [ref=f35e152] [cursor=pointer]:
+            - /url: /contacts/
+            - heading "Не знаете, что выбрать?" [level=3] [ref=f35e156]
+            - paragraph [ref=f35e157]: Подберём направление на консультации — по возрасту и интересам ребёнка.
+            - generic [ref=f35e158]: Помогите выбрать
+    - region [ref=f35e159]:
+      - generic [ref=f35e160]:
+        - generic [ref=f35e161]:
+          - heading "Как учат в АйТи Скул" [level=2] [ref=f35e163]
+          - paragraph [ref=f35e164]: В АйТи Скул мы используем программируемые конструкторы LEGO и робототехнические наборы Arduino для обучения детей с 6 лет.
+        - generic [ref=f35e165]:
+          - figure "Команда АйТи Скул на фестивале Smart Robo Fest" [ref=f35e166]:
+            - img "Команда АйТи Скул с наградами на фестивале Smart Robo Fest" [ref=f35e167]
+          - generic [ref=f35e169]:
+            - generic [ref=f35e170]:
+              - paragraph [ref=f35e173]: Мы собрали команду преподавателей из числа брестских специалистов по робототехнике, опытных предпринимателей и менеджеров из IT-отрасли, чтобы решить амбициозную задачу — обеспечить нашим детям возможность развиваться с использованием новейших и инновационных образовательных технологий.
+              - paragraph [ref=f35e176]: Наша учебная программа разработана специалистами, которые зарекомендовали себя как в Республике Беларусь, так и на международной арене. Педагоги АйТи Скул прошли специальную подготовку и сертификацию по использованию оборудования LEGO в образовательном процессе.
+            - paragraph [ref=f35e177]: Наша главная цель — формирование профессиональных кадров для IT-отрасли уже со школьной скамьи.
+    - region [ref=f35e178]:
+      - generic [ref=f35e179]:
+        - heading "Для чего ребёнку компьютерное образование?" [level=2] [ref=f35e181]
+        - generic [ref=f35e182]:
+          - generic [ref=f35e183]:
+            - heading "Развитие потенциала" [level=3] [ref=f35e188]
+            - paragraph [ref=f35e189]: Работа с компьютером — инструмент интеллектуальной работы. Она развивает интеллектуально-творческий потенциал личности, помогает быстрее адаптироваться к разным условиям и находить нестандартные решения.
+          - generic [ref=f35e190]:
+            - heading "Профориентация" [level=3] [ref=f35e195]
+            - paragraph [ref=f35e196]: "Курс построен так, что подростки могут попробовать себя в разных ролях в IT: от тестировщика до программиста."
+          - generic [ref=f35e197]:
+            - heading "Ранний старт в IT" [level=3] [ref=f35e204]
+            - paragraph [ref=f35e205]: Ребята получают реальный опыт и свою первую профессию ещё в школе, создавая и развивая настоящий проект.
+    - region [ref=f35e206]:
+      - generic [ref=f35e207]:
+        - heading "Отзывы о школе" [level=2] [ref=f35e209]
+        - iframe [ref=f35e211]
+    - region [ref=f35e212]:
+      - generic [ref=f35e214]:
+        - generic [ref=f35e215]:
+          - heading "Присоединяйтесь к нам в Instagram" [level=2] [ref=f35e216]
+          - paragraph [ref=f35e217]: Новости школы, проекты учеников и закулисье занятий.
+        - link "@itschoolby" [ref=f35e218] [cursor=pointer]:
+          - /url: https://www.instagram.com/itschoolby/
+    - region [ref=f35e221]:
+      - generic [ref=f35e222]:
+        - generic [ref=f35e223]:
+          - heading "Частые вопросы" [level=2] [ref=f35e224]
+          - paragraph [ref=f35e225]: Собрали то, о чём чаще всего спрашивают родители.
+        - generic [ref=f35e226]:
+          - group [ref=f35e227]:
+            - generic "С какого возраста можно заниматься?" [ref=f35e228] [cursor=pointer]
+          - group [ref=f35e229]:
+            - generic "Кто ведёт занятия?" [ref=f35e230] [cursor=pointer]
+          - group [ref=f35e231]:
+            - generic "Как проходят занятия?" [ref=f35e232] [cursor=pointer]
+          - group [ref=f35e233]:
+            - generic "Как записаться?" [ref=f35e234] [cursor=pointer]
+    - region [ref=f35e235]:
+      - generic [ref=f35e236]:
+        - generic [ref=f35e237]:
+          - heading "Не знаете, какой курс выбрать?" [level=2] [ref=f35e238]
+          - paragraph [ref=f35e239]: Позвоните — зададим несколько вопросов о ребёнке и предложим направление, с которого лучше начать.
+        - link "Получить консультацию" [ref=f35e240] [cursor=pointer]:
+          - /url: /contacts/
+  - contentinfo [ref=f35e244]:
+    - generic [ref=f35e245]:
+      - link "АйТи Скул" [ref=f35e247] [cursor=pointer]:
+        - /url: /
+      - navigation "Навигация в подвале" [ref=f35e248]:
+        - paragraph [ref=f35e249]: Навигация
+        - list [ref=f35e250]:
+          - listitem [ref=f35e251]:
+            - link "Курсы" [ref=f35e252] [cursor=pointer]:
+              - /url: /courses/
+          - listitem [ref=f35e253]:
+            - link "IT каникулы" [ref=f35e254] [cursor=pointer]:
+              - /url: /it-vacations/
+          - listitem [ref=f35e255]:
+            - link "О нас" [ref=f35e256] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f35e257]:
+            - link "Блог" [ref=f35e258] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f35e259]:
+            - link "Контакты" [ref=f35e260] [cursor=pointer]:
+              - /url: /contacts/
+      - generic [ref=f35e261]:
+        - paragraph [ref=f35e262]: Контакты
+        - link "+375 (29) 871-76-12" [ref=f35e263] [cursor=pointer]:
+          - /url: tel:+375298717612
+        - link "+375 (29) 228-49-71 (Директор)" [ref=f35e264] [cursor=pointer]:
+          - /url: tel:+375292284971
+        - link "info@it-school.by" [ref=f35e265] [cursor=pointer]:
+          - /url: mailto:info@it-school.by
+        - paragraph [ref=f35e266]:
+          - link "г. Брест ул. Пионерская, 52 к. 503 (офис)" [ref=f35e267] [cursor=pointer]:
+            - /url: https://yandex.by/maps/-/CDDRAYi-
+      - generic [ref=f35e268]:
+        - paragraph [ref=f35e269]: Месенджеры
+        - list [ref=f35e270]:
+          - listitem [ref=f35e271]:
+            - link "Viber" [ref=f35e272] [cursor=pointer]:
+              - /url: viber://chat?number=%2B375298717612
+    - generic [ref=f35e273]:
+      - generic [ref=f35e274]: © 2026 Все права защищены
+      - link "Разработка Богатов" [ref=f35e275] [cursor=pointer]:
+        - /url: https://victoretc.github.io/portfolio/
+      - link "Прокрутить вверх" [ref=f35e276] [cursor=pointer]:
+        - /url: "#main"

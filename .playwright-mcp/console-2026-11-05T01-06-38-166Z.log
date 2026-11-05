@@ -1,0 +1,2 @@
+[      62ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:1441/livereload.js?mindelay=10&v=2&port=1319&path=livereload:0
+[     143ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:1441/favicon.ico:0
