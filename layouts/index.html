@@ -1,124 +1,142 @@
 {{ define "main" }}
 {{- $hero := .Params.hero -}}
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <h1 class="hero__title" id="hero-title">
-        <span class="hero__line">{{ $hero.title }}</span>
-        <span class="hero__line">{{ $hero.title_second }}</span>
-        <span class="hero__line hero__line--accent">{{ $hero.accent }}</span>
+
+{{/* ---------------------------------------------------------------- hero */}}
+<section class="sb-hero" aria-labelledby="hero-title">
+  <div class="sb-hero__inner">
+    <div class="sb-hero__art sb-hero__art--left" aria-hidden="true">
+      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--hero-flower") }}
+      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--hero-star") }}
+      {{ partial "sb-art.html" (dict "kind" "coin" "class" "sb-art--hero-coin") }}
+      {{ partial "sb-art.html" (dict "kind" "heart" "class" "sb-art--hero-heart") }}
+      {{ partial "sb-art.html" (dict "kind" "gear" "class" "sb-art--hero-gear") }}
+      {{ partial "sb-art.html" (dict "kind" "dots" "class" "sb-art--hero-dots") }}
+    </div>
+
+    <div class="sb-hero__copy">
+      <h1 class="sb-hero__title" id="hero-title">
+        <span>{{ $hero.title }}</span>
+        <span>{{ $hero.title_second }}</span>
+        <span class="sb-hero__age">{{ $hero.accent }}</span>
       </h1>
-      <p class="hero__lead">{{ $hero.lead }}</p>
 
-      <ul class="hero__points">
-        {{- range $hero.points }}
-        <li class="hero__point">
-          <svg class="hero__point-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false">
-            <path d="M3 8.2l3.1 3.1L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          <span>{{ . }}</span>
-        </li>
-        {{- end }}
-      </ul>
+      <p class="sb-hero__lead">{{ $hero.lead }}</p>
 
-      <div class="hero__actions">
-        <a class="btn btn--cta" href="{{ "/contacts/" | relURL }}">
-          <span class="btn__label">{{ $hero.cta }}</span>
-          <span class="btn__icon" aria-hidden="true">
-            <svg class="btn__arrow" viewBox="0 0 24 24" width="18" height="18" focusable="false">
-              <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </span>
-        </a>
-        <a class="btn btn--ghost" href="#courses">{{ $hero.cta_secondary }}</a>
+      <div class="sb-actions">
+        {{ partial "sb-cta-button.html" (dict "label" $hero.cta) }}
+        <a class="sb-btn sb-btn--sand" href="#courses">{{ $hero.cta_secondary }}</a>
       </div>
 
-      <dl class="hero__proof">
+      <dl class="sb-stats">
         {{- range $hero.proof }}
-        <div class="hero__proof-item">
+        <div class="sb-stats__item">
           <dt>{{ .value }}</dt>
           <dd>{{ .label }}</dd>
         </div>
         {{- end }}
       </dl>
-
     </div>
 
-    <div class="hero__cloud-wrap">
-      <div class="hero__cloud" data-icon-cloud role="img" aria-label="Технологии, которые изучают в АйТи Скул: Scratch, Python, Arduino, HTML5, CSS, JavaScript, Roblox, Unity, Godot, Tinkercad, Blender и C++"></div>
+    <div class="sb-hero__art sb-hero__art--right" aria-hidden="true">
+      {{ partial "sb-art.html" (dict "kind" "blob" "class" "sb-art--hero-blob") }}
+      {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--hero-cat") }}
+      {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--hero-triangle") }}
+      {{ partial "sb-art.html" (dict "kind" "lock" "class" "sb-art--hero-lock") }}
+      {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--hero-spark") }}
+      {{ partial "sb-art.html" (dict "kind" "leaf" "class" "sb-art--hero-leaf") }}
+      {{ partial "sb-art.html" (dict "kind" "plus" "class" "sb-art--hero-plus") }}
+    </div>
 
-      {{- with resources.Get "images/blog/winners-6.jpg" }}
-      {{- $crop := .Fill "1280x1600 Center" }}
-      <figure class="hero__photo hero__photo--main">
-        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Ученики АйТи Скул с дипломами на соревнованиях по робототехнике" loading="eager" decoding="async">
-      </figure>
-      {{- end }}
-
-      {{- with resources.Get "images/blog/winners-1.jpg" }}
-      {{- $crop := .Fill "900x1200 Smart" }}
-      <figure class="hero__photo hero__photo--small">
-        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Ученик АйТи Скул с дипломом на соревнованиях по робототехнике" loading="eager" decoding="async">
-      </figure>
-      {{- end }}
+    <div class="sb-hero__mobile-art" aria-hidden="true">
+      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--mobile-flower") }}
+      {{ partial "sb-art.html" (dict "kind" "blob" "class" "sb-art--mobile-blob") }}
+      {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-art--mobile-triangle") }}
+      {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--mobile-cat") }}
     </div>
   </div>
 </section>
 
+{{/* ------------------------------------------------------------ benefits */}}
+{{- with $hero.points }}
+<section class="sb-benefits" aria-label="Почему родители выбирают АйТи Скул">
+  <ul class="sb-benefits__inner">
+    {{- range $i, $point := . }}
+    <li class="sb-benefits__item">
+      <span class="sb-benefits__mark sb-benefits__mark--{{ mod $i 4 }}" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="12" height="12" focusable="false">
+          <path d="M3 8.4 6.2 11.6 13 4.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+      <span>{{ $point }}</span>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+
+{{/* ------------------------------------------------------------ approach */}}
 {{- with .Params.approach }}
-<section class="approach" aria-labelledby="approach-title">
-  <div class="approach__inner">
-    <header class="approach__head" data-reveal>
-      <div>
-        <h2 class="section-title" id="approach-title">{{ .title }}</h2>
-      </div>
-      <p class="approach__lead">{{ .lead }}</p>
+<section class="sb-section sb-approach" aria-labelledby="approach-title">
+  <div class="sb-inner">
+    <header class="sb-head" data-reveal>
+      <h2 class="sb-title" id="approach-title">{{ .title }}</h2>
+      <p class="sb-lead">{{ .lead }}</p>
     </header>
 
-    <div class="approach__body">
-      {{- with resources.Get "images/school-blog-2.jpg" }}
-      {{- $crop := .Fill "1200x900 Center" }}
-      <figure class="approach__media" data-reveal>
-        <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Команда АйТи Скул с наградами на фестивале Smart Robo Fest" loading="lazy" decoding="async">
-        <figcaption>{{ $.Params.approach.caption }}</figcaption>
-      </figure>
-      {{- end }}
+    <div class="sb-approach__body">
+      <div class="sb-approach__media-wrap" data-reveal>
+        {{- with resources.Get "images/school-blog-2.jpg" }}
+        {{- $crop := .Fill "1200x900 Center" }}
+        <figure class="sb-approach__media">
+          <img src="{{ $crop.RelPermalink }}" width="{{ $crop.Width }}" height="{{ $crop.Height }}" alt="Команда АйТи Скул с наградами на фестивале Smart Robo Fest" loading="lazy" decoding="async">
+        </figure>
+        {{- end }}
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-art--approach-star") }}
+        <p class="sb-approach__caption">{{ .caption }}</p>
+      </div>
 
-      <div class="approach__content">
-        <div class="approach__notes" data-reveal-group>
+      <div class="sb-approach__content">
+        <div class="sb-notes">
           {{- range $i, $note := .notes }}
-          <div class="approach__note" data-reveal>
-            <span class="approach__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+          <div class="sb-notes__item" data-reveal>
+            <span class="sb-notes__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             <p>{{ $note }}</p>
           </div>
           {{- end }}
         </div>
-        <div class="approach__statement" data-reveal>
-          <p class="approach__statement-text">{{ .statement }}</p>
-        </div>
       </div>
     </div>
+
+    <blockquote class="sb-statement" data-reveal>
+      <span class="sb-statement__mark" aria-hidden="true">“</span>
+      <p>{{ .statement }}</p>
+      {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-art--statement-spark") }}
+    </blockquote>
   </div>
 </section>
 {{- end }}
 
+{{/* ------------------------------------------------------------- purpose */}}
 {{- with .Params.purpose }}
-<section class="purpose" aria-labelledby="purpose-title">
-  <div class="purpose__inner">
-    <header class="purpose__head" data-reveal>
-      <h2 class="section-title" id="purpose-title">{{ .title }}</h2>
+{{- /* Icons: Phosphor Icons (MIT), fetched via Iconify. */ -}}
+{{- $tiles := dict "spark" "images/icons/potential.svg" "compass" "images/icons/career.svg" "rocket" "images/icons/start.svg" }}
+<section class="sb-section sb-purpose" aria-labelledby="purpose-title">
+  <div class="sb-inner">
+    <header class="sb-head sb-head--center" data-reveal>
+      <h2 class="sb-title" id="purpose-title">{{ .title }}</h2>
     </header>
 
-    <div class="purpose__grid" data-reveal-group>
+    <div class="sb-purpose__grid" data-reveal-group>
       {{- range $i, $point := .points }}
-      <article class="purpose__card" data-reveal>
-        <div class="purpose__card-top">
-          <span class="purpose__icon">{{ partial "icon.html" $point.icon }}</span>
-          <span class="purpose__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+      <article class="sb-card sb-purpose__card" data-reveal>
+        <div class="sb-purpose__top">
+          <span class="sb-tile sb-tile--{{ mod $i 3 }}" aria-hidden="true">
+            {{- with index $tiles $point.icon }}{{ with resources.Get . }}{{ .Content | safeHTML }}{{ end }}{{ end -}}
+          </span>
+          <span class="sb-purpose__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
         </div>
-        <div class="purpose__card-body">
-          <h3 class="purpose__item-title">{{ $point.title }}</h3>
-          <p class="purpose__text">{{ $point.text }}</p>
-        </div>
+        <h3 class="sb-card__title">{{ $point.title }}</h3>
+        <p class="sb-card__text">{{ $point.text }}</p>
       </article>
       {{- end }}
     </div>
@@ -126,95 +144,93 @@
 </section>
 {{- end }}
 
+{{/* ------------------------------------------------------------- courses */}}
 {{- with .Params.courses }}
 {{- $courses := sort site.Data.courses "guideOrder" }}
-<section class="catalog-index" id="courses" aria-labelledby="courses-title">
-  <div class="catalog-index__inner">
-    <div class="catalog-index__aside">
-      <header class="catalog-index__head" data-reveal>
-        <h2 class="section-title" id="courses-title">{{ .title }}</h2>
-        <p class="catalog-index__lead">{{ .lead }}</p>
-      </header>
-
-      {{- with .help }}
-      <div class="catalog-index__help" data-reveal>
-        <p class="catalog-index__help-title">{{ .title }}</p>
-        <p class="catalog-index__help-text">{{ .text }}</p>
-        <a class="catalog-index__phone" href="{{ site.Params.phoneHref | safeURL }}">
-          <span>{{ site.Params.phone }}</span>
-        </a>
+<section class="sb-section sb-courses" id="courses" aria-labelledby="courses-title">
+  <div class="sb-inner">
+    <header class="sb-courses__head" data-reveal>
+      <div>
+        <h2 class="sb-title" id="courses-title">{{ .title }}</h2>
+        <p class="sb-lead">{{ .lead }}</p>
       </div>
-      {{- end }}
-    </div>
+      <span class="sb-count">{{ len $courses }} направлений</span>
+    </header>
 
-    <div class="catalog-index__list" data-reveal-group>
-      {{- range $i, $course := $courses }}
-      <details class="course-row" data-reveal>
-        <summary class="course-row__summary">
-          <span class="course-row__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-          <span class="course-row__title">{{ $course.guideTitle }}</span>
-          <span class="course-row__age">с {{ $course.age }} лет</span>
-          <span class="course-row__toggle" aria-hidden="true"></span>
-        </summary>
-        <div class="course-row__panel">
-          <div class="course-row__body">{{ $course.body | safeHTML }}</div>
-          <a class="course-row__cta" href="{{ "/contacts/" | relURL }}">
-            Записаться
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </a>
-        </div>
-      </details>
-      {{- end }}
+    <div class="sb-courses__body">
+      <div class="sb-courses__list" data-reveal-group>
+        {{- range $i, $course := $courses }}
+        <details class="sb-course" data-reveal>
+          <summary class="sb-course__summary">
+            <span class="sb-course__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            <span class="sb-course__title">{{ $course.guideTitle }}</span>
+            <span class="sb-course__age">с {{ $course.age }} лет</span>
+            <span class="sb-course__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sb-course__panel">
+            <p class="sb-course__price">{{ $course.price }} {{ $course.suffix }}</p>
+            <div class="sb-course__text">{{ $course.body | safeHTML }}</div>
+            <a class="sb-link" href="{{ "/contacts/" | relURL }}">
+              Записаться на курс
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+        </details>
+        {{- end }}
+      </div>
+
+      <aside class="sb-help" data-reveal>
+        {{ partial "sb-art.html" (dict "kind" "blob" "class" "sb-art--help-blob") }}
+        <p class="sb-help__eyebrow">Нужна помощь?</p>
+        <h3 class="sb-help__title">{{ .help.title }}</h3>
+        <p class="sb-help__text">{{ .help.text }}</p>
+        <a class="sb-help__phone" href="{{ site.Params.phoneHref | safeURL }}">
+          {{ site.Params.phone }}
+        </a>
+        <p class="sb-help__note">Пн–Сб, 9:00–20:00</p>
+      </aside>
     </div>
   </div>
 </section>
 {{- end }}
 
+{{/* ---------------------------------------------------------------- more */}}
 {{- with .Params.more }}
-<section class="more" id="about" aria-labelledby="more-title">
-  <div class="more__inner">
-    <div class="more__copy" data-reveal>
-      <h2 class="section-title" id="more-title">{{ .title }}</h2>
-
-      <div class="more__text">
+<section class="sb-section sb-more" aria-labelledby="more-title">
+  <div class="sb-inner sb-more__inner">
+    <div class="sb-more__copy" data-reveal>
+      <h2 class="sb-title" id="more-title">{{ .title }}</h2>
+      <div class="sb-more__text">
         {{- range .paragraphs }}
         <p>{{ . }}</p>
         {{- end }}
       </div>
-
       {{- with .cta }}
-      <div class="more__actions">
-        <a class="btn" href="{{ "/contacts/" | relURL }}">
-          {{ . }}
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-      </div>
+      {{ partial "sb-cta-button.html" (dict "label" .) }}
       {{- end }}
     </div>
 
     {{- with .video }}
-    <figure class="more__video" data-reveal>
-      <div class="more__video-frame" data-video data-video-id="{{ .id }}" data-video-title="{{ .title }}">
-        <a class="more__video-facade" href="https://www.youtube.com/watch?v={{ .id }}" data-video-play aria-label="Смотреть видео: {{ .title }}">
+    <figure class="sb-more__video-wrap" data-reveal>
+      <div class="sb-more__video" data-video data-video-id="{{ .id }}" data-video-title="{{ .title }}">
+        <a class="sb-more__facade" href="https://www.youtube.com/watch?v={{ .id }}" data-video-play aria-label="Смотреть видео: {{ .title }}">
           {{- with resources.Get "images/school-graduates.jpg" }}
           {{- $poster := .Fill "1280x720 Center" }}
-          <img class="more__poster" src="{{ $poster.RelPermalink }}" width="{{ $poster.Width }}" height="{{ $poster.Height }}" alt="" loading="lazy" decoding="async">
+          <img class="sb-more__poster" src="{{ $poster.RelPermalink }}" width="{{ $poster.Width }}" height="{{ $poster.Height }}" alt="" loading="lazy" decoding="async">
           {{- end }}
-          <span class="more__video-shade" aria-hidden="true"></span>
-          <span class="more__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="26" height="26" focusable="false">
+          <span class="sb-more__shade" aria-hidden="true"></span>
+          <span class="sb-more__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
               <path d="M9.2 6.6a.9.9 0 0 1 1.38-.77l7 4.4a.9.9 0 0 1 0 1.54l-7 4.4a.9.9 0 0 1-1.38-.77Z" fill="currentColor"></path>
             </svg>
           </span>
-          <span class="more__video-label">{{ .label }}</span>
+          <span class="sb-more__label">{{ .label }}</span>
         </a>
       </div>
       {{- with .caption }}
-      <figcaption class="more__caption">{{ . }}</figcaption>
+      <figcaption class="sb-more__caption">{{ . }}</figcaption>
       {{- end }}
     </figure>
     {{- end }}
@@ -222,15 +238,16 @@
 </section>
 {{- end }}
 
+{{/* ------------------------------------------------------------- reviews */}}
 {{- with .Params.reviews }}
-<section class="reviews" aria-labelledby="reviews-title">
-  <div class="reviews__inner">
-    <header class="reviews__head" data-reveal>
-      <h2 class="section-title" id="reviews-title">{{ .title }}</h2>
+<section class="sb-section sb-reviews" aria-labelledby="reviews-title">
+  <div class="sb-inner">
+    <header class="sb-head sb-head--center" data-reveal>
+      <h2 class="sb-title" id="reviews-title">{{ .title }}</h2>
     </header>
 
     {{- with .yandex }}
-    <div class="reviews__widget" data-reveal>
+    <div class="sb-reviews__frame" data-reveal>
       <iframe src="{{ .widget }}" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     {{- end }}
@@ -238,48 +255,72 @@
 </section>
 {{- end }}
 
+{{/* ----------------------------------------------------------- instagram */}}
 {{- with .Params.instagram }}
-<section class="instagram" aria-labelledby="instagram-title">
-  <div class="instagram__inner">
-    <header class="instagram__head" data-reveal>
+<section class="sb-section sb-instagram" aria-labelledby="instagram-title">
+  <div class="sb-inner">
+    <header class="sb-instagram__head" data-reveal>
       <div>
-        <h2 class="section-title" id="instagram-title">{{ .title }}</h2>
+        <h2 class="sb-title" id="instagram-title">{{ .title }}</h2>
         {{- with .lead }}
-        <p class="instagram__lead">{{ . }}</p>
+        <p class="sb-lead">{{ . }}</p>
         {{- end }}
       </div>
       {{- with .url }}
-      <a class="instagram__link" href="{{ . }}" target="_blank" rel="noopener">
+      <a class="sb-link sb-link--lg" href="{{ . }}" target="_blank" rel="noopener">
         {{ $.Params.instagram.handle | default "Instagram" }}
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+          <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </a>
       {{- end }}
     </header>
 
-    <div class="instagram__widget" data-reveal>
+    <div class="sb-instagram__widget" data-reveal>
       {{ partial "instagram.html" . }}
     </div>
   </div>
 </section>
 {{- end }}
 
+{{/* ----------------------------------------------------------------- faq */}}
 {{- with .Params.faq }}
-<section class="faq" aria-labelledby="faq-title">
-  <div class="faq__inner">
-    <header class="faq__head" data-reveal>
-      <h2 class="section-title" id="faq-title">{{ .title }}</h2>
-      <p class="faq__lead">{{ .lead }}</p>
+<section class="sb-section sb-faq" aria-labelledby="faq-title">
+  <div class="sb-inner sb-faq__inner">
+    <header class="sb-faq__head" data-reveal>
+      <h2 class="sb-title" id="faq-title">{{ .title }}</h2>
+      <p class="sb-lead">{{ .lead }}</p>
+      {{ partial "sb-art.html" (dict "kind" "squiggle" "class" "sb-art--faq-squiggle") }}
     </header>
 
-    <div class="faq__list" data-reveal-group>
+    <div class="sb-faq__list" data-reveal-group>
       {{- range .items }}
-      <details class="faq__item" data-reveal>
-        <summary>{{ .q }}</summary>
-        <p class="faq__answer">{{ .a }}</p>
+      <details class="sb-faq__item" data-reveal>
+        <summary>
+          <span>{{ .q }}</span>
+          <span class="sb-faq__toggle" aria-hidden="true"></span>
+        </summary>
+        <p class="sb-faq__answer">{{ .a }}</p>
       </details>
       {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{/* ----------------------------------------------------------------- cta */}}
+{{- with .Params.cta }}
+<section class="sb-cta" aria-labelledby="cta-title">
+  <div class="sb-inner">
+    <div class="sb-cta__panel" data-reveal>
+      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--cta-flower") }}
+      {{ partial "sb-art.html" (dict "kind" "blob" "class" "sb-art--cta-blob") }}
+      <h2 class="sb-cta__title" id="cta-title">{{ .title }}</h2>
+      <p class="sb-cta__text">{{ .text }}</p>
+      <div class="sb-actions sb-actions--center">
+        {{ partial "sb-cta-button.html" (dict "label" .button) }}
+        <a class="sb-btn sb-btn--sand" href="{{ site.Params.phoneHref | safeURL }}">{{ site.Params.phone }}</a>
+      </div>
     </div>
   </div>
 </section>

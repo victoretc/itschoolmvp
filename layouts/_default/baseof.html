@@ -13,9 +13,17 @@
   <meta name="theme-color" content="#41c0f0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {{ if .IsHome }}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@400&display=swap" rel="stylesheet">
+  {{ else }}
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  {{ end }}
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ if .IsHome }}
+  {{ $homeCss := resources.Get "css/home.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}" integrity="{{ $homeCss.Data.Integrity }}">
+  {{ end }}
   <script>
     document.documentElement.classList.add('js');
     window.setTimeout(function () {
@@ -26,7 +34,7 @@
     }, 2500);
   </script>
 </head>
-<body id="top">
+<body id="top"{{ if .IsHome }} class="home"{{ end }}>
   <a class="skip" href="#main">Перейти к содержимому</a>
   {{ partial "header.html" . }}
   <main id="main">
@@ -35,9 +43,5 @@
   {{ partial "footer.html" . }}
   {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
-  {{ if .IsHome }}
-  {{ $cloud := resources.Get "js/icon-cloud.js" | minify | fingerprint }}
-  <script src="{{ $cloud.RelPermalink }}" defer></script>
-  {{ end }}
 </body>
 </html>

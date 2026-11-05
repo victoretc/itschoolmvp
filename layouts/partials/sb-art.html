@@ -1,0 +1,110 @@
+{{- /* Storybook artwork: hand-drawn mascots and confetti. */ -}}
+{{- $kind := .kind -}}
+{{- $class := .class | default "" -}}
+<span class="sb-art sb-art--{{ $kind }} {{ $class }}" aria-hidden="true">
+  {{- if eq $kind "flower" -}}
+  <svg viewBox="0 0 160 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#343433" stroke-width="3">
+      <circle cx="120" cy="56" r="26" fill="#64c6ff"/>
+      <circle cx="100" cy="91" r="26" fill="#ff58ae"/>
+      <circle cx="60" cy="91" r="26" fill="#64c6ff"/>
+      <circle cx="40" cy="56" r="26" fill="#ff58ae"/>
+      <circle cx="60" cy="21" r="26" fill="#64c6ff"/>
+      <circle cx="100" cy="21" r="26" fill="#ff58ae"/>
+      <rect x="50" y="30" width="60" height="60" rx="14" fill="#ffcd6c"/>
+      <path d="M80 122v30" stroke-linecap="round"/>
+      <path d="M80 140c-14-8-27-4-31 10 15 6 27 1 31-10Z" fill="#00c978" stroke-linejoin="round"/>
+      <path d="M46 92c-14 2-22 10-26 20M114 92c14 2 22 10 26 20" stroke-linecap="round"/>
+    </g>
+    <g fill="#343433">
+      <circle cx="70" cy="58" r="3.4"/>
+      <circle cx="90" cy="58" r="3.4"/>
+    </g>
+    <path d="M68 70q12 10 24 0" stroke="#343433" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </svg>
+  {{- else if eq $kind "blob" -}}
+  <svg viewBox="0 0 176 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M31 77c-2-36 28-58 60-55 35-4 58 20 55 54 6 32-25 55-57 51-34 5-56-19-58-50Z" fill="#00c978" stroke="#343433" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M33 99C19 100 12 108 10 118M147 99c14 1 21 9 23 19" stroke="#343433" stroke-width="3" stroke-linecap="round"/>
+    <g fill="#343433">
+      <circle cx="68" cy="74" r="4.4"/>
+      <circle cx="108" cy="74" r="4.4"/>
+    </g>
+    <path d="M74 93q14 13 28 0" stroke="#343433" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="54" cy="90" r="7" fill="#ff58ae" opacity=".55"/>
+    <circle cx="122" cy="90" r="7" fill="#ff58ae" opacity=".55"/>
+  </svg>
+  {{- else if eq $kind "triangle" -}}
+  <svg viewBox="0 0 110 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M55 8 104 103c2 5-1 9-6 9H12c-5 0-8-4-6-9L55 8Z" fill="#ffcd6c" stroke="#343433" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#343433">
+      <circle cx="43" cy="78" r="4"/>
+      <circle cx="69" cy="78" r="4"/>
+    </g>
+    <path d="M48 90q7 7 14 0" stroke="#343433" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M14 94C7 98 5 105 5 110M96 94c7 4 9 11 9 16M42 112v10M68 112v10" stroke="#343433" stroke-width="3" stroke-linecap="round"/>
+    <path d="M35 122h14M61 122h14" stroke="#343433" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  {{- else if eq $kind "cat" -}}
+  <svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 40 26 10l26 16M100 40l4-30-26 16" fill="#64c6ff" stroke="#343433" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m34 34-2-14 12 8M96 34l2-14-12 8" fill="#ff58ae" stroke="#343433" stroke-width="2.4" stroke-linejoin="round"/>
+    <rect x="17" y="24" width="96" height="86" rx="36" fill="#64c6ff" stroke="#343433" stroke-width="3"/>
+    <g fill="#343433">
+      <circle cx="50" cy="62" r="4.2"/>
+      <circle cx="80" cy="62" r="4.2"/>
+    </g>
+    <path d="m65 76-5 4h10l-5-4Z" fill="#ff58ae" stroke="#343433" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M65 84v4M65 88q-7 7-14 1M65 88q7 7 14 1M42 74l-16-5M42 80l-16 1M88 74l16-5M88 80l16 1" stroke="#343433" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  </svg>
+  {{- else if eq $kind "star" -}}
+  <svg viewBox="0 0 60 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="m30 4 7.4 15.9 17.3 2.2-12.7 12 3.3 17.2L30 43.1 14.7 51.3l3.3-17.2L5.3 22.1l17.3-2.2L30 4Z" fill="#ffcd6c" stroke="#343433" stroke-width="2.4" stroke-linejoin="round"/>
+  </svg>
+  {{- else if eq $kind "coin" -}}
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="27" fill="#ffbb26" stroke="#343433" stroke-width="2.6"/>
+    <circle cx="32" cy="32" r="18" stroke="#343433" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
+  </svg>
+  {{- else if eq $kind "heart" -}}
+  <svg viewBox="0 0 54 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M27 45S5 32 5 17C5 7 17 3 27 14 37 3 49 7 49 17c0 15-22 28-22 28Z" fill="#ff58ae" stroke="#343433" stroke-width="2.4" stroke-linejoin="round"/>
+  </svg>
+  {{- else if eq $kind "gear" -}}
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M27 5h10l1.6 8 5.2 2.2 6.9-4.6 7 7-4.6 7 2.2 5.2 8 1.5v10l-8 1.6-2.2 5.2 4.6 6.9-7 7-7-4.6-5.1 2.2L37 59H27l-1.6-8-5.2-2.2-6.9 4.6-7-7 4.6-7-2.2-5.1L1 33V23l8-1.6 2.2-5.2-4.6-6.9 7-7 7 4.6 5.1-2.2L27 5Z" fill="#64c6ff" stroke="#343433" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="32" cy="32" r="8.5" fill="#fbfaf9" stroke="#343433" stroke-width="2.4"/>
+  </svg>
+  {{- else if eq $kind "leaf" -}}
+  <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M48 6C24 6 6 17 6 35c0 8 6 15 15 15 18 0 27-19 27-44Z" fill="#00c978" stroke="#343433" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M10 51 40 18" stroke="#343433" stroke-width="2.2" stroke-linecap="round"/>
+  </svg>
+  {{- else if eq $kind "lock" -}}
+  <svg viewBox="0 0 54 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 25V17a12 12 0 0 1 24 0v8" stroke="#343433" stroke-width="2.6" stroke-linecap="round"/>
+    <rect x="7" y="24" width="40" height="30" rx="8" fill="#ffcd6c" stroke="#343433" stroke-width="2.6"/>
+    <circle cx="27" cy="37" r="3.4" fill="#343433"/>
+    <path d="M27 40v6" stroke="#343433" stroke-width="2.6" stroke-linecap="round"/>
+  </svg>
+  {{- else if eq $kind "spark" -}}
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M22 2c1.6 10 4.4 15.4 14 20-9.6 4.6-12.4 10-14 20-1.6-10-4.4-15.4-14-20C17.6 17.4 20.4 12 22 2Z" fill="#ff3e00" stroke="#343433" stroke-width="2" stroke-linejoin="round"/>
+  </svg>
+  {{- else if eq $kind "plus" -}}
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 3v26M3 16h26" stroke="#343433" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  {{- else if eq $kind "squiggle" -}}
+  <svg viewBox="0 0 96 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 20c10-18 18 12 28-2s18 12 28-2 14 6 34-9" stroke="#ff3e00" stroke-width="3.4" stroke-linecap="round"/>
+  </svg>
+  {{- else if eq $kind "dots" -}}
+  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="3" fill="#343433"/>
+    <circle cx="22" cy="14" r="3" fill="#343433"/>
+    <circle cx="12" cy="24" r="3" fill="#343433"/>
+    <circle cx="28" cy="30" r="3" fill="#343433"/>
+  </svg>
+  {{- end -}}
+</span>
