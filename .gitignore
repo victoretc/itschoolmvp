@@ -3,3 +3,4 @@
 /.hugo_build.lock
 hugo_stats.json
 .DS_Store
+.playwright-mcp/
