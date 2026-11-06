@@ -147,6 +147,7 @@
 
 .sb-contacts {
   padding-top: 0;
+  padding-bottom: clamp(16px, 2vw, 24px);
 }
 
 .sb-contacts__inner {
@@ -385,6 +386,7 @@
 /* ------------------------------------------------------------ branches */
 
 .sb-branches {
+  padding-top: clamp(16px, 2vw, 24px);
   background: var(--sb-stone);
 }
 

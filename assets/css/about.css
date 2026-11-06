@@ -15,11 +15,11 @@
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
-  gap: clamp(32px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 56px);
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(36px, 5.5vw, 72px) clamp(20px, 4vw, 40px) clamp(44px, 6vw, 84px);
+  padding: clamp(24px, 3.2vw, 40px) clamp(20px, 4vw, 40px);
 }
 
 .sb-about-hero__copy {
@@ -59,23 +59,23 @@
 }
 
 .sb-about-hero__title {
-  margin-top: 22px;
+  margin-top: 18px;
   color: var(--sb-ink);
   font-family: var(--sb-font-display);
-  font-size: clamp(3rem, 1.5rem + 5.4vw, 5.6rem);
+  font-size: clamp(2.5rem, 1.3rem + 4.2vw, 4.5rem);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.045em;
 }
 
 .sb-art--about-hero-squiggle {
-  width: 118px;
-  margin-top: 20px;
+  width: 96px;
+  margin-top: 16px;
 }
 
 .sb-about-hero__lead {
   max-width: 40ch;
-  margin-top: 22px;
+  margin-top: 18px;
   color: var(--sb-body);
   font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.2rem);
   line-height: 1.55;
@@ -86,21 +86,22 @@
 .sb-about-hero__media-wrap {
   position: relative;
   justify-self: end;
-  width: min(100%, 470px);
+  width: min(100%, 400px);
 }
 
 .sb-about-hero__media {
   margin: 0;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 22px;
   background: var(--sb-stone);
   box-shadow:
     inset 0 0 0 1px var(--sb-hair),
     0 34px 60px -46px rgba(18, 18, 18, 0.5);
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
 }
 
 .sb-about-hero__media img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -108,23 +109,23 @@
 
 .sb-art--about-hero-star {
   position: absolute;
-  top: -20px;
-  right: -14px;
-  width: 48px;
+  top: -14px;
+  right: -12px;
+  width: 40px;
 }
 
 .sb-art--about-hero-coin {
   position: absolute;
-  top: 34px;
-  left: -28px;
-  width: 54px;
+  top: 22px;
+  left: -24px;
+  width: 46px;
 }
 
 .sb-art--about-hero-flower {
   position: absolute;
-  left: -44px;
-  bottom: -36px;
-  width: 122px;
+  left: -36px;
+  bottom: -22px;
+  width: 100px;
 }
 
 /* ------------------------------------------------------------ welcome */
@@ -425,7 +426,7 @@
 @media (max-width: 900px) {
   .sb-about-hero__inner {
     grid-template-columns: minmax(0, 1fr);
-    gap: clamp(28px, 6vw, 44px);
+    gap: clamp(22px, 4vw, 36px);
   }
 
   .sb-about-hero__lead {
@@ -434,12 +435,12 @@
 
   .sb-about-hero__media-wrap {
     justify-self: start;
-    width: min(100%, 520px);
+    width: min(100%, 420px);
   }
 
   .sb-art--about-hero-flower {
     left: -22px;
-    bottom: -28px;
+    bottom: -18px;
     width: 96px;
   }
 
@@ -510,11 +511,11 @@
   }
 
   .sb-about-hero__title {
-    font-size: clamp(2.6rem, 1.4rem + 8vw, 4rem);
+    font-size: clamp(2.25rem, 1.2rem + 6.4vw, 3.3rem);
   }
 
   .sb-art--about-hero-squiggle {
-    width: 96px;
+    width: 84px;
   }
 
   .sb-about-welcome__card {
@@ -538,8 +539,8 @@
   }
 
   .sb-art--about-hero-star {
-    width: 38px;
-    top: -14px;
+    width: 32px;
+    top: -12px;
     right: -8px;
   }
 
@@ -550,7 +551,7 @@
   .sb-art--about-hero-flower {
     left: auto;
     right: -18px;
-    bottom: -26px;
+    bottom: -16px;
     width: 86px;
   }
 

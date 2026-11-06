@@ -362,51 +362,14 @@
   z-index: 1;
   display: grid;
   justify-items: end;
-  gap: 10px;
 }
 
-.sb-courses-help__phone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 58px;
-  padding: 7px 24px 7px 8px;
-  border-radius: 999px;
-  background: var(--sb-ink);
-  color: var(--sb-canvas);
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  transition: background-color 180ms ease;
+.sb-courses-help .sb-phone__icon {
+  background: rgba(255, 255, 255, 0.55);
 }
 
-.sb-courses-help__phone-icon {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--sb-yellow);
-  color: var(--sb-ink);
-}
-
-.sb-courses-help__phone-icon svg {
-  width: 18px;
-  height: 18px;
-  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.sb-courses-help__note {
+.sb-courses-help .sb-phone__note {
   color: var(--sb-head);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  line-height: 1.4;
-  font-variant-numeric: tabular-nums;
 }
 
 .sb-art--courses-help-blob {
@@ -414,12 +377,8 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .sb-courses-help__phone:hover {
-    background: #343433;
-  }
-
-  .sb-courses-help__phone:hover .sb-courses-help__phone-icon svg {
-    transform: rotate(-14deg) scale(1.1);
+  .sb-courses-help .sb-phone:hover .sb-phone__icon {
+    background: #fff;
   }
 }
 
@@ -494,10 +453,6 @@
     justify-items: start;
     width: 100%;
   }
-
-  .sb-courses-help__phone {
-    width: 100%;
-  }
 }
 
 @media (max-width: 620px) {
@@ -534,9 +489,7 @@
 
   .sb-course-card,
   .sb-course-card .sb-tile,
-  .sb-course-card__arrow,
-  .sb-courses-help__phone,
-  .sb-courses-help__phone-icon svg {
+  .sb-course-card__arrow {
     transition: none;
   }
 
@@ -549,10 +502,6 @@
   }
 
   .sb-course-card:hover .sb-course-card__arrow {
-    transform: none;
-  }
-
-  .sb-courses-help__phone:hover {
     transform: none;
   }
 }

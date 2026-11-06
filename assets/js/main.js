@@ -99,18 +99,32 @@
     const id = player.dataset.videoId;
     if (!facade || !id) return;
 
-    facade.addEventListener('click', (event) => {
-      event.preventDefault();
+    const holder = player.querySelector('[data-video-player]');
+    let iframe = null;
 
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    const start = () => {
+      if (iframe) return;
+
+      iframe = document.createElement('iframe');
+      iframe.src =
+        'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
       iframe.title = player.dataset.videoTitle || 'Видео о школе';
       iframe.allow =
         'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       iframe.allowFullscreen = true;
 
-      player.replaceChildren(iframe);
-      iframe.focus();
+      // The poster stays visible underneath until the player is ready, so the
+      // block never flashes an empty frame while YouTube loads.
+      iframe.addEventListener('load', () => {
+        if (facade.isConnected) facade.remove();
+      });
+
+      (holder || player).append(iframe);
+    };
+
+    facade.addEventListener('click', (event) => {
+      event.preventDefault();
+      start();
     });
   });
 })();

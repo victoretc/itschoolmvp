@@ -4,7 +4,7 @@
 <article class="sb-blog-tile" data-reveal>
   <a class="sb-blog-tile__media" href="{{ $page.RelPermalink }}" tabindex="-1" aria-hidden="true">
     {{- with $cover -}}
-    {{ partial "responsive-img.html" (dict "resource" . "fill" "720x520 Center" "alt" "" "sizes" "(max-width: 700px) 90vw, 320px" "widths" (slice 320 480 720)) }}
+    {{ partial "responsive-img.html" (dict "resource" . "fill" "1200x750 Center" "alt" "" "sizes" "(max-width: 620px) 92vw, (max-width: 900px) 46vw, (max-width: 1250px) 47vw, 548px" "widths" (slice 360 540 720 1080)) }}
     {{- end -}}
   </a>
   <div class="sb-blog-tile__body">

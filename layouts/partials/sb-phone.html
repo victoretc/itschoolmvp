@@ -1,0 +1,11 @@
+{{- /* Quiet phone link: circular glyph, number and an optional note.
+       Used by the home help card, courses help banner and vacations CTA. */ -}}
+<a class="sb-phone{{ with .class }} {{ . }}{{ end }}" href="{{ site.Params.phoneHref | safeURL }}">
+  <span class="sb-phone__icon">{{ partial "icon.html" "phone" }}</span>
+  <span class="sb-phone__copy">
+    <span class="sb-phone__number">{{ site.Params.phone }}</span>
+    {{- with .note }}
+    <span class="sb-phone__note">{{ . }}</span>
+    {{- end }}
+  </span>
+</a>

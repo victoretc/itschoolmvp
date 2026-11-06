@@ -119,11 +119,7 @@
         <p class="sb-courses-help__text">{{ .text }}</p>
       </div>
       <div class="sb-courses-help__contact">
-        <a class="sb-courses-help__phone" href="{{ site.Params.phoneHref | safeURL }}">
-          <span class="sb-courses-help__phone-icon">{{ partial "icon.html" "phone" }}</span>
-          <span>{{ site.Params.phone }}</span>
-        </a>
-        <p class="sb-courses-help__note">Пн–Сб, 9:00–20:00</p>
+        {{ partial "sb-phone.html" (dict "note" "Пн–Сб, 9:00–20:00") }}
       </div>
     </aside>
     {{- end }}

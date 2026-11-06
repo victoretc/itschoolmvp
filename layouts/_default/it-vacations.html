@@ -60,13 +60,7 @@
         {{ .title }} <span class="sb-vac-cta__accent">{{ .accent }}</span>
       </h2>
       <p class="sb-cta__text">{{ .text }}</p>
-      <a class="sb-vac-phone" href="{{ site.Params.phoneHref | safeURL }}">
-        <span class="sb-vac-phone__icon">{{ partial "icon.html" "phone" }}</span>
-        <span class="sb-vac-phone__body">
-          <span class="sb-vac-phone__label">{{ .phone_label }}</span>
-          <span class="sb-vac-phone__number">{{ .phone }}</span>
-        </span>
-      </a>
+      {{ partial "sb-phone.html" (dict "class" "sb-vac-phone" "note" .phone_note) }}
     </div>
   </div>
 </section>

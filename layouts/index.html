@@ -40,7 +40,7 @@
 
       <div class="sb-actions">
         {{ partial "sb-cta-button.html" (dict "label" $hero.cta) }}
-        <a class="sb-btn sb-btn--sand" href="#courses">{{ $hero.cta_secondary }}</a>
+        <a class="sb-btn sb-btn--outline" href="#courses">{{ $hero.cta_secondary }}</a>
       </div>
 
       <dl class="sb-stats">
@@ -84,35 +84,43 @@
 {{- with .Params.approach }}
 <section class="sb-section sb-approach" aria-labelledby="approach-title">
   <div class="sb-inner">
-    <header class="sb-approach__head">
-      <div class="sb-approach__intro">
-        <h2 class="sb-title" id="approach-title">{{ .title }}</h2>
-        <p class="sb-approach__lead">{{ .lead }}</p>
-      </div>
+    <header class="sb-approach__head" data-reveal>
+      <h2 class="sb-approach__title" id="approach-title">
+        {{ replace .title "в АйТи Скул" "<span class=\"sb-approach__title-mark\">в АйТи Скул</span>" | safeHTML }}
+      </h2>
 
-      <figure class="sb-approach__media">
-        {{ partial "responsive-img.html" (dict "src" "images/school-blog-2.jpg" "fill" "1200x900 Center" "alt" "Команда АйТи Скул с наградами на фестивале Smart Robo Fest" "sizes" "(max-width: 900px) 90vw, 480px" "widths" (slice 400 600 900 1200)) }}
-        <figcaption class="sb-approach__caption">{{ .caption }}</figcaption>
-      </figure>
+      <div class="sb-approach__aside">
+        <p class="sb-approach__lead">{{ .lead }}</p>
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-approach__head-star") }}
+      </div>
     </header>
 
-    <ol class="sb-approach__steps">
-      {{- range $i, $note := .notes }}
-      <li class="sb-step">
-        <span class="sb-step__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-        <p class="sb-step__text">{{ $note }}</p>
-      </li>
-      {{- end }}
-    </ol>
+    <div class="sb-approach__spread">
+      <figure class="sb-approach__media" data-reveal>
+        <div class="sb-approach__shot">
+          {{ partial "responsive-img.html" (dict "src" "images/school-blog-2.jpg" "fill" "1200x900 Center" "alt" "" "sizes" "(max-width: 900px) 90vw, 520px" "widths" (slice 400 600 900 1200)) }}
+          <figcaption class="sb-approach__caption">{{ .caption }}</figcaption>
+        </div>
+        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-approach__flower") }}
+        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-approach__triangle") }}
+      </figure>
 
-    <blockquote class="sb-approach__goal">
-      <div class="sb-approach__goal-body">
-        {{- with .statement_label }}
-        <p class="sb-approach__goal-label">{{ . }}</p>
+      <ol class="sb-approach__steps" data-reveal-group>
+        {{- range $i, $note := .notes }}
+        <li class="sb-step" data-reveal>
+          <span class="sb-step__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+          <p class="sb-step__text">{{ $note }}</p>
+        </li>
         {{- end }}
-        <p class="sb-approach__goal-text">{{ replace .statement "со школьной скамьи" "<span class=\"sb-approach__goal-hl\">со школьной скамьи</span>" | safeHTML }}</p>
-      </div>
-      {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-approach__goal-star") }}
+      </ol>
+    </div>
+
+    <blockquote class="sb-approach__goal" data-reveal>
+      <p class="sb-approach__goal-text">
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-approach__goal-star") }}
+        {{- with .statement_label }}<span class="sb-approach__goal-label">{{ . }}</span>&nbsp;— {{ end -}}
+        {{ replace .statement "со школьной скамьи." "<span class=\"sb-approach__goal-hl\">со школьной скамьи.</span>" | safeHTML }}
+      </p>
     </blockquote>
   </div>
 </section>
@@ -120,7 +128,7 @@
 
 {{/* ------------------------------------------------------------- purpose */}}
 {{- with .Params.purpose }}
-{{- /* Icons: Phosphor Icons (MIT), fetched via Iconify. */ -}}
+{{- /* Icons: Phosphor Duotone (MIT), fetched via Iconify. */ -}}
 {{- $tiles := dict "spark" "images/icons/potential.svg" "compass" "images/icons/career.svg" "rocket" "images/icons/start.svg" }}
 <section class="sb-section sb-purpose" aria-labelledby="purpose-title">
   <div class="sb-inner">
@@ -185,15 +193,10 @@
       </div>
 
       <aside class="sb-help" data-reveal>
-        {{ partial "sb-art.html" (dict "kind" "blob" "class" "sb-art--help-blob") }}
         <p class="sb-help__eyebrow">Нужна помощь?</p>
         <h3 class="sb-help__title">{{ .help.title }}</h3>
         <p class="sb-help__text">{{ .help.text }}</p>
-        <a class="sb-help__phone sb-btn sb-btn--sand sb-btn--phone" href="{{ site.Params.phoneHref | safeURL }}">
-          {{ partial "icon.html" "phone" }}
-          <span>{{ site.Params.phone }}</span>
-        </a>
-        <p class="sb-help__note">Пн–Сб, 9:00–20:00</p>
+        {{ partial "sb-phone.html" (dict "note" "Пн–Сб, 9:00–20:00") }}
       </aside>
     </div>
   </div>
@@ -211,8 +214,14 @@
         <p>{{ . }}</p>
         {{- end }}
       </div>
+      {{- $ctaHref := .cta_href | default "courses/" | relURL -}}
       {{- with .cta }}
-      {{ partial "sb-cta-button.html" (dict "label" .) }}
+      <a class="sb-link" href="{{ $ctaHref }}">
+        {{ . }}
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+          <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
       {{- end }}
     </div>
 
@@ -229,10 +238,13 @@
           </span>
           <span class="sb-more__label">{{ .label }}</span>
         </a>
+        <div class="sb-more__player" data-video-player></div>
       </div>
-      {{- with .caption }}
-      <figcaption class="sb-more__caption">{{ . }}</figcaption>
-      {{- end }}
+      <figcaption class="sb-more__meta">
+        {{- with .caption }}
+        <span class="sb-more__caption">{{ . }}</span>
+        {{- end }}
+      </figcaption>
     </figure>
     {{- end }}
   </div>
@@ -260,22 +272,25 @@
 {{- with .Params.instagram }}
 <section class="sb-section sb-instagram" aria-labelledby="instagram-title">
   <div class="sb-inner">
-    <header class="sb-instagram__head" data-reveal>
-      <div>
-        <h2 class="sb-title" id="instagram-title">{{ .title }}</h2>
-        {{- with .lead }}
-        <p class="sb-lead">{{ . }}</p>
-        {{- end }}
+    <div class="sb-instagram__panel" data-reveal>
+      <div class="sb-instagram__text">
+        <span class="sb-instagram__badge" aria-hidden="true">{{ partial "social-icon.html" "instagram" }}</span>
+        <div>
+          <h2 class="sb-title" id="instagram-title">{{ .title }}</h2>
+          {{- with .lead }}
+          <p class="sb-lead">{{ . }}</p>
+          {{- end }}
+        </div>
       </div>
       {{- with .url }}
-      <a class="sb-link sb-link--lg" href="{{ . }}" target="_blank" rel="noopener">
+      <a class="sb-btn sb-btn--sand sb-instagram__link" href="{{ . }}" target="_blank" rel="noopener">
         {{ $.Params.instagram.handle | default "Instagram" }}
         <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
           <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </a>
       {{- end }}
-    </header>
+    </div>
   </div>
 </section>
 {{- end }}

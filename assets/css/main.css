@@ -432,31 +432,31 @@ button {
 .header__phone {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.5625rem;
   min-height: 2.5rem;
-  padding: 0;
+  padding: 0 0.9375rem 0 0.75rem;
   border-radius: 999px;
+  background: rgba(13, 27, 51, 0.045);
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
-  transition: color 150ms var(--ease);
+  transition:
+    color 150ms var(--ease),
+    background-color 150ms var(--ease);
 }
 
 .header__phone svg {
   flex: none;
-  width: 2.25rem;
-  height: 2.25rem;
-  padding: 0.55rem;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  background: rgba(61, 178, 222, 0.16);
-  box-shadow: inset 0 0 0 1px rgba(61, 178, 222, 0.28);
-  color: #0a6e9e;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  stroke-width: 2.4;
   transition:
-    background-color 150ms var(--ease),
     color 150ms var(--ease),
     transform 150ms var(--ease-out);
 }
@@ -536,8 +536,13 @@ button {
 @media (min-width: 60.0625rem) and (max-width: 72rem) {
   .header__phone {
     justify-content: center;
-    width: 2.25rem;
+    width: 2.5rem;
     padding: 0;
+  }
+
+  .header__phone svg {
+    width: 1.15rem;
+    height: 1.15rem;
   }
 
   .header__phone span {
@@ -566,11 +571,11 @@ button {
   }
 
   .header__phone:hover {
-    color: #0a6e9e;
+    color: var(--ink);
+    background: rgba(13, 27, 51, 0.09);
   }
 
   .header__phone:hover svg {
-    background: var(--blue);
     color: var(--ink);
   }
 
@@ -2284,9 +2289,9 @@ button {
   }
 
   .header__phone svg {
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0.55rem;
+    width: 1.375rem;
+    height: 1.375rem;
+    padding: 0;
   }
 
   .header__cta {
