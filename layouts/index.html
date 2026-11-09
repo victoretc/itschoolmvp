@@ -57,7 +57,7 @@
       <figure class="sb-hero__photo sb-photo--awards">
         {{ partial "responsive-img.html" (dict "src" "images/about/gallery-01.jpg" "alt" "Награды АйТи Скул на фестивале Smart Robo Fest" "sizes" "200px") }}
         {{ partial "sb-art.html" (dict "kind" "headphones" "class" "sb-sticker--headphones") }}
-        {{ partial "sb-art.html" (dict "kind" "joystick" "class" "sb-sticker--joystick") }}
+        {{ partial "sb-art.html" (dict "kind" "lego" "class" "sb-sticker--lego") }}
       </figure>
     </div>
 
@@ -140,8 +140,10 @@
         <span class="sb-teachers__stat-label">преподавателей</span>
       </div>
     </header>
+  </div>
 
-    <div class="sb-teachers__stage" data-reveal>
+  <div class="sb-teachers__stage" data-reveal>
+    <div class="sb-inner sb-teachers__stage-inner">
       <div class="sb-teachers__panels">
         {{- range $i, $teacher := $teachers }}
         <article class="sb-teacher-panel{{ if eq $i 0 }} is-active{{ end }}" id="teacher-panel-{{ $i }}" role="tabpanel" aria-labelledby="teacher-tab-{{ $i }}" tabindex="0" data-teacher-panel>

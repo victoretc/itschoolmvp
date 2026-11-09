@@ -1,0 +1,7 @@
+{{- $logo := resources.Get "images/logo_itschool.svg" -}}
+<div class="site-loader" data-loader role="presentation" aria-hidden="true">
+  <div class="site-loader__inner">
+    <img class="site-loader__logo" src="{{ $logo.RelPermalink }}" alt="" width="414" height="130" decoding="async">
+    <span class="site-loader__bar"><span></span></span>
+  </div>
+</div>

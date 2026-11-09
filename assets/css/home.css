@@ -26,6 +26,9 @@
   --sb-violet: #9f4fff;
   --sb-font-display: "Unbounded", "Onest", ui-sans-serif, system-ui, sans-serif;
   --sb-font-body: "Inter", "Onest", ui-sans-serif, system-ui, sans-serif;
+  /* One gap above and below the hero benefits band, so the space from the
+     hero copy to the four points matches the space down to the next section. */
+  --sb-hero-gap: clamp(48px, 6vw, 80px);
 
   background: var(--sb-canvas);
   color: var(--sb-head);
@@ -180,7 +183,7 @@
 }
 
 .sb-section {
-  padding: clamp(56px, 7vw, 96px) 0;
+  padding: clamp(32px, 5vw, 80px) 0;
 }
 
 /* One display face for the hero and every section heading. */
@@ -479,7 +482,7 @@
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: clamp(28px, 4vw, 56px) clamp(20px, 4vw, 40px) clamp(48px, 6vw, 80px);
+  padding: clamp(28px, 4vw, 56px) clamp(20px, 4vw, 40px) var(--sb-hero-gap, clamp(48px, 6vw, 80px));
 }
 
 .sb-hero__copy {
@@ -718,7 +721,7 @@
   transform: rotate(5deg);
 }
 
-.sb-sticker--joystick {
+.sb-sticker--lego {
   bottom: -28px;
   left: -30px;
   width: 44%;
@@ -800,7 +803,7 @@
 /* ----------------------------------------------------------- approach */
 
 .sb-hero + .sb-approach {
-  padding-top: clamp(48px, 6vw, 88px);
+  padding-top: var(--sb-hero-gap, clamp(48px, 6vw, 88px));
 }
 
 /* The full-bleed goal band closes the section, so no paper strip should
@@ -1033,7 +1036,13 @@
 /* ----------------------------------------------------------- teachers */
 
 .sb-teachers {
-  background: var(--sb-sand);
+  /* The whole block, heading included, sits on the same white as the card. */
+  background: #fff;
+  /* No gap under the full-bleed card: the next block starts right at it. */
+  padding-bottom: 0;
+  /* The rail bleeds to the viewport edge; clip the overhang a scrollbar
+     would otherwise turn into a horizontal page scroll. */
+  overflow-x: clip;
 }
 
 .sb-teachers__head {
@@ -1076,13 +1085,12 @@
   white-space: nowrap;
 }
 
-/* The stage is one card: selected teacher above, the rail of everyone below. */
+/* The stage is one card: selected teacher above, the rail of everyone below.
+   The card is a full-bleed white band; its content stays in the page grid. */
 .sb-teachers__stage {
   position: relative;
-  padding: clamp(12px, 2.2vw, 22px);
-  border: 1px solid #ece3d6;
-  border-radius: clamp(24px, 3vw, 36px);
-  background: linear-gradient(180deg, #fff 0%, #fffdf8 100%);
+  padding-block: clamp(16px, 2.4vw, 26px);
+  background: #fff;
   scroll-margin-top: calc(var(--header-h) + 12px);
 }
 
@@ -1319,8 +1327,10 @@
   grid-auto-flow: column;
   grid-auto-columns: clamp(150px, 15vw, 184px);
   gap: clamp(10px, 1.2vw, 16px);
-  margin: 0 -4px;
-  padding: 4px 4px 14px;
+  /* Runs past the page container to the right edge of the screen, so the
+     next card is cut by the viewport, not by the page padding. */
+  margin: 0 calc((100vw - 100%) / -2) 0 -4px;
+  padding: 4px clamp(20px, 4vw, 40px) 14px 4px;
   list-style: none;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -2328,7 +2338,7 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 /* The live Yandex widget stays collapsed: its own UI reads as a foreign
    block next to the parent screenshots. On open it loads on demand. */
 .sb-reviews__live {
-  margin-top: clamp(32px, 4vw, 48px);
+  margin-top: clamp(14px, 1.6vw, 20px);
   border-radius: 18px;
   background: #fff;
   box-shadow: inset 0 0 0 1px #e7dfd3;
@@ -2518,12 +2528,17 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   }
 }
 
-@media (max-width: 23rem) {
+/* Phones: side by side the badge ate 62px of every line and pushed the long
+   heading into ragged wraps. Stack it above the copy, which then shares the
+   left edge with the full-width button below. */
+@media (max-width: 30rem) {
   .sb-instagram__text {
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
+}
 
+@media (max-width: 23rem) {
   .sb-instagram .sb-title {
     font-size: 1.3rem;
   }
@@ -2533,28 +2548,30 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 
 .sb-faq__inner {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  align-items: start;
-  gap: clamp(28px, 5vw, 72px);
+  justify-items: center;
+  gap: clamp(28px, 4vw, 44px);
 }
 
 .sb-faq__head {
-  position: sticky;
-  top: 120px;
+  max-width: 40rem;
+  text-align: center;
 }
 
 .sb-faq__head .sb-lead {
-  max-width: 32ch;
+  max-width: 40ch;
+  margin-inline: auto;
 }
 
 .sb-art--faq-squiggle {
   width: 92px;
-  margin-top: 22px;
+  margin: 22px auto 0;
 }
 
 .sb-faq__list {
   display: grid;
   gap: 8px;
+  width: 100%;
+  max-width: 46rem;
 }
 
 .sb-faq__answer {
@@ -3442,9 +3459,12 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 
 /* Keep the hero within one screen on short viewports. */
 @media (max-height: 820px) {
+  .home {
+    --sb-hero-gap: clamp(24px, 5vh, 56px);
+  }
+
   .sb-hero__inner {
     padding-top: clamp(18px, 3vh, 40px);
-    padding-bottom: clamp(24px, 5vh, 56px);
   }
 
   .sb-hero__title {
@@ -3492,9 +3512,12 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 }
 
 @media (max-height: 620px) {
+  .home {
+    --sb-hero-gap: 18px;
+  }
+
   .sb-hero__inner {
     padding-top: 14px;
-    padding-bottom: 18px;
   }
 
   .sb-hero__title {

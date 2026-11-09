@@ -1,3 +1,48 @@
+/* ---------------------------------------------------------------- loader */
+/* Runs only when the inline head script opened the boot screen: first visit
+   of the session, never on repeat navigations or bfcache restores. */
+(() => {
+  const root = document.documentElement;
+  if (!root.classList.contains('is-booting')) return;
+
+  const loader = document.querySelector('[data-loader]');
+  const MIN_VISIBLE = 600;
+  const started = performance.now();
+  let released = false;
+
+  const release = () => {
+    if (released) return;
+    released = true;
+
+    window.setTimeout(() => {
+      root.classList.add('is-loader-out');
+
+      try {
+        window.sessionStorage.setItem('itschool-booted', '1');
+      } catch (error) {
+        /* Storage disabled: the boot screen simply repeats next visit. */
+      }
+
+      let cleaned = false;
+      const cleanup = () => {
+        if (cleaned) return;
+        cleaned = true;
+        root.classList.remove('is-booting', 'is-loader-out');
+        if (loader) loader.remove();
+      };
+
+      if (loader) loader.addEventListener('transitionend', cleanup, { once: true });
+      window.setTimeout(cleanup, 700);
+    }, Math.max(0, MIN_VISIBLE - (performance.now() - started)));
+  };
+
+  if (document.readyState === 'complete') release();
+  else window.addEventListener('load', release, { once: true });
+
+  /* A hanging image must not keep the page covered. */
+  window.setTimeout(release, 3500);
+})();
+
 (() => {
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-menu]');
@@ -61,7 +106,7 @@
         observer.unobserve(entry.target);
       });
     },
-    { rootMargin: '0px 0px -8% 0px', threshold: 0.15 }
+    { rootMargin: '0px 0px -48px 0px', threshold: 0 }
   );
 
   items.forEach((item) => observer.observe(item));

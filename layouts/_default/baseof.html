@@ -56,6 +56,22 @@
   <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}">
   <script>
     document.documentElement.classList.add('js');
+    (function () {
+      var seen = false;
+      try {
+        seen = window.sessionStorage.getItem('itschool-booted') === '1';
+      } catch (error) {
+        /* Private mode: the boot screen still runs, it just cannot persist. */
+      }
+      if (seen) return;
+      document.documentElement.classList.add('is-booting');
+      /* Never leave the page covered if the bundle fails to arrive. */
+      window.setTimeout(function () {
+        document.documentElement.classList.remove('is-booting', 'is-loader-out');
+        var loader = document.querySelector('[data-loader]');
+        if (loader) loader.remove();
+      }, 6000);
+    })();
     window.setTimeout(function () {
       if (document.documentElement.classList.contains('motion-ready')) return;
       document.querySelectorAll('[data-reveal]:not(.is-visible)').forEach(function (el) {
@@ -65,6 +81,7 @@
   </script>
 </head>
 <body id="top" class="{{ if $storybook }}home{{ end }}{{ if eq .Section "courses" }} courses-page{{ end }}{{ if $vacations }} vacations-page{{ end }}{{ if $cookies }} cookies-page{{ end }}"{{ with site.Params.yandexMetrikaId }} data-metrika-id="{{ . }}"{{ end }} data-cookie-settings-url="{{ "cookies/" | relURL }}#settings">
+  {{ partial "loader.html" . }}
   <a class="skip" href="#main">Перейти к содержимому</a>
   {{ partial "header.html" . }}
   <main id="main">

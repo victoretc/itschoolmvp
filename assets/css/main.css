@@ -98,6 +98,97 @@ button {
   background: var(--paper);
   color: var(--ink);
 }
+
+/* ---------------------------------------------------------------- loader */
+/* Boot screen for the first visit of a session; the inline head script sets
+   is-booting, main.js swaps it for is-loader-out once the page has loaded. */
+
+.site-loader {
+  display: none;
+}
+
+html.is-booting .site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  opacity: 1;
+  transition:
+    opacity 380ms var(--ease-out),
+    visibility 380ms;
+}
+
+html.is-loader-out .site-loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-loader__inner {
+  display: grid;
+  justify-items: center;
+  gap: clamp(18px, 3vw, 26px);
+}
+
+.site-loader__logo {
+  width: clamp(150px, 42vw, 230px);
+  height: auto;
+  animation: loader-logo 640ms var(--ease-out-back) both;
+}
+
+@keyframes loader-logo {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.site-loader__bar {
+  display: block;
+  overflow: hidden;
+  width: clamp(96px, 22vw, 128px);
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(13, 27, 51, 0.08);
+}
+
+.site-loader__bar span {
+  display: block;
+  width: 40%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--green), var(--blue-bright) 55%, var(--yellow));
+  animation: loader-bar 1.1s var(--ease) infinite;
+}
+
+@keyframes loader-bar {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(360%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-loader__logo {
+    animation: none;
+  }
+
+  .site-loader__bar span {
+    width: 100%;
+    animation: none;
+  }
+
+  html.is-booting .site-loader {
+    transition: none;
+  }
+}
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -2010,7 +2101,7 @@ button {
   gap: clamp(1.75rem, 4vw, 4rem);
 }
 .footer__legal-name {
-  margin-top: 0.9rem;
+  margin-top: 1.15rem;
   font-size: 0.9375rem;
   font-weight: 700;
   line-height: 1.4;
@@ -2019,7 +2110,7 @@ button {
 .footer__legal-list {
   display: grid;
   gap: 0.35rem;
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
 }
 .footer__legal-row {
   display: grid;
@@ -2285,23 +2376,23 @@ button {
   .js [data-reveal].is-visible {
     opacity: 1;
     translate: 0 0;
-    animation: reveal-in 700ms var(--ease-out) both;
+    animation: reveal-in 500ms var(--ease-out) both;
     animation-delay: var(--reveal-delay, 0ms);
   }
   .js [data-reveal-group] > :nth-child(2) {
-    --reveal-delay: 60ms;
+    --reveal-delay: 40ms;
   }
   .js [data-reveal-group] > :nth-child(3) {
-    --reveal-delay: 120ms;
+    --reveal-delay: 80ms;
   }
   .js [data-reveal-group] > :nth-child(4) {
-    --reveal-delay: 180ms;
+    --reveal-delay: 120ms;
   }
   .js [data-reveal-group] > :nth-child(5) {
-    --reveal-delay: 240ms;
+    --reveal-delay: 160ms;
   }
   .js [data-reveal-group] > :nth-child(6) {
-    --reveal-delay: 300ms;
+    --reveal-delay: 200ms;
   }
 }
 
@@ -2393,7 +2484,7 @@ button {
   .header__mobile-socials {
     display: flex;
     align-items: center;
-    gap: 0.375rem;
+    gap: 0.75rem;
   }
 
   .header__burger-label {
@@ -5250,6 +5341,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-width: 0;
   max-width: 100%;
   max-height: 100%;
   margin: 0;
@@ -5260,7 +5353,7 @@ button {
   display: block;
   width: auto;
   height: auto;
-  max-width: min(94vw, 1400px);
+  max-width: min(1400px, 100%);
   max-height: 88vh;
   border-radius: 12px;
   background: var(--sand, #f6f4ef);
