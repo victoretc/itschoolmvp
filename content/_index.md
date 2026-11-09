@@ -64,11 +64,11 @@ more:
   cta: 'Смотреть курсы'
   cta_href: 'courses/'
   video:
-    src: 'video/robot-tournament.mp4'
-    poster: 'video/robot-tournament-poster.jpg'
+    src: 'video/lessons.mp4'
+    poster: 'video/lessons-poster.jpg'
     ratio: '9 / 16'
-    title: 'Атмосфера II Международного роботурнира «Кубок Института Конфуция по науке и технике БНТУ»'
-    caption: 'Как проходит международный роботурнир в БНТУ: команды, роботы и накал борьбы'
+    title: 'Как проходят занятия в АйТи Скул'
+    caption: 'Теория, сборка роботов и программирование — как устроено одно занятие'
 reviews:
   title: 'Отзывы о школе'
   lead: 'Родители пишут нам в чатах, в Instagram и на Яндекс Картах — собрали самые тёплые сообщения.'
