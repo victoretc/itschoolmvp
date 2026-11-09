@@ -132,13 +132,12 @@
   <div class="sb-inner">
     <header class="sb-head sb-teachers__head" data-reveal>
       <div class="sb-teachers__intro">
-        <p class="sb-teachers__eyebrow"><span aria-hidden="true"></span>Команда</p>
         <h2 class="sb-title" id="teachers-title">{{ .title }}</h2>
         <p class="sb-lead sb-teachers__lead">{{ .lead }}</p>
       </div>
       <div class="sb-teachers__meta">
         <span class="sb-teachers__stat">{{ len $teachers }}</span>
-        <span class="sb-teachers__stat-label">преподавателей<br>в команде</span>
+        <span class="sb-teachers__stat-label">преподавателей</span>
       </div>
     </header>
 
@@ -147,24 +146,26 @@
       <li class="sb-teacher" data-reveal>
         <figure class="sb-teacher__media">
           {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "640x800 Center" "alt" (printf "%s — %s" $teacher.name (lower $teacher.role)) "sizes" "(max-width: 480px) 80vw, (max-width: 720px) 42vw, (max-width: 900px) 30vw, 270px" "widths" (slice 240 360 480 640)) }}
-          <span class="sb-teacher__role">
-            <span class="sb-teacher__dot sb-teacher__dot--{{ mod $i 3 }}" aria-hidden="true"></span>
-            {{ $teacher.role }}
-          </span>
         </figure>
         <div class="sb-teacher__body">
+          <div class="sb-teacher__top">
+            <p class="sb-teacher__role">
+              <span class="sb-teacher__dot" aria-hidden="true"></span>
+              {{ $teacher.role }}
+            </p>
+            <span class="sb-teacher__index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+          </div>
           <h3 class="sb-teacher__name">{{ $teacher.name }}</h3>
           {{- $subjects := $teacher.subjects }}
           {{- with $subjects }}
           <ul class="sb-teacher__subjects">
-            {{- range first 3 . }}
+            {{- range first 2 . }}
             <li>{{ . }}</li>
             {{- end }}
-            {{- $rest := sub (len $subjects) 3 }}
+            {{- $rest := sub (len $subjects) 2 }}
             {{- if gt $rest 0 }}
-            <li class="sb-teacher__more">
-              ещё {{ $rest }} {{ cond (eq $rest 1) "курс" (cond (le $rest 4) "курса" "курсов") }}
-            </li>
+            {{- $word := cond (eq $rest 1) "курс" (cond (le $rest 4) "курса" "курсов") }}
+            <li class="sb-teacher__more" aria-label="Ещё {{ $rest }} {{ $word }}">+{{ $rest }}</li>
             {{- end }}
           </ul>
           {{- end }}
@@ -276,26 +277,30 @@
     </div>
 
     {{- with .video }}
+    {{- $data := . }}
+    {{- with resources.Get .src }}
     <figure class="sb-more__video-wrap" data-reveal>
-      <div class="sb-more__video" data-video data-video-id="{{ .id }}" data-video-title="{{ .title }}">
-        <a class="sb-more__facade" href="https://www.youtube.com/watch?v={{ .id }}" data-video-play aria-label="Смотреть видео: {{ .title }}">
-          {{ partial "responsive-img.html" (dict "src" "images/school-graduates.jpg" "class" "sb-more__poster" "fill" "1280x720 Center" "alt" "" "sizes" "(max-width: 900px) 90vw, 640px" "widths" (slice 400 640 900 1280)) }}
-          <span class="sb-more__shade" aria-hidden="true"></span>
-          <span class="sb-more__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
-              <path d="M9.2 6.6a.9.9 0 0 1 1.38-.77l7 4.4a.9.9 0 0 1 0 1.54l-7 4.4a.9.9 0 0 1-1.38-.77Z" fill="currentColor"></path>
-            </svg>
-          </span>
-          <span class="sb-more__label">{{ .label }}</span>
-        </a>
-        <div class="sb-more__player" data-video-player></div>
+      <div class="sb-more__video" style="aspect-ratio: {{ $data.ratio | default "16 / 10" | safeCSS }};">
+        <video class="sb-more__media" data-autoplay muted loop playsinline controls preload="metadata" title="{{ $data.title }}"
+          {{- with resources.Get $data.poster }} poster="{{ .RelPermalink }}"{{ end }}>
+          <source src="{{ .RelPermalink }}" type="video/mp4">
+        </video>
+        <button class="sb-more__toggle" type="button" data-video-toggle hidden aria-label="Пауза">
+          <svg class="sb-more__icon sb-more__icon--pause" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <path d="M8 5.5h3v13H8zM13 5.5h3v13h-3z" fill="currentColor"></path>
+          </svg>
+          <svg class="sb-more__icon sb-more__icon--play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <path d="M9.2 6.6a.9.9 0 0 1 1.38-.77l7 4.4a.9.9 0 0 1 0 1.54l-7 4.4a.9.9 0 0 1-1.38-.77Z" fill="currentColor"></path>
+          </svg>
+        </button>
       </div>
+      {{- with $data.caption }}
       <figcaption class="sb-more__meta">
-        {{- with .caption }}
         <span class="sb-more__caption">{{ . }}</span>
-        {{- end }}
       </figcaption>
+      {{- end }}
     </figure>
+    {{- end }}
     {{- end }}
   </div>
 </section>
@@ -307,7 +312,34 @@
   <div class="sb-inner">
     <header class="sb-head sb-head--center" data-reveal>
       <h2 class="sb-title" id="reviews-title">{{ .title }}</h2>
+      {{- with .lead }}
+      <p class="sb-lead">{{ . }}</p>
+      {{- end }}
     </header>
+
+    {{- with .screenshots }}
+    <ul class="sb-reviews__rail" data-reveal-group>
+      {{- range . }}
+      <li class="sb-reviews__item" data-reveal>
+        <figure class="sb-reviews__shot">
+          {{ partial "responsive-img.html" (dict "src" (printf "images/reviews/%s" .image) "alt" .alt "sizes" "(max-width: 63.99rem) 68vw, 208px" "widths" (slice 320 460 640)) }}
+        </figure>
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+    {{- with .more }}
+    <p class="sb-reviews__more" data-reveal>
+      <a class="sb-reviews__more-link" href="{{ .url }}" target="_blank" rel="noopener">
+        <span class="sb-reviews__more-badge" aria-hidden="true">{{ partial "social-icon.html" "instagram" }}</span>
+        <span>{{ .label }}</span>
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+          <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+    </p>
+    {{- end }}
 
     {{- with .yandex }}
     <div class="sb-reviews__frame" data-reveal>
@@ -372,7 +404,7 @@
 
 {{/* ----------------------------------------------------------------- cta */}}
 {{- with .Params.cta }}
-<section class="sb-cta" aria-labelledby="cta-title">
+<section class="sb-cta" id="cta" aria-labelledby="cta-title">
   <div class="sb-inner">
     <div class="sb-cta__panel" data-reveal>
       {{ partial "sb-art.html" (dict "kind" "lego" "class" "sb-art--cta-lego") }}

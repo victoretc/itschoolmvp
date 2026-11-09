@@ -64,12 +64,28 @@ more:
   cta: 'Смотреть курсы'
   cta_href: 'courses/'
   video:
-    id: 'XWkcsQ30xeg'
-    title: 'Приглашаем Вас в «Школу Информационных технологий»'
-    label: 'Смотреть видео о школе'
-    caption: 'Экскурсия по школе и рассказ о том, как проходят занятия'
+    src: 'video/robot-tournament.mp4'
+    poster: 'video/robot-tournament-poster.jpg'
+    ratio: '9 / 16'
+    title: 'Атмосфера II Международного роботурнира «Кубок Института Конфуция по науке и технике БНТУ»'
+    caption: 'Как проходит международный роботурнир в БНТУ: команды, роботы и накал борьбы'
 reviews:
   title: 'Отзывы о школе'
+  lead: 'Родители пишут нам в чатах и в Instagram — собрали самые тёплые сообщения.'
+  screenshots:
+    - image: 'chat-thanks.jpg'
+      alt: 'Скриншоты благодарностей родителей в чате школы'
+    - image: 'it-camp.jpg'
+      alt: 'Отзывы родителей об IT-каникулах в чате школы'
+    - image: 'camp-final-day.jpg'
+      alt: 'Отзывы родителей о последней смене IT-каникул'
+    - image: 'lessons.jpg'
+      alt: 'Отзывы родителей о занятиях робототехникой'
+    - image: 'poem.jpg'
+      alt: 'Стихотворный отзыв мамы ученика об АйТи Скул'
+  more:
+    label: 'Больше отзывов в нашем Instagram'
+    url: 'https://www.instagram.com/itschoolby/'
   yandex:
     widget: 'https://yandex.by/maps-reviews-widget/170502162732?comments'
 instagram:

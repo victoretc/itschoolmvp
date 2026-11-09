@@ -91,41 +91,67 @@
 })();
 
 (() => {
-  const players = document.querySelectorAll('[data-video]');
-  if (!players.length) return;
+  const videos = document.querySelectorAll('video[data-autoplay]');
+  if (!videos.length) return;
 
-  players.forEach((player) => {
-    const facade = player.querySelector('[data-video-play]');
-    const id = player.dataset.videoId;
-    if (!facade || !id) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    const holder = player.querySelector('[data-video-player]');
-    let iframe = null;
+  videos.forEach((video) => {
+    const wrap = video.closest('.sb-more__video');
+    const toggle = wrap && wrap.querySelector('[data-video-toggle]');
+    let userPaused = reduceMotion.matches;
 
-    const start = () => {
-      if (iframe) return;
+    // Native controls stay in the markup as a no-JS fallback; with JS the
+    // lightweight overlay button replaces them.
+    video.controls = false;
 
-      iframe = document.createElement('iframe');
-      iframe.src =
-        'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
-      iframe.title = player.dataset.videoTitle || 'Видео о школе';
-      iframe.allow =
-        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.allowFullscreen = true;
-
-      // The poster stays visible underneath until the player is ready, so the
-      // block never flashes an empty frame while YouTube loads.
-      iframe.addEventListener('load', () => {
-        if (facade.isConnected) facade.remove();
-      });
-
-      (holder || player).append(iframe);
+    const sync = () => {
+      if (wrap) wrap.classList.toggle('is-paused', video.paused);
+      if (toggle) toggle.setAttribute('aria-label', video.paused ? 'Воспроизвести видео' : 'Пауза');
     };
 
-    facade.addEventListener('click', (event) => {
-      event.preventDefault();
-      start();
-    });
+    const flip = () => {
+      if (video.paused) {
+        userPaused = false;
+        video.play().catch(() => {});
+      } else {
+        userPaused = true;
+        video.pause();
+      }
+    };
+
+    if (toggle) {
+      toggle.hidden = false;
+      toggle.addEventListener('click', flip);
+    }
+
+    video.addEventListener('click', flip);
+
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+
+    if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+      sync();
+      return;
+    }
+
+    // Play only while the block is on screen: no wasted bandwidth and no
+    // video running off-screen. A pause from the viewer wins over autoplay.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!userPaused) video.play().catch(() => {});
+          } else if (!video.paused) {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(video);
+    sync();
   });
 })();
 
