@@ -48,7 +48,7 @@
         </ul>
 
         {{- with $ctaText }}
-        <button class="header__cta" type="button" data-consult-open data-consult-source="header">{{ . }}</button>
+        {{ partial "web-shot-cta.html" (dict "label" . "source" "header") }}
         {{- end }}
       </div>
     </nav>

@@ -260,6 +260,28 @@
   });
 })();
 
+/* ---------------------------------------------------- live review widget */
+(() => {
+  const items = document.querySelectorAll('[data-live-frame]');
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const frame = item.querySelector('iframe[data-src]');
+    if (!frame) return;
+
+    const load = () => {
+      if (frame.getAttribute('src')) return;
+      frame.setAttribute('src', frame.dataset.src);
+    };
+
+    item.addEventListener('toggle', () => {
+      if (item.open) load();
+    });
+
+    if (item.open) load();
+  });
+})();
+
 /* ---------------------------------------------------------- consultation */
 (() => {
   const root = document.querySelector('[data-consult]');
@@ -545,4 +567,98 @@
   });
 
   if (window.location.hash === '#consult') open();
+})();
+
+(() => {
+  const buttons = document.querySelectorAll('[data-pixels]');
+  if (!buttons.length) return;
+
+  const PIXEL_SIZE = 10;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const build = (container) => {
+    const button = container.parentElement;
+    if (!button) return;
+
+    const width = button.offsetWidth;
+    const height = button.offsetHeight;
+    const cols = Math.ceil(width / PIXEL_SIZE);
+    const rows = Math.ceil(height / PIXEL_SIZE);
+
+    if (!cols || !rows) {
+      container.replaceChildren();
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const pixel = document.createElement('span');
+        pixel.className = 'header__cta-pixel';
+        pixel.style.left = `${col * PIXEL_SIZE}px`;
+        pixel.style.top = `${row * PIXEL_SIZE}px`;
+        pixel.style.width = `${Math.min(PIXEL_SIZE, width - col * PIXEL_SIZE)}px`;
+        pixel.style.height = `${Math.min(PIXEL_SIZE, height - row * PIXEL_SIZE)}px`;
+        pixel.style.transitionDelay = reduceMotion.matches
+          ? '0s'
+          : `${(Math.random() * 1).toFixed(2)}s`;
+        fragment.appendChild(pixel);
+      }
+    }
+
+    container.replaceChildren(fragment);
+  };
+
+  buttons.forEach((container) => {
+    build(container);
+
+    if ('ResizeObserver' in window) {
+      let frame = 0;
+      const observer = new ResizeObserver(() => {
+        window.cancelAnimationFrame(frame);
+        frame = window.requestAnimationFrame(() => build(container));
+      });
+      observer.observe(container.parentElement || container);
+    } else {
+      window.addEventListener('resize', () => build(container));
+    }
+  });
+})();
+
+(() => {
+  const list = document.querySelector('[data-course-list]');
+  if (!list) return;
+
+  const extras = Array.from(list.querySelectorAll('[data-course-extra]'));
+  const button = list.querySelector('[data-course-more]');
+  const label = button && button.querySelector('[data-course-more-label]');
+  const count = button && button.querySelector('[data-course-more-count]');
+  const wrap = list.querySelector('[data-course-more-wrap]');
+
+  if (!extras.length || !button || !label || !wrap) {
+    if (wrap) wrap.remove();
+    return;
+  }
+
+  const setExpanded = (expanded) => {
+    button.setAttribute('aria-expanded', String(expanded));
+    label.textContent = expanded ? 'Свернуть' : 'Смотреть ещё';
+    if (count) count.hidden = expanded;
+
+    extras.forEach((item) => {
+      item.hidden = !expanded;
+      if (expanded) item.classList.add('is-visible');
+    });
+  };
+
+  extras.forEach((item) => {
+    item.hidden = true;
+  });
+
+  wrap.hidden = false;
+
+  button.addEventListener('click', () => {
+    setExpanded(button.getAttribute('aria-expanded') !== 'true');
+  });
 })();

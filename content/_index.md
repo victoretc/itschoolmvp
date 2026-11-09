@@ -22,7 +22,7 @@ hero:
       label: 'Постоянных клиентов в год'
     - value: '10'
       label: 'Лет преподавания'
-    - value: '15'
+    - value: '12'
       label: 'Педагогов'
     - value: '6000+'
       label: 'обученных детей'
@@ -71,7 +71,7 @@ more:
     caption: 'Как проходит международный роботурнир в БНТУ: команды, роботы и накал борьбы'
 reviews:
   title: 'Отзывы о школе'
-  lead: 'Родители пишут нам в чатах и в Instagram — собрали самые тёплые сообщения.'
+  lead: 'Родители пишут нам в чатах, в Instagram и на Яндекс Картах — собрали самые тёплые сообщения.'
   screenshots:
     - image: 'chat-thanks.jpg'
       alt: 'Скриншоты благодарностей родителей в чате школы'
@@ -88,6 +88,7 @@ reviews:
     url: 'https://www.instagram.com/itschoolby/'
   yandex:
     widget: 'https://yandex.by/maps-reviews-widget/170502162732?comments'
+    url: 'https://yandex.by/maps/org/tsentr_robototekhniki_i_programirovaniya_dlya_detey/170502162732/'
 instagram:
   title: 'Присоединяйтесь к нам в Instagram'
   lead: 'Новости школы, проекты учеников и закулисье занятий.'

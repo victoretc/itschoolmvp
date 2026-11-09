@@ -17,7 +17,7 @@
     </button>
 
     <div class="consult__aside">
-      <p class="consult__eyebrow"><span aria-hidden="true"></span>Бесплатная консультация</p>
+      <p class="consult__eyebrow">Бесплатная консультация</p>
       <h2 class="consult__title" id="consult-title" data-consult-title>Поможем выбрать курс</h2>
       <p class="consult__lead" id="consult-lead" data-consult-lead>
         Расскажем, с чего начать, как проходят занятия и сколько они стоят.
@@ -108,7 +108,7 @@
         </div>
 
         <button class="consult__submit" type="submit" data-consult-submit>
-          <span class="consult__submit-label">Записаться на консультацию</span>
+          <span class="consult__submit-label">Отправить</span>
           <span class="consult__submit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
               <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -120,10 +120,6 @@
         <p class="consult__alt">
           <span>Или позвоните</span>
           <a href="{{ site.Params.phoneHref | safeURL }}">{{ site.Params.phone }}</a>
-        </p>
-
-        <p class="consult__consent">
-          Отправляя форму, вы соглашаетесь на обработку персональных данных.
         </p>
 
         <p class="consult__error consult__error--form" data-consult-form-error hidden></p>

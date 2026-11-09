@@ -90,8 +90,8 @@
       </h2>
 
       <div class="sb-approach__aside">
+        {{ partial "sb-art.html" (dict "kind" "atom" "class" "sb-approach__atom") }}
         <p class="sb-approach__lead">{{ .lead }}</p>
-        {{ partial "sb-art.html" (dict "kind" "atom" "class" "sb-approach__head-atom") }}
       </div>
     </header>
 
@@ -141,20 +141,18 @@
       </div>
     </header>
 
-    <ul class="sb-teachers__grid" data-reveal-group>
+    <ul class="sb-teachers__grid" data-reveal-group data-lightbox-group>
       {{- range $i, $teacher := $teachers }}
       <li class="sb-teacher" data-reveal>
         <figure class="sb-teacher__media">
           {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "640x800 Center" "alt" (printf "%s — %s" $teacher.name (lower $teacher.role)) "sizes" "(max-width: 480px) 80vw, (max-width: 720px) 42vw, (max-width: 900px) 30vw, 270px" "widths" (slice 240 360 480 640)) }}
+          <span class="sb-teacher__index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
         </figure>
         <div class="sb-teacher__body">
-          <div class="sb-teacher__top">
-            <p class="sb-teacher__role">
-              <span class="sb-teacher__dot" aria-hidden="true"></span>
-              {{ $teacher.role }}
-            </p>
-            <span class="sb-teacher__index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-          </div>
+          <p class="sb-teacher__role">
+            <span class="sb-teacher__dot" aria-hidden="true"></span>
+            {{ $teacher.role }}
+          </p>
           <h3 class="sb-teacher__name">{{ $teacher.name }}</h3>
           {{- $subjects := $teacher.subjects }}
           {{- with $subjects }}
@@ -211,17 +209,18 @@
 <section class="sb-section sb-courses" id="courses" aria-labelledby="courses-title">
   <div class="sb-inner">
     <header class="sb-courses__head" data-reveal>
-      <div>
-        <h2 class="sb-title" id="courses-title">{{ .title }}</h2>
+      <h2 class="sb-title" id="courses-title">{{ .title }}</h2>
+      <div class="sb-courses__sub">
         <p class="sb-lead">{{ .lead }}</p>
+        <span class="sb-count">{{ len $courses }} направлений</span>
       </div>
-      <span class="sb-count">{{ len $courses }} направлений</span>
     </header>
 
     <div class="sb-courses__body">
-      <div class="sb-courses__list" data-reveal-group>
-        {{- range $course := $courses }}
-        <details class="sb-acc sb-course" data-reveal>
+      {{- $visibleCourses := 6 -}}
+      <div class="sb-courses__list" id="courses-list" data-reveal-group data-course-list>
+        {{- range $i, $course := $courses }}
+        <details class="sb-acc sb-course" data-reveal{{ if ge $i $visibleCourses }} data-course-extra{{ end }}>
           <summary class="sb-acc__summary">
             <span class="sb-course__title">{{ $course.guideTitle }}</span>
             <span class="sb-acc__toggle" aria-hidden="true"></span>
@@ -241,6 +240,12 @@
           </div>
         </details>
         {{- end }}
+        <div class="sb-courses__more-wrap" data-course-more-wrap hidden>
+          <button class="sb-btn sb-btn--outline sb-courses__more" type="button" data-course-more aria-expanded="false" aria-controls="courses-list">
+            <span data-course-more-label>Смотреть ещё</span>
+            <span class="sb-courses__more-count" data-course-more-count>{{ sub (len $courses) $visibleCourses }}</span>
+          </button>
+        </div>
       </div>
 
       <aside class="sb-help" data-reveal>
@@ -249,6 +254,33 @@
         <p class="sb-help__text">{{ .help.text }}</p>
         {{ partial "sb-phone.html" (dict "note" "Пн–Сб, 9:00–20:00") }}
       </aside>
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{/* ----------------------------------------------------------- instagram */}}
+{{- with .Params.instagram }}
+<section class="sb-section sb-instagram" aria-labelledby="instagram-title">
+  <div class="sb-inner">
+    <div class="sb-instagram__panel" data-reveal>
+      <div class="sb-instagram__text">
+        <span class="sb-instagram__badge" aria-hidden="true">{{ partial "social-icon.html" "instagram" }}</span>
+        <div>
+          <h2 class="sb-title" id="instagram-title">{{ .title }}</h2>
+          {{- with .lead }}
+          <p class="sb-lead">{{ . }}</p>
+          {{- end }}
+        </div>
+      </div>
+      {{- with .url }}
+      <a class="sb-btn sb-btn--sand sb-instagram__link" href="{{ . }}" target="_blank" rel="noopener">
+        {{ $.Params.instagram.handle | default "Instagram" }}
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+          <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      {{- end }}
     </div>
   </div>
 </section>
@@ -318,7 +350,7 @@
     </header>
 
     {{- with .screenshots }}
-    <ul class="sb-reviews__rail" data-reveal-group>
+    <ul class="sb-reviews__rail" data-reveal-group data-lightbox-group>
       {{- range . }}
       <li class="sb-reviews__item" data-reveal>
         <figure class="sb-reviews__shot">
@@ -342,37 +374,23 @@
     {{- end }}
 
     {{- with .yandex }}
-    <div class="sb-reviews__frame" data-reveal>
-      <iframe src="{{ .widget }}" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    {{- end }}
-  </div>
-</section>
-{{- end }}
-
-{{/* ----------------------------------------------------------- instagram */}}
-{{- with .Params.instagram }}
-<section class="sb-section sb-instagram" aria-labelledby="instagram-title">
-  <div class="sb-inner">
-    <div class="sb-instagram__panel" data-reveal>
-      <div class="sb-instagram__text">
-        <span class="sb-instagram__badge" aria-hidden="true">{{ partial "social-icon.html" "instagram" }}</span>
-        <div>
-          <h2 class="sb-title" id="instagram-title">{{ .title }}</h2>
-          {{- with .lead }}
-          <p class="sb-lead">{{ . }}</p>
-          {{- end }}
-        </div>
+    <details class="sb-acc sb-reviews__live" data-reveal data-live-frame>
+      <summary class="sb-acc__summary sb-reviews__live-summary">
+        <span class="sb-reviews__live-badge" aria-hidden="true">{{ partial "icon.html" "pin" }}</span>
+        <span class="sb-reviews__live-title">Отзывы на Яндекс Картах</span>
+        <span class="sb-reviews__live-action" aria-hidden="true">Смотреть</span>
+        <span class="sb-acc__toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="sb-acc__panel sb-reviews__live-panel">
+        <noscript>
+          <p class="sb-reviews__live-fallback">
+            <a href="{{ .url | default site.Data.site.mapUrl }}" target="_blank" rel="noopener">Открыть отзывы на Яндекс Картах ↗</a>
+          </p>
+        </noscript>
+        <iframe data-src="{{ .widget }}" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      {{- with .url }}
-      <a class="sb-btn sb-btn--sand sb-instagram__link" href="{{ . }}" target="_blank" rel="noopener">
-        {{ $.Params.instagram.handle | default "Instagram" }}
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
-          <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </a>
-      {{- end }}
-    </div>
+    </details>
+    {{- end }}
   </div>
 </section>
 {{- end }}

@@ -136,7 +136,7 @@
   {{ partial "footer.html" . }}
   {{ partial "consult-modal.html" . }}
   {{ partial "lightbox.html" . }}
-  {{ $js := slice (resources.Get "js/main.js") (resources.Get "js/lightbox.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
+  {{ $js := slice (resources.Get "js/main.js") (resources.Get "js/lightbox.js") (resources.Get "js/web-shot.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 </html>

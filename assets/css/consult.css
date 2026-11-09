@@ -38,6 +38,7 @@
   border-radius: 1.75rem;
   background: #fff;
   box-shadow:
+    0 0 0 1px rgba(18, 18, 18, 0.06),
     0 1px 2px rgba(18, 18, 18, 0.08),
     0 40px 80px -32px rgba(18, 18, 18, 0.45);
   opacity: 0;
@@ -119,9 +120,10 @@
   flex-direction: column;
   gap: 0.95rem;
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  background-color: var(--sb-ink, #121212);
-  background-image: radial-gradient(110% 80% at 0% 100%, rgba(255, 62, 0, 0.28), transparent 62%);
-  color: #fbfaf9;
+  border-right: 1px solid #eae4d8;
+  background-color: var(--sb-stone, #f2f0ed);
+  background-image: radial-gradient(110% 80% at 0% 100%, rgba(255, 205, 108, 0.5), transparent 62%);
+  color: var(--sb-ink, #121212);
   overflow: hidden;
 }
 
@@ -130,11 +132,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(251, 250, 249, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(18, 18, 18, 0.16) 1px, transparent 1px);
   background-size: 15px 15px;
   -webkit-mask-image: radial-gradient(80% 70% at 100% 0%, #000 5%, transparent 68%);
   mask-image: radial-gradient(80% 70% at 100% 0%, #000 5%, transparent 68%);
-  opacity: 0.7;
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -146,28 +148,25 @@
 .consult__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 0.1rem;
-  color: rgba(251, 250, 249, 0.6);
+  align-self: flex-start;
+  margin: 0 0 0.35rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--sb-yellow, #ffcd6c);
+  color: var(--sb-ink, #121212);
   font-family: var(--sb-font-body, "Inter", system-ui, sans-serif);
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.consult__eyebrow span {
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 50%;
-  background: var(--sb-ember, #ff3e00);
-  box-shadow: 0 0 0 4px rgba(255, 62, 0, 0.16);
+  transform: rotate(-1.4deg);
+  transform-origin: left center;
 }
 
 .consult__title {
   max-width: 13ch;
   margin: 0;
-  color: #fbfaf9;
+  color: var(--sb-ink, #121212);
   font-family: var(--sb-font-display, "Unbounded", system-ui, sans-serif);
   font-size: clamp(1.5rem, 1.15rem + 1.4vw, 2.15rem);
   font-weight: 400;
@@ -179,7 +178,7 @@
 .consult__lead {
   max-width: 32ch;
   margin: 0;
-  color: rgba(251, 250, 249, 0.68);
+  color: var(--sb-body, #474645);
   font-size: 0.9375rem;
   line-height: 1.5;
   letter-spacing: -0.011em;
@@ -192,16 +191,16 @@
   margin: 0.65rem 0 0;
   /* Reserves the corner the mascot sits in, so text never runs into it. */
   padding: 1rem 0 6.75rem;
-  border-top: 1px solid rgba(251, 250, 249, 0.12);
+  border-top: 1px solid #eae4d8;
   list-style: none;
   font-size: 0.875rem;
   line-height: 1.4;
-  color: rgba(251, 250, 249, 0.84);
+  color: var(--sb-body, #474645);
 }
 
 .consult__points li {
   display: grid;
-  grid-template-columns: 1.125rem minmax(0, 1fr);
+  grid-template-columns: 1.375rem minmax(0, 1fr);
   align-items: start;
   gap: 0.6rem;
 }
@@ -209,12 +208,21 @@
 .consult__point-icon {
   display: grid;
   place-items: center;
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-top: 0.1rem;
-  border-radius: 50%;
-  background: rgba(255, 205, 108, 0.16);
-  color: var(--sb-yellow, #ffcd6c);
+  width: 1.375rem;
+  height: 1.375rem;
+  margin-top: 0.05rem;
+  border: 1.5px solid var(--sb-head, #343433);
+  border-radius: 0.4rem;
+  background: #ffdd94;
+  color: var(--sb-ink, #121212);
+}
+
+.consult__points li:nth-child(2) .consult__point-icon {
+  background: #8dd7ff;
+}
+
+.consult__points li:nth-child(3) .consult__point-icon {
+  background: #5ee6a8;
 }
 
 .consult__art {
@@ -224,6 +232,7 @@
   bottom: -2rem;
   width: 10rem;
   height: 10rem;
+  filter: drop-shadow(0 6px 8px rgba(18, 18, 18, 0.16));
   pointer-events: none;
 }
 
@@ -262,7 +271,7 @@
 
 .consult__form {
   display: grid;
-  gap: 1.1rem;
+  gap: 1.15rem;
 }
 
 .consult__form[hidden] {
@@ -271,7 +280,7 @@
 
 .consult__field {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.5rem;
   min-width: 0;
   margin: 0;
   padding: 0;
@@ -283,7 +292,7 @@
   align-items: baseline;
   gap: 0.15rem;
   padding: 0;
-  color: var(--sb-body, #474645);
+  color: var(--sb-muted, #6b6b6a);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -328,9 +337,10 @@
   width: 100%;
   height: 3.5rem;
   padding: 0 1rem 0 2.9rem;
-  border: 1.5px solid #e4ded3;
-  border-radius: 0.875rem;
+  border: 0;
+  border-radius: 0.75rem;
   background: var(--sb-sand, #f6f4ef);
+  box-shadow: inset 0 0 0 1px #eae4d8;
   color: var(--sb-ink, #121212);
   font: inherit;
   font-family: var(--sb-font-body, "Inter", system-ui, sans-serif);
@@ -338,7 +348,6 @@
   letter-spacing: -0.011em;
   appearance: none;
   transition:
-    border-color 150ms cubic-bezier(0.2, 0, 0, 1),
     box-shadow 150ms cubic-bezier(0.2, 0, 0, 1),
     background-color 150ms cubic-bezier(0.2, 0, 0, 1);
 }
@@ -356,14 +365,16 @@
 .consult .consult__input:focus,
 .consult .consult__input:focus-visible {
   outline: none;
-  border-color: var(--sb-ink, #121212);
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(255, 62, 0, 0.14);
+  box-shadow:
+    inset 0 0 0 1.5px var(--sb-ink, #121212),
+    0 0 0 4px rgba(255, 62, 0, 0.14);
 }
 
 .consult__field.has-error .consult__input {
-  border-color: #c0392b;
-  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.1);
+  box-shadow:
+    inset 0 0 0 1.5px #c0392b,
+    0 0 0 4px rgba(192, 57, 43, 0.1);
 }
 
 /* Chrome paints autofilled fields with its own background; keep the
@@ -426,41 +437,35 @@
   isolation: isolate;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  justify-content: center;
+  gap: 0.625rem;
   width: 100%;
   min-height: 3.5rem;
-  margin-top: 0.15rem;
-  padding: 0.35rem 0.35rem 0.35rem 1.25rem;
+  margin-top: 0.35rem;
+  padding: 0 1.5rem;
   overflow: hidden;
-  border: 0;
-  border-radius: 1rem;
-  background: var(--sb-ink, #121212);
-  color: #fbfaf9;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--sb-sand, #f6f4ef);
+  box-shadow: inset 0 0 0 1px #eae5db;
+  color: var(--sb-ink, #121212);
   font-family: var(--sb-font-body, "Inter", system-ui, sans-serif);
-  font-size: 0.975rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  text-align: left;
-  transition:
-    color 180ms cubic-bezier(0.2, 0, 0, 1),
-    transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Same fill token as the site CTA: the yellow disc grows to fill the
-   button on hover, so the dialog's submit matches every other CTA. */
+/* The phone CTA's fill: yellow rises from the bottom edge, so the label
+   stays readable while the panel paints itself. */
 .consult__submit::before {
   content: "";
   position: absolute;
-  z-index: 0;
-  top: 0.35rem;
-  right: 0.35rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 50%;
+  inset: 0;
+  z-index: -1;
   background: var(--sb-yellow, #ffcd6c);
-  transform: scale(1);
-  transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(101%);
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
   pointer-events: none;
 }
 
@@ -474,26 +479,26 @@
   display: grid;
   place-items: center;
   flex: none;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 50%;
-  color: var(--sb-ink, #121212);
-  transition:
-    background-color 200ms cubic-bezier(0.2, 0, 0, 1),
-    color 200ms cubic-bezier(0.2, 0, 0, 1);
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 .consult__submit-icon svg {
-  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+  transform-origin: 50% 50%;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .consult__spinner {
   position: absolute;
+  inset: 0;
   z-index: 1;
-  right: 1.6rem;
   width: 1.1rem;
   height: 1.1rem;
-  border: 2px solid rgba(18, 18, 18, 0.25);
+  margin: auto;
+  border: 2px solid rgba(18, 18, 18, 0.2);
   border-top-color: var(--sb-ink, #121212);
   border-radius: 50%;
   opacity: 0;
@@ -501,18 +506,11 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .consult__submit:not(:disabled):hover {
-    color: var(--sb-ink, #121212);
-  }
   .consult__submit:not(:disabled):hover::before {
-    transform: scale(13);
-  }
-  .consult__submit:not(:disabled):hover .consult__submit-icon {
-    background: var(--sb-ink, #121212);
-    color: var(--sb-yellow, #ffcd6c);
+    transform: translateY(0);
   }
   .consult__submit:not(:disabled):hover .consult__submit-icon svg {
-    transform: translate(2px, -2px);
+    transform: rotate(-14deg) scale(1.1);
   }
 }
 
@@ -551,7 +549,9 @@
   align-items: baseline;
   justify-content: center;
   gap: 0.35rem;
-  margin: 0;
+  margin: 0.2rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid #eae4d8;
   color: var(--sb-muted, #6b6b6a);
   font-size: 0.8125rem;
   line-height: 1.4;
@@ -572,18 +572,6 @@
     color: var(--sb-ember, #ff3e00);
   }
 }
-
-.consult__consent {
-  max-width: 33ch;
-  margin: -0.15rem auto 0;
-  color: var(--sb-muted, #6b6b6a);
-  font-size: 0.75rem;
-  line-height: 1.45;
-  letter-spacing: -0.005em;
-  text-align: center;
-  text-wrap: pretty;
-}
-
 
 /* ----------------------------------------------------------- success */
 
@@ -689,6 +677,8 @@ html.has-consult {
   .consult__aside {
     padding: 1.25rem 3.75rem 1rem 1.35rem;
     gap: 0.4rem;
+    border-right: 0;
+    border-bottom: 1px solid #eae4d8;
   }
 
   .consult__title {
@@ -713,9 +703,9 @@ html.has-consult {
   .consult__close {
     top: 0.85rem;
     right: 0.85rem;
-    background: rgba(255, 255, 255, 0.14);
-    box-shadow: none;
-    color: #fbfaf9;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px #eae4d8;
+    color: var(--sb-ink, #121212);
   }
 }
 
@@ -738,7 +728,18 @@ html.has-consult {
   }
 
   .consult__submit::before {
-    transition: none;
+    opacity: 0;
+    transform: none;
+    transition: opacity 120ms linear;
+  }
+
+  .consult__submit:not(:disabled):hover::before {
+    opacity: 1;
+    transform: none;
+  }
+
+  .consult__submit:not(:disabled):hover .consult__submit-icon svg {
+    transform: none;
   }
 
   .consult__submit.is-loading .consult__spinner {

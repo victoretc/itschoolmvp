@@ -1,11 +1,23 @@
-{{- /* Full-size photo viewer. Opens from any photo inside <main>. */ -}}
+{{- /* Full-size photo viewer. Opens from any photo inside <main>;
+       photos sharing a [data-lightbox-group] parent become one carousel. */ -}}
 <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
   <button class="lightbox__close" type="button" data-lightbox-close aria-label="Закрыть фотографию">
     <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
       <path d="M6 6 18 18M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
     </svg>
   </button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Предыдущее фото" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path d="M14.5 6 8.5 12l6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Следующее фото" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path d="M9.5 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
   <figure class="lightbox__figure">
     <img class="lightbox__img" alt="" decoding="async">
   </figure>
+  <p class="lightbox__counter" data-lightbox-counter aria-live="polite" hidden></p>
 </div>

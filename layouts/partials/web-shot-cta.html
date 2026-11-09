@@ -1,0 +1,16 @@
+{{- /* Glass CTA with silk threads that follow the pointer. */ -}}
+{{- $label := .label | default "Пробное занятие" -}}
+{{- $source := .source | default "header" -}}
+{{- $reach := .reach | default 120 -}}
+{{- $threads := .threads | default 5 -}}
+<span class="web-shot" data-web-shot data-web-shot-reach="{{ $reach }}" data-web-shot-threads="{{ $threads }}">
+  <canvas class="web-shot__canvas" data-web-shot-canvas aria-hidden="true"></canvas>
+  <button class="web-shot__button" type="button" data-consult-open data-consult-source="{{ $source }}" data-web-shot-btn>
+    <span class="web-shot__label">{{ $label }}</span>
+    <span class="web-shot__icon" aria-hidden="true">
+      <svg class="web-shot__arrow" viewBox="0 0 24 24" width="16" height="16" focusable="false">
+        <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </button>
+</span>
