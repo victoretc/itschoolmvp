@@ -1,0 +1,97 @@
+# Педагоги АйТи Скул. Тексты взяты с фотографий преподавателей.
+- name: 'Романюк Мария Александровна'
+  image: 'teachers/maria-romanyuk.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Робототехника WeDo 2.0'
+    - 'Робототехника EV3'
+    - 'Программирование Roblox'
+    - 'Программирование Minecraft'
+    - 'Программирование Kodu и Scratch'
+    - '3D-моделирование в Blender'
+
+- name: 'Крагель Алина Максимовна'
+  image: 'teachers/alina-kragel.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Робототехника WeDo 1.0'
+    - 'Робототехника WeDo 2.0'
+    - 'Робототехника EV3'
+
+- name: 'Николаев Дмитрий Александрович'
+  image: 'teachers/dmitry-nikolaev.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Нейронные сети'
+    - 'Разработка игр на Godot'
+    - 'Робототехника Arduino'
+    - 'Программирование на Python'
+
+- name: 'Шульган Антип Андреевич'
+  image: 'teachers/antip-shulgan.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Программирование Minecraft'
+    - 'Программирование Roblox'
+    - 'Тестирование ПО'
+
+- name: 'Казаков Андрей Александрович'
+  image: 'teachers/andrey-kazakov.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Робототехника WeDo 2.0'
+
+- name: 'Меречко Денис Дмитриевич'
+  image: 'teachers/denis-merechko.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Робототехника WeDo 2.0'
+    - 'Робототехника EV3'
+
+- name: 'Охримчук Валерий Валерьевич'
+  image: 'teachers/valery-okhrimchuk.jpg'
+  role: 'Тренер по робототехнике'
+  subjects:
+    - 'Готовит детей к соревнованиям по робототехнике'
+    - 'Неоднократный победитель соревнований'
+
+- name: 'Грицук Ангелина Викторовна'
+  image: 'teachers/angelina-gritsuk.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Робототехника WeDo 1.0'
+    - 'Робототехника WeDo 2.0'
+    - 'Робототехника EV3'
+    - 'Создание игр в Scratch и Kodu'
+    - 'IT-каникулы'
+
+- name: 'Маркина Анастасия Александровна'
+  image: 'teachers/anastasia-markina.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Программирование на Python'
+    - 'Создание игр на Unity'
+    - '3D-моделирование в Blender'
+    - 'Нейронные сети'
+    - 'Разработка сайтов'
+
+- name: 'Баран Юрий Викторович'
+  image: 'teachers/yuri-baran.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Робототехника Arduino'
+
+- name: 'Тузик Марина Николаевна'
+  image: 'teachers/marina-tuzik.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Робототехника WeDo 1.0'
+    - 'Робототехника WeDo 2.0'
+    - 'IT-каникулы'
+
+- name: 'Вырва Наталья Витальевна'
+  image: 'teachers/natalia-vyrva.jpg'
+  role: 'Преподаватель'
+  subjects:
+    - 'Разработка игр на платформе Unity'
+    - 'Тестирование программного обеспечения'

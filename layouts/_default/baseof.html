@@ -11,18 +11,21 @@
   <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
   <meta name="theme-color" content="#41c0f0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   {{- $vacations := eq .Layout "it-vacations" -}}
   {{- $about := eq .Type "about" -}}
   {{- $contacts := eq .Type "contacts" -}}
   {{- $blog := eq .Section "blog" -}}
   {{- $storybook := or .IsHome (eq .Section "courses") $vacations $about $contacts $blog -}}
-  {{- $fonts := cond $storybook "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@400&display=swap" "https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" -}}
-  <link rel="preload" as="style" href="{{ $fonts }}">
-  <link rel="stylesheet" href="{{ $fonts }}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ $fonts }}"></noscript>
-  {{- $styles := slice (resources.Get "css/main.css") -}}
+  {{- /* All webfonts are self-hosted; preload the faces used above the fold. */}}
+  {{- $primaryFont := cond $storybook "inter" "onest" -}}
+  <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
+  <link rel="preload" as="font" type="font/woff2" href="{{ printf "fonts/%s-cyrillic.woff2" $primaryFont | relURL }}" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="{{ printf "fonts/%s-latin.woff2" $primaryFont | relURL }}" crossorigin>
+  {{- if $storybook }}
+  <link rel="preload" as="font" type="font/woff2" href="{{ "fonts/unbounded-400-cyrillic.woff2" | relURL }}" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="{{ "fonts/unbounded-400-latin.woff2" | relURL }}" crossorigin>
+  {{- end }}
+  {{- $styles := slice (resources.Get "css/main.css") (resources.Get "css/consult.css") -}}
   {{- $bundleName := "base" -}}
   {{- if $storybook -}}
     {{- $styles = $styles | append (resources.Get "css/home.css") -}}
@@ -131,7 +134,9 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  {{ partial "consult-modal.html" . }}
+  {{ partial "lightbox.html" . }}
+  {{ $js := slice (resources.Get "js/main.js") (resources.Get "js/lightbox.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 </html>

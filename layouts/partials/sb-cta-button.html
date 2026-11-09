@@ -1,5 +1,8 @@
+{{- /* Primary lead button. Without an href it opens the consultation
+       dialog; with an href it stays a plain link (e.g. "Подобрать курс"). */ -}}
 {{- $label := .label -}}
-{{- $href := .href | default (relURL "contacts/") -}}
+{{- $href := .href -}}
+{{- if $href -}}
 <a class="btn btn--cta" href="{{ $href }}">
   <span class="btn__label">{{ $label }}</span>
   <span class="btn__icon" aria-hidden="true">
@@ -8,3 +11,13 @@
     </svg>
   </span>
 </a>
+{{- else -}}
+<button class="btn btn--cta" type="button" data-consult-open{{ with .source }} data-consult-source="{{ . }}"{{ end }}>
+  <span class="btn__label">{{ $label }}</span>
+  <span class="btn__icon" aria-hidden="true">
+    <svg class="btn__arrow" viewBox="0 0 24 24" width="18" height="18" focusable="false">
+      <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </span>
+</button>
+{{- end -}}

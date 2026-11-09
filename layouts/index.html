@@ -7,8 +7,8 @@
     <div class="sb-hero__art sb-hero__art--left">
       <figure class="sb-hero__photo sb-photo--main">
         {{ partial "responsive-img.html" (dict "src" "images/about/gallery-02.jpg" "alt" "Педагог и ученик собирают модель на занятии" "sizes" "200px" "loading" "eager" "priority" "high") }}
-        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--flower") }}
-        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-sticker--star") }}
+        {{ partial "sb-art.html" (dict "kind" "robot" "class" "sb-sticker--robot") }}
+        {{ partial "sb-art.html" (dict "kind" "bolt" "class" "sb-sticker--bolt") }}
       </figure>
       <figure class="sb-hero__photo sb-photo--small">
         {{ partial "responsive-img.html" (dict "src" "images/about/gallery-05.jpg" "alt" "Рабочее место с ноутбуком, конструктором и собранной моделью" "sizes" "140px") }}
@@ -25,7 +25,7 @@
       <div class="sb-hero__mobile-photos">
         <figure class="sb-hero__photo">
           {{ partial "responsive-img.html" (dict "src" "images/about/gallery-02.jpg" "alt" "Педагог и ученик собирают модель на занятии" "sizes" "120px") }}
-          {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-sticker--mobile-flower") }}
+          {{ partial "sb-art.html" (dict "kind" "chip" "class" "sb-sticker--mobile-chip") }}
         </figure>
         <figure class="sb-hero__photo">
           {{ partial "responsive-img.html" (dict "src" "images/about/gallery-01.jpg" "alt" "Награды АйТи Скул на фестивале Smart Robo Fest" "sizes" "120px") }}
@@ -56,8 +56,8 @@
     <div class="sb-hero__art sb-hero__art--right">
       <figure class="sb-hero__photo sb-photo--awards">
         {{ partial "responsive-img.html" (dict "src" "images/about/gallery-01.jpg" "alt" "Награды АйТи Скул на фестивале Smart Robo Fest" "sizes" "200px") }}
-        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-sticker--triangle") }}
-        {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-sticker--cat") }}
+        {{ partial "sb-art.html" (dict "kind" "headphones" "class" "sb-sticker--headphones") }}
+        {{ partial "sb-art.html" (dict "kind" "joystick" "class" "sb-sticker--joystick") }}
       </figure>
     </div>
 
@@ -91,18 +91,17 @@
 
       <div class="sb-approach__aside">
         <p class="sb-approach__lead">{{ .lead }}</p>
-        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-approach__head-star") }}
+        {{ partial "sb-art.html" (dict "kind" "atom" "class" "sb-approach__head-atom") }}
       </div>
     </header>
 
     <div class="sb-approach__spread">
       <figure class="sb-approach__media" data-reveal>
         <div class="sb-approach__shot">
-          {{ partial "responsive-img.html" (dict "src" "images/school-blog-2.jpg" "fill" "1200x900 Center" "alt" "" "sizes" "(max-width: 900px) 90vw, 520px" "widths" (slice 400 600 900 1200)) }}
-          <figcaption class="sb-approach__caption">{{ .caption }}</figcaption>
+          {{ partial "responsive-img.html" (dict "src" "images/school-smart-robo-fest.jpg" "fill" "1200x900 Center" "alt" "Ученики АйТи Скул на фестивале робототехники" "sizes" "(max-width: 900px) 90vw, 520px" "widths" (slice 400 600 900 1200)) }}
         </div>
-        {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-approach__flower") }}
-        {{ partial "sb-art.html" (dict "kind" "triangle" "class" "sb-approach__triangle") }}
+        {{ partial "sb-art.html" (dict "kind" "astronaut" "class" "sb-approach__astronaut") }}
+        {{ partial "sb-art.html" (dict "kind" "chip" "class" "sb-approach__chip") }}
       </figure>
 
       <ol class="sb-approach__steps" data-reveal-group>
@@ -122,6 +121,57 @@
         {{ replace .statement "со школьной скамьи." "<span class=\"sb-approach__goal-hl\">со школьной скамьи.</span>" | safeHTML }}
       </p>
     </blockquote>
+  </div>
+</section>
+{{- end }}
+
+{{/* ------------------------------------------------------------ teachers */}}
+{{- with .Params.teachers }}
+{{- $teachers := site.Data.teachers }}
+<section class="sb-section sb-teachers" aria-labelledby="teachers-title">
+  <div class="sb-inner">
+    <header class="sb-head sb-teachers__head" data-reveal>
+      <div class="sb-teachers__intro">
+        <p class="sb-teachers__eyebrow"><span aria-hidden="true"></span>Команда</p>
+        <h2 class="sb-title" id="teachers-title">{{ .title }}</h2>
+        <p class="sb-lead sb-teachers__lead">{{ .lead }}</p>
+      </div>
+      <div class="sb-teachers__meta">
+        <span class="sb-teachers__stat">{{ len $teachers }}</span>
+        <span class="sb-teachers__stat-label">преподавателей<br>в команде</span>
+      </div>
+    </header>
+
+    <ul class="sb-teachers__grid" data-reveal-group>
+      {{- range $i, $teacher := $teachers }}
+      <li class="sb-teacher" data-reveal>
+        <figure class="sb-teacher__media">
+          {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "640x800 Center" "alt" (printf "%s — %s" $teacher.name (lower $teacher.role)) "sizes" "(max-width: 480px) 80vw, (max-width: 720px) 42vw, (max-width: 900px) 30vw, 270px" "widths" (slice 240 360 480 640)) }}
+          <span class="sb-teacher__role">
+            <span class="sb-teacher__dot sb-teacher__dot--{{ mod $i 3 }}" aria-hidden="true"></span>
+            {{ $teacher.role }}
+          </span>
+        </figure>
+        <div class="sb-teacher__body">
+          <h3 class="sb-teacher__name">{{ $teacher.name }}</h3>
+          {{- $subjects := $teacher.subjects }}
+          {{- with $subjects }}
+          <ul class="sb-teacher__subjects">
+            {{- range first 3 . }}
+            <li>{{ . }}</li>
+            {{- end }}
+            {{- $rest := sub (len $subjects) 3 }}
+            {{- if gt $rest 0 }}
+            <li class="sb-teacher__more">
+              ещё {{ $rest }} {{ cond (eq $rest 1) "курс" (cond (le $rest 4) "курса" "курсов") }}
+            </li>
+            {{- end }}
+          </ul>
+          {{- end }}
+        </div>
+      </li>
+      {{- end }}
+    </ul>
   </div>
 </section>
 {{- end }}
@@ -325,8 +375,8 @@
 <section class="sb-cta" aria-labelledby="cta-title">
   <div class="sb-inner">
     <div class="sb-cta__panel" data-reveal>
-      {{ partial "sb-art.html" (dict "kind" "flower" "class" "sb-art--cta-flower") }}
-      {{ partial "sb-art.html" (dict "kind" "cat" "class" "sb-art--cta-cat") }}
+      {{ partial "sb-art.html" (dict "kind" "lego" "class" "sb-art--cta-lego") }}
+      {{ partial "sb-art.html" (dict "kind" "roboarm" "class" "sb-art--cta-roboarm") }}
       <h2 class="sb-cta__title" id="cta-title">{{ .title }}</h2>
       <p class="sb-cta__text">{{ .text }}</p>
       <div class="sb-actions sb-actions--center">

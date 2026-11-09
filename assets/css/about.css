@@ -121,7 +121,7 @@
   width: 46px;
 }
 
-.sb-art--about-hero-flower {
+.sb-art--about-hero-watch {
   position: absolute;
   left: -36px;
   bottom: -22px;
@@ -438,7 +438,7 @@
     width: min(100%, 420px);
   }
 
-  .sb-art--about-hero-flower {
+  .sb-art--about-hero-watch {
     left: -22px;
     bottom: -18px;
     width: 96px;
@@ -548,7 +548,7 @@
     display: none;
   }
 
-  .sb-art--about-hero-flower {
+  .sb-art--about-hero-watch {
     left: auto;
     right: -18px;
     bottom: -16px;

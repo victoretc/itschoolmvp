@@ -1,5 +1,5 @@
 {{- $logo := resources.Get "images/logo_itschool.svg" -}}
-{{- $ctaText := "Бесплатный урок" -}}
+{{- $ctaText := "Пробное занятие" -}}
 <header class="header" data-header>
   <div class="header__inner">
     <a class="header__logo" href="{{ site.Home.RelPermalink }}" aria-label="АйТи Скул — на главную">
@@ -48,7 +48,7 @@
         </ul>
 
         {{- with $ctaText }}
-        <a class="header__cta" href="{{ "contacts/" | relURL }}">{{ . }}</a>
+        <button class="header__cta" type="button" data-consult-open data-consult-source="header">{{ . }}</button>
         {{- end }}
       </div>
     </nav>

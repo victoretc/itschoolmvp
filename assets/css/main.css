@@ -4997,3 +4997,123 @@ button {
     justify-content: center;
   }
 }
+
+/* ------------------------------------------------------------- lightbox */
+
+#main img {
+  cursor: zoom-in;
+}
+
+#main a img,
+#main img[data-no-lightbox] {
+  cursor: auto;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgba(18, 18, 18, 0.94);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 180ms var(--ease-out),
+    visibility 180ms var(--ease-out);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  pointer-events: none;
+}
+
+.lightbox__img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(94vw, 1400px);
+  max-height: 88vh;
+  border-radius: 12px;
+  background: var(--sand, #f6f4ef);
+  box-shadow: 0 32px 80px -32px rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+  transform: scale(0.98);
+  transition: transform 220ms var(--ease-out);
+}
+
+.lightbox__img:not([src]) {
+  visibility: hidden;
+}
+
+.lightbox.is-open .lightbox__img {
+  transform: scale(1);
+}
+
+.lightbox__close {
+  position: fixed;
+  top: clamp(12px, 2.4vw, 24px);
+  right: clamp(12px, 2.4vw, 24px);
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(251, 250, 249, 0.94);
+  color: var(--ink, #121212);
+  cursor: pointer;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.5);
+  transition:
+    background-color 150ms var(--ease),
+    transform 150ms var(--ease-out);
+}
+
+@media (hover: hover) {
+  .lightbox__close:hover {
+    background: #fff;
+    transform: scale(1.04);
+  }
+}
+
+.lightbox__close:active {
+  transform: scale(0.96);
+}
+
+.lightbox__close:focus-visible {
+  outline: 3px solid var(--sky, #64c6ff);
+  outline-offset: 3px;
+}
+
+html.has-lightbox {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox__img,
+  .lightbox__close {
+    transition: none;
+  }
+
+  .lightbox__img {
+    transform: none;
+  }
+}

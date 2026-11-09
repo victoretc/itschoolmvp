@@ -66,10 +66,10 @@
   position: absolute;
 }
 
-.sb-art--contacts-flower {
+.sb-art--contacts-bug {
   top: 6%;
   left: 2%;
-  width: 64%;
+  width: 52%;
 }
 
 .sb-art--contacts-star {
@@ -96,16 +96,16 @@
   width: 13%;
 }
 
-.sb-art--contacts-cat {
+.sb-art--contacts-roboarm {
   right: 2%;
   bottom: 2%;
-  width: 52%;
+  width: 46%;
 }
 
-.sb-art--contacts-triangle {
+.sb-art--contacts-lego {
   top: 2%;
   left: 2%;
-  width: 42%;
+  width: 38%;
 }
 
 .sb-art--contacts-lock {

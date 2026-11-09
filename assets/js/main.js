@@ -233,3 +233,290 @@
     });
   });
 })();
+
+/* ---------------------------------------------------------- consultation */
+(() => {
+  const root = document.querySelector('[data-consult]');
+  if (!root) return;
+
+  const dialog = root.querySelector('.consult__dialog');
+  const form = root.querySelector('[data-consult-form]');
+  const success = root.querySelector('[data-consult-success]');
+  const titleEl = root.querySelector('[data-consult-title]');
+  const leadEl = root.querySelector('[data-consult-lead]');
+  const submit = root.querySelector('[data-consult-submit]');
+  const formError = root.querySelector('[data-consult-form-error]');
+  const nameInput = form.elements.name;
+  const phoneInput = form.elements.phone;
+
+  const baseTitle = titleEl.textContent.trim();
+  const baseLead = leadEl.textContent.trim();
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const background = () =>
+    [document.querySelector('.header'), document.getElementById('main'), document.querySelector('.footer')].filter(Boolean);
+
+  let isOpen = false;
+  let lastFocused = null;
+  let closeTimer = 0;
+  let submitted = false;
+
+  /* ------------------------------------------------------------ scroll */
+
+  const lockScroll = () => {
+    const gap = window.innerWidth - document.documentElement.clientWidth;
+    if (gap > 0) document.documentElement.style.paddingRight = gap + 'px';
+    document.documentElement.classList.add('has-consult');
+  };
+
+  const unlockScroll = () => {
+    document.documentElement.classList.remove('has-consult');
+    document.documentElement.style.removeProperty('padding-right');
+  };
+
+  /* ------------------------------------------------------------ errors */
+
+  const setError = (name, message) => {
+    const input = form.elements[name];
+    const error = form.querySelector('[data-error-for="' + name + '"]');
+    const field = input.closest('.consult__field');
+
+    if (error) {
+      error.textContent = message || '';
+      error.hidden = !message;
+    }
+    if (field) field.classList.toggle('has-error', Boolean(message));
+    input.setAttribute('aria-invalid', message ? 'true' : 'false');
+  };
+
+  const clearErrors = () => {
+    ['name', 'phone'].forEach((name) => setError(name, ''));
+    formError.hidden = true;
+  };
+
+  /* ------------------------------------------------------------- phone */
+
+  const formatPhone = (raw) => {
+    let digits = raw.replace(/\D/g, '');
+    if (!digits) return '';
+    if (digits.startsWith('80')) digits = '375' + digits.slice(2);
+    if (!digits.startsWith('375')) digits = '375' + digits;
+    digits = digits.slice(0, 12);
+
+    let value = '+375';
+    if (digits.length > 3) value += ' (' + digits.slice(3, 5);
+    if (digits.length > 5) value += ') ' + digits.slice(5, 8);
+    if (digits.length > 8) value += '-' + digits.slice(8, 10);
+    if (digits.length > 10) value += '-' + digits.slice(10, 12);
+    return value;
+  };
+
+  phoneInput.addEventListener('input', () => {
+    phoneInput.value = formatPhone(phoneInput.value);
+  });
+
+  phoneInput.addEventListener('focus', () => {
+    if (!phoneInput.value) phoneInput.value = '+375 ';
+  });
+
+  phoneInput.addEventListener('blur', () => {
+    if (phoneInput.value.replace(/\D/g, '').length <= 3) phoneInput.value = '';
+  });
+
+  /* ---------------------------------------------------------- validate */
+
+  const validate = () => {
+    const name = nameInput.value.trim();
+    const digits = phoneInput.value.replace(/\D/g, '');
+    let firstInvalid = null;
+
+    if (name.length < 2) {
+      setError('name', 'Напишите, как к вам обращаться');
+      firstInvalid = firstInvalid || nameInput;
+    } else {
+      setError('name', '');
+    }
+
+    if (digits.length !== 12 || !digits.startsWith('375')) {
+      setError('phone', 'Введите номер в формате +375 (29) 000-00-00');
+      firstInvalid = firstInvalid || phoneInput;
+    } else {
+      setError('phone', '');
+    }
+
+    if (firstInvalid) firstInvalid.focus({ preventScroll: false });
+    return !firstInvalid;
+  };
+
+  /* ------------------------------------------------------------ states */
+
+  const showForm = () => {
+    form.hidden = false;
+    success.hidden = true;
+  };
+
+  const showSuccess = () => {
+    submitted = true;
+    form.hidden = true;
+    success.hidden = false;
+    const done = success.querySelector('.consult__done');
+    if (done) done.focus({ preventScroll: true });
+  };
+
+  const resetForm = () => {
+    form.reset();
+    phoneInput.value = '';
+    clearErrors();
+    submit.classList.remove('is-loading');
+    submit.disabled = false;
+    showForm();
+    submitted = false;
+  };
+
+  /* --------------------------------------------------------- open/close */
+
+  const open = (trigger) => {
+    if (isOpen) return;
+
+    window.clearTimeout(closeTimer);
+    isOpen = true;
+    lastFocused = document.activeElement;
+
+    if (submitted) resetForm();
+
+    const data = trigger ? trigger.dataset : {};
+    titleEl.textContent = data.consultTitle || baseTitle;
+    leadEl.textContent = data.consultLead || baseLead;
+
+    root.hidden = false;
+    root.classList.remove('is-closing');
+    void root.offsetWidth;
+
+    lockScroll();
+    background().forEach((el) => {
+      el.inert = true;
+      el.setAttribute('aria-hidden', 'true');
+    });
+
+    window.requestAnimationFrame(() => root.classList.add('is-open'));
+    dialog.focus({ preventScroll: true });
+
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'consult_open', source: data.consultSource || 'cta' });
+    }
+  };
+
+  const close = () => {
+    if (!isOpen) return;
+
+    isOpen = false;
+    root.classList.remove('is-open');
+    root.classList.add('is-closing');
+
+    if (window.location.hash === '#consult') {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
+    const finish = () => {
+      root.hidden = true;
+      root.classList.remove('is-closing');
+      unlockScroll();
+      background().forEach((el) => {
+        el.inert = false;
+        el.removeAttribute('aria-hidden');
+      });
+      if (lastFocused && lastFocused.isConnected) lastFocused.focus({ preventScroll: true });
+    };
+
+    closeTimer = window.setTimeout(finish, reduceMotion.matches ? 120 : 200);
+  };
+
+  /* ------------------------------------------------------------ events */
+
+  document.addEventListener('click', (event) => {
+    const opener = event.target.closest('[data-consult-open]');
+    if (opener) {
+      event.preventDefault();
+      open(opener);
+      return;
+    }
+
+    if (event.target.closest('[data-consult-close]')) {
+      event.preventDefault();
+      close();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!isOpen) return;
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      close();
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+
+    const focusable = [...dialog.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])')]
+      .filter((el) => el.offsetParent !== null);
+
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && (document.activeElement === first || document.activeElement === dialog)) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  nameInput.addEventListener('input', () => {
+    if (nameInput.getAttribute('aria-invalid') === 'true') setError('name', '');
+  });
+
+  phoneInput.addEventListener('input', () => {
+    if (phoneInput.getAttribute('aria-invalid') === 'true') setError('phone', '');
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    formError.hidden = true;
+
+    if (!validate()) return;
+
+    submit.classList.add('is-loading');
+    submit.disabled = true;
+
+    const endpoint = form.getAttribute('action');
+
+    try {
+      if (endpoint) {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error('Request failed');
+      } else {
+        // Static MVP: no backend yet. Replace with a real endpoint via
+        // [params] consultEndpoint in hugo.toml.
+        await new Promise((resolve) => window.setTimeout(resolve, 700));
+      }
+
+      if (window.dataLayer) window.dataLayer.push({ event: 'consult_submit' });
+      showSuccess();
+    } catch (error) {
+      formError.textContent = 'Не удалось отправить заявку. Позвоните нам: +375 (29) 871-76-12.';
+      formError.hidden = false;
+    } finally {
+      submit.classList.remove('is-loading');
+      submit.disabled = false;
+    }
+  });
+
+  if (window.location.hash === '#consult') open();
+})();

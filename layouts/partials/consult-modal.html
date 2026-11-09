@@ -1,0 +1,146 @@
+{{- /* Lead form modal. Every "Получить консультацию" CTA opens it via
+       [data-consult-open], so the flow never depends on a separate page. */ -}}
+<div class="consult" data-consult hidden>
+  <div class="consult__scrim" data-consult-close></div>
+
+  <div
+    class="consult__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="consult-title"
+    aria-describedby="consult-lead"
+    tabindex="-1">
+    <button class="consult__close" type="button" data-consult-close aria-label="Закрыть форму">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+    </button>
+
+    <div class="consult__aside">
+      <p class="consult__eyebrow"><span aria-hidden="true"></span>Бесплатная консультация</p>
+      <h2 class="consult__title" id="consult-title" data-consult-title>Поможем выбрать курс</h2>
+      <p class="consult__lead" id="consult-lead" data-consult-lead>
+        Расскажем, с чего начать, как проходят занятия и сколько они стоят.
+      </p>
+
+      <ul class="consult__points">
+        <li>
+          <span class="consult__point-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="12" height="12" focusable="false">
+              <path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          Подберём направление по возрасту и интересам
+        </li>
+        <li>
+          <span class="consult__point-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="12" height="12" focusable="false">
+              <path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          Расскажем о расписании и стоимости
+        </li>
+        <li>
+          <span class="consult__point-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="12" height="12" focusable="false">
+              <path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          Запишем на пробное занятие
+        </li>
+      </ul>
+
+      <div class="consult__art" aria-hidden="true">
+        {{ partial "sb-art.html" (dict "kind" "bolt" "class" "consult__art-bolt") }}
+        {{ partial "sb-art.html" (dict "kind" "robot" "class" "consult__art-robot") }}
+      </div>
+    </div>
+
+    <div class="consult__main">
+      <form class="consult__form" data-consult-form novalidate
+        {{- with site.Params.consultEndpoint }} action="{{ . }}" method="post"{{ end }}>
+        <div class="consult__field">
+          <label class="consult__label" for="consult-name">
+            Как вас зовут<span class="consult__req" aria-hidden="true">*</span>
+          </label>
+          <div class="consult__control">
+            <span class="consult__input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                <circle cx="12" cy="7.75" r="3.75" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                <path d="M4.75 20.25c0-3.6 3.2-5.75 7.25-5.75s7.25 2.15 7.25 5.75" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <input
+              class="consult__input"
+              id="consult-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Анна"
+              required
+              aria-describedby="consult-name-error">
+          </div>
+          <p class="consult__error" id="consult-name-error" data-error-for="name" hidden></p>
+        </div>
+
+        <div class="consult__field">
+          <label class="consult__label" for="consult-phone">
+            Телефон<span class="consult__req" aria-hidden="true">*</span>
+          </label>
+          <div class="consult__control">
+            <span class="consult__input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <input
+              class="consult__input"
+              id="consult-phone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="+375 (29) 000-00-00"
+              required
+              aria-describedby="consult-phone-error">
+          </div>
+          <p class="consult__error" id="consult-phone-error" data-error-for="phone" hidden></p>
+        </div>
+
+        <button class="consult__submit" type="submit" data-consult-submit>
+          <span class="consult__submit-label">Записаться на консультацию</span>
+          <span class="consult__submit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+              <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <span class="consult__spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="consult__alt">
+          <span>Или позвоните</span>
+          <a href="{{ site.Params.phoneHref | safeURL }}">{{ site.Params.phone }}</a>
+        </p>
+
+        <p class="consult__consent">
+          Отправляя форму, вы соглашаетесь на обработку персональных данных.
+        </p>
+
+        <p class="consult__error consult__error--form" data-consult-form-error hidden></p>
+      </form>
+
+      <div class="consult__success" data-consult-success role="status" hidden>
+        <span class="consult__check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" focusable="false">
+            <path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <h3 class="consult__success-title">Заявка отправлена</h3>
+        <p class="consult__success-text">
+          Спасибо! Свяжемся с вами в рабочее время и поможем выбрать курс.
+        </p>
+        <button class="consult__done" type="button" data-consult-close>Хорошо</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -97,7 +97,7 @@
   width: 46px;
 }
 
-.sb-art--vac-hero-flower {
+.sb-art--vac-hero-lego {
   position: absolute;
   left: -36px;
   bottom: -28px;
@@ -210,17 +210,17 @@
   transform: rotate(-1deg);
 }
 
-.sb-art--vac-cta-flower {
+.sb-art--vac-cta-laptop {
   position: absolute;
-  left: -14px;
-  bottom: -26px;
+  left: clamp(8px, 1.5vw, 24px);
+  bottom: -18px;
   width: 150px;
 }
 
-.sb-art--vac-cta-cat {
+.sb-art--vac-cta-joystick {
   position: absolute;
-  right: -16px;
-  bottom: -26px;
+  right: clamp(10px, 2.5vw, 36px);
+  bottom: -14px;
   width: 150px;
 }
 
@@ -245,7 +245,7 @@
     width: min(100%, 420px);
   }
 
-  .sb-art--vac-hero-flower,
+  .sb-art--vac-hero-lego,
   .sb-art--vac-hero-coin {
     display: none;
   }
@@ -281,8 +281,8 @@
     font-size: 20px;
   }
 
-  .sb-art--vac-cta-flower,
-  .sb-art--vac-cta-cat {
+  .sb-art--vac-cta-laptop,
+  .sb-art--vac-cta-joystick {
     display: none;
   }
 }
