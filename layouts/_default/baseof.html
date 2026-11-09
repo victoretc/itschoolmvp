@@ -54,40 +54,6 @@
   {{- end -}}
   {{- $bundle := $styles | resources.Concat (printf "css/bundle-%s.css" $bundleName) | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}">
-  <style>
-    .site-loader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: grid;
-      place-items: center;
-      background: #000;
-      transition: opacity 400ms ease, visibility 400ms ease;
-    }
-    .site-loader.is-hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .site-loader__spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(255, 255, 255, 0.22);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: site-loader-spin 800ms linear infinite;
-    }
-    html.is-loading,
-    html.is-loading body {
-      overflow: hidden;
-    }
-    @keyframes site-loader-spin {
-      to { transform: rotate(360deg); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .site-loader__spinner { animation-duration: 1600ms; }
-    }
-  </style>
-  <noscript><style>.site-loader { display: none; }</style></noscript>
   <script>
     document.documentElement.classList.add('js');
     window.setTimeout(function () {
@@ -99,36 +65,6 @@
   </script>
 </head>
 <body id="top" class="{{ if $storybook }}home{{ end }}{{ if eq .Section "courses" }} courses-page{{ end }}{{ if $vacations }} vacations-page{{ end }}{{ if $cookies }} cookies-page{{ end }}"{{ with site.Params.yandexMetrikaId }} data-metrika-id="{{ . }}"{{ end }} data-cookie-settings-url="{{ "cookies/" | relURL }}#settings">
-  <div class="site-loader" data-site-loader role="status" aria-label="Загрузка страницы">
-    <span class="site-loader__spinner" aria-hidden="true"></span>
-  </div>
-  <script>
-    (function () {
-      var loader = document.querySelector('[data-site-loader]');
-      if (!loader) return;
-      document.documentElement.classList.add('is-loading');
-
-      var startedAt = Date.now();
-      var hidden = false;
-      function hideLoader() {
-        if (hidden) return;
-        hidden = true;
-        var wait = Math.max(0, 300 - (Date.now() - startedAt));
-        window.setTimeout(function () {
-          loader.classList.add('is-hidden');
-          document.documentElement.classList.remove('is-loading');
-          window.setTimeout(function () { loader.remove(); }, 450);
-        }, wait);
-      }
-
-      var pageLoad = document.readyState === 'loading'
-        ? new Promise(function (resolve) { document.addEventListener('DOMContentLoaded', resolve, { once: true }); })
-        : Promise.resolve();
-
-      pageLoad.then(hideLoader, hideLoader);
-      window.setTimeout(hideLoader, 2000);
-    })();
-  </script>
   <a class="skip" href="#main">Перейти к содержимому</a>
   {{ partial "header.html" . }}
   <main id="main">
@@ -138,7 +74,7 @@
   {{ partial "cookie-consent.html" . }}
   {{ partial "consult-modal.html" . }}
   {{ partial "lightbox.html" . }}
-  {{ $js := slice (resources.Get "js/cookie.js") (resources.Get "js/main.js") (resources.Get "js/lightbox.js") (resources.Get "js/web-shot.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
+  {{ $js := slice (resources.Get "js/cookie.js") (resources.Get "js/main.js") (resources.Get "js/lightbox.js") (resources.Get "js/web-shot.js") (resources.Get "js/teachers.js") (resources.Get "js/reviews.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 </html>

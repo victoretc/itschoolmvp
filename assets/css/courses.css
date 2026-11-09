@@ -293,95 +293,6 @@
   }
 }
 
-/* -------------------------------------------------------------- help */
-
-.sb-courses-help {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 28px 48px;
-  overflow: hidden;
-  margin-top: clamp(28px, 4vw, 44px);
-  padding: clamp(32px, 4vw, 44px) clamp(24px, 4vw, 48px);
-  border-radius: 28px;
-  background: var(--sb-yellow);
-  color: var(--sb-ink);
-  box-shadow: inset 0 0 0 1px rgba(180, 125, 10, 0.16);
-}
-
-.sb-courses-help__body {
-  position: relative;
-  z-index: 1;
-  max-width: 58ch;
-}
-
-.sb-courses-help__eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--sb-head);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.sb-courses-help__eyebrow::before {
-  content: "";
-  flex: none;
-  width: 20px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--sb-ink);
-}
-
-.sb-courses-help__title {
-  max-width: 24ch;
-  margin-top: 14px;
-  font-family: var(--sb-font-display);
-  font-size: clamp(1.5rem, 1.15rem + 1.2vw, 2.1rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  text-wrap: balance;
-}
-
-.sb-courses-help__text {
-  max-width: 52ch;
-  margin-top: 10px;
-  color: var(--sb-head);
-  font-size: 15px;
-  line-height: 1.55;
-  letter-spacing: -0.01em;
-}
-
-.sb-courses-help__contact {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  justify-items: end;
-}
-
-.sb-courses-help .sb-phone__icon {
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.sb-courses-help .sb-phone__note {
-  color: var(--sb-head);
-}
-
-.sb-art--courses-help-blob {
-  display: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .sb-courses-help .sb-phone:hover .sb-phone__icon {
-    background: #fff;
-  }
-}
-
 /* -------------------------------------------------------- breakpoints */
 
 @media (max-width: 980px) {
@@ -443,16 +354,6 @@
   .sb-stats--three dd {
     font-size: 11.5px;
   }
-
-  .sb-courses-help {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-  }
-
-  .sb-courses-help__contact {
-    justify-items: start;
-    width: 100%;
-  }
 }
 
 @media (max-width: 620px) {
@@ -473,11 +374,6 @@
 
   .sb-courses-head__note {
     font-size: 14.5px;
-  }
-
-  .sb-courses-help {
-    padding: 26px 22px;
-    border-radius: 20px;
   }
 }
 

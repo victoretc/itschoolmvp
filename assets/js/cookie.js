@@ -108,7 +108,6 @@
       '</span>' +
       '<p class="cookie-embed__text">Здесь загружается внешний виджет Яндекса. Он использует функциональные файлы cookie.</p>' +
       '<div class="cookie-embed__actions">' +
-        '<button class="cookie-embed__btn" type="button" data-cookie-embed-load>Загрузить</button>' +
         '<a class="cookie-embed__link" href="' + settingsUrl + '">Настроить</a>' +
       '</div>';
 
@@ -247,20 +246,12 @@
       setStatus('Оставлены только необходимые файлы cookie. Изменить настройки можно здесь в любой момент.');
       return;
     }
-
-    if (event.target.closest('[data-cookie-embed-load]')) {
-      write({
-        necessary: true,
-        analytics: Boolean(current && current.analytics),
-        functional: true,
-      });
-      return;
-    }
   });
 
   if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+    form.addEventListener('change', (event) => {
+      const input = event.target.closest('[data-cookie-category]');
+      if (!input || input.disabled) return;
 
       const analyticsInput = form.querySelector('[data-cookie-category="analytics"]');
       const functionalInput = form.querySelector('[data-cookie-category="functional"]');

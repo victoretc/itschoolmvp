@@ -112,14 +112,49 @@
     </div>
 
     {{- with .Params.help }}
-    <aside class="sb-courses-help">
-      <div class="sb-courses-help__body">
-        <p class="sb-courses-help__eyebrow">Нужна помощь?</p>
-        <h3 class="sb-courses-help__title">{{ .title }}</h3>
-        <p class="sb-courses-help__text">{{ .text }}</p>
+    <aside class="sb-help-hero" aria-labelledby="courses-help-title">
+      <div class="sb-help-hero__art sb-help-hero__art--left" aria-hidden="true">
+        <figure class="sb-help-hero__photo sb-help-hero__photo--main">
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-02.jpg" "fill" "480x600 Center" "alt" "" "sizes" "230px" "widths" (slice 240 360 480)) }}
+          {{ partial "sb-art.html" (dict "kind" "robot" "class" "sb-help-hero__sticker--robot") }}
+        </figure>
       </div>
-      <div class="sb-courses-help__contact">
-        {{ partial "sb-phone.html" (dict "note" "Пн–Сб, 9:00–20:00") }}
+
+      <div class="sb-help-hero__copy">
+        <p class="sb-help-hero__eyebrow">Нужна помощь?</p>
+        <h2 class="sb-help-hero__title" id="courses-help-title">{{ .title }}</h2>
+
+        <div class="sb-help-hero__mobile-photos">
+          <figure class="sb-help-hero__mobile-photo">
+            {{ partial "responsive-img.html" (dict "src" "images/about/gallery-02.jpg" "fill" "360x440 Center" "alt" "Педагог помогает ученику на занятии" "sizes" "40vw" "widths" (slice 240 360)) }}
+            {{ partial "sb-art.html" (dict "kind" "robot" "class" "sb-help-hero__mobile-sticker" ) }}
+          </figure>
+          <figure class="sb-help-hero__mobile-photo">
+            {{ partial "responsive-img.html" (dict "src" "images/about/gallery-05.jpg" "fill" "360x440 Center" "alt" "Рабочее место с ноутбуком и собранной моделью" "sizes" "40vw" "widths" (slice 240 360)) }}
+          </figure>
+        </div>
+
+        <p class="sb-help-hero__text">{{ .text }}</p>
+
+        <div class="sb-actions sb-actions--center sb-help-hero__actions">
+          {{ partial "sb-cta-button.html" (dict "label" "Получить консультацию" "source" "courses-help") }}
+          <a class="sb-btn sb-btn--sand sb-btn--phone" href="{{ site.Params.phoneHref | safeURL }}">
+            {{ partial "icon.html" "phone" }}
+            <span>{{ site.Params.phone }}</span>
+          </a>
+        </div>
+        <p class="sb-help-hero__hours">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.2 2"></path></svg>
+          <span>Пн–Сб, 9:00–20:00</span>
+        </p>
+      </div>
+
+      <div class="sb-help-hero__art sb-help-hero__art--right" aria-hidden="true">
+        <figure class="sb-help-hero__photo sb-help-hero__photo--small">
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-05.jpg" "fill" "480x600 Center" "alt" "" "sizes" "200px" "widths" (slice 240 360 480)) }}
+          {{ partial "sb-art.html" (dict "kind" "bolt" "class" "sb-help-hero__sticker--bolt") }}
+        </figure>
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-help-hero__sticker--star") }}
       </div>
     </aside>
     {{- end }}

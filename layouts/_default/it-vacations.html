@@ -51,16 +51,52 @@
 </section>
 
 {{- with .Params.cta }}
-<section class="sb-section sb-vac-cta" aria-labelledby="vacations-cta-title">
+<section class="sb-section sb-vac-help" aria-labelledby="vacations-cta-title">
   <div class="sb-inner">
-    <div class="sb-cta__panel sb-vac-cta__panel" data-reveal>
-      {{ partial "sb-art.html" (dict "kind" "laptop" "class" "sb-art--vac-cta-laptop") }}
-      {{ partial "sb-art.html" (dict "kind" "joystick" "class" "sb-art--vac-cta-joystick") }}
-      <h2 class="sb-cta__title sb-vac-cta__title" id="vacations-cta-title">
-        {{ .title }} <span class="sb-vac-cta__accent">{{ .accent }}</span>
-      </h2>
-      <p class="sb-cta__text">{{ .text }}</p>
-      {{ partial "sb-phone.html" (dict "class" "sb-vac-phone" "note" .phone_note) }}
+    <div class="sb-help-hero sb-help-hero--standalone" data-reveal>
+      <div class="sb-help-hero__art sb-help-hero__art--left" aria-hidden="true">
+        <figure class="sb-help-hero__photo sb-help-hero__photo--main">
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-04.jpg" "fill" "480x600 Center" "alt" "" "sizes" "230px" "widths" (slice 240 360 480)) }}
+          {{ partial "sb-art.html" (dict "kind" "robot" "class" "sb-help-hero__sticker--robot") }}
+        </figure>
+      </div>
+
+      <div class="sb-help-hero__copy">
+        <p class="sb-help-hero__eyebrow">IT Каникулы</p>
+        <h2 class="sb-help-hero__title" id="vacations-cta-title">{{ .title }} <span class="sb-vac-cta__accent">{{ .accent }}</span></h2>
+
+        <div class="sb-help-hero__mobile-photos">
+          <figure class="sb-help-hero__mobile-photo">
+            {{ partial "responsive-img.html" (dict "src" "images/about/gallery-04.jpg" "fill" "360x440 Center" "alt" "Дети осваивают 3D-ручку на занятиях IT Каникул" "sizes" "40vw" "widths" (slice 240 360)) }}
+            {{ partial "sb-art.html" (dict "kind" "robot" "class" "sb-help-hero__mobile-sticker") }}
+          </figure>
+          <figure class="sb-help-hero__mobile-photo">
+            {{ partial "responsive-img.html" (dict "src" "images/about/gallery-06.jpg" "fill" "360x440 Center" "alt" "Ученик собирает модель на занятии" "sizes" "40vw" "widths" (slice 240 360)) }}
+          </figure>
+        </div>
+
+        <p class="sb-help-hero__text">{{ .text }}</p>
+
+        <div class="sb-actions sb-actions--center sb-help-hero__actions">
+          {{ partial "sb-cta-button.html" (dict "label" "Получить консультацию" "source" "vacations") }}
+          <a class="sb-btn sb-btn--sand sb-btn--phone" href="{{ site.Params.phoneHref | safeURL }}">
+            {{ partial "icon.html" "phone" }}
+            <span>{{ site.Params.phone }}</span>
+          </a>
+        </div>
+        <p class="sb-help-hero__hours">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.2 2"></path></svg>
+          <span>{{ .phone_note }}</span>
+        </p>
+      </div>
+
+      <div class="sb-help-hero__art sb-help-hero__art--right" aria-hidden="true">
+        <figure class="sb-help-hero__photo sb-help-hero__photo--small">
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-06.jpg" "fill" "480x600 Center" "alt" "" "sizes" "200px" "widths" (slice 240 360 480)) }}
+          {{ partial "sb-art.html" (dict "kind" "laptop" "class" "sb-help-hero__sticker--laptop") }}
+        </figure>
+        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-help-hero__sticker--star") }}
+      </div>
     </div>
   </div>
 </section>

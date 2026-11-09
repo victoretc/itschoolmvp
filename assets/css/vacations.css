@@ -193,12 +193,12 @@
 
 /* ---------------------------------------------------------------- cta */
 
-.sb-vac-cta__panel {
-  padding-bottom: clamp(44px, 6vw, 96px);
-}
-
-.sb-vac-cta__title {
+/* The vacations headline carries a long highlighted tail, so it stays a
+   notch smaller than the courses help hero to keep the accent on one line. */
+.sb-vac-help .sb-help-hero__title {
   max-width: 24ch;
+  margin: 18px auto 0;
+  font-size: clamp(1.8rem, 1.05rem + 2.3vw, 2.75rem);
 }
 
 .sb-vac-cta__accent {
@@ -208,28 +208,6 @@
   background: var(--sb-yellow);
   color: var(--sb-ink);
   transform: rotate(-1deg);
-}
-
-.sb-art--vac-cta-laptop {
-  position: absolute;
-  left: clamp(8px, 1.5vw, 24px);
-  bottom: -18px;
-  width: 150px;
-}
-
-.sb-art--vac-cta-joystick {
-  position: absolute;
-  right: clamp(10px, 2.5vw, 36px);
-  bottom: -14px;
-  width: 150px;
-}
-
-.sb-vac-phone {
-  margin-top: 32px;
-}
-
-.sb-vac-phone .sb-phone__icon {
-  background: #fff;
 }
 
 /* -------------------------------------------------------- breakpoints */
@@ -280,16 +258,10 @@
   .sb-vac-card__title {
     font-size: 20px;
   }
-
-  .sb-art--vac-cta-laptop,
-  .sb-art--vac-cta-joystick {
-    display: none;
-  }
 }
 
 @media (max-width: 560px) {
-  .sb-vac-cta__panel {
-    padding-left: 22px;
-    padding-right: 22px;
+  .sb-vac-help .sb-help-hero__mobile-photos {
+    max-width: 260px;
   }
 }

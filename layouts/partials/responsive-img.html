@@ -19,5 +19,5 @@
   {{- end -}}
   {{- $last := index $widths (sub (len $widths) 1) -}}
   {{- $fallback := $img.Resize (printf "%dx webp q80" $last) -}}
-  <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ $fallback.RelPermalink }}" data-full="{{ $full.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ with $priority }} fetchpriority="{{ . }}"{{ end }}>
+  <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ $fallback.RelPermalink }}" data-full="{{ $full.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ with $priority }} fetchpriority="{{ . }}"{{ end }}{{ if $.noLightbox }} data-no-lightbox{{ end }}>
 {{- end -}}

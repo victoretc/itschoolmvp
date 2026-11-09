@@ -113,22 +113,22 @@
         {{- end }}
       </ol>
     </div>
-
-    <blockquote class="sb-approach__goal" data-reveal>
-      <p class="sb-approach__goal-text">
-        {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-approach__goal-star") }}
-        {{- with .statement_label }}<span class="sb-approach__goal-label">{{ . }}</span>&nbsp;— {{ end -}}
-        {{ replace .statement "со школьной скамьи." "<span class=\"sb-approach__goal-hl\">со школьной скамьи.</span>" | safeHTML }}
-      </p>
-    </blockquote>
   </div>
+
+  <blockquote class="sb-approach__goal" data-reveal>
+    {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-approach__goal-star") }}
+    <p class="sb-approach__goal-text">
+      {{- with .statement_label }}<span class="sb-approach__goal-label">{{ . }}</span>&nbsp;— {{ end -}}
+      {{ replace .statement "со школьной скамьи." "<span class=\"sb-approach__goal-hl\">со школьной скамьи.</span>" | safeHTML }}
+    </p>
+  </blockquote>
 </section>
 {{- end }}
 
 {{/* ------------------------------------------------------------ teachers */}}
 {{- with .Params.teachers }}
 {{- $teachers := site.Data.teachers }}
-<section class="sb-section sb-teachers" aria-labelledby="teachers-title">
+<section class="sb-section sb-teachers" aria-labelledby="teachers-title" data-teachers>
   <div class="sb-inner">
     <header class="sb-head sb-teachers__head" data-reveal>
       <div class="sb-teachers__intro">
@@ -141,36 +141,68 @@
       </div>
     </header>
 
-    <ul class="sb-teachers__grid" data-reveal-group data-lightbox-group>
-      {{- range $i, $teacher := $teachers }}
-      <li class="sb-teacher" data-reveal>
-        <figure class="sb-teacher__media">
-          {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "640x800 Center" "alt" (printf "%s — %s" $teacher.name (lower $teacher.role)) "sizes" "(max-width: 480px) 80vw, (max-width: 720px) 42vw, (max-width: 900px) 30vw, 270px" "widths" (slice 240 360 480 640)) }}
-          <span class="sb-teacher__index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-        </figure>
-        <div class="sb-teacher__body">
-          <p class="sb-teacher__role">
-            <span class="sb-teacher__dot" aria-hidden="true"></span>
-            {{ $teacher.role }}
-          </p>
-          <h3 class="sb-teacher__name">{{ $teacher.name }}</h3>
-          {{- $subjects := $teacher.subjects }}
-          {{- with $subjects }}
-          <ul class="sb-teacher__subjects">
-            {{- range first 2 . }}
-            <li>{{ . }}</li>
-            {{- end }}
-            {{- $rest := sub (len $subjects) 2 }}
-            {{- if gt $rest 0 }}
-            {{- $word := cond (eq $rest 1) "курс" (cond (le $rest 4) "курса" "курсов") }}
-            <li class="sb-teacher__more" aria-label="Ещё {{ $rest }} {{ $word }}">+{{ $rest }}</li>
-            {{- end }}
-          </ul>
-          {{- end }}
+    <div class="sb-teachers__stage" data-reveal>
+      <div class="sb-teachers__panels">
+        {{- range $i, $teacher := $teachers }}
+        <article class="sb-teacher-panel{{ if eq $i 0 }} is-active{{ end }}" id="teacher-panel-{{ $i }}" role="tabpanel" aria-labelledby="teacher-tab-{{ $i }}" tabindex="0" data-teacher-panel>
+          <figure class="sb-teacher-panel__media">
+            {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "800x1000 Center" "alt" (printf "%s — %s" $teacher.name (lower $teacher.role)) "sizes" "(max-width: 600px) 90vw, (max-width: 900px) 200px, 300px" "widths" (slice 320 480 640 800)) }}
+            <span class="sb-teacher-panel__badge" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-teacher-panel__star") }}
+          </figure>
+
+          <div class="sb-teacher-panel__body">
+            <span class="sb-teacher-panel__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            <p class="sb-teacher-panel__role">
+              <span class="sb-teacher-panel__dot" aria-hidden="true"></span>
+              {{ $teacher.role }}
+            </p>
+            <h3 class="sb-teacher-panel__name">{{ $teacher.name }}</h3>
+            <p class="sb-teacher-panel__label">Ведёт занятия</p>
+            <ul class="sb-teacher-panel__subjects">
+              {{- range $teacher.subjects }}
+              <li>{{ . }}</li>
+              {{- end }}
+            </ul>
+          </div>
+        </article>
+        {{- end }}
+      </div>
+
+      <div class="sb-teachers__rail-head">
+        <p class="sb-teachers__rail-hint">Выберите педагога</p>
+        <div class="sb-teachers__nav">
+          <button class="sb-teachers__nav-btn" type="button" data-teachers-prev aria-label="Предыдущие преподаватели">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="sb-teachers__nav-btn" type="button" data-teachers-next aria-label="Следующие преподаватели">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
-      </li>
-      {{- end }}
-    </ul>
+      </div>
+
+      <ul class="sb-teachers__rail" role="tablist" aria-label="Преподаватели" data-teachers-rail>
+        {{- range $i, $teacher := $teachers }}
+        <li role="presentation">
+          <button class="sb-teacher" type="button" role="tab" id="teacher-tab-{{ $i }}" aria-controls="teacher-panel-{{ $i }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" tabindex="{{ if eq $i 0 }}0{{ else }}-1{{ end }}" data-teacher-tab>
+            <span class="sb-teacher__media">
+              {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "480x600 Center" "alt" "" "sizes" "(max-width: 720px) 37vw, 184px" "widths" (slice 160 240 320 400) "noLightbox" true) }}
+              <span class="sb-teacher__index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            </span>
+            <span class="sb-teacher__body">
+              <span class="sb-teacher__name">{{ delimit (first 2 (split $teacher.name " ")) " " }}</span>
+              <span class="sb-teacher__role">{{ $teacher.role }}</span>
+            </span>
+          </button>
+        </li>
+        {{- end }}
+      </ul>
+
+      <div class="sb-teachers__foot">
+        <p class="sb-teachers__foot-text">Расскажем, как проходят занятия, и подберём группу под возраст и интересы ребёнка.</p>
+        {{ partial "sb-cta-button.html" (dict "label" "Записаться на занятие" "source" "teachers") }}
+      </div>
+    </div>
   </div>
 </section>
 {{- end }}
@@ -247,13 +279,6 @@
           </button>
         </div>
       </div>
-
-      <aside class="sb-help" data-reveal>
-        <p class="sb-help__eyebrow">Нужна помощь?</p>
-        <h3 class="sb-help__title">{{ .help.title }}</h3>
-        <p class="sb-help__text">{{ .help.text }}</p>
-        {{ partial "sb-phone.html" (dict "note" "Пн–Сб, 9:00–20:00") }}
-      </aside>
     </div>
   </div>
 </section>
@@ -350,15 +375,33 @@
     </header>
 
     {{- with .screenshots }}
-    <ul class="sb-reviews__rail" data-reveal-group data-lightbox-group>
-      {{- range . }}
-      <li class="sb-reviews__item" data-reveal>
-        <figure class="sb-reviews__shot">
-          {{ partial "responsive-img.html" (dict "src" (printf "images/reviews/%s" .image) "alt" .alt "sizes" "(max-width: 63.99rem) 68vw, 208px" "widths" (slice 320 460 640)) }}
-        </figure>
-      </li>
-      {{- end }}
-    </ul>
+    <div class="sb-reviews__carousel" data-reviews-carousel role="region" aria-roledescription="карусель" aria-label="Отзывы родителей">
+      <div class="sb-reviews__stage" data-reviews-stage>
+        <ul class="sb-reviews__rail" data-reviews-rail data-lightbox-group>
+          {{- range . }}
+          <li class="sb-reviews__item">
+            <figure class="sb-reviews__shot">
+              {{ partial "responsive-img.html" (dict "src" (printf "images/reviews/%s" .image) "alt" .alt "sizes" "(max-width: 720px) 60vw, 260px" "widths" (slice 320 460 640)) }}
+            </figure>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+
+      <div class="sb-reviews__controls">
+        <button class="sb-reviews__nav" type="button" data-reviews-prev aria-label="Предыдущий отзыв">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 5 8 12l7 7"></path></svg>
+        </button>
+        <p class="sb-reviews__counter" aria-hidden="true">
+          <span data-reviews-current>01</span>
+          <span class="sb-reviews__counter-sep">/</span>
+          <span>{{ printf "%02d" (len .) }}</span>
+        </p>
+        <button class="sb-reviews__nav" type="button" data-reviews-next aria-label="Следующий отзыв">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg>
+        </button>
+      </div>
+    </div>
     {{- end }}
 
     {{- with .more }}
