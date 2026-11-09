@@ -1,0 +1,30 @@
+{{- /* Cookie consent notice. Shown once per year until the visitor makes a
+       choice. Necessary cookies work without it; analytics and external
+       embeds stay off until consent is given. */ -}}
+<div
+  class="cookie-consent"
+  data-cookie-consent
+  role="dialog"
+  aria-labelledby="cookie-consent-title"
+  aria-describedby="cookie-consent-text"
+  hidden>
+  <div class="cookie-consent__card">
+    <span class="cookie-consent__icon" aria-hidden="true">
+      {{ partial "icon.html" "cookie" }}
+    </span>
+
+    <div class="cookie-consent__body">
+      <p class="cookie-consent__eyebrow">Файлы cookie</p>
+      <h2 class="cookie-consent__title" id="cookie-consent-title">Позаботимся о вашей приватности</h2>
+      <p class="cookie-consent__text" id="cookie-consent-text">
+        Необходимые файлы cookie обеспечивают работу сайта. Аналитические и функциональные подключаем только с вашего согласия — отказаться можно без потери доступа. Подробнее — в <a href="{{ "cookies/" | relURL }}">политике обработки файлов cookie</a>.
+      </p>
+    </div>
+
+    <div class="cookie-consent__actions">
+      <button class="cookie-consent__btn" type="button" data-cookie-accept>Принять все</button>
+      <button class="cookie-consent__btn" type="button" data-cookie-reject>Только необходимые</button>
+      <a class="cookie-consent__more" href="{{ "cookies/" | relURL }}#settings">Настроить</a>
+    </div>
+  </div>
+</div>

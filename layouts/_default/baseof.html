@@ -15,6 +15,7 @@
   {{- $about := eq .Type "about" -}}
   {{- $contacts := eq .Type "contacts" -}}
   {{- $blog := eq .Section "blog" -}}
+  {{- $cookies := eq .Type "cookies" -}}
   {{- $storybook := or .IsHome (eq .Section "courses") $vacations $about $contacts $blog -}}
   {{- /* All webfonts are self-hosted; preload the faces used above the fold. */}}
   {{- $primaryFont := cond $storybook "inter" "onest" -}}
@@ -25,7 +26,7 @@
   <link rel="preload" as="font" type="font/woff2" href="{{ "fonts/unbounded-400-cyrillic.woff2" | relURL }}" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="{{ "fonts/unbounded-400-latin.woff2" | relURL }}" crossorigin>
   {{- end }}
-  {{- $styles := slice (resources.Get "css/main.css") (resources.Get "css/consult.css") -}}
+  {{- $styles := slice (resources.Get "css/main.css") (resources.Get "css/consult.css") (resources.Get "css/cookie.css") -}}
   {{- $bundleName := "base" -}}
   {{- if $storybook -}}
     {{- $styles = $styles | append (resources.Get "css/home.css") -}}
@@ -97,7 +98,7 @@
     }, 2500);
   </script>
 </head>
-<body id="top" class="{{ if $storybook }}home{{ end }}{{ if eq .Section "courses" }} courses-page{{ end }}{{ if $vacations }} vacations-page{{ end }}">
+<body id="top" class="{{ if $storybook }}home{{ end }}{{ if eq .Section "courses" }} courses-page{{ end }}{{ if $vacations }} vacations-page{{ end }}{{ if $cookies }} cookies-page{{ end }}"{{ with site.Params.yandexMetrikaId }} data-metrika-id="{{ . }}"{{ end }} data-cookie-settings-url="{{ "cookies/" | relURL }}#settings">
   <div class="site-loader" data-site-loader role="status" aria-label="Загрузка страницы">
     <span class="site-loader__spinner" aria-hidden="true"></span>
   </div>
@@ -134,9 +135,10 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  {{ partial "cookie-consent.html" . }}
   {{ partial "consult-modal.html" . }}
   {{ partial "lightbox.html" . }}
-  {{ $js := slice (resources.Get "js/main.js") (resources.Get "js/lightbox.js") (resources.Get "js/web-shot.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
+  {{ $js := slice (resources.Get "js/cookie.js") (resources.Get "js/main.js") (resources.Get "js/lightbox.js") (resources.Get "js/web-shot.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 </html>

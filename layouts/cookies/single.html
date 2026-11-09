@@ -1,0 +1,110 @@
+{{ define "main" }}
+<section class="cookie-page" aria-labelledby="cookie-page-title">
+  <div class="cookie-page__inner">
+    <header class="cookie-page__hero">
+      <p class="cookie-page__eyebrow">Правовая информация</p>
+      <h1 class="cookie-page__title" id="cookie-page-title">Файлы cookie</h1>
+      <p class="cookie-page__lead">
+        Здесь можно выбрать, какие файлы cookie использует сайт, и прочитать
+        политику их обработки. Настройки можно изменить в любой момент.
+      </p>
+      <p class="cookie-page__meta">
+        <span>Закон Республики Беларусь № 99-З «О защите персональных данных»</span>
+        {{- with .Params.updated }}<span>Редакция от {{ . }}</span>{{ end }}
+      </p>
+    </header>
+
+    <section class="cookie-panel" id="settings" aria-labelledby="cookie-settings-title">
+      <p class="cookie-panel__kicker">Настройки</p>
+      <h2 class="cookie-panel__title" id="cookie-settings-title">Какие файлы cookie можно использовать</h2>
+      <p class="cookie-panel__lead">
+        Необходимые файлы cookie обеспечивают корректную работу сайта и включены
+        всегда. Аналитические и функциональные подключаются только с вашего
+        согласия — его можно отозвать здесь же.
+      </p>
+
+      <form class="cookie-form" data-cookie-settings novalidate>
+        <ul class="cookie-form__list">
+          <li class="cookie-form__item">
+            <div class="cookie-form__info">
+              <div class="cookie-form__row">
+                <h3 class="cookie-form__name">Необходимые</h3>
+                <span class="cookie-form__badge">Всегда включены</span>
+              </div>
+              <p class="cookie-form__desc">
+                Хранят выбор настроек cookie, обеспечивают безопасность и базовые
+                функции сайта. Без них сайт не сможет работать корректно, поэтому
+                согласие для этой категории не требуется.
+              </p>
+            </div>
+            <label class="cookie-switch cookie-switch--locked">
+              <input type="checkbox" checked disabled data-cookie-category="necessary" aria-label="Необходимые файлы cookie включены всегда">
+              <span class="cookie-switch__track" aria-hidden="true"><span class="cookie-switch__thumb"></span></span>
+            </label>
+          </li>
+
+          <li class="cookie-form__item">
+            <div class="cookie-form__info">
+              <div class="cookie-form__row">
+                <h3 class="cookie-form__name">Аналитические</h3>
+              </div>
+              <p class="cookie-form__desc">
+                Помогают понять, как посетители пользуются сайтом: какие страницы
+                открывают, сколько времени проводят. Данные обрабатываются в
+                обобщённом виде с помощью Яндекс.Метрики. Подключаются только
+                после вашего согласия.
+              </p>
+            </div>
+            <label class="cookie-switch">
+              <input type="checkbox" data-cookie-category="analytics" aria-label="Аналитические файлы cookie">
+              <span class="cookie-switch__track" aria-hidden="true"><span class="cookie-switch__thumb"></span></span>
+            </label>
+          </li>
+
+          <li class="cookie-form__item">
+            <div class="cookie-form__info">
+              <div class="cookie-form__row">
+                <h3 class="cookie-form__name">Функциональные</h3>
+              </div>
+              <p class="cookie-form__desc">
+                Нужны для внешних виджетов — карты и отзывов Яндекс.Карт. Пока
+                согласия нет, вместо них показывается заглушка, а данные в
+                сторонние сервисы не передаются. Подключаются только после
+                вашего согласия.
+              </p>
+            </div>
+            <label class="cookie-switch">
+              <input type="checkbox" data-cookie-category="functional" aria-label="Функциональные файлы cookie">
+              <span class="cookie-switch__track" aria-hidden="true"><span class="cookie-switch__thumb"></span></span>
+            </label>
+          </li>
+        </ul>
+
+        <p class="cookie-form__note">
+          Отказ от аналитических и функциональных файлов cookie не ограничивает
+          доступ к сайту. Отозвать согласие можно в любой момент на этой странице
+          или письмом на <a href="mailto:info@it-school.by">info@it-school.by</a>.
+        </p>
+
+        <div class="cookie-form__actions">
+          <button class="cookie-btn cookie-btn--primary" type="submit">Сохранить настройки</button>
+          <button class="cookie-btn" type="button" data-cookie-accept-all>Принять все</button>
+          <button class="cookie-btn" type="button" data-cookie-reject-all>Только необходимые</button>
+        </div>
+
+        <p class="cookie-form__status" data-cookie-status role="status" aria-live="polite"></p>
+        <noscript>
+          <p class="cookie-form__note">
+            Для изменения настроек включите JavaScript в браузере. Без него
+            используются только необходимые файлы cookie.
+          </p>
+        </noscript>
+      </form>
+    </section>
+
+    <article class="cookie-policy" id="policy">
+      {{ .Content }}
+    </article>
+  </div>
+</section>
+{{ end }}

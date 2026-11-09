@@ -2338,6 +2338,39 @@
   }
 }
 
+.home .footer__legal-name {
+  color: var(--sb-ink);
+  font-size: 14px;
+}
+
+.home .footer__legal-row dt {
+  color: var(--sb-muted);
+}
+
+.home .footer__legal-row dd {
+  color: var(--sb-body);
+}
+
+.home .footer__doc {
+  background: var(--sb-stone);
+  color: var(--sb-body);
+}
+
+.home .footer__doc svg {
+  color: var(--sb-ink);
+}
+
+.home .footer__doc-type {
+  color: var(--sb-muted);
+}
+
+@media (hover: hover) {
+  .home .footer__doc:hover {
+    background: var(--sb-yellow);
+    color: var(--sb-ink);
+  }
+}
+
 .home .footer__base {
   border-top-color: var(--sb-line);
   color: var(--sb-muted);

@@ -387,7 +387,7 @@
             <a href="{{ .url | default site.Data.site.mapUrl }}" target="_blank" rel="noopener">Открыть отзывы на Яндекс Картах ↗</a>
           </p>
         </noscript>
-        <iframe data-src="{{ .widget }}" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe data-src="{{ .widget }}" data-cookie-embed="functional" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </details>
     {{- end }}

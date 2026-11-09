@@ -94,7 +94,7 @@
 
     {{- with .widget }}
     <div class="sb-reviews__frame sb-about-reviews__frame" data-reveal>
-      <iframe src="{{ . }}" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe data-src="{{ . }}" data-cookie-embed="functional" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     {{- end }}
   </div>

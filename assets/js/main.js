@@ -271,6 +271,7 @@
 
     const load = () => {
       if (frame.getAttribute('src')) return;
+      if (window.itschoolCookieConsent && !window.itschoolCookieConsent.allows('functional')) return;
       frame.setAttribute('src', frame.dataset.src);
     };
 
