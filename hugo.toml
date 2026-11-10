@@ -43,10 +43,11 @@ summaryLength = 30
   name = 'О нас'
   url = '/about/'
   weight = 40
-[[menus.main]]
-  name = 'Блог'
-  url = '/blog/'
-  weight = 50
+# Блог временно скрыт: страница и ссылки на неё отключены.
+# [[menus.main]]
+#   name = 'Блог'
+#   url = '/blog/'
+#   weight = 50
 [[menus.main]]
   name = 'Контакты'
   url = '/contacts/'

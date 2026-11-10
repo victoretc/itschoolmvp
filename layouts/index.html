@@ -149,12 +149,10 @@
         <article class="sb-teacher-panel{{ if eq $i 0 }} is-active{{ end }}" id="teacher-panel-{{ $i }}" role="tabpanel" aria-labelledby="teacher-tab-{{ $i }}" tabindex="0" data-teacher-panel>
           <figure class="sb-teacher-panel__media">
             {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "800x1000 Center" "alt" (printf "%s — %s" $teacher.name (lower $teacher.role)) "sizes" "(max-width: 600px) 90vw, (max-width: 900px) 200px, 300px" "widths" (slice 320 480 640 800)) }}
-            <span class="sb-teacher-panel__badge" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-teacher-panel__star") }}
           </figure>
 
           <div class="sb-teacher-panel__body">
-            <span class="sb-teacher-panel__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             <p class="sb-teacher-panel__role">
               <span class="sb-teacher-panel__dot" aria-hidden="true"></span>
               {{ $teacher.role }}
@@ -189,7 +187,6 @@
           <button class="sb-teacher" type="button" role="tab" id="teacher-tab-{{ $i }}" aria-controls="teacher-panel-{{ $i }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" tabindex="{{ if eq $i 0 }}0{{ else }}-1{{ end }}" data-teacher-tab>
             <span class="sb-teacher__media">
               {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "480x600 Center" "alt" "" "sizes" "(max-width: 720px) 37vw, 184px" "widths" (slice 160 240 320 400) "noLightbox" true) }}
-              <span class="sb-teacher__index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
             </span>
             <span class="sb-teacher__body">
               <span class="sb-teacher__name">{{ delimit (first 2 (split $teacher.name " ")) " " }}</span>

@@ -1139,26 +1139,6 @@
   outline-offset: -1px;
 }
 
-.sb-teacher-panel__badge {
-  position: absolute;
-  top: 14px;
-  left: -12px;
-  display: grid;
-  place-items: center;
-  min-width: 34px;
-  height: 28px;
-  padding: 0 9px;
-  border-radius: 999px;
-  background: var(--tc-accent);
-  color: var(--sb-ink);
-  font-family: var(--sb-font-display);
-  font-size: 11px;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  box-shadow: 0 6px 12px -6px rgba(18, 18, 18, 0.4);
-  transform: rotate(-4deg);
-}
-
 .sb-teacher-panel__star {
   position: absolute;
   right: -20px;
@@ -1170,22 +1150,6 @@
 .sb-teacher-panel__body {
   position: relative;
   min-width: 0;
-}
-
-/* Oversized ghost index, a quiet editorial anchor on the right. */
-.sb-teacher-panel__num {
-  position: absolute;
-  top: -18px;
-  right: 0;
-  color: var(--sb-ink);
-  font-family: var(--sb-font-display);
-  font-size: clamp(3.5rem, 2rem + 5vw, 6rem);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.06em;
-  opacity: 0.055;
-  pointer-events: none;
-  user-select: none;
 }
 
 .sb-teacher-panel__role {
@@ -1389,25 +1353,6 @@
     filter 250ms var(--ease-out);
 }
 
-.sb-teacher__index {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: grid;
-  place-items: center;
-  min-width: 26px;
-  height: 21px;
-  padding: 0 7px;
-  border-radius: 999px;
-  background: var(--tc-accent);
-  color: var(--sb-ink);
-  font-family: var(--sb-font-display);
-  font-size: 9px;
-  line-height: 1;
-  letter-spacing: 0.03em;
-  box-shadow: 0 4px 8px -4px rgba(18, 18, 18, 0.35);
-}
-
 .sb-teacher__body {
   display: flex;
   flex-direction: column;
@@ -1547,11 +1492,6 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   .sb-teacher-panel__name {
     max-width: none;
   }
-
-  .sb-teacher-panel__num {
-    top: -14px;
-    font-size: 3.5rem;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1574,16 +1514,8 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
     width: 46px;
   }
 
-  .sb-teacher-panel__badge {
-    left: 10px;
-  }
-
   .sb-teacher-panel__name {
     margin-top: 12px;
-  }
-
-  .sb-teacher-panel__num {
-    display: none;
   }
 
   .sb-teacher-panel__label {
