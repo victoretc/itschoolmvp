@@ -48,6 +48,7 @@
     panels.forEach((panel, i) => {
       const active = i === index;
       panel.classList.toggle('is-active', active);
+      panel.tabIndex = active ? 0 : -1;
       const tab = tabs[i];
       tab.setAttribute('aria-selected', String(active));
       tab.tabIndex = active ? 0 : -1;

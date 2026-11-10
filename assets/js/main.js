@@ -175,10 +175,29 @@
     video.addEventListener('play', sync);
     video.addEventListener('pause', sync);
 
+    // The markup ships preload="none", so nothing is downloaded on page load.
+    // Fetch the file only when the block is about to be seen.
+    let prefetched = false;
+    const prefetch = () => {
+      if (prefetched) return;
+      prefetched = true;
+      video.preload = 'auto';
+      video.load();
+    };
+
     if (reduceMotion.matches || !('IntersectionObserver' in window)) {
       sync();
       return;
     }
+
+    new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        prefetch();
+        observer.disconnect();
+      },
+      { rootMargin: '400px 0px' }
+    ).observe(video);
 
     // Play only while the block is on screen: no wasted bandwidth and no
     // video running off-screen. A pause from the viewer wins over autoplay.
@@ -186,6 +205,7 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            prefetch();
             if (!userPaused) video.play().catch(() => {});
           } else if (!video.paused) {
             video.pause();

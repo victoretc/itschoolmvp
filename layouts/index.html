@@ -146,7 +146,7 @@
     <div class="sb-inner sb-teachers__stage-inner">
       <div class="sb-teachers__panels">
         {{- range $i, $teacher := $teachers }}
-        <article class="sb-teacher-panel{{ if eq $i 0 }} is-active{{ end }}" id="teacher-panel-{{ $i }}" role="tabpanel" aria-labelledby="teacher-tab-{{ $i }}" tabindex="0" data-teacher-panel>
+        <div class="sb-teacher-panel{{ if eq $i 0 }} is-active{{ end }}" id="teacher-panel-{{ $i }}" role="tabpanel" aria-labelledby="teacher-tab-{{ $i }}" tabindex="{{ if eq $i 0 }}0{{ else }}-1{{ end }}" data-teacher-panel>
           <figure class="sb-teacher-panel__media">
             {{ partial "responsive-img.html" (dict "src" (printf "images/%s" $teacher.image) "fill" "800x1000 Center" "alt" (printf "%s — %s" $teacher.name (lower $teacher.role)) "sizes" "(max-width: 600px) 90vw, (max-width: 900px) 200px, 300px" "widths" (slice 320 480 640 800)) }}
             {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-teacher-panel__star") }}
@@ -165,7 +165,7 @@
               {{- end }}
             </ul>
           </div>
-        </article>
+        </div>
         {{- end }}
       </div>
 
@@ -337,7 +337,7 @@
     {{- with resources.Get .src }}
     <figure class="sb-more__video-wrap" data-reveal>
       <div class="sb-more__video" style="aspect-ratio: {{ $data.ratio | default "16 / 10" | safeCSS }};">
-        <video class="sb-more__media" data-autoplay muted loop playsinline controls preload="metadata" title="{{ $data.title }}"
+        <video class="sb-more__media" data-autoplay data-lazy-video muted loop playsinline controls preload="none" title="{{ $data.title }}"
           {{- with resources.Get $data.poster }} poster="{{ .RelPermalink }}"{{ end }}>
           <source src="{{ .RelPermalink }}" type="video/mp4">
         </video>
