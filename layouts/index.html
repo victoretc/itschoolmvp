@@ -40,7 +40,7 @@
 
       <div class="sb-actions">
         {{ partial "sb-cta-button.html" (dict "label" $hero.cta) }}
-        <a class="sb-btn sb-btn--outline" href="#courses">{{ $hero.cta_secondary }}</a>
+        <a class="sb-btn sb-btn--outline" href="{{ "courses/" | relURL }}">{{ $hero.cta_secondary }}</a>
       </div>
 
       <dl class="sb-stats">
@@ -219,12 +219,9 @@
     <div class="sb-purpose__grid" data-reveal-group>
       {{- range $i, $point := .points }}
       <article class="sb-card sb-purpose__card" data-reveal>
-        <div class="sb-purpose__top">
-          <span class="sb-tile sb-tile--{{ mod $i 3 }}" aria-hidden="true">
-            {{- with index $tiles $point.icon }}{{ with resources.Get . }}{{ .Content | safeHTML }}{{ end }}{{ end -}}
-          </span>
-          <span class="sb-purpose__num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
-        </div>
+        <span class="sb-tile sb-tile--{{ mod $i 3 }}" aria-hidden="true">
+          {{- with index $tiles $point.icon }}{{ with resources.Get . }}{{ .Content | safeHTML }}{{ end }}{{ end -}}
+        </span>
         <h3 class="sb-card__title">{{ $point.title }}</h3>
         <p class="sb-card__text">{{ $point.text }}</p>
       </article>
@@ -366,11 +363,22 @@
 {{- with .Params.reviews }}
 <section class="sb-section sb-reviews" aria-labelledby="reviews-title">
   <div class="sb-inner">
-    <header class="sb-head sb-head--center" data-reveal>
-      <h2 class="sb-title" id="reviews-title">{{ .title }}</h2>
-      {{- with .lead }}
-      <p class="sb-lead">{{ . }}</p>
-      {{- end }}
+    <header class="sb-head sb-reviews__head" data-reveal>
+      <div class="sb-reviews__shots">
+        <figure class="sb-reviews__photo sb-reviews__photo--a">
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-03.jpg" "fill" "480x600 Center" "alt" "Дети запускают собранных LEGO-роботов на занятии" "sizes" "(max-width: 900px) 46vw, 220px" "widths" (slice 240 360 480)) }}
+          {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-reviews__sticker") }}
+        </figure>
+        <figure class="sb-reviews__photo sb-reviews__photo--b">
+          {{ partial "responsive-img.html" (dict "src" "images/about/gallery-04.jpg" "fill" "480x600 Center" "alt" "Ученицы работают над проектом за ноутбуками" "sizes" "(max-width: 900px) 46vw, 220px" "widths" (slice 240 360 480)) }}
+        </figure>
+      </div>
+      <div class="sb-reviews__intro">
+        <h2 class="sb-title" id="reviews-title">{{ .title }}</h2>
+        {{- with .lead }}
+        <p class="sb-lead">{{ . }}</p>
+        {{- end }}
+      </div>
     </header>
 
     {{- with .screenshots }}
@@ -403,35 +411,54 @@
     </div>
     {{- end }}
 
-    {{- with .more }}
-    <p class="sb-reviews__more" data-reveal>
-      <a class="sb-reviews__more-link" href="{{ .url }}" target="_blank" rel="noopener">
-        <span class="sb-reviews__more-badge" aria-hidden="true">{{ partial "social-icon.html" "instagram" }}</span>
-        <span>{{ .label }}</span>
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
-          <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </a>
-    </p>
-    {{- end }}
+    {{- if or .more .yandex }}
+    <div class="sb-reviews__links">
+      {{- with .more }}
+      <p class="sb-reviews__more" data-reveal>
+        <a class="sb-reviews__more-link" href="{{ .url }}" target="_blank" rel="noopener">
+          <span class="sb-reviews__more-badge" aria-hidden="true">{{ partial "social-icon.html" "instagram" }}</span>
+          <span>{{ .label }}</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+            <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </p>
+      {{- end }}
 
-    {{- with .yandex }}
-    <details class="sb-acc sb-reviews__live" data-reveal data-live-frame>
-      <summary class="sb-acc__summary sb-reviews__live-summary">
-        <span class="sb-reviews__live-badge" aria-hidden="true">{{ partial "icon.html" "pin" }}</span>
-        <span class="sb-reviews__live-title">Отзывы на Яндекс Картах</span>
-        <span class="sb-reviews__live-action" aria-hidden="true">Смотреть</span>
-        <span class="sb-acc__toggle" aria-hidden="true"></span>
-      </summary>
-      <div class="sb-acc__panel sb-reviews__live-panel">
-        <noscript>
-          <p class="sb-reviews__live-fallback">
-            <a href="{{ .url | default site.Data.site.mapUrl }}" target="_blank" rel="noopener">Открыть отзывы на Яндекс Картах ↗</a>
-          </p>
-        </noscript>
-        <iframe data-src="{{ .widget }}" data-cookie-embed="functional" title="Отзывы об АйТи Скул на Яндекс Картах" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </details>
+      {{- with .yandex }}
+      {{- $rating := float (.rating | default 4.5) }}
+      {{- $ratingLabel := replace (string $rating) "." "," }}
+      {{- $pct := math.Round (mul (div $rating 5) 100) }}
+      <p class="sb-reviews__more sb-reviews__more--rating" data-reveal>
+        <a class="sb-reviews__more-link" href="{{ .url | default site.Data.site.mapUrl }}" target="_blank" rel="noopener">
+          <span class="sb-reviews__more-badge" aria-hidden="true">{{ partial "icon.html" "pin" }}</span>
+          <span class="sb-reviews__more-text">
+            <span class="sb-reviews__more-topline">
+              <span class="sb-reviews__more-stars" role="img" aria-label="Рейтинг {{ $ratingLabel }} из 5">
+                <span class="sb-reviews__more-stars-row" aria-hidden="true">
+                  {{- range seq 5 }}
+                  <svg viewBox="0 0 24 24" width="16" height="16" focusable="false"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9Z" fill="currentColor"></path></svg>
+                  {{- end }}
+                </span>
+                <span class="sb-reviews__more-stars-fill" style="--sb-rating: {{ $pct }}%" aria-hidden="true">
+                  <span class="sb-reviews__more-stars-row">
+                    {{- range seq 5 }}
+                    <svg viewBox="0 0 24 24" width="16" height="16" focusable="false"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9Z" fill="currentColor"></path></svg>
+                    {{- end }}
+                  </span>
+                </span>
+              </span>
+              <span class="sb-reviews__more-score" aria-hidden="true">{{ $ratingLabel }}</span>
+            </span>
+            <span class="sb-reviews__more-caption">{{ .ratings }} оценок на Яндекс Картах</span>
+          </span>
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+            <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </p>
+      {{- end }}
+    </div>
     {{- end }}
   </div>
 </section>
@@ -444,7 +471,6 @@
     <header class="sb-faq__head" data-reveal>
       <h2 class="sb-title" id="faq-title">{{ .title }}</h2>
       <p class="sb-lead">{{ .lead }}</p>
-      {{ partial "sb-art.html" (dict "kind" "squiggle" "class" "sb-art--faq-squiggle") }}
     </header>
 
     <div class="sb-faq__list" data-reveal-group>
@@ -465,10 +491,17 @@
 {{/* ----------------------------------------------------------------- cta */}}
 {{- with .Params.cta }}
 <section class="sb-cta" id="cta" aria-labelledby="cta-title">
+  <div class="sb-cta__decor" aria-hidden="true">
+    {{ partial "sb-art.html" (dict "kind" "lego" "class" "sb-cta__mascot sb-cta__mascot--lego") }}
+    {{ partial "sb-art.html" (dict "kind" "roboarm" "class" "sb-cta__mascot sb-cta__mascot--roboarm") }}
+    {{ partial "sb-art.html" (dict "kind" "star" "class" "sb-cta__confetti sb-cta__confetti--star") }}
+    {{ partial "sb-art.html" (dict "kind" "spark" "class" "sb-cta__confetti sb-cta__confetti--spark") }}
+    {{ partial "sb-art.html" (dict "kind" "bolt" "class" "sb-cta__confetti sb-cta__confetti--bolt") }}
+    {{ partial "sb-art.html" (dict "kind" "squiggle" "class" "sb-cta__confetti sb-cta__confetti--squiggle") }}
+  </div>
+
   <div class="sb-inner">
     <div class="sb-cta__panel" data-reveal>
-      {{ partial "sb-art.html" (dict "kind" "lego" "class" "sb-art--cta-lego") }}
-      {{ partial "sb-art.html" (dict "kind" "roboarm" "class" "sb-art--cta-roboarm") }}
       <h2 class="sb-cta__title" id="cta-title">{{ .title }}</h2>
       <p class="sb-cta__text">{{ .text }}</p>
       <div class="sb-actions sb-actions--center">

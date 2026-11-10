@@ -1,0 +1,20 @@
+{{- /* Course pages are generated from the same data the home page uses, so the
+       description on a course page always matches the accordion on the home
+       page. Add or edit a course in data/courses.json — pages follow. */ -}}
+{{- range site.Data.courses }}
+  {{- $title := .guideTitle | default .title }}
+  {{- $content := dict "mediaType" "text/html" "value" .body }}
+  {{- $params := dict
+      "age" .age
+      "price" .price
+      "suffix" .suffix
+      "guideOrder" .guideOrder
+  }}
+  {{- $.AddPage (dict
+      "path" .slug
+      "title" $title
+      "description" (.body | plainify | truncate 160)
+      "params" $params
+      "content" $content
+  ) }}
+{{- end }}

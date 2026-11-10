@@ -1,0 +1,55 @@
+{{ define "main" }}
+{{- $age := .Params.age -}}
+{{- $price := .Params.price -}}
+{{- $suffix := .Params.suffix -}}
+{{- $icon := partial "course-icon.html" .Title -}}
+{{- $coursesURL := "courses/" | relURL -}}
+<article class="sb-course-page">
+  <header class="sb-course-page__hero">
+    <div class="sb-inner">
+      <nav class="sb-course-page__crumbs" aria-label="Хлебные крошки">
+        <a href="{{ $coursesURL }}">Курсы</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ .Title }}</span>
+      </nav>
+
+      <div class="sb-course-page__top">
+        <span class="sb-tile sb-tile--{{ mod .Params.guideOrder 4 }}" aria-hidden="true">{{ partial "icon.html" $icon }}</span>
+        {{- with $age }}<span class="sb-course-page__age">с {{ . }} лет</span>{{ end }}
+      </div>
+
+      <h1 class="sb-course-page__title">{{ .Title }}</h1>
+    </div>
+  </header>
+
+  <div class="sb-inner">
+    <div class="sb-course-page__grid">
+      <div class="sb-course-page__content">
+        {{ .Content }}
+      </div>
+
+      <aside class="sb-course-page__aside" aria-label="Запись на курс">
+        <p class="sb-course-page__aside-label">Стоимость</p>
+        <p class="sb-course-page__price">
+          <span>{{ $price }}</span>
+          <small>{{ $suffix }}</small>
+        </p>
+
+        {{ partial "sb-cta-button.html" (dict "label" "Записаться на занятие" "source" (printf "course-%s" .Title)) }}
+
+        <a class="sb-btn sb-btn--sand sb-btn--phone sb-course-page__phone" href="{{ site.Params.phoneHref | safeURL }}">
+          {{ partial "icon.html" "phone" }}
+          <span>{{ site.Params.phone }}</span>
+        </a>
+
+        <a class="sb-course-page__all" href="{{ $coursesURL }}#courses">
+          Все курсы
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </aside>
+    </div>
+  </div>
+</article>
+{{ end }}

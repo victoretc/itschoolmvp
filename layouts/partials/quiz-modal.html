@@ -1,0 +1,310 @@
+{{- /* Course quiz modal. Opened by [data-quiz-open] ("Подобрать курс").
+       Four questions, a course recommendation, then the same lead form as
+       the consultation modal. Courses come from data/courses.json. */ -}}
+{{- $quizCourses := slice -}}
+{{- range $i, $course := site.Data.courses -}}
+  {{- $title := $course.guideTitle | default $course.title -}}
+  {{- $quizCourses = $quizCourses | append (dict
+      "slug" $course.slug
+      "title" $title
+      "age" $course.age
+      "price" $course.price
+      "suffix" $course.suffix
+      "icon" (partial "icon.html" (partial "course-icon.html" $title))
+      "tone" (mod $i 4)
+      "url" (printf "courses/%s/" $course.slug | relURL)) -}}
+{{- end -}}
+<div class="consult quiz" data-quiz hidden>
+  <div class="consult__scrim" data-quiz-close></div>
+
+  <div
+    class="consult__dialog quiz__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="quiz-title"
+    tabindex="-1">
+    <button class="consult__close" type="button" data-quiz-close aria-label="Закрыть подбор курса">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+    </button>
+
+    <script type="application/json" data-quiz-courses>{{ $quizCourses | jsonify | safeJS }}</script>
+
+    <header class="quiz__head">
+      <p class="quiz__eyebrow" data-quiz-eyebrow>Подбор курса</p>
+      <h2 class="quiz__title" id="quiz-title" data-quiz-title>Подберём курс за 4 вопроса</h2>
+      <p class="quiz__intro" data-quiz-intro>
+        Ответьте про возраст, интересы и цель — покажем направление, с которого лучше начать.
+      </p>
+
+      <div class="quiz__status" data-quiz-status>
+        <div class="quiz__progress" data-quiz-progress data-step="1" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="quiz__count" data-quiz-count>Шаг 1 из 4</p>
+      </div>
+
+      {{ partial "sb-art.html" (dict "kind" "robot" "class" "quiz__mascot") }}
+    </header>
+
+    <div class="quiz__body">
+      <form class="quiz__questions" data-quiz-questions novalidate>
+        <fieldset class="quiz__step" data-quiz-step="0" hidden>
+          <legend class="quiz__question">Сколько лет ребёнку?</legend>
+          <p class="quiz__hint">Возраст помогает подобрать подходящую группу.</p>
+          <div class="quiz__options quiz__options--age">
+            {{- range seq 6 17 }}
+            <label class="quiz__opt quiz__opt--age">
+              <input class="quiz__radio" type="radio" name="age" value="{{ . }}">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">{{ . }}</span>
+              </span>
+            </label>
+            {{- end }}
+          </div>
+          <p class="quiz__error" data-quiz-error="age" hidden></p>
+        </fieldset>
+
+        <fieldset class="quiz__step" data-quiz-step="1" hidden>
+          <legend class="quiz__question">Что ребёнку интереснее всего?</legend>
+          <p class="quiz__hint">Достаточно первого впечатления — остальное уточним на занятии.</p>
+          <div class="quiz__options">
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="interest" value="robots">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-icon" aria-hidden="true">{{ partial "icon.html" "robot" }}</span>
+                <span class="quiz__opt-label">Роботы и техника</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="interest" value="games">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-icon" aria-hidden="true">{{ partial "icon.html" "game" }}</span>
+                <span class="quiz__opt-label">Создавать игры</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="interest" value="code">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-icon" aria-hidden="true">{{ partial "icon.html" "code" }}</span>
+                <span class="quiz__opt-label">Программирование и сайты</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="interest" value="ai">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-icon" aria-hidden="true">{{ partial "icon.html" "neural" }}</span>
+                <span class="quiz__opt-label">Нейросети и ИИ</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="interest" value="creative">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-icon" aria-hidden="true">{{ partial "icon.html" "puzzle" }}</span>
+                <span class="quiz__opt-label">3D и дизайн</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="interest" value="unsure">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-icon" aria-hidden="true">{{ partial "icon.html" "compass" }}</span>
+                <span class="quiz__opt-label">Пока не знает</span>
+              </span>
+            </label>
+          </div>
+          <p class="quiz__error" data-quiz-error="interest" hidden></p>
+        </fieldset>
+
+        <fieldset class="quiz__step" data-quiz-step="2" hidden>
+          <legend class="quiz__question">Есть ли опыт занятий?</legend>
+          <div class="quiz__options">
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="experience" value="new">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">Только начинает</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="experience" value="some">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">Занимался LEGO или Scratch</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="experience" value="confident">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">Уже пробовал писать код</span>
+              </span>
+            </label>
+          </div>
+          <p class="quiz__error" data-quiz-error="experience" hidden></p>
+        </fieldset>
+
+        <fieldset class="quiz__step" data-quiz-step="3" hidden>
+          <legend class="quiz__question">Зачем идёте на курсы?</legend>
+          <div class="quiz__options">
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="goal" value="try">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">Интересно попробовать</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="goal" value="projects">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">Делать свои проекты</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="goal" value="olympiad">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">Олимпиады и соревнования</span>
+              </span>
+            </label>
+            <label class="quiz__opt">
+              <input class="quiz__radio" type="radio" name="goal" value="career">
+              <span class="quiz__opt-inner">
+                <span class="quiz__opt-label">Профессия в IT</span>
+              </span>
+            </label>
+          </div>
+          <p class="quiz__error" data-quiz-error="goal" hidden></p>
+        </fieldset>
+
+      </form>
+
+      <div class="quiz__nav" data-quiz-nav>
+        <button class="quiz__back" type="button" data-quiz-back hidden>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>Назад</span>
+        </button>
+
+        <button class="sb-btn quiz__next" type="button" data-quiz-next>
+          <span data-quiz-next-label>Далее</span>
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="quiz__result" data-quiz-result hidden>
+        <article class="quiz__course">
+          <div class="quiz__course-top">
+            <span class="quiz__course-tile" data-quiz-course-tile aria-hidden="true"></span>
+            <span class="quiz__course-age" data-quiz-course-age></span>
+            <span class="quiz__course-price" data-quiz-course-price></span>
+          </div>
+          <h3 class="quiz__course-title">
+            <a data-quiz-course-link href="courses/">Курс</a>
+          </h3>
+          <p class="quiz__course-why" data-quiz-course-why></p>
+          <p class="quiz__course-alts" data-quiz-course-alts hidden></p>
+        </article>
+
+        <div class="quiz__lead">
+          <h4 class="quiz__lead-title">Записаться на курс</h4>
+          <p class="quiz__lead-text">Перезвоним, подберём группу и пригласим на пробное занятие.</p>
+
+          <form class="consult__form quiz__lead-form" data-quiz-lead-form novalidate
+            {{- with site.Params.consultEndpoint }} action="{{ . }}" method="post"{{ end }}>
+            <input type="hidden" name="course" data-quiz-field-course>
+            <input type="hidden" name="answers" data-quiz-field-answers>
+            <input type="hidden" name="source" value="quiz">
+
+            <div class="consult__field">
+              <label class="consult__label" for="quiz-name">
+                Как вас зовут<span class="consult__req" aria-hidden="true">*</span>
+              </label>
+              <div class="consult__control">
+                <span class="consult__input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                    <circle cx="12" cy="7.75" r="3.75" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                    <path d="M4.75 20.25c0-3.6 3.2-5.75 7.25-5.75s7.25 2.15 7.25 5.75" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                  </svg>
+                </span>
+                <input
+                  class="consult__input"
+                  id="quiz-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Анна"
+                  required
+                  aria-describedby="quiz-name-error">
+              </div>
+              <p class="consult__error" id="quiz-name-error" data-quiz-error-for="name" hidden></p>
+            </div>
+
+            <div class="consult__field">
+              <label class="consult__label" for="quiz-phone">
+                Телефон<span class="consult__req" aria-hidden="true">*</span>
+              </label>
+              <div class="consult__control">
+                <span class="consult__input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                <input
+                  class="consult__input"
+                  id="quiz-phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  placeholder="+375 (29) 000-00-00"
+                  required
+                  aria-describedby="quiz-phone-error">
+              </div>
+              <p class="consult__error" id="quiz-phone-error" data-quiz-error-for="phone" hidden></p>
+            </div>
+
+            <div class="quiz__lead-actions">
+              <button class="consult__submit" type="submit" data-quiz-submit>
+                <span class="consult__submit-label">Отправить заявку</span>
+                <span class="consult__submit-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                    <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                <span class="consult__spinner" aria-hidden="true"></span>
+              </button>
+
+              <p class="consult__alt">
+                <span>Или позвоните</span>
+                <a href="{{ site.Params.phoneHref | safeURL }}">{{ site.Params.phone }}</a>
+              </p>
+            </div>
+
+            <p class="consult__error consult__error--form" data-quiz-lead-error hidden></p>
+          </form>
+
+          <div class="consult__success" data-quiz-success role="status" hidden>
+            {{ partial "sb-art.html" (dict "kind" "star" "class" "quiz__success-star") }}
+            <span class="consult__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" focusable="false">
+                <path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <h3 class="consult__success-title">Заявка отправлена</h3>
+            <p class="consult__success-text" data-quiz-success-text>
+              Спасибо! Свяжемся с вами в рабочее время и запишем на выбранный курс.
+            </p>
+            <button class="consult__done" type="button" data-quiz-close>Хорошо</button>
+          </div>
+        </div>
+
+        <div class="quiz__foot">
+          <button class="quiz__restart" type="button" data-quiz-restart>Пройти заново</button>
+          <a class="quiz__all" href="#courses" data-quiz-close>Посмотреть все курсы</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,6 +35,7 @@
   {{- if eq .Section "courses" -}}
     {{- $styles = $styles | append (resources.Get "css/courses.css") -}}
     {{- $bundleName = printf "%s-courses" $bundleName -}}
+    {{- $styles = $styles | append (resources.Get "css/quiz.css") -}}
   {{- end -}}
   {{- if $vacations -}}
     {{- $styles = $styles | append (resources.Get "css/vacations.css") -}}
@@ -83,6 +84,7 @@
 <body id="top" class="{{ if $storybook }}home{{ end }}{{ if eq .Section "courses" }} courses-page{{ end }}{{ if $vacations }} vacations-page{{ end }}{{ if $cookies }} cookies-page{{ end }}"{{ with site.Params.yandexMetrikaId }} data-metrika-id="{{ . }}"{{ end }} data-cookie-settings-url="{{ "cookies/" | relURL }}#settings">
   {{ partial "loader.html" . }}
   <a class="skip" href="#main">Перейти к содержимому</a>
+  {{ partial "announcement-bar.html" . }}
   {{ partial "header.html" . }}
   <main id="main">
     {{ block "main" . }}{{ end }}
@@ -90,8 +92,11 @@
   {{ partial "footer.html" . }}
   {{ partial "cookie-consent.html" . }}
   {{ partial "consult-modal.html" . }}
+  {{- if and (eq .Section "courses") .IsSection }}
+  {{ partial "quiz-modal.html" . }}
+  {{- end }}
   {{ partial "lightbox.html" . }}
-  {{ $js := slice (resources.Get "js/cookie.js") (resources.Get "js/main.js") (resources.Get "js/lightbox.js") (resources.Get "js/web-shot.js") (resources.Get "js/teachers.js") (resources.Get "js/reviews.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
+  {{ $js := slice (resources.Get "js/cookie.js") (resources.Get "js/main.js") (resources.Get "js/lightbox.js") (resources.Get "js/quiz.js") (resources.Get "js/web-shot.js") (resources.Get "js/teachers.js") (resources.Get "js/courses.js") (resources.Get "js/reviews.js") | resources.Concat "js/bundle.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 </html>

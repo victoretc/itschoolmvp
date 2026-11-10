@@ -1,0 +1,850 @@
+/* ============================================================
+   Course quiz modal
+   Speaks the home hero's language: cream canvas, Unbounded
+   display type, yellow highlighter, ink CTA with the yellow
+   arrow disc. Reuses the consultation form controls so the
+   lead form stays identical to "Получить консультацию".
+   ============================================================ */
+
+.quiz__dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(42rem, 100%);
+  background: var(--sb-canvas, #fbfaf9);
+  box-shadow:
+    0 0 0 1px rgba(18, 18, 18, 0.06),
+    0 1px 2px rgba(18, 18, 18, 0.08),
+    0 48px 90px -40px rgba(18, 18, 18, 0.55);
+}
+
+/* ------------------------------------------------------------- head */
+
+.quiz__head {
+  position: relative;
+  flex: none;
+  display: grid;
+  gap: 0.55rem;
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(1.35rem, 3vw, 2.25rem) 1.15rem;
+  border-bottom: 1px solid var(--sb-hair, #f2f0ed);
+}
+
+/* The hero's yellow highlighter, reduced to a label. */
+.quiz__eyebrow {
+  display: inline-block;
+  width: fit-content;
+  margin: 0;
+  padding: 0.3rem 0.65rem 0.36rem;
+  border-radius: 0.55rem;
+  background: var(--sb-yellow, #ffcd6c);
+  color: var(--sb-ink, #121212);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  transform: rotate(-1.4deg);
+  transform-origin: left center;
+}
+
+.quiz__title {
+  margin: 0.1rem 0 0;
+  padding-right: 5.75rem;
+  color: var(--sb-ink, #121212);
+  font-family: var(--sb-font-display, "Unbounded", system-ui, sans-serif);
+  font-size: clamp(1.4rem, 1.15rem + 0.85vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+/* The heading is a programmatic focus target after the quiz result. */
+.quiz .quiz__title:focus,
+.quiz .quiz__title:focus-visible {
+  outline: none;
+}
+
+.quiz__intro {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--sb-body, #474645);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------------------- progress */
+
+.quiz__status {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.quiz__progress {
+  display: flex;
+  flex: 1;
+  gap: 5px;
+}
+
+.quiz__progress span {
+  flex: 1;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--sb-stone, #f2f0ed);
+  transition: background-color 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.quiz__progress[data-step="1"] span:nth-child(-n + 1),
+.quiz__progress[data-step="2"] span:nth-child(-n + 2),
+.quiz__progress[data-step="3"] span:nth-child(-n + 3),
+.quiz__progress[data-step="4"] span:nth-child(-n + 4) {
+  background: var(--sb-ink, #121212);
+}
+
+.quiz__count {
+  margin: 0;
+  color: var(--sb-muted, #6b6b6a);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.quiz__count[hidden] {
+  display: none;
+}
+
+/* The hero's robot mascot, tucked beside the close button. */
+.quiz__mascot {
+  position: absolute;
+  top: 1.1rem;
+  right: 4.5rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  pointer-events: none;
+  transform: rotate(6deg);
+}
+
+/* ------------------------------------------------------------- body */
+
+.quiz__body {
+  flex: 1;
+  min-height: 18rem;
+  padding: 1.35rem clamp(1.35rem, 3vw, 2.25rem) clamp(1.35rem, 3vw, 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.quiz__step {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.quiz__step[hidden] {
+  display: none;
+}
+
+.quiz__question {
+  padding: 0;
+  color: var(--sb-ink, #121212);
+  font-family: var(--sb-font-display, "Unbounded", system-ui, sans-serif);
+  font-size: clamp(1rem, 0.94rem + 0.3vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+
+.quiz__hint {
+  margin: 0;
+  color: var(--sb-muted, #6b6b6a);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+/* ---------------------------------------------------------- options */
+
+.quiz__options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quiz__options--age {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.quiz__opt {
+  position: relative;
+  display: block;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.quiz__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.quiz__opt-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  height: 100%;
+  min-height: 3.5rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid transparent;
+  border-radius: 0.875rem;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #eae4d8;
+  color: var(--sb-ink, #121212);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  transition:
+    background-color 150ms cubic-bezier(0.2, 0, 0, 1),
+    color 150ms cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 150ms cubic-bezier(0.2, 0, 0, 1),
+    transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.quiz__opt-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--sb-sand, #f6f4ef);
+  color: var(--sb-ink, #121212);
+}
+
+.quiz__opt-icon svg {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* The same four tile colours the home page and course cards rotate. */
+.quiz__opt:nth-child(4n + 1) .quiz__opt-icon {
+  background: #8dd7ff;
+}
+
+.quiz__opt:nth-child(4n + 2) .quiz__opt-icon {
+  background: #ffdd94;
+}
+
+.quiz__opt:nth-child(4n + 3) .quiz__opt-icon {
+  background: #5ee6a8;
+}
+
+.quiz__opt:nth-child(4n + 4) .quiz__opt-icon {
+  background: #ffa1cb;
+}
+
+.quiz__opt-label {
+  min-width: 0;
+  text-wrap: pretty;
+}
+
+/* A static check, so the choice survives forced-colors mode and is not
+   carried by the ink fill alone. */
+.quiz__opt-inner::after {
+  content: "";
+  flex: none;
+  width: 0.42rem;
+  height: 0.8rem;
+  margin: 0 0.15rem 0 auto;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: translateY(-0.12em) rotate(45deg);
+  transition: border-color 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.quiz__radio:checked + .quiz__opt-inner::after {
+  border-color: var(--sb-yellow, #ffcd6c);
+}
+
+.quiz__opt--age .quiz__opt-inner::after {
+  display: none;
+}
+
+.quiz__opt--age .quiz__opt-inner {
+  justify-content: center;
+  padding: 0.5rem 0.2rem;
+  font-family: var(--sb-font-display, "Unbounded", system-ui, sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiz__opt:hover .quiz__opt-inner {
+    background: var(--sb-stone, #f2f0ed);
+  }
+}
+
+.quiz__radio:checked + .quiz__opt-inner {
+  background: var(--sb-ink, #121212);
+  box-shadow: inset 0 0 0 1px var(--sb-ink, #121212);
+  color: #fbfaf9;
+}
+
+.quiz__radio:focus-visible + .quiz__opt-inner {
+  outline: 3px solid var(--sb-ember, #ff3e00);
+  outline-offset: 3px;
+}
+
+.quiz__opt:active .quiz__opt-inner {
+  transform: scale(0.96);
+}
+
+/* ------------------------------------------------------------ errors */
+
+.quiz__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0.2rem 0 0;
+  color: #b3261e;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.quiz__error::before {
+  content: "!";
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.05rem;
+  border-radius: 50%;
+  background: #b3261e;
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.quiz__error[hidden] {
+  display: none;
+}
+
+/* -------------------------------------------------------------- nav */
+
+.quiz__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.quiz__nav[hidden] {
+  display: none;
+}
+
+.quiz__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0 0.35rem;
+  border: 0;
+  background: none;
+  color: var(--sb-muted, #6b6b6a);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.quiz__back[hidden] {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiz__back:hover {
+    color: var(--sb-ink, #121212);
+  }
+}
+
+/* Plain step button: the site pill with an ink fill. No disc, no shadow, no
+   fill sweep — the only motion is .sb-btn's colour swap and arrow nudge. */
+.quiz__next {
+  margin-left: auto;
+  padding-inline: 26px;
+  background: var(--sb-ink, #121212);
+  color: var(--sb-canvas, #fbfaf9);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiz__next:hover {
+    background: var(--sb-yellow, #ffcd6c);
+    color: var(--sb-ink, #121212);
+  }
+}
+
+/* The arrow stays put: this button only swaps colour on hover. */
+.quiz__next svg,
+.quiz__next:hover svg {
+  transform: none;
+  transition: none;
+}
+
+/* ----------------------------------------------------------- result */
+
+.quiz__result {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.quiz__result[hidden] {
+  display: none;
+}
+
+.quiz__course {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: 1.125rem;
+  background: var(--sb-sand, #f6f4ef);
+  box-shadow: inset 0 0 0 1px #e7e0d4;
+}
+
+.quiz__course-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.quiz__course-tile {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: #8dd7ff;
+  color: var(--sb-ink, #121212);
+}
+
+.quiz__course-tile svg {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.quiz__course-tile[data-tone="1"] {
+  background: #ffdd94;
+}
+
+.quiz__course-tile[data-tone="2"] {
+  background: #5ee6a8;
+}
+
+.quiz__course-tile[data-tone="3"] {
+  background: #ffa1cb;
+}
+
+.quiz__course-age {
+  padding: 0.24rem 0.62rem;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e5d5c3;
+  color: var(--sb-ink, #121212);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.quiz__course-price {
+  margin-left: auto;
+  color: var(--sb-muted, #6b6b6a);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.quiz__course-title {
+  margin: 0.1rem 0 0;
+  font-family: var(--sb-font-display, "Unbounded", system-ui, sans-serif);
+  font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.quiz__course-title a {
+  color: var(--sb-ink, #121212);
+  text-decoration: none;
+}
+
+.quiz__course-title a:focus-visible {
+  outline: 3px solid var(--sb-ember, #ff3e00);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiz__course-title a:hover {
+    color: var(--sb-ember-text, #cc3500);
+  }
+}
+
+.quiz__course-why {
+  margin: 0;
+  color: var(--sb-body, #474645);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: -0.008em;
+  text-wrap: pretty;
+}
+
+.quiz__course-alts {
+  margin: 0.2rem 0 0;
+  color: var(--sb-muted, #6b6b6a);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.quiz__course-alts[hidden] {
+  display: none;
+}
+
+.quiz__course-alts a {
+  color: var(--sb-ink, #121212);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiz__course-alts a:hover {
+    color: var(--sb-ember-text, #cc3500);
+  }
+}
+
+/* -------------------------------------------------------- lead form */
+
+/* Flat on the canvas: one hairline, no card, so the course stays the hero
+   of the result screen and the form reads as the next step. */
+.quiz__lead {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--sb-hair, #f2f0ed);
+}
+
+.quiz__lead[hidden] {
+  display: none;
+}
+
+.quiz__lead-title {
+  margin: 0;
+  color: var(--sb-ink, #121212);
+  font-family: var(--sb-font-display, "Unbounded", system-ui, sans-serif);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.quiz__lead-text {
+  max-width: 60ch;
+  margin: 0 0 0.65rem;
+  color: var(--sb-muted, #6b6b6a);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* Two fields share a row; the actions sit underneath. */
+.quiz__lead-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 0.75rem;
+}
+
+.quiz__lead-form .consult__error--form {
+  grid-column: 1 / -1;
+}
+
+.quiz__lead-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.25rem;
+  margin-top: 0.1rem;
+}
+
+/* The quiz's primary action mirrors the step CTA rather than the sand
+   consult button: the form ends the quiz, it is not a side panel. */
+.quiz__lead .consult__submit {
+  width: auto;
+  min-width: 12.5rem;
+  min-height: 3.25rem;
+  margin-top: 0;
+  border-radius: 999px;
+  background: var(--sb-ink, #121212);
+  box-shadow: none;
+  color: var(--sb-canvas, #fbfaf9);
+  transition:
+    background-color 180ms cubic-bezier(0.2, 0, 0, 1),
+    color 180ms cubic-bezier(0.2, 0, 0, 1),
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* No fill sweep here: the label is light, so the colour swap keeps it
+   readable at every frame. */
+.quiz__lead .consult__submit::before {
+  display: none;
+}
+
+/* The arrow stays put, as on the step button. */
+.quiz__lead .consult__submit .consult__submit-icon svg {
+  transform: none;
+  transition: none;
+}
+
+.quiz__lead .consult__submit.is-loading {
+  color: transparent;
+}
+
+.quiz__lead .consult__submit.is-loading .consult__spinner {
+  border-color: rgba(251, 250, 249, 0.28);
+  border-top-color: var(--sb-canvas, #fbfaf9);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiz__lead .consult__submit:not(:disabled):hover {
+    background: var(--sb-yellow, #ffcd6c);
+    color: var(--sb-ink, #121212);
+  }
+
+  .quiz__lead .consult__submit:not(:disabled):hover .consult__submit-icon svg {
+    transform: none;
+  }
+}
+
+.quiz__lead-actions .consult__alt {
+  margin: 0 0 0 auto;
+  padding: 0;
+  border-top: 0;
+  font-size: 0.8125rem;
+}
+
+/* Success keeps a light sheet so it reads as a result, not a leftover
+   form. */
+.quiz .consult__success {
+  position: relative;
+  padding: 1.5rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--sb-hair, #f2f0ed);
+}
+
+.quiz .consult__success-text {
+  max-width: 34ch;
+}
+
+.quiz__success-star {
+  position: absolute;
+  top: 0.85rem;
+  right: 1.1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  pointer-events: none;
+  transform: rotate(12deg);
+}
+
+.quiz__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.85rem;
+}
+
+.quiz__foot[hidden] {
+  display: none;
+}
+
+.quiz__restart,
+.quiz__all {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--sb-muted, #6b6b6a);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiz__restart:hover,
+  .quiz__all:hover {
+    color: var(--sb-ink, #121212);
+  }
+}
+
+/* ------------------------------------------------------------ close */
+
+.quiz .consult__close {
+  background: #fff;
+  box-shadow:
+    inset 0 0 0 1px #eae4d8,
+    0 1px 2px rgba(18, 18, 18, 0.06);
+  transition:
+    background-color 150ms cubic-bezier(0.2, 0, 0, 1),
+    color 150ms cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 150ms cubic-bezier(0.2, 0, 0, 1),
+    transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Scoped so the white base rule above cannot leave a white glyph on a
+   white disc: hover paints the disc ink and the cross canvas-light. */
+@media (hover: hover) and (pointer: fine) {
+  .quiz .consult__close:hover {
+    background: var(--sb-ink, #121212);
+    box-shadow: inset 0 0 0 1px var(--sb-ink, #121212);
+    color: var(--sb-canvas, #fbfaf9);
+  }
+}
+
+.quiz .consult__close:active {
+  transform: scale(0.96);
+}
+
+/* ------------------------------------------------------------ mobile */
+
+@media (max-width: 47.99rem) {
+  .quiz__head {
+    padding: 1.25rem 3.5rem 1rem 1.35rem;
+    gap: 0.45rem;
+  }
+
+  .quiz__mascot {
+    display: none;
+  }
+
+  .quiz__title {
+    padding-right: 0;
+    font-size: 1.3rem;
+  }
+
+  .quiz__intro {
+    display: none;
+  }
+
+  .quiz__body {
+    min-height: 0;
+    padding: 1.15rem 1.35rem calc(1.35rem + env(safe-area-inset-bottom));
+  }
+
+  .quiz__question {
+    font-size: 1rem;
+  }
+
+  .quiz__status {
+    margin-top: 0.5rem;
+  }
+
+  .quiz__back {
+    min-height: 3.25rem;
+  }
+
+  .quiz__next {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .quiz__success-star {
+    top: 0.75rem;
+    right: 0.9rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* The lead form stacks before the dialog itself becomes a bottom sheet,
+   so two 250px fields never get cramped. */
+@media (max-width: 34rem) {
+  .quiz__lead-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quiz__lead-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quiz__lead-actions .consult__submit {
+    width: 100%;
+  }
+
+  .quiz__lead-actions .consult__alt {
+    margin: 0.2rem auto 0;
+  }
+}
+
+@media (max-width: 25rem) {
+  .quiz__options--age {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 26rem) {
+  .quiz__options:not(.quiz__options--age) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------------------------------------------------- reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz__progress span,
+  .quiz__opt-inner,
+  .quiz__opt-inner::after,
+  .quiz__next,
+  .quiz__lead .consult__submit {
+    transition: none;
+  }
+
+  .quiz__opt:active .quiz__opt-inner {
+    transform: none;
+  }
+
+  .quiz .consult__close:active {
+    transform: none;
+  }
+}

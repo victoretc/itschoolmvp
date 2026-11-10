@@ -1,5 +1,6 @@
 {{- /* Primary lead button. Without an href it opens the consultation
-       dialog; with an href it stays a plain link (e.g. "Подобрать курс"). */ -}}
+       dialog; with an href it stays a plain link. Pass quiz=true to open
+       the course quiz instead of the consultation dialog. */ -}}
 {{- $label := .label -}}
 {{- $href := .href -}}
 {{- if $href -}}
@@ -12,7 +13,7 @@
   </span>
 </a>
 {{- else -}}
-<button class="btn btn--cta" type="button" data-consult-open{{ with .source }} data-consult-source="{{ . }}"{{ end }}>
+<button class="btn btn--cta" type="button"{{ if .quiz }} data-quiz-open{{ else }} data-consult-open{{ with .source }} data-consult-source="{{ . }}"{{ end }}{{ end }}>
   <span class="btn__label">{{ $label }}</span>
   <span class="btn__icon" aria-hidden="true">
     <svg class="btn__arrow" viewBox="0 0 24 24" width="18" height="18" focusable="false">

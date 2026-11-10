@@ -1,0 +1,20 @@
+{{- /* Maps a course title to the short label shown above the course name.
+       Usage: {{ partial "course-category.html" $course.guideTitle }} */ -}}
+{{- $key := lower . -}}
+{{- $category := "Программирование" -}}
+{{- if strings.Contains $key "робот" -}}
+  {{- $category = "Робототехника" -}}
+{{- else if or (strings.Contains $key "нейрон") (strings.Contains $key "нейросет") -}}
+  {{- $category = "Нейросети" -}}
+{{- else if strings.Contains $key "квадрокоптер" -}}
+  {{- $category = "Квадрокоптеры" -}}
+{{- else if or (strings.Contains $key "игр") (strings.Contains $key "roblox") (strings.Contains $key "minecraft") -}}
+  {{- $category = "Разработка игр" -}}
+{{- else if or (strings.Contains $key "3д") (strings.Contains $key "3d") (strings.Contains $key "blender") -}}
+  {{- $category = "3D-моделирование" -}}
+{{- else if strings.Contains $key "тестирование" -}}
+  {{- $category = "Тестирование" -}}
+{{- else if strings.Contains $key "сайт" -}}
+  {{- $category = "Разработка сайтов" -}}
+{{- end -}}
+{{- return $category -}}

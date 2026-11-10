@@ -1,0 +1,68 @@
+{{- /* Announcement strip above the header. Bars live in hugo.toml under
+       [params.announcement]; only one shows at a time — the enabled bar with
+       the highest priority wins. A click opens the consultation modal. */ -}}
+{{- $bars := slice -}}
+{{- with site.Params.announcement -}}
+  {{- with .bars }}{{ $bars = . }}{{ end -}}
+{{- end -}}
+{{- $bar := false -}}
+{{- range where $bars "enabled" true -}}
+  {{- if not $bar -}}
+    {{- $bar = . -}}
+  {{- else if gt (.priority | default 0) ($bar.priority | default 0) -}}
+    {{- $bar = . -}}
+  {{- end -}}
+{{- end -}}
+{{- with $bar -}}
+{{- $benefits := .benefits | default slice -}}
+{{- $title := .title -}}
+{{- with .highlight -}}
+  {{- $title = replace $title . (printf `<span class="announce__hl">%s</span>` .) -}}
+{{- end -}}
+<div class="announce" id="announce-{{ .id }}" data-announce data-announce-id="{{ .id }}">
+  <div class="announce__inner">
+    <a
+      class="announce__link"
+      href="#consult"
+      data-consult-open
+      data-consult-source="announcement-{{ .id }}"
+      {{- with .consultTitle }} data-consult-title="{{ . }}"{{ end }}
+      {{- with .consultLead }} data-consult-lead="{{ . }}"{{ end }}>
+      {{ partial "sb-art.html" (dict "kind" "star" "class" "announce__star") }}
+
+      <span class="announce__title">{{ $title | safeHTML }}</span>
+      {{- with $benefits }}
+      <span class="announce__points">
+        {{- range . }}<span class="announce__point">{{ . }}</span>{{ end -}}
+      </span>
+      {{- end }}
+
+      <span class="announce__cta">
+        <span class="announce__cta-label">{{ .cta | default "Записаться" }}</span>
+        <span class="announce__cta-icon">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+            <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+      </span>
+    </a>
+
+    <button class="announce__close" type="button" data-announce-close aria-label="Скрыть объявление">
+      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+<script>
+  (function () {
+    var bar = document.getElementById('announce-{{ .id }}');
+    if (!bar) return;
+    try {
+      if (window.localStorage.getItem('itschool-announce-{{ .id }}') === '1') bar.remove();
+    } catch (error) {
+      /* Private mode: keep the announcement visible. */
+    }
+  })();
+</script>
+{{- end -}}

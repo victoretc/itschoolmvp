@@ -325,29 +325,6 @@
   });
 })();
 
-/* ---------------------------------------------------- live review widget */
-(() => {
-  const items = document.querySelectorAll('[data-live-frame]');
-  if (!items.length) return;
-
-  items.forEach((item) => {
-    const frame = item.querySelector('iframe[data-src]');
-    if (!frame) return;
-
-    const load = () => {
-      if (frame.getAttribute('src')) return;
-      if (window.itschoolCookieConsent && !window.itschoolCookieConsent.allows('functional')) return;
-      frame.setAttribute('src', frame.dataset.src);
-    };
-
-    item.addEventListener('toggle', () => {
-      if (item.open) load();
-    });
-
-    if (item.open) load();
-  });
-})();
-
 /* ---------------------------------------------------------- consultation */
 (() => {
   const root = document.querySelector('[data-consult]');
@@ -726,5 +703,25 @@
 
   button.addEventListener('click', () => {
     setExpanded(button.getAttribute('aria-expanded') !== 'true');
+  });
+})();
+
+(() => {
+  const bar = document.querySelector('[data-announce]');
+  if (!bar) return;
+
+  const close = bar.querySelector('[data-announce-close]');
+  if (!close) return;
+
+  close.addEventListener('click', () => {
+    const id = bar.dataset.announceId;
+    bar.remove();
+
+    if (!id) return;
+    try {
+      window.localStorage.setItem(`itschool-announce-${id}`, '1');
+    } catch (error) {
+      /* Private mode: the bar just comes back on the next visit. */
+    }
   });
 })();

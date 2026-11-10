@@ -12,6 +12,7 @@
     document.querySelector('main'),
     document.querySelector('.footer'),
     document.querySelector('.consult'),
+    document.querySelector('.quiz'),
   ].filter(Boolean);
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 

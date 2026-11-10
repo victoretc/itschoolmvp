@@ -1441,7 +1441,6 @@
   gap: 14px 24px;
   margin-top: clamp(6px, 1vw, 12px);
   padding-top: clamp(16px, 2vw, 22px);
-  border-top: 1px solid #efe8dc;
 }
 
 .sb-teachers__foot-text {
@@ -1539,7 +1538,17 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 /* ------------------------------------------------------------ purpose */
 
 .sb-purpose {
+  padding-block: clamp(28px, 3.5vw, 40px);
   background: var(--sb-stone);
+}
+
+.sb-purpose .sb-head--center {
+  max-width: 100%;
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.sb-purpose .sb-title {
+  font-size: clamp(1.75rem, 1rem + 2.2vw, 2.75rem);
 }
 
 .sb-purpose__grid {
@@ -1549,13 +1558,8 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 }
 
 .sb-purpose__card {
-  border-radius: 30px;
-}
-
-.sb-purpose__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 20px;
+  border-radius: 22px;
 }
 
 .sb-tile {
@@ -1573,12 +1577,26 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 }
 
 .sb-purpose .sb-tile {
+  width: 40px;
+  height: 40px;
   border: 1.5px solid var(--sb-head);
 }
 
 .sb-purpose .sb-tile svg {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
+}
+
+.sb-purpose .sb-card__title {
+  margin-top: 12px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.sb-purpose .sb-card__text {
+  margin-top: 6px;
+  font-size: 14.5px;
+  line-height: 1.4;
 }
 
 .sb-tile--0 {
@@ -1591,13 +1609,6 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 
 .sb-tile--2 {
   background: #5ee6a8;
-}
-
-.sb-purpose__num {
-  color: var(--sb-muted);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
 }
 
 /* ------------------------------------------------------------ courses */
@@ -2001,6 +2012,103 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 
 /* ------------------------------------------------------------ reviews */
 
+/* Two classroom postcards flank the heading, so the block opens with the
+   people behind the chat messages. */
+.sb-reviews .sb-reviews__head {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 220px;
+  grid-template-areas: "a intro b";
+  align-items: center;
+  gap: clamp(20px, 3vw, 44px);
+  max-width: 1060px;
+  margin: 0 auto clamp(28px, 3.5vw, 40px);
+  text-align: center;
+}
+
+.sb-reviews__shots {
+  display: contents;
+}
+
+.sb-reviews__intro {
+  grid-area: intro;
+}
+
+.sb-reviews .sb-reviews__intro .sb-lead {
+  max-width: 46ch;
+  margin: 16px auto 0;
+}
+
+.sb-reviews__photo {
+  position: relative;
+  margin: 0;
+  padding: 6px;
+  border-radius: 21px;
+  background: #fff;
+  box-shadow: 0 22px 34px -28px rgba(18, 18, 18, 0.48);
+}
+
+.sb-reviews__photo--a {
+  grid-area: a;
+  transform: rotate(-2deg);
+}
+
+.sb-reviews__photo--b {
+  grid-area: b;
+  transform: rotate(2deg);
+}
+
+.sb-reviews__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 15px;
+  outline: 1px solid oklch(0 0 0 / 0.1);
+  outline-offset: -1px;
+}
+
+.sb-reviews__sticker {
+  position: absolute;
+  right: -16px;
+  bottom: -16px;
+  width: 56px;
+  filter: drop-shadow(0 5px 7px rgba(18, 18, 18, 0.16));
+}
+
+@media (max-width: 900px) {
+  .sb-reviews .sb-reviews__head {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "intro intro"
+      "a b";
+    gap: clamp(14px, 2.6vw, 22px);
+    max-width: 560px;
+  }
+
+  .sb-reviews__photo {
+    min-width: 0;
+    padding: 5px;
+    border-radius: 17px;
+    transform: rotate(-1.5deg);
+  }
+
+  .sb-reviews__photo--b {
+    transform: rotate(1.5deg);
+  }
+
+  .sb-reviews__photo img {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+
+  .sb-reviews__sticker {
+    right: -8px;
+    bottom: -12px;
+    width: 44px;
+  }
+}
+
 .sb-reviews {
   background: var(--sb-stone);
 }
@@ -2046,8 +2154,8 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   overflow: hidden;
   aspect-ratio: 9 / 16;
   border-radius: 18px;
+  border: 1px solid #e7dfd3;
   background: #fff;
-  box-shadow: inset 0 0 0 1px #e7dfd3;
 }
 
 .sb-reviews__shot img {
@@ -2058,7 +2166,7 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   cursor: zoom-in;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .sb-reviews__shot {
     transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -2157,6 +2265,16 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   -webkit-user-drag: none;
 }
 
+@media (hover: hover) {
+  .sb-reviews__carousel.is-3d .sb-reviews__shot {
+    transition: border-color 220ms var(--ease-out);
+  }
+
+  .sb-reviews__carousel.is-3d .sb-reviews__shot:hover {
+    border-color: #d6c9b2;
+  }
+}
+
 .sb-reviews__carousel.is-3d.is-dragging .sb-reviews__shot {
   transition: none;
 }
@@ -2183,17 +2301,19 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  border: 1px solid #e7dfd3;
   background: #fff;
   color: var(--sb-ink);
-  box-shadow: inset 0 0 0 1px #e7dfd3;
   transition:
     background-color 160ms ease,
     color 160ms ease,
     transform 160ms var(--ease-out);
 }
 
-.sb-reviews__nav:active {
-  transform: scale(0.96);
+@media (prefers-reduced-motion: no-preference) {
+  .sb-reviews__nav:active {
+    transform: scale(0.96);
+  }
 }
 
 .sb-reviews__counter {
@@ -2218,15 +2338,27 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   }
 }
 
+/* The two trust rows share one left edge so the cluster reads as a single
+   group instead of two centred lines of different width. */
+.sb-reviews__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: max-content;
+  max-width: 100%;
+  margin: clamp(18px, 2.4vw, 26px) auto 0;
+}
+
 .sb-reviews__more {
-  margin: clamp(18px, 2.4vw, 26px) 0 0;
-  text-align: center;
+  margin: 0;
+  text-align: left;
 }
 
 .sb-reviews__more-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: var(--sb-ink);
   font-size: 15px;
   font-weight: 600;
@@ -2237,17 +2369,21 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   display: grid;
   place-items: center;
   flex: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 11px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #e7dfd3;
   background: #fff;
-  box-shadow: inset 0 0 0 1px #e7dfd3;
   color: var(--sb-head);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
 }
 
 .sb-reviews__more-badge svg {
-  width: 17px;
-  height: 17px;
+  width: 19px;
+  height: 19px;
 }
 
 .sb-reviews__more-link > svg {
@@ -2255,9 +2391,18 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* Every child of the row sets its own colour, so the hover cue has to name
+   them: a colour swap on the link alone would show nothing. */
 @media (hover: hover) {
-  .sb-reviews__more-link:hover {
+  .sb-reviews__more-link:hover,
+  .sb-reviews__more-link:hover .sb-reviews__more-score {
     color: var(--sb-ember-text);
+  }
+
+  .sb-reviews__more-link:hover .sb-reviews__more-badge {
+    border-color: var(--sb-yellow);
+    background: var(--sb-yellow);
+    color: var(--sb-ink);
   }
 }
 
@@ -2267,91 +2412,78 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   }
 }
 
-/* The live Yandex widget stays collapsed: its own UI reads as a foreign
-   block next to the parent screenshots. On open it loads on demand. */
-.sb-reviews__live {
-  margin-top: clamp(14px, 1.6vw, 20px);
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px #e7dfd3;
+/* The Instagram label is long: on phones the trailing arrow drops to the far
+   right of a wrapped row, so the badge and colour carry the affordance. */
+@media (max-width: 30rem) {
+  .sb-reviews__more-link {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .sb-reviews__more-link > svg {
+    display: none;
+  }
 }
 
-.sb-reviews__live .sb-reviews__live-summary {
-  gap: 14px;
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: #fbfaf9;
-}
-
-/* The Yandex row ships in its highlighted state: the pale surface and the
-   yellow plus keep it looking like a live, openable widget at rest. */
-.sb-reviews__live .sb-acc__toggle {
-  background: var(--sb-yellow);
-}
-
-.sb-reviews__live[open] .sb-reviews__live-summary {
-  border-radius: 18px 18px 0 0;
-}
-
-.sb-reviews__live-badge {
+/* Both rows keep one rhythm: badge, text, arrow. The rating sits up front so
+   the number is visible without a click. */
+.sb-reviews__more-text {
   display: grid;
-  place-items: center;
-  flex: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: var(--sb-sand);
-  box-shadow: inset 0 0 0 1px #e7dfd3;
-  color: var(--sb-head);
-}
-
-.sb-reviews__live-badge svg {
-  width: 18px;
-  height: 18px;
-}
-
-.sb-reviews__live-title {
+  gap: 4px;
   min-width: 0;
-  margin-right: auto;
-  color: var(--sb-ink);
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  text-align: left;
 }
 
-.sb-reviews__live-action {
+.sb-reviews__more-topline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sb-reviews__more-stars {
+  position: relative;
+  display: inline-block;
   flex: none;
+  line-height: 0;
+}
+
+.sb-reviews__more-stars-row {
+  display: flex;
+  gap: 2px;
+  color: #d6c9b2;
+}
+
+.sb-reviews__more-stars-row svg {
+  display: block;
+}
+
+.sb-reviews__more-stars-fill {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  width: var(--sb-rating, 100%);
+  color: #f0aa35;
+}
+
+.sb-reviews__more-stars-fill .sb-reviews__more-stars-row {
+  width: max-content;
+  color: inherit;
+}
+
+.sb-reviews__more-score {
+  color: var(--sb-ink);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.sb-reviews__more-caption {
   color: var(--sb-muted);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.01em;
-}
-
-.sb-reviews__live .sb-reviews__live-panel {
-  padding: 0 10px 10px;
-}
-
-.sb-reviews__live-panel iframe {
-  display: block;
-  width: 100%;
-  max-width: 760px;
-  height: clamp(32rem, 48vw, 40rem);
-  margin: 0 auto;
-  border: 1px solid var(--sb-hair);
-  border-radius: 8px;
-  background: #fff;
-}
-
-.sb-reviews__live-fallback {
-  margin: 0 0 10px;
-  font-size: 14px;
-}
-
-.sb-reviews__live-fallback a {
-  color: var(--sb-ember-text);
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 /* ---------------------------------------------------------- instagram */
@@ -2492,11 +2624,6 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 .sb-faq__head .sb-lead {
   max-width: 40ch;
   margin-inline: auto;
-}
-
-.sb-art--faq-squiggle {
-  width: 92px;
-  margin: 22px auto 0;
 }
 
 .sb-faq__list {
@@ -2753,28 +2880,56 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
 }
 
 /* ---------------------------------------------------------------- cta */
+/* Full-bleed closing band: it runs edge to edge and stops flush against the
+   footer, so the page never shows a strip of canvas under the message. */
 
 .sb-cta {
-  padding: 0 0 clamp(56px, 7vw, 96px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(64px, 8vw, 112px) 0 clamp(72px, 8.5vw, 120px);
+  background:
+    radial-gradient(120% 150% at 50% 116%, #eee9dd 0%, rgb(242 240 237 / 0) 62%),
+    var(--sb-stone);
+  box-shadow: inset 0 1px 0 rgb(52 52 51 / 0.08);
+}
+
+/* Dot grid, masked out of the middle so the copy stays quiet. */
+.sb-cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgb(52 52 51 / 0.09) 1.3px, transparent 1.7px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 68% 78% at 50% 50%, transparent 36%, #000 84%);
+  mask-image: radial-gradient(ellipse 68% 78% at 50% 50%, transparent 36%, #000 84%);
+  pointer-events: none;
+}
+
+.sb-cta > .sb-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .sb-cta__panel {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(36px, 4.5vw, 64px) clamp(24px, 5vw, 64px) clamp(44px, 6vw, 80px);
-  border-radius: 24px;
-  background: var(--sb-stone);
-  box-shadow: inset 0 0 0 1px #eae4d8;
   text-align: center;
+}
+
+.sb-cta__decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .sb-cta__title {
   max-width: 20ch;
   margin: 0 auto;
-  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.75rem);
+  font-size: clamp(1.75rem, 1.15rem + 2.4vw, 3.35rem);
   font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   color: var(--sb-ink);
   text-wrap: balance;
 }
@@ -2787,30 +2942,102 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   line-height: 1.55;
 }
 
-/* Two mascots flank the message instead of sinking into the corners:
-   same size, same optical inset, centred on the content block. */
-.sb-art--cta-lego,
-.sb-art--cta-roboarm {
+/* Two mascots flank the message and sit on the band's baseline; confetti
+   fills the outer corners so the full-width field never reads as empty. */
+.sb-cta__mascot {
   position: absolute;
-  top: 50%;
-  width: clamp(132px, 12vw, 176px);
-  translate: 0 -50%;
+  bottom: clamp(16px, 2.4vw, 32px);
+  width: clamp(112px, 11vw, 156px);
+  filter: drop-shadow(0 6px 10px rgb(18 18 18 / 0.1));
 }
 
-.sb-art--cta-lego {
-  left: clamp(24px, 6vw, 112px);
-  rotate: -3deg;
+.sb-cta__mascot--lego {
+  left: clamp(16px, 6vw, 128px);
+  rotate: -4deg;
 }
 
-.sb-art--cta-roboarm {
-  right: clamp(24px, 6vw, 112px);
-  rotate: 3deg;
+.sb-cta__mascot--roboarm {
+  right: clamp(16px, 6vw, 128px);
+  rotate: 4deg;
+}
+
+.sb-cta__confetti {
+  position: absolute;
+}
+
+.sb-cta__confetti--star {
+  top: 16%;
+  left: 17%;
+  width: 38px;
+  rotate: 10deg;
+}
+
+.sb-cta__confetti--spark {
+  top: 21%;
+  right: 18%;
+  width: 32px;
+  rotate: -8deg;
+}
+
+.sb-cta__confetti--bolt {
+  top: 32%;
+  left: 6%;
+  width: 34px;
+  rotate: -12deg;
+}
+
+.sb-cta__confetti--squiggle {
+  top: 15%;
+  right: 6%;
+  width: 78px;
+  opacity: 0.9;
 }
 
 @media (max-width: 63.99rem) {
-  .sb-art--cta-lego,
-  .sb-art--cta-roboarm {
+  .sb-cta__mascot {
+    bottom: clamp(12px, 2vw, 20px);
+    width: 90px;
+  }
+
+  .sb-cta__mascot--lego {
+    left: 16px;
+  }
+
+  .sb-cta__mascot--roboarm {
+    right: 16px;
+  }
+
+  .sb-cta__confetti--star,
+  .sb-cta__confetti--squiggle {
     display: none;
+  }
+
+  .sb-cta__confetti--bolt {
+    top: 20px;
+    left: 20px;
+    width: 28px;
+  }
+
+  .sb-cta__confetti--spark {
+    top: 22px;
+    right: 20px;
+    width: 26px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .sb-cta__mascot {
+    bottom: 6px;
+    width: 58px;
+    filter: none;
+  }
+
+  .sb-cta__mascot--lego {
+    left: 10px;
+  }
+
+  .sb-cta__mascot--roboarm {
+    right: 10px;
   }
 }
 
@@ -3120,24 +3347,22 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   .sb-purpose__card {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    column-gap: 20px;
+    align-items: start;
+    column-gap: 16px;
+    padding: 20px;
   }
 
-  .sb-purpose__top {
-    display: contents;
-  }
-
-  .sb-tile {
-    grid-row: span 2;
+  .sb-purpose .sb-tile {
+    grid-row: 1 / span 2;
     align-self: start;
   }
 
-  .sb-purpose__num {
-    display: none;
+  .sb-purpose .sb-card__title {
+    margin-top: 0;
   }
 
-  .sb-card__title {
-    margin-top: 0;
+  .sb-purpose .sb-card__text {
+    margin-top: 6px;
   }
 
   .sb-faq__inner {
@@ -3212,10 +3437,6 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
   .sb-card__title {
     font-size: 20px;
   }
-
-  .sb-reviews__live-action {
-    display: none;
-  }
 }
 
 @media (max-width: 560px) {
@@ -3285,23 +3506,21 @@ html:not(.js) .sb-teacher-panel + .sb-teacher-panel {
     width: 18%;
   }
 
+  .sb-purpose__grid {
+    gap: 0;
+  }
+
   .sb-purpose__card {
-    display: block;
-    border-radius: 20px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 16px 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
   }
 
-  .sb-tile {
-    width: 48px;
-    height: 48px;
-  }
-
-  .sb-purpose .sb-tile svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .sb-card__title {
-    margin-top: 20px;
+  .sb-purpose__card + .sb-purpose__card {
+    border-top: 1px solid var(--sb-line);
   }
 
   .sb-cta__text {

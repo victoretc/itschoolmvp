@@ -1,0 +1,18 @@
+{{- /* Maps a course title to an icon name from icon.html. Usage:
+       {{ partial "course-icon.html" $course.title }} */ -}}
+{{- $key := lower . -}}
+{{- $icon := "code" -}}
+{{- if strings.Contains $key "робот" -}}
+  {{- $icon = "robot" -}}
+{{- else if or (strings.Contains $key "нейрон") (strings.Contains $key "нейросет") -}}
+  {{- $icon = "neural" -}}
+{{- else if strings.Contains $key "квадрокоптер" -}}
+  {{- $icon = "rocket" -}}
+{{- else if or (strings.Contains $key "игр") (strings.Contains $key "roblox") (strings.Contains $key "minecraft") -}}
+  {{- $icon = "game" -}}
+{{- else if or (strings.Contains $key "3д") (strings.Contains $key "3d") (strings.Contains $key "blender") -}}
+  {{- $icon = "compass" -}}
+{{- else if strings.Contains $key "scratch" -}}
+  {{- $icon = "blocks" -}}
+{{- end -}}
+{{- return $icon -}}
