@@ -350,6 +350,7 @@
   let lastFocused = null;
   let closeTimer = 0;
   let submitted = false;
+  let userOpened = false;
 
   /* ------------------------------------------------------------ scroll */
 
@@ -465,7 +466,7 @@
 
   /* --------------------------------------------------------- open/close */
 
-  const open = (trigger) => {
+  const open = (trigger, source) => {
     if (isOpen) return;
 
     window.clearTimeout(closeTimer);
@@ -492,7 +493,7 @@
     dialog.focus({ preventScroll: true });
 
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'consult_open', source: data.consultSource || 'cta' });
+      window.dataLayer.push({ event: 'consult_open', source: source || data.consultSource || 'cta' });
     }
   };
 
@@ -521,12 +522,93 @@
     closeTimer = window.setTimeout(finish, reduceMotion.matches ? 120 : 200);
   };
 
+  /* ------------------------------------------------- auto open on home */
+
+  /* The homepage drops a zero-height sentinel after the reviews. When it
+     scrolls into view the visitor has read the whole argument and seen the
+     proof but has not left a request — the moment to offer help choosing.
+     Shown once per visitor, never on top of the cookie notice or an
+     already-open dialog. */
+  const AUTO_KEY = 'itschool-consult-auto';
+  const AUTO_TTL = 30 * 24 * 60 * 60 * 1000;
+  const autoTrigger = document.querySelector('[data-auto-consult-trigger]');
+  const cookieNotice = document.querySelector('[data-cookie-consent]');
+
+  const autoSeen = () => {
+    try {
+      const at = Number(window.localStorage.getItem(AUTO_KEY) || 0);
+      return at > 0 && Date.now() - at < AUTO_TTL;
+    } catch (error) {
+      return false;
+    }
+  };
+
+  const markAutoSeen = () => {
+    try {
+      window.localStorage.setItem(AUTO_KEY, String(Date.now()));
+    } catch (error) {
+      /* Storage disabled: the dialog may repeat next visit. */
+    }
+  };
+
+  const autoAllowed = () =>
+    autoTrigger &&
+    'IntersectionObserver' in window &&
+    !autoSeen() &&
+    window.location.hash !== '#consult';
+
+  if (autoAllowed()) {
+    let armed = false;
+    let retry = 0;
+
+    const canOpen = () =>
+      !isOpen &&
+      !submitted &&
+      !userOpened &&
+      document.visibilityState !== 'hidden' &&
+      !(cookieNotice && !cookieNotice.hidden);
+
+    const tryOpen = () => {
+      if (!armed || !canOpen()) return false;
+      armed = false;
+      window.clearInterval(retry);
+      markAutoSeen();
+      open(null, 'auto-scroll');
+      return true;
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        armed = true;
+
+        /* Short pause so a fast flick through the list does not pop the
+           dialog mid-scroll. */
+        window.setTimeout(() => {
+          if (tryOpen()) return;
+
+          /* Cookie notice still on screen: wait until the visitor answers. */
+          retry = window.setInterval(() => {
+            if (tryOpen()) return;
+            if (submitted || userOpened) window.clearInterval(retry);
+          }, 1200);
+          window.setTimeout(() => window.clearInterval(retry), 60000);
+        }, 1000);
+      },
+      { rootMargin: '0px 0px -10% 0px' }
+    );
+
+    observer.observe(autoTrigger);
+  }
+
   /* ------------------------------------------------------------ events */
 
   document.addEventListener('click', (event) => {
     const opener = event.target.closest('[data-consult-open]');
     if (opener) {
       event.preventDefault();
+      userOpened = true;
       open(opener);
       return;
     }

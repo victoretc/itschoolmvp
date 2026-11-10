@@ -7,6 +7,33 @@
 <article class="sb-course-page">
   <header class="sb-course-page__hero">
     <div class="sb-inner">
+      {{/* Purchase strip: price, the action and the phone, before the head. */}}
+      <div class="sb-course-page__buy">
+        <p class="sb-course-page__price">
+          <span class="sb-course-page__price-label">Стоимость</span>
+          <span class="sb-course-page__price-value">
+            <span class="sb-course-page__price-amount">{{ $price }}</span>
+            <small>{{ $suffix }}</small>
+          </span>
+        </p>
+
+        <div class="sb-course-page__buy-actions">
+          {{ partial "sb-cta-button.html" (dict "label" "Записаться на занятие" "source" (printf "course-%s" .Title)) }}
+
+          <a class="sb-btn sb-btn--sand sb-btn--phone" href="{{ site.Params.phoneHref | safeURL }}">
+            {{ partial "icon.html" "phone" }}
+            <span>{{ site.Params.phone }}</span>
+          </a>
+        </div>
+
+        <a class="sb-course-page__all" href="{{ $coursesURL }}#courses">
+          Все курсы
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+
       <nav class="sb-course-page__crumbs" aria-label="Хлебные крошки">
         <a href="{{ $coursesURL }}">Курсы</a>
         <span aria-hidden="true">/</span>
@@ -23,32 +50,8 @@
   </header>
 
   <div class="sb-inner">
-    <div class="sb-course-page__grid">
-      <div class="sb-course-page__content">
-        {{ .Content }}
-      </div>
-
-      <aside class="sb-course-page__aside" aria-label="Запись на курс">
-        <p class="sb-course-page__aside-label">Стоимость</p>
-        <p class="sb-course-page__price">
-          <span>{{ $price }}</span>
-          <small>{{ $suffix }}</small>
-        </p>
-
-        {{ partial "sb-cta-button.html" (dict "label" "Записаться на занятие" "source" (printf "course-%s" .Title)) }}
-
-        <a class="sb-btn sb-btn--sand sb-btn--phone sb-course-page__phone" href="{{ site.Params.phoneHref | safeURL }}">
-          {{ partial "icon.html" "phone" }}
-          <span>{{ site.Params.phone }}</span>
-        </a>
-
-        <a class="sb-course-page__all" href="{{ $coursesURL }}#courses">
-          Все курсы
-          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
-            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-      </aside>
+    <div class="sb-course-page__content">
+      {{ .Content }}
     </div>
   </div>
 </article>

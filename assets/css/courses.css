@@ -721,7 +721,7 @@ html:not(.js) .sb-course-panel + .sb-course-panel {
 /* -------------------------------------------------------- course page */
 
 .sb-course-page__hero {
-  padding: clamp(24px, 3.5vw, 40px) 0 clamp(20px, 3vw, 28px);
+  padding: clamp(20px, 2.6vw, 28px) 0 clamp(20px, 3vw, 28px);
 }
 
 .sb-course-page__crumbs {
@@ -729,7 +729,7 @@ html:not(.js) .sb-course-panel + .sb-course-panel {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  margin-bottom: clamp(20px, 3vw, 28px);
+  margin: 18px 0 clamp(20px, 3vw, 28px);
   color: var(--sb-muted);
   font-size: 13.5px;
   line-height: 1.4;
@@ -778,16 +778,9 @@ html:not(.js) .sb-course-panel + .sb-course-panel {
   text-wrap: balance;
 }
 
-.sb-course-page__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
-  align-items: start;
-  gap: clamp(28px, 4vw, 64px);
-  padding-bottom: clamp(48px, 6vw, 80px);
-}
-
 .sb-course-page__content {
   max-width: 68ch;
+  padding: clamp(24px, 3vw, 40px) 0 clamp(48px, 6vw, 80px);
 }
 
 .sb-course-page__content > :first-child {
@@ -826,82 +819,94 @@ html:not(.js) .sb-course-panel + .sb-course-panel {
   font-weight: 600;
 }
 
-.sb-course-page__aside {
-  position: sticky;
-  top: calc(var(--header-h) + 24px);
-  display: grid;
-  gap: 14px;
-  padding: 24px;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px var(--sb-hair);
-}
-
-.sb-course-page__aside-label {
-  color: var(--sb-muted);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  text-transform: uppercase;
+/* Purchase strip above the breadcrumbs. One row: price, the action, the
+   phone, then the way back to the catalogue. The hairline is structure, not
+   elevation — the page has no shadows. */
+.sb-course-page__buy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  padding-bottom: clamp(16px, 2vw, 22px);
+  border-bottom: 1px solid var(--sb-hair);
 }
 
 .sb-course-page__price {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 8px;
-  margin-top: -6px;
+  display: grid;
+  gap: 4px;
+  margin: 0;
 }
 
-.sb-course-page__price span {
-  color: var(--sb-ink);
-  font-size: 34px;
+.sb-course-page__price-label {
+  color: var(--sb-muted);
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.sb-course-page__price-value {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
   line-height: 1;
+}
+
+.sb-course-page__price-amount {
+  color: var(--sb-ink);
+  font-family: var(--sb-font-display);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
 }
 
-.sb-course-page__price small {
+.sb-course-page__price-value small {
   color: var(--sb-muted);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.006em;
 }
 
-.sb-course-page__aside .btn--cta,
-.sb-course-page__aside .sb-btn {
-  width: 100%;
+.sb-course-page__buy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
 }
 
 /* The page body carries .home, so the home CTA shadow wins on specificity
-   until this selector names the button class too. */
-.sb-course-page__aside .btn.btn--cta {
+   until this selector names the button class too. Both buttons share a
+   height so the pair sits on one line. */
+.sb-course-page__buy .btn.btn--cta {
   justify-content: space-between;
   box-shadow: none;
 }
 
-/* The phone is a secondary action: it hugs its content instead of stretching
-   to the full column, so the icon keeps the same distance from the text as
-   the same button elsewhere. */
-.sb-course-page__aside .sb-btn--phone {
-  justify-self: center;
-  width: auto;
+.sb-course-page__buy .sb-btn--phone {
+  min-height: 3.5rem;
 }
 
 .sb-course-page__all {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 1px solid var(--sb-hair);
+  gap: 10px;
   color: var(--sb-ink);
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: -0.006em;
   text-decoration: none;
+}
+
+/* The divider only holds while the strip is one row. Narrower widths wrap it
+   under the buttons, where a dangling tick would read as a bug. */
+@media (min-width: 64rem) {
+  .sb-course-page__all {
+    padding-left: 22px;
+    border-left: 1px solid var(--sb-hair);
+  }
 }
 
 .sb-course-page__all svg {
@@ -915,12 +920,24 @@ html:not(.js) .sb-course-panel + .sb-course-panel {
 }
 
 @media (max-width: 900px) {
-  .sb-course-page__grid {
-    grid-template-columns: minmax(0, 1fr);
+  .sb-course-page__buy {
+    gap: 14px 20px;
   }
 
-  .sb-course-page__aside {
-    position: static;
+  .sb-course-page__buy-actions {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .sb-course-page__buy-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .sb-course-page__buy-actions .sb-btn--phone {
+    justify-content: center;
   }
 }
 

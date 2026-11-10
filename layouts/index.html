@@ -464,6 +464,13 @@
 </section>
 {{- end }}
 
+{{/* Auto-offer trigger. Sits after the reviews: the visitor has scrolled
+     through the whole argument (how we teach, who teaches, why the child
+     needs it) and seen the proof, but has not left a request. main.js opens
+     the consultation dialog here once per visitor. Move this node to change
+     where the dialog appears. */}}
+<div class="sb-auto-consult-sentinel" data-auto-consult-trigger aria-hidden="true"></div>
+
 {{/* ----------------------------------------------------------------- faq */}}
 {{- with .Params.faq }}
 <section class="sb-section sb-faq" aria-labelledby="faq-title">
