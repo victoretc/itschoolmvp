@@ -1,19 +1,36 @@
 {{- /* Course pages are generated from the same data the home page uses, so the
        description on a course page always matches the accordion on the home
-       page. Add or edit a course in data/courses.json — pages follow. */ -}}
+       page. Add or edit a course in data/courses.json — pages follow.
+
+       `description` in data/courses.json is the source of truth for the page's
+       meta description. When it is missing we fall back to a sanitised excerpt
+       of the course text.
+
+       The sanitising pipeline matters: Hugo's minifier re-serialises attribute
+       values and double-escapes quotes, so a raw `"` or `'` inside a meta
+       description ends up in the page as `&amp;#34;`. Entities, bare ampersands
+       and both quote characters are stripped, and whitespace is collapsed to a
+       single space, before the text is truncated. */ -}}
 {{- range site.Data.courses }}
   {{- $title := .guideTitle | default .title }}
   {{- $content := dict "mediaType" "text/html" "value" .body }}
+  {{- $description := "" }}
+  {{- if .description }}
+    {{- $description = .description }}
+  {{- else }}
+    {{- $description = .body | plainify | replaceRE "&[#0-9a-zA-Z]+;" "" | replaceRE "&" "" | replaceRE "[\"']" "" | replaceRE "\xc2\xa0" " " | replaceRE "\\s+" " " | truncate 160 }}
+  {{- end }}
   {{- $params := dict
       "age" .age
       "price" .price
       "suffix" .suffix
       "guideOrder" .guideOrder
+      "description" $description
   }}
   {{- $.AddPage (dict
       "path" .slug
       "title" $title
-      "description" (.body | plainify | truncate 160)
+      "description" $description
       "params" $params
       "content" $content
   ) }}
