@@ -444,6 +444,7 @@
     dialog.focus({ preventScroll: true });
 
     if (window.dataLayer) window.dataLayer.push({ event: 'quiz_open' });
+    if (window.itschoolGoal) window.itschoolGoal('quiz_start');
   };
 
   const close = () => {
@@ -582,6 +583,12 @@
 
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'quiz_submit', course: currentCourse ? currentCourse.slug : '' });
+      }
+      if (window.itschoolGoal) {
+        window.itschoolGoal('lead_quiz', {
+          course: currentCourse ? currentCourse.slug : '',
+          page: window.location.pathname,
+        });
       }
     } catch (error) {
       leadError.textContent = 'Не удалось отправить заявку. Позвоните нам: +375 (29) 871-76-12.';

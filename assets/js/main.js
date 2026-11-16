@@ -351,6 +351,7 @@
   let closeTimer = 0;
   let submitted = false;
   let userOpened = false;
+  let lastSource = 'cta';
 
   /* ------------------------------------------------------------ scroll */
 
@@ -478,6 +479,7 @@
     const data = trigger ? trigger.dataset : {};
     titleEl.textContent = data.consultTitle || baseTitle;
     leadEl.textContent = data.consultLead || baseLead;
+    lastSource = source || data.consultSource || 'cta';
 
     root.hidden = false;
     root.classList.remove('is-closing');
@@ -493,8 +495,9 @@
     dialog.focus({ preventScroll: true });
 
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'consult_open', source: source || data.consultSource || 'cta' });
+      window.dataLayer.push({ event: 'consult_open', source: lastSource });
     }
+    if (window.itschoolGoal) window.itschoolGoal('consult_open', { source: lastSource });
   };
 
   const close = () => {
@@ -681,6 +684,12 @@
       }
 
       if (window.dataLayer) window.dataLayer.push({ event: 'consult_submit' });
+      if (window.itschoolGoal) {
+        window.itschoolGoal('lead_consult', {
+          source: lastSource,
+          page: window.location.pathname,
+        });
+      }
       showSuccess();
     } catch (error) {
       formError.textContent = 'Не удалось отправить заявку. Позвоните нам: +375 (29) 871-76-12.';

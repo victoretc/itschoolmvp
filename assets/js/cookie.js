@@ -90,7 +90,7 @@
       clickmap: true,
       trackLinks: true,
       accurateTrackBounce: true,
-      webvisor: false,
+      webvisor: true,
     });
   };
 
@@ -185,7 +185,9 @@
 
     if (current && current.analytics) {
       loadMetrika();
-    } else if (metrikaStarted) {
+    } else {
+      /* Also covers the case where consent expired or was reset: cookies
+         from an earlier visit must not survive an explicit refusal. */
       clearAnalyticsCookies();
     }
 
